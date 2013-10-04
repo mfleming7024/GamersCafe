@@ -13,15 +13,17 @@
     background-color: #424242;
     width: 100%;
     height: 60px;
-    margin-top: 80px;
+    margin-top: 20px;
     border-top: 3px solid #3299BB;
 }
-#main_nav object{
-    float: right;
-    width: 400px;
-    position: relative;
-    margin-top: -65px;
-    margin-right: -15px;
+#logo {
+    margin-top: 20px;
+
+}
+#logo object{
+    width: 330px;
+    height: 50px;
+    z-index: 1;
 }
 #mobile_menu{
     margin-top: 10px;
@@ -29,7 +31,8 @@
 
 h1, h2, h3, p, a {
     font-family: 'Open Sans', sans-serif;
-    font-weight: 600;
+    font-weight: 300;
+    text-transform: uppercase;
 }
 
 /* Media Queries ----------- */
@@ -39,10 +42,14 @@ h1, h2, h3, p, a {
         float: right;
         margin-right: 10px;
         margin-top: -55px;
+        position: relative;
     }
     #mobile_menu{
-        margin-right: -70px;
+        margin-right: 0;
         float: right;
-        z-index: 0;
     }
+    #logo {
+        margin-top: 20px;
+    }
+
 }

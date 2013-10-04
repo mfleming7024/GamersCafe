@@ -10,7 +10,7 @@ body {
   font-size: 100%; }
 
 body {
-  background: #BCBCBC;
+  background: #fff;
   color: #222222;
   padding: 0;
   margin: 0;
@@ -2917,8 +2917,8 @@ label.error {
     color: white;
     padding: 12px 0 12px 0;
     padding-left: 15px;
-    font-size: 0.8125em;
-    font-weight: bold;
+    font-size: 1em;
+    font-weight: 400;
     background: #424242; }
     .top-bar-section ul li > a.button {
       background: #2ba6cb;
