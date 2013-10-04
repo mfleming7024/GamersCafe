@@ -10,7 +10,7 @@ body {
   font-size: 100%; }
 
 body {
-  background: white;
+  background: #BCBCBC;
   color: #222222;
   padding: 0;
   margin: 0;
@@ -1061,7 +1061,7 @@ p {
 
 /* Default header styles */
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: bold;
   font-style: normal;
   color: #222222;
@@ -2901,13 +2901,13 @@ label.error {
     width: 100%;
     height: auto;
     display: block;
-    background: #222222;
+    background: #424242;
     font-size: 16;
     margin: 0; }
   .top-bar-section .divider,
   .top-bar-section [role="separator"] {
-    border-bottom: solid 1px #2b2b2b;
-    border-top: solid 1px black;
+    border-bottom: solid 1px #424242;
+    border-top: solid 1px #424242;
     clear: both;
     height: 1px;
     width: 100%; }
@@ -2919,7 +2919,7 @@ label.error {
     padding-left: 15px;
     font-size: 0.8125em;
     font-weight: bold;
-    background: #222222; }
+    background: #424242; }
     .top-bar-section ul li > a.button {
       background: #2ba6cb;
       font-size: 0.8125em; }
@@ -2941,7 +2941,7 @@ label.error {
     background: #090909;
     color: white; }
   .top-bar-section ul li.active > a {
-    background: #090909;
+    background: #424242;
     color: white; }
   .top-bar-section .has-form {
     padding: 15px; }
@@ -3001,7 +3001,7 @@ label.error {
 
 @media only screen and (min-width: 58.75em) {
   .top-bar {
-    background: #111111;
+    background: #424242;
     *zoom: 1;
     overflow: visible; }
     .top-bar:before, .top-bar:after {
@@ -3047,7 +3047,7 @@ label.error {
     .top-bar-section li a:not(.button) {
       padding: 0 15px;
       line-height: 45px;
-      background: #111111; }
+      background: #424242; }
       .top-bar-section li a:not(.button).hover {
         background: black; }
     .top-bar-section .has-dropdown > a {
@@ -3093,8 +3093,8 @@ label.error {
     .top-bar-section > ul > .divider, .top-bar-section > ul > [role="separator"] {
       border-bottom: none;
       border-top: none;
-      border-right: solid 1px #2b2b2b;
-      border-left: solid 1px black;
+      border-right: solid 1px #424242;
+      border-left: solid 1px #424242;
       clear: none;
       height: 45px;
       width: 0px; }
