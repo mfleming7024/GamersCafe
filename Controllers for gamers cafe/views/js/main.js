@@ -52,7 +52,7 @@ gamerscafe.controller('Core', ['$scope', 'angularFireCollection', 'angularFireAu
 
 	//create a system and adds it to the database
 	$scope.addSystem = function(){
-		$scope.systems.add({name: "Xbox 360"});
+		$scope.systems.add({name: "Xbox 360",station:"number here", model_number:"1234567890", purchased_date:"10/31/2013", info:"Blah Blah Blah"});
 		console.log("addSystem clicked");
 	}
 
@@ -66,6 +66,10 @@ gamerscafe.controller('Core', ['$scope', 'angularFireCollection', 'angularFireAu
 	//have fields instead of string literal
 	$scope.updateSystem = function(system){
 		system.name = "PS3";
+		system.station:"here number";
+		system.model_number:"0987654321"; 
+		system.purchased_date:"10/30/2013"; 
+		system.info:"updated Blah";
 		$scope.systems.update(system);
 	}
 
