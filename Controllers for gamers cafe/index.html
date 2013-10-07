@@ -12,12 +12,12 @@
 
 		<ul>
 			<!--Loop to create list from database of games-->
-			<li ng-repeat="game in games | orderBy:'title'"><span>{{game.title}}</span><button type="button" ng-click="deleteGame(game.$id)">Delete Game</button><li/>					
+			<li ng-repeat="game in games | orderBy:'title'"><span>{{game.title}}</span><button type="button" ng-click="deleteGame(game.$id)">Delete Game</button><button ng-click="updateGame(game)">Update Game</button><li/>					
 		</ul>
 
 		<ul>
 			<!--Loop to create list from database of games-->
-			<li ng-repeat="system in systems | orderBy:'name'"><span>{{system.name}}</span><button type="button" ng-click="deleteSystem(system.$id)">Delete System</button><li/>					
+			<li ng-repeat="system in systems | orderBy:'name'"><span>{{system.name}}</span><button type="button" ng-click="deleteSystem(system.$id)">Delete System</button><button ng-click="updateSystem(system)">Update System</button><li/>					
 		</ul>
 
 	</div>

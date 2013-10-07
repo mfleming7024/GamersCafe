@@ -30,8 +30,16 @@ gamerscafe.controller('Core', ['$scope', 'angularFireCollection', 'angularFireAu
 		console.log("deleteGame clicked");
 	}
 
-	//updates the game database
-	$scope.updateGame = function(){
+	//updates the games database
+	//have fields instead of string literal
+	$scope.updateGame = function(game){
+		game.title = "Gears of War 3";
+		game.information = "This is an updated information";
+		game.images = ["url3","url4"]
+		game.system = "Xbox 360"; 
+		game.genre = "Shooter";
+
+		$scope.games.update(game);
 	}
 
 	//************************************Systems***************************************************
@@ -54,8 +62,11 @@ gamerscafe.controller('Core', ['$scope', 'angularFireCollection', 'angularFireAu
 		console.log("deleteSystem clicked");
 	}
 
-	//updates the system database
-	$scope.updateSystem = function(){
+	//updates the systems database
+	//have fields instead of string literal
+	$scope.updateSystem = function(system){
+		system.name = "PS3";
+		$scope.systems.update(system);
 	}
 
 }])
