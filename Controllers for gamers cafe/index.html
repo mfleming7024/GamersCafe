@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html lang="en" ng-app="gamerscafe">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Gamers Cafe</title>
+</head>
+<body>
+	<div class="container" ng-controller="Core">
+		<button ng-click="addGame()">Add Game</button>
+		<br/>
+		<button ng-click="addSystem()">Add System</button>
+
+		<ul>
+			<!--Loop to create list from database of games-->
+			<li ng-repeat="game in games | orderBy:'title'"><span>{{game.title}}</span><button type="button" ng-click="deleteGame(game.$id)">Delete Game</button><button ng-click="updateGame(game)">Update Game</button><li/>					
+		</ul>
+
+		<ul>
+			<!--Loop to create list from database of games-->
+			<li ng-repeat="system in systems | orderBy:'name'"><span>{{system.name}}</span><button type="button" ng-click="deleteSystem(system.$id)">Delete System</button><button ng-click="updateSystem(system)">Update System</button><li/>					
+		</ul>
+
+	</div>
+
+	<!-- Firebase Conenctions -->
+	<script src="https://cdn.firebase.com/v0/firebase.js"></script>
+	
+	<!--simple login-->
+	<script type='text/javascript' src="https://cdn.firebase.com/v0/firebase-simple-login.js"></script>
+
+	<!--angular-->
+	<script src="views/js/plugins/angular.js"></script>
+
+	<!--angularFire-->
+	<script src="views/js/plugins/angularfire.js"></script>
+
+	<!--Main JS-->
+	<script type="text/javascript" src="views/js/main.js"></script>
+
+</body>
+</html>
