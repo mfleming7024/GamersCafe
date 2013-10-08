@@ -379,7 +379,7 @@
       caption_class: 'orbit-caption',
       active_slide_class: 'active',
       orbit_transition_class: 'orbit-transitioning',
-      bullets: true,
+      bullets: false,
       timer: true,
       variable_height: false,
       before_slide_change: noop,
