@@ -121,7 +121,7 @@
                     <td>GTA V</td>
                     <td>12:30 (10/08/13)</td>
                     <td>00:59</td>
-                    <td><a href="">Update</a> </td>
+                    <td><a data-reveal-id="update_gamer" href="">Update</a> </td>
                 </tr>
                 <tr>
                     <td>Mike Flemming</td>
@@ -129,7 +129,7 @@
                     <td>Watch Dog</td>
                     <td>02:10 (10/08/13)</td>
                     <td>00:41</td>
-                    <td><a href="">Update</a> </td>
+                    <td><a data-reveal-id="update_gamer" href="">Update</a> </td>
                 </tr>
                 <tr>
                     <td>Chris Henry</td>
@@ -137,7 +137,7 @@
                     <td>League Of Legends</td>
                     <td>4:30 (10/08/13)</td>
                     <td>00:02</td>
-                    <td><a href="">Update</a> </td>
+                    <td><a data-reveal-id="update_gamer" href="">Update</a> </td>
                 </tr>
                 </tbody>
             </table>
@@ -146,7 +146,6 @@
 
         <div id="queue_list">
             <h2>Queue List</h2>
-
             <!-- Table -->
             <table class="gts">
                 <thead>
@@ -245,6 +244,59 @@
                 </select>
             </form>
             <a href="#" class="button">Play!</a>
+            <a href="#" class="button">Cancel</a>
+        </fieldset>
+    </form>
+</div>
+
+<!-- Update gamer -->
+<!-- MODALS -->
+<div id="update_gamer" class="reveal-modal small">
+    <form>
+        <fieldset>
+            <legend>Update Gamer</legend>
+
+            <label>Email Address</label>
+            <input class="staff_add_gamer" type="text" placeholder="Enter Gamers Email">
+            <form class="custom">
+            </form>
+            <label>Station</label>
+            <form class="custom">
+                <select class="customDropdown" class="medium">
+                    <option>Station 1 (PS4)</option>
+                    <option>Station 5 (XBOX One)</option>
+                    <option>Station 12 (PC)</option>
+                </select>
+            </form>
+            <label>Games</label>
+            <form class="custom">
+                <select class="games_option" class="medium">
+                    <option>GTA V</option>
+                    <option>Hello Kitty</option>
+                    <option>Beyond Two Souls</option>
+                </select>
+            </form>
+            <div class="points">
+                <h5>Points:</h5>
+                <p>1000</p>
+                <form class="custom">
+                    <label for="checkbox1">
+                        <input type="checkbox" id="checkbox2" style="display: none;">
+                        <span class="custom checkbox"></span> Use 500 Points?
+                    </label>
+                </form>
+            </div>
+            <label>Time</label>
+            <form class="custom">
+                <select id="time_dropdown2" class="medium">
+                    <option>30 Minutes</option>
+                    <option>60 Minutes</option>
+                    <option>90 Minutes</option>
+                    <option>120 Minutes</option>
+                    <option>150 Minutes</option>
+                </select>
+            </form>
+            <a href="#" class="button">Update!</a>
             <a href="#" class="button">Cancel</a>
         </fieldset>
     </form>
