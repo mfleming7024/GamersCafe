@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en" ng-app="chatApp">
+<head>
+	<meta charset="utf-8">
+	<title>Dont forget your title</title>
+	<meta name="description" content="The HTML5 Herald">
+	<meta name="author" content="SitePoint">
+	
+	<link rel="stylesheet" href="css/styles.css" />
+	
+	<script src="https://cdn.firebase.com/v0/firebase.js"></script>
+	<script src="js/angular.min.js"></script>
+	<script src="js/angularfire.min.js"></script>
+	<script src="https://cdn.firebase.com/v0/firebase-auth-client.js" />
+	<script src="https://cdn.firebase.com/v0/firebase-simple-login.js"></script>
+		
+</head>
+<body>
+	
+	<div style="padding-top: 20px">
+		<h1>User information</h1>
+		<form ng-submit="addUser()" ng-controller="loginCtrl">
+			<input type="button" ng-click="login()" value="FB Login" />
+			<br />
+			<img ng-src="{{picurl}}" />
+			<br />
+			<label>Full Name:</label>
+			<input type="text"  value="{{fullname}}" ng-model="fullname" required />
+			<br />
+			<label>Username:</label>
+			<input type="text" value="{{username}}" ng-model="username" required />
+			<br />
+			<label>Email:</label>			
+			<input type="email" value="{{email}}" ng-model="email" />
+			<br />
+			<label>Password</label>			
+			<input type="password" ng-model="password" required />
+			<br />
+			<label>Bio</label>			
+			<textarea ng-model="userbio"></textarea>
+			<br />
+			<input type="submit" value="Add User" />
+			<br />
+			<ul>
+				<li ng-repeat="user in users">{{user.username}}</li>
+			</ul>
+		</form>
+	</div>
+
+
+	<script src="js/scripts.js"></script>
+</body>
+</html>

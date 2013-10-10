@@ -1,0 +1,15 @@
+.ng-valid {
+	border: 1px solid #6af26e;
+}
+
+.ng-invalid {
+	border: 1px solid red;
+}
+
+.ng-dirty {
+	border: 1px solid red;
+}
+
+.ng-pristine {
+	border: 1px solid blue;
+}
