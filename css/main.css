@@ -144,6 +144,24 @@ h1, h2, h3, p, a {
     position: relative;
     margin: 0 auto;
 }
+.cancel_comment label{
+    text-align: center;
+    text-transform: uppercase;
+}
+.cancel_comment textarea{
+    width: 400px;
+    height: 100px;
+    margin: 0 auto;
+}
+.middle .staff_columns .cancel_gamer_button{
+    margin: 0 auto;
+    display: block;
+    width: 20%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: crimson;
+    border: 1px solid crimson;
+}
 
 .gts{
     margin-top: 20px;
