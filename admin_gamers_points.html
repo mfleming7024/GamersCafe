@@ -92,13 +92,14 @@
 <!-- Staff Page -->
 <div class="middle">
     <div class="row staff_columns">
-        <div class="sub_nav">
-            <a href="#" data-reveal-id="add_gamer" class="button">Add Gamer</a>
-            <a href="#" class="button">Cancel</a>
-            <a href="#" class="button">History</a>
-            <a href="#" class="button">Gamer Points</a>
-        </div>
-
+        <ul class="admin_nav button-group">
+            <li><a href="#" class="small button">User List</a></li>
+            <li><a href="#" class="small button">Staff</a></li>
+            <li><a href="#" class="small button">Station</a></li>
+            <li><a href="#" class="small button">System</a></li>
+            <li><a href="#" class="small button">Games</a></li>
+            <li><a href="#" class="small button">Gamer Points</a></li>
+        </ul>
         <div class="splitter"></div>
 
         <div id="gts">
@@ -138,6 +139,37 @@
                 </tr>
                 </tbody>
             </table>
+        </div>
+        <!-- Table -->
+
+        <div id="gp_rewards">
+            <h2>Gamer Rewards</h2>
+            <!-- Table -->
+            <table class="gts">
+                <thead>
+                <tr>
+                    <th width="200">Reward Name</th>
+                    <th>Points</th>
+                    <th>Comments</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Coke</td>
+                    <td>500</td>
+                    <td>Comments here</td>
+                </tr>
+                <tr>
+                    <td>Free Game Hour</td>
+                    <td>600</td>
+                    <td>some kind of comment</td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="sub_nav">
+                <a href="#" class="button">Add Reward</a>
+                <a href="#" class="button">Cancel</a>
+            </div>
         </div>
         <!-- Table -->
 
