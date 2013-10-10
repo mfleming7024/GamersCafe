@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html lang="en" ng-app="gamerscafe">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Gamers Cafe</title>
+</head>
+<body>
+	<div class="container" ng-controller="Core">
+		<!-- Add Gamer Page (Staff Id to track history of staff.)
+			Gamer Email (future card?)
+			Points:
+			Station (Avail) (have history of station/consoles)
+			Games (Avail) (have history of games being played)
+			User Points?
+			Time
+			Start (Give points) -->
+		<form ng-submit="addStationToHistory()">
+				<select ng-model="user.email">
+	  				<option ng-repeat="user in users | orderBy:'email'" value="{{user.email}}">{{user.email}}</option>
+				</select>
+			</br>
+				<p>{{user.points}}</p>
+			</br>
+				<select ng-model="user.station">
+	  				<option ng-repeat="station in stations | orderBy:'system'">{{station.number}} / {{station.system}}</option>
+				</select>
+			</br>
+				<select ng-model="user.gameTitle">
+	  				<option ng-repeat="game in games | orderBy:'title'">{{game.title}}</option>
+				</select>
+			</br>
+				<input type="checkbox" name="usePoints" value="usePoints">Use Points
+			</br>
+				<p>Hours:</p>
+				<select ng-model="user.hours">
+	  				<option ng-repeat="n in [] | range:24 | orderBy:'title'">{{n+1}}</option>
+				</select>
+
+				<p>Minutes:</p>
+				<select ng-model="user.minutes">
+	  				<option ng-repeat="n in [] | range:2 | orderBy:'title'">{{n*30}}</option>
+				</select>
+			</br>
+			<button type="submit">Start</button>
+		</form>
+
+	</div>
+
+	<!-- Firebase Conenctions -->
+	<script src="https://cdn.firebase.com/v0/firebase.js"></script>
+	
+	<!--simple login-->
+	<script type='text/javascript' src="https://cdn.firebase.com/v0/firebase-simple-login.js"></script>
+
+	<!--angular-->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+
+	<!--angularFire-->
+	<script src="https://cdn.firebase.com/libs/angularfire/0.3.0/angularfire.min.js"></script>
+
+	<!--Main JS-->
+	<script type="text/javascript" src="views/js/main.js"></script>
+
+</body>
+</html>
