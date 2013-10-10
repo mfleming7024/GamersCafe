@@ -6,38 +6,30 @@
 </head>
 <body>
 	<div class="container" ng-controller="Core">
-		<!-- Add Gamer Page (Staff Id to track history of staff.)
-			Gamer Email (future card?)
-			Points:
-			Station (Avail) (have history of station/consoles)
-			Games (Avail) (have history of games being played)
-			User Points?
-			Time
-			Start (Give points) -->
 		<form ng-submit="addStationToHistory()">
-				<select ng-model="user.email">
-	  				<option ng-repeat="user in users | orderBy:'email'" value="{{user.email}}">{{user.email}}</option>
+				<select ng-model="startTicket.email">
+	  				<option ng-repeat="user in users | orderBy:'email'">{{user.email}}</option>
 				</select>
 			</br>
 				<p>{{user.points}}</p>
 			</br>
-				<select ng-model="user.station">
+				<select ng-model="startTicket.station">
 	  				<option ng-repeat="station in stations | orderBy:'system'">{{station.number}} / {{station.system}}</option>
 				</select>
 			</br>
-				<select ng-model="user.gameTitle">
+				<select ng-model="startTicket.gameTitle">
 	  				<option ng-repeat="game in games | orderBy:'title'">{{game.title}}</option>
 				</select>
 			</br>
 				<input type="checkbox" name="usePoints" value="usePoints">Use Points
 			</br>
 				<p>Hours:</p>
-				<select ng-model="user.hours">
+				<select ng-model="startTicket.hours">
 	  				<option ng-repeat="n in [] | range:24 | orderBy:'title'">{{n+1}}</option>
 				</select>
 
 				<p>Minutes:</p>
-				<select ng-model="user.minutes">
+				<select ng-model="startTicket.minutes">
 	  				<option ng-repeat="n in [] | range:2 | orderBy:'title'">{{n*30}}</option>
 				</select>
 			</br>

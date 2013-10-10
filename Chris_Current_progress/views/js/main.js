@@ -12,6 +12,7 @@ gamerscafe.controller('Core', ['$scope', 'angularFireCollection', 'angularFireAu
 	// Creates an instance of Firebase and connects to our URL
 	var myConn 	= new Firebase('https://gamerscafe.firebaseio.com/gamerscafe');
 
+	var auth = new FirebaseSimpleLogin(myConn, function(error, user) {});
 
 	//************************************Games database***************************************************
 
@@ -19,7 +20,7 @@ gamerscafe.controller('Core', ['$scope', 'angularFireCollection', 'angularFireAu
 	var urlGames = new Firebase("https://gamerscafe.firebaseio.com/gamerscafe/games");
 
 	//collects the info from the database for use.
-	$scope.games = angularFireCollection(urlGames, $scope, 'games', []);
+	$scope.games = angularFireCollection(urlGames);
 
 	//create a game and adds it to the database
 	$scope.addGame = function(){
@@ -51,7 +52,7 @@ gamerscafe.controller('Core', ['$scope', 'angularFireCollection', 'angularFireAu
 	var urlSystem = new Firebase('https://gamerscafe.firebaseio.com/gamerscafe/systems');
 
 	//collects the info from the database for use.
-	$scope.systems = angularFireCollection(urlSystem, $scope, 'systems', []);
+	$scope.systems = angularFireCollection(urlSystem);
 
 	//create a system and adds it to the database
 	$scope.addSystem = function(){
@@ -69,10 +70,10 @@ gamerscafe.controller('Core', ['$scope', 'angularFireCollection', 'angularFireAu
 	//have fields instead of string literal
 	$scope.updateSystem = function(system){
 		system.name = "PS3";
-		system.station:"here number";
-		system.model_number:"0987654321"; 
-		system.purchased_date:"10/30/2013"; 
-		system.info:"updated Blah";
+		system.station = "9999";
+		system.model_number = "0987654321"; 
+		system.purchased_date = "10/30/2013"; 
+		system.info = "updated Blah";
 		$scope.systems.update(system);
 	}
 	
@@ -86,13 +87,13 @@ gamerscafe.controller('Core', ['$scope', 'angularFireCollection', 'angularFireAu
 
 	//************************************Stations CRUD***************************************************
 
-	var user ={};
-
-	//url to the data needed
+	//urls to the data needed
 	var urlStations = new Firebase('https://gamerscafe.firebaseio.com/gamerscafe/stations');
+	var urlStationHist = new Firebase('https://gamerscafe.firebaseio.com/gamerscafe/shistory');
 
 	//collects the info from the database for use.
-	$scope.stations = angularFireCollection(urlStations, $scope, 'stations', []);
+	$scope.stations = angularFireCollection(urlStations);
+	$scope.stationHistory = angularFireCollection(urlStationHist);
 
 	//create a system and adds it to the database
 	$scope.addStation = function(){
@@ -115,7 +116,7 @@ gamerscafe.controller('Core', ['$scope', 'angularFireCollection', 'angularFireAu
 	}
 
 	$scope.addStationToHistory = function(){
-		console.log($scope.user.email);
+		$scope.stationHistory.add($scope.startTicket);
 	}
 
 	//************************************Staff CRUD***************************************************
@@ -124,23 +125,23 @@ gamerscafe.controller('Core', ['$scope', 'angularFireCollection', 'angularFireAu
 	var urlStaff = new Firebase('https://gamerscafe.firebaseio.com/gamerscafe/staff');
 
 	//collects the info from the database for use.
-	$scope.staff = angularFireCollection(urlStaff, $scope, 'staff', []);
+	$scope.staff = angularFireCollection(urlStaff);
 
-	//create a system and adds it to the database
+	//create a staff member and adds it to the staff database
 	$scope.addStaff = function(){
-		$scope.staff.add({number: "1", system: "Xbox One"});
-		console.log("addStaff clicked");
+		$scope.staff.add({email:"", password:""});
+
+		auth.createUser(email, password, function(error, user) {
+			if (!error) {
+				console.log('User Id: ' + user.id + ', Email: ' + user.email);
+			}
+		});
 	}
 
-	//removes system based on a unique id
+	//remove from the databse object but not from the auth list.
 	$scope.deleteStaff = function(myid){
 		$scope.staff.remove(myid);
 		console.log("deleteStaff clicked");
-	}
-
-
-	$scope.updateStaff = function(staff){
-		
 	}
 
 }]);
