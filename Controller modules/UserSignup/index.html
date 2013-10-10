@@ -17,7 +17,7 @@
 </head>
 <body>
 	
-	<div style="padding-top: 20px">
+	<div>
 		<h1>User information</h1>
 		<form ng-submit="addUser()" novalidate ng-controller="loginCtrl">
 			<input type="button" ng-click="login()" value="FB Login" />
@@ -25,10 +25,10 @@
 			<img ng-src="{{picurl}}" />
 			<br />
 			<label>Full Name:</label>
-			<input type="text"  value="{{fullname}}" ng-model="fullname" ng-required />
+			<input type="text"  value="{{fullname}}" ng-minlength="5" ng-model="fullname" ng-required />
 			<br />
 			<label>Username:</label>
-			<input type="text" value="{{username}}" ng-model="username" ng-required />
+			<input type="text" value="{{username}}" ng-minlength="5" ng-model="username" ng-required />
 			<br />
 			<label>Email:</label>			
 			<input type="email" value="{{email}}" ng-model="email" />
