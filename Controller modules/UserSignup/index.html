@@ -11,7 +11,7 @@
 	<script src="https://cdn.firebase.com/v0/firebase.js"></script>
 	<script src="js/angular.min.js"></script>
 	<script src="js/angularfire.min.js"></script>
-	<script src="https://cdn.firebase.com/v0/firebase-auth-client.js" />
+	<script src="https://cdn.firebase.com/v0/firebase-auth-client.js"></script>
 	<script src="https://cdn.firebase.com/v0/firebase-simple-login.js"></script>
 		
 </head>
@@ -20,29 +20,20 @@
 	<div>
 		<h1>User information</h1>
 		<form ng-submit="addUser()" novalidate ng-controller="loginCtrl">
-			<input type="button" ng-click="login()" value="FB Login" />
-			<br />
-			<img ng-src="{{picurl}}" />
-			<br />
 			<label>Full Name:</label>
-			<input type="text"  value="{{fullname}}" ng-minlength="5" ng-model="fullname" ng-required />
-			<br />
-			<label>Username:</label>
-			<input type="text" value="{{username}}" ng-minlength="5" ng-model="username" ng-required />
+			<input type="text"  ng-minlength="5" ng-model="user.name" ng-required />
 			<br />
 			<label>Email:</label>			
-			<input type="email" value="{{email}}" ng-model="email" />
+			<input type="email"  ng-model="user.email" />
 			<br />
 			<label>Password</label>			
-			<input type="password" ng-model="password" ng-required />
+			<input type="password" ng-model="user.password" ng-required />
 			<br />
-			<label>Bio</label>			
-			<textarea ng-model="bio"></textarea>
-			<br />
-			<input type="submit" value="Add User" />
+			<input type="submit" value="Email Signup" />
+			<input type="button" ng-click="login()" value="FB Signup" />
 			<br />
 			<ul>
-				<li ng-repeat="user in users">{{user.username}}</li>
+				<li ng-repeat="user in users">{{user}}</li>
 			</ul>
 		</form>
 	</div>
