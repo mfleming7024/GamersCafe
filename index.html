@@ -28,7 +28,8 @@
 <!-- Nav Top Bar -->
 <div class="top_bar">
     <div class="top_half_bar">
-        <p class="login">Login</p>
+        <a href="#" class="login" data-reveal-id="login">Login</a>
+        <a href="#" class="become_a_gamer" data-reveal-id="become_a_gamer">Become A Gamer!</a>
     </div>
 </div><!-- End top-bar -->
 
@@ -160,6 +161,42 @@
     <div id="footer">
 
     </div>
+</div>
+
+<!-- MODALS -->
+<!-- Login Modal -->
+<div id="login" class="reveal-modal small">
+    <form>
+        <fieldset>
+            <legend>Login</legend>
+
+            <label>Email Address</label>
+            <input class="input_login" type="text" placeholder="email@email.com">
+            <label>Password</label>
+            <input class="input_login" type="text" placeholder="Password">
+
+            <a href="#" class="button">Login</a> or <a href="#"><img class="fb_login" src="img/fb_login.png"></a>
+        </fieldset>
+
+    </form>
+</div>
+
+<!-- Registration Modal -->
+<div id="become_a_gamer" class="reveal-modal small">
+    <form>
+        <fieldset>
+            <legend>Become A Gamer</legend>
+
+            <label>Email Address</label>
+            <input class="become_email" type="text" placeholder="email@email.com">
+            <label>Password</label>
+            <input class="become_password" type="text" placeholder="Password">
+            <label>Confirm Passwrd</label>
+            <input class="become_confirm_password" type="text" placeholder="Password">
+            <a href="#" class="button">Sign up!</a> or <a href="#"><img class="fb_login" src="img/fb_login.png"></a>
+        </fieldset>
+
+    </form>
 </div>
 
 <script>

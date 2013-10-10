@@ -13,6 +13,31 @@
     width: 45%;
     float: right;
 }
+
+#login form {
+    margin: 0 auto;
+}
+
+.login{
+    color: #fff;
+    text-transform: uppercase;
+    margin-top: -25px;
+    float: left;
+}
+
+.fb_login{
+    width: 30%;
+}
+.input_login{
+    width: 40%;
+}
+.become_a_gamer{
+    color: #fff;
+    text-transform: uppercase;
+    margin-top: -25px;
+    float: left;
+    margin-left: 50px;
+}
 #main_nav{
     background-color: #424242;
     width: 100%;
@@ -77,8 +102,32 @@ h1, h2, h3, p, a {
     color: #3299BB;
     text-transform: uppercase;
     text-shadow: -1px 1px #000;
+    text-align: center;
 }
 .home_columns h2 p{
+    margin-top: 100px;
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 400;
+    color: #000;
+}
+.staff_columns{
+    /*background-color:rgba(255,255,255,1.0);*/
+    background-color: #f2f2f2;
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,0.75);
+    box-shadow: 0 0 10px rgba(0,0,0,0.75);
+
+}
+.staff_columns h2{
+    margin-top: 20px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    color: #3299BB;
+    text-transform: uppercase;
+    text-shadow: -1px 1px #000;
+    text-align: center;
+}
+.staff_columns h2 p{
     margin-top: 100px;
     font-family: 'Titillium Web', sans-serif;
     font-weight: 400;
@@ -101,6 +150,10 @@ h1, h2, h3, p, a {
     width: 95%;
     margin-left: auto;
     margin-right: auto;
+}
+
+.staff_add_gamer{
+    width: 45%;
 }
 
 #footer{
