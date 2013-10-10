@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a8505ecb-af5c-4d36-b590-3be31278425d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin.html" afterPath="$PROJECT_DIR$/admin.html" />
-    </list>
+    <list default="true" id="a8505ecb-af5c-4d36-b590-3be31278425d" name="Default" comment="" />
     <ignored path="GamersCafe.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="a8505ecb-af5c-4d36-b590-3be31278425d" time="1381414145288" ignored="false" />
@@ -19,7 +17,7 @@
     <file path="/cancel_gts.html" changelist="a8505ecb-af5c-4d36-b590-3be31278425d" time="1381432267904" ignored="false" />
     <file path="/admin_gamers_points.html" changelist="a8505ecb-af5c-4d36-b590-3be31278425d" time="1381433258422" ignored="false" />
     <file path="/admin.html" changelist="a8505ecb-af5c-4d36-b590-3be31278425d" time="1381433432499" ignored="false" />
-    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="a8505ecb-af5c-4d36-b590-3be31278425d" time="1381433579726" ignored="false" />
+    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="a8505ecb-af5c-4d36-b590-3be31278425d" time="1381434116412" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
