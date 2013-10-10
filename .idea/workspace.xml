@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a8505ecb-af5c-4d36-b590-3be31278425d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin_gamers_points.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin.html" afterPath="$PROJECT_DIR$/admin.html" />
     </list>
     <ignored path="GamersCafe.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -21,6 +19,7 @@
     <file path="/cancel_gts.html" changelist="a8505ecb-af5c-4d36-b590-3be31278425d" time="1381432267904" ignored="false" />
     <file path="/admin_gamers_points.html" changelist="a8505ecb-af5c-4d36-b590-3be31278425d" time="1381433258422" ignored="false" />
     <file path="/admin.html" changelist="a8505ecb-af5c-4d36-b590-3be31278425d" time="1381433432499" ignored="false" />
+    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="a8505ecb-af5c-4d36-b590-3be31278425d" time="1381433579726" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +87,7 @@
       <file leaf-file-name="admin.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/admin.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="0" selection-start="1107" selection-end="1107" vertical-scroll-proportion="0.58208954">
+            <state line="24" column="0" selection-start="1105" selection-end="1105" vertical-scroll-proportion="0.29104477">
               <folding>
                 <element signature="n#style#0;n#input#0;n#label#0;n#form#0;n#div#0;n#fieldset#0;n#form#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#input#0;n#label#0;n#form#0;n#div#0;n#fieldset#0;n#form#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -491,7 +490,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admin.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="0" selection-start="1107" selection-end="1107" vertical-scroll-proportion="0.58208954">
+        <state line="24" column="0" selection-start="1105" selection-end="1105" vertical-scroll-proportion="0.29104477">
           <folding>
             <element signature="n#style#0;n#input#0;n#label#0;n#form#0;n#div#0;n#fieldset#0;n#form#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#label#0;n#form#0;n#div#0;n#fieldset#0;n#form#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
