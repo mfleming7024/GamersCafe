@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Gamers Cafe :: Admin</title>
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/font-awesome-ie7.css">
+
+    <!-- FONTS -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,300,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:600,700,700italic,900,400italic,400,300italic,300,200italic,200' rel='stylesheet' type='text/css'>
+
+    <script src="js/vendor/custom.modernizr.js"></script>
+
+</head>
+<body>
+
+
+
+<!-- Nav Top Bar -->
+<div class="top_bar">
+    <div class="top_half_bar"></div>
+</div><!-- End top-bar -->
+
+<div id="top">
+    <div id="logo" class="row">
+        <!-- LOGO -->
+        <object data="img/logo.svg" type="image/svg+xml" class="gamer_logo">
+        </object> <!-- END LOGO -->
+    </div>
+
+    <!-- Navigation -->
+    <div id="main_nav" class="row">
+        <nav class="top-bar">
+            <section class="top-bar-section">
+                <ul class="left">
+                    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+                    <li id="mobile_menu" class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+                    <li class="divider"></li>
+                    <li class="active"><a href="#">League/Tournaments</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Games</a></li>
+                    <li class="divider"></li>
+                    <li class="has-dropdown"><a href="#">About Us</a>
+
+                        <ul class="dropdown">
+                            <li class="has-dropdown"><a href="#">Dropdown Level 1a</a>
+
+                                <ul class="dropdown">
+                                    <li><label>Dropdown Level 2 Label</label></li>
+                                    <li><a href="#">Dropdown Level 2a</a></li>
+                                    <li><a href="#">Dropdown Level 2b</a></li>
+                                    <li class="has-dropdown"><a href="#">Dropdown Level 2c</a>
+
+                                        <ul class="dropdown">
+                                            <li><label>Dropdown Level 3 Label</label></li>
+                                            <li><a href="#">Dropdown Level 3a</a></li>
+                                            <li><a href="#">Dropdown Level 3b</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="#">Dropdown Level 3c</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Dropdown Level 2d</a></li>
+                                    <li><a href="#">Dropdown Level 2e</a></li>
+                                    <li><a href="#">Dropdown Level 2f</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Dropdown Level 1b</a></li>
+                            <li><a href="#">Dropdown Level 1c</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Dropdown Level 1d</a></li>
+                            <li><a href="#">Dropdown Level 1e</a></li>
+                            <li><a href="#">Dropdown Level 1f</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">See all &rarr;</a></li>
+                        </ul>
+                </ul>
+            </section>
+        </nav>
+    </div> <!-- END NAVIGATION -->
+
+
+
+    <!-- Staff Page -->
+    <div class="middle">
+        <div class="row staff_columns">
+            <div class="sub_nav">
+                <a href="#" data-reveal-id="add_gamer" class="button">Add Gamer</a>
+                <a href="#" class="button">Cancel</a>
+                <a href="#" class="button">History</a>
+                <a href="#" class="button">Gamer Points</a>
+            </div>
+
+            <div class="splitter"></div>
+
+            <div id="gts">
+                <h2>Gamer Tracking System</h2>
+                <!-- Table -->
+                <table class="gts">
+                    <thead>
+                    <tr>
+                        <th width="200">Gamer Name</th>
+                        <th>Station Number</th>
+                        <th>Game</th>
+                        <th width="150">Time In</th>
+                        <th width="150">Time Left</th>
+                        <th width="10%">Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Erwin Angeles</td>
+                        <td>Station 2</td>
+                        <td>GTA V</td>
+                        <td>12:30 (10/08/13)</td>
+                        <td>00:59</td>
+                        <td><a data-reveal-id="update_gamer" href="">Update</a> </td>
+                    </tr>
+                    <tr>
+                        <td>Mike Flemming</td>
+                        <td>Station 10</td>
+                        <td>Watch Dog</td>
+                        <td>02:10 (10/08/13)</td>
+                        <td>00:41</td>
+                        <td><a data-reveal-id="update_gamer" href="">Update</a> </td>
+                    </tr>
+                    <tr>
+                        <td>Chris Henry</td>
+                        <td>Station 4</td>
+                        <td>League Of Legends</td>
+                        <td>4:30 (10/08/13)</td>
+                        <td>00:02</td>
+                        <td><a data-reveal-id="update_gamer" href="">Update</a> </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Table -->
+
+            <div id="queue_list">
+                <h2>Queue List</h2>
+                <!-- Table -->
+                <table class="gts">
+                    <thead>
+                    <tr>
+                        <th width="200">Gamer Name</th>
+                        <th>Station Number</th>
+                        <th>Game</th>
+                        <th width="150">Time Queued</th>
+                        <th width="150">Time Bought</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Niwre Angeles</td>
+                        <td>Station 2</td>
+                        <td>Final Fantasy IV</td>
+                        <td>1:30 (10/08/13)</td>
+                        <td>30 Mins</td>
+                    </tr>
+                    <tr>
+                        <td>Ekim Flemming</td>
+                        <td>Station 10</td>
+                        <td>Watch Cat</td>
+                        <td>03:10 (10/08/13)</td>
+                        <td>60 Mins</td>
+                    </tr>
+                    <tr>
+                        <td>C Henry</td>
+                        <td>Station 4</td>
+                        <td>Tournaments of Legends</td>
+                        <td>5:30 (10/08/13)</td>
+                        <td>150 Mins</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Table -->
+        </div>
+
+    </div>
+
+
+</div>
+
+<div class="row">
+    <div id="footer">
+
+    </div>
+</div>
+
+
+<!-- MODALS -->
+<div id="add_gamer" class="reveal-modal small">
+    <form>
+        <fieldset>
+            <legend>Add Gamer</legend>
+
+            <label>Email Address</label>
+            <input class="staff_add_gamer" type="text" placeholder="Enter Gamers Email">
+            <form class="custom">
+            </form>
+            <label>Station</label>
+            <form class="custom">
+                <select id="customDropdown" class="medium">
+                    <option>Station 1 (PS4)</option>
+                    <option>Station 5 (XBOX One)</option>
+                    <option>Station 12 (PC)</option>
+                </select>
+            </form>
+            <label>Games</label>
+            <form class="custom">
+                <select id="games_option" class="medium">
+                    <option>GTA V</option>
+                    <option>Hello Kitty</option>
+                    <option>Beyond Two Souls</option>
+                </select>
+            </form>
+            <div id="points">
+                <h5>Points:</h5>
+                <p>1000</p>
+                <form class="custom">
+                    <label for="checkbox1">
+                        <input type="checkbox" id="checkbox1" style="display: none;">
+                        <span class="custom checkbox"></span> Use 500 Points?
+                    </label>
+                </form>
+            </div>
+            <label>Time</label>
+            <form class="custom">
+                <select id="time_dropdown" class="medium">
+                    <option>30 Minutes</option>
+                    <option>60 Minutes</option>
+                    <option>90 Minutes</option>
+                    <option>120 Minutes</option>
+                    <option>150 Minutes</option>
+                </select>
+            </form>
+            <a href="#" class="button">Play!</a>
+            <a href="#" class="button">Cancel</a>
+        </fieldset>
+    </form>
+</div>
+
+<!-- Update gamer -->
+<!-- MODALS -->
+<div id="update_gamer" class="reveal-modal small">
+    <form>
+        <fieldset>
+            <legend>Update Gamer</legend>
+
+            <label>Email Address</label>
+            <input class="staff_add_gamer" type="text" placeholder="Enter Gamers Email">
+            <form class="custom">
+            </form>
+            <label>Station</label>
+            <form class="custom">
+                <select class="customDropdown" class="medium">
+                    <option>Station 1 (PS4)</option>
+                    <option>Station 5 (XBOX One)</option>
+                    <option>Station 12 (PC)</option>
+                </select>
+            </form>
+            <label>Games</label>
+            <form class="custom">
+                <select class="games_option" class="medium">
+                    <option>GTA V</option>
+                    <option>Hello Kitty</option>
+                    <option>Beyond Two Souls</option>
+                </select>
+            </form>
+            <div class="points">
+                <h5>Points:</h5>
+                <p>1000</p>
+                <form class="custom">
+                    <label for="checkbox1">
+                        <input type="checkbox" id="checkbox2" style="display: none;">
+                        <span class="custom checkbox"></span> Use 500 Points?
+                    </label>
+                </form>
+            </div>
+            <label>Time</label>
+            <form class="custom">
+                <select id="time_dropdown2" class="medium">
+                    <option>30 Minutes</option>
+                    <option>60 Minutes</option>
+                    <option>90 Minutes</option>
+                    <option>120 Minutes</option>
+                    <option>150 Minutes</option>
+                </select>
+            </form>
+            <a href="#" class="button">Update!</a>
+            <a href="#" class="button">Cancel</a>
+        </fieldset>
+    </form>
+</div>
+<script>
+    document.write('<script src=' +
+            ('__proto__' in {} ? 'js/vendor/zepto' : 'js/vendor/jquery') +
+            '.js><\/script>')
+</script>
+
+<script src="js/foundation.min.js"></script>
+<script src="js/foundation/foundation.orbit.js"></script>
+<script src="js/foundation/foundation.reveal.js"></script>
+<!--
+<script src="js/foundation/foundation.js"></script>
+<script src="js/foundation/foundation.interchange.js"></script>
+<script src="js/foundation/foundation.abide.js"></script>
+<script src="js/foundation/foundation.dropdown.js"></script>
+<script src="js/foundation/foundation.placeholder.js"></script>
+<script src="js/foundation/foundation.forms.js"></script>
+<script src="js/foundation/foundation.alerts.js"></script>
+<script src="js/foundation/foundation.magellan.js"></script>
+<script src="js/foundation/foundation.reveal.js"></script>
+<script src="js/foundation/foundation.tooltips.js"></script>
+<script src="js/foundation/foundation.clearing.js"></script>
+<script src="js/foundation/foundation.cookie.js"></script>
+<script src="js/foundation/foundation.joyride.js"></script>
+<script src="js/foundation/foundation.section.js"></script>
+<script src="js/foundation/foundation.topbar.js"></script>
+-->
+
+<script>
+    $(document).foundation();
+</script>
+</body>
+</html>

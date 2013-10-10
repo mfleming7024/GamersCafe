@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a8505ecb-af5c-4d36-b590-3be31278425d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cancel_gts.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gamer_points.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/main.css" afterPath="$PROJECT_DIR$/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/staff.html" afterPath="$PROJECT_DIR$/staff.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin_gamers_points.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="GamersCafe.iws" />
@@ -21,6 +19,8 @@
     <file path="/signup.html" changelist="a8505ecb-af5c-4d36-b590-3be31278425d" time="1381280116637" ignored="false" />
     <file path="/member_points.html" changelist="a8505ecb-af5c-4d36-b590-3be31278425d" time="1381431317194" ignored="false" />
     <file path="/cancel_gts.html" changelist="a8505ecb-af5c-4d36-b590-3be31278425d" time="1381432267904" ignored="false" />
+    <file path="/admin_gamers_points.html" changelist="a8505ecb-af5c-4d36-b590-3be31278425d" time="1381433258422" ignored="false" />
+    <file path="/admin.html" changelist="a8505ecb-af5c-4d36-b590-3be31278425d" time="1381433432499" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +52,7 @@
       <file leaf-file-name="staff.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/staff.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="108" column="16" selection-start="4782" selection-end="5458" vertical-scroll-proportion="-8.75">
+            <state line="108" column="16" selection-start="0" selection-end="12817" vertical-scroll-proportion="-8.75">
               <folding>
                 <element signature="n#style#0;n#input#0;n#label#0;n#form#0;n#div#0;n#fieldset#0;n#form#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#input#0;n#label#0;n#form#0;n#div#0;n#fieldset#0;n#form#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -64,10 +64,34 @@
       <file leaf-file-name="gamer_points.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gamer_points.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="26" selection-start="194" selection-end="194" vertical-scroll-proportion="-3.125">
+            <state line="5" column="26" selection-start="0" selection-end="11395" vertical-scroll-proportion="-3.125">
               <folding>
                 <element signature="n#style#0;n#input#0;n#label#0;n#form#0;n#div#0;n#fieldset#0;n#form#0;n#div#4;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#input#0;n#label#0;n#form#0;n#div#0;n#fieldset#0;n#form#0;n#div#5;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin_gamers_points.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin_gamers_points.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="32" selection-start="283" selection-end="283" vertical-scroll-proportion="-3.75">
+              <folding>
+                <element signature="n#style#0;n#input#0;n#label#0;n#form#0;n#div#0;n#fieldset#0;n#form#0;n#div#4;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#label#0;n#form#0;n#div#0;n#fieldset#0;n#form#0;n#div#5;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/admin.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="26" column="0" selection-start="1107" selection-end="1107" vertical-scroll-proportion="0.58208954">
+              <folding>
+                <element signature="n#style#0;n#input#0;n#label#0;n#form#0;n#div#0;n#fieldset#0;n#form#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#label#0;n#form#0;n#div#0;n#fieldset#0;n#form#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -85,10 +109,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.css" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="162" column="30" selection-start="3034" selection-end="3034" vertical-scroll-proportion="0.40329218">
+            <state line="162" column="30" selection-start="3034" selection-end="3034" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -141,6 +165,8 @@
         <option value="$PROJECT_DIR$/cancel_gts.html" />
         <option value="$PROJECT_DIR$/css/foundation.css" />
         <option value="$PROJECT_DIR$/css/main.css" />
+        <option value="$PROJECT_DIR$/admin_gamers_points.html" />
+        <option value="$PROJECT_DIR$/admin.html" />
       </list>
     </option>
   </component>
@@ -345,20 +371,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/css/foundation.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1677" column="4" selection-start="44275" selection-end="44287" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="195" column="116" selection-start="8010" selection-end="8010" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="121" column="17" selection-start="2183" selection-end="2183" vertical-scroll-proportion="0.0">
@@ -423,26 +435,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/staff.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="108" column="16" selection-start="4782" selection-end="5458" vertical-scroll-proportion="-8.75">
-          <folding>
-            <element signature="n#style#0;n#input#0;n#label#0;n#form#0;n#div#0;n#fieldset#0;n#form#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#label#0;n#form#0;n#div#0;n#fieldset#0;n#form#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gamer_points.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="26" selection-start="194" selection-end="194" vertical-scroll-proportion="-3.125">
-          <folding>
-            <element signature="n#style#0;n#input#0;n#label#0;n#form#0;n#div#0;n#fieldset#0;n#form#0;n#div#4;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#label#0;n#form#0;n#div#0;n#fieldset#0;n#form#0;n#div#5;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cancel_gts.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="134" column="79" selection-start="5504" selection-end="5504" vertical-scroll-proportion="-33.125">
@@ -462,8 +454,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="162" column="30" selection-start="3034" selection-end="3034" vertical-scroll-proportion="0.40329218">
+        <state line="162" column="30" selection-start="3034" selection-end="3034" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gamer_points.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="26" selection-start="0" selection-end="11395" vertical-scroll-proportion="-3.125">
+          <folding>
+            <element signature="n#style#0;n#input#0;n#label#0;n#form#0;n#div#0;n#fieldset#0;n#form#0;n#div#4;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#label#0;n#form#0;n#div#0;n#fieldset#0;n#form#0;n#div#5;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin_gamers_points.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="32" selection-start="283" selection-end="283" vertical-scroll-proportion="-3.75">
+          <folding>
+            <element signature="n#style#0;n#input#0;n#label#0;n#form#0;n#div#0;n#fieldset#0;n#form#0;n#div#4;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#label#0;n#form#0;n#div#0;n#fieldset#0;n#form#0;n#div#5;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/staff.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="108" column="16" selection-start="0" selection-end="12817" vertical-scroll-proportion="-8.75">
+          <folding>
+            <element signature="n#style#0;n#input#0;n#label#0;n#form#0;n#div#0;n#fieldset#0;n#form#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#label#0;n#form#0;n#div#0;n#fieldset#0;n#form#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="0" selection-start="1107" selection-end="1107" vertical-scroll-proportion="0.58208954">
+          <folding>
+            <element signature="n#style#0;n#input#0;n#label#0;n#form#0;n#div#0;n#fieldset#0;n#form#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#label#0;n#form#0;n#div#0;n#fieldset#0;n#form#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
