@@ -1,0 +1,183 @@
+#top{
+    margin-top: 0;
+}
+
+.top_bar{
+    background-color: #424242;
+    width: 100%;
+    height: 30px;
+}
+.top_half_bar{
+    border-top: 1.9em solid #3299BB;
+    border-left: 2em solid transparent;
+    width: 45%;
+    float: right;
+}
+
+#login form {
+    margin: 0 auto;
+}
+
+.login{
+    color: #fff;
+    text-transform: uppercase;
+    margin-top: -25px;
+    float: left;
+}
+
+.fb_login{
+    width: 30%;
+}
+.input_login{
+    width: 40%;
+}
+.become_a_gamer{
+    color: #fff;
+    text-transform: uppercase;
+    margin-top: -25px;
+    float: left;
+    margin-left: 50px;
+}
+#main_nav{
+    background-color: #424242;
+    width: 100%;
+    height: 60px;
+    margin-top: 20px;
+    border-top: 3px solid #3299BB;
+}
+#main_nav .top-bar section ul li a{
+    text-shadow: -1px 1px #000;
+    text-transform: uppercase;
+}
+#logo {
+
+
+}
+#logo object{
+    width: 330px;
+    height: 50px;
+    margin-top: 30px;
+    z-index: 1;
+}
+#mobile_menu{
+    margin-top: 10px;
+}
+
+h1, h2, h3, p, a {
+    /*font-family: 'Open Sans', sans-serif;*/
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+    /*text-transform: uppercase;*/
+}
+
+.orbit-container ul li img{
+    width: 1000px;
+    height: 400px;
+}
+
+
+.middle{
+    background-image: url("../images/mooning.png");
+
+}
+
+.icons{
+    font-size: 5em;
+    position: relative;
+    margin-left: 40%;
+    top: 50px;
+}
+.home_columns{
+    /*background-color:rgba(255,255,255,1.0);*/
+    background-color: #f2f2f2;
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,0.75);
+    box-shadow: 0 0 10px rgba(0,0,0,0.75);
+
+}
+.home_columns h2{
+    margin-top: 100px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    color: #3299BB;
+    text-transform: uppercase;
+    text-shadow: -1px 1px #000;
+    text-align: center;
+}
+.home_columns h2 p{
+    margin-top: 100px;
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 400;
+    color: #000;
+}
+.staff_columns{
+    /*background-color:rgba(255,255,255,1.0);*/
+    background-color: #f2f2f2;
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,0.75);
+    box-shadow: 0 0 10px rgba(0,0,0,0.75);
+
+}
+.staff_columns h2{
+    margin-top: 20px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    color: #3299BB;
+    text-transform: uppercase;
+    text-shadow: -1px 1px #000;
+    text-align: center;
+}
+.staff_columns h2 p{
+    margin-top: 100px;
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 400;
+    color: #000;
+}
+
+.sub_nav{
+    margin-left: 17px;
+    margin-top: 20px;
+}
+.splitter{
+    border-bottom: 1px solid cadetblue;
+    width: 95%;
+    position: relative;
+    margin: 0 auto;
+}
+
+.gts{
+    margin-top: 20px;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.staff_add_gamer{
+    width: 45%;
+}
+
+#footer{
+    background-color: #424242;
+    width: 100%;
+    height: 60px;
+    border-top: 3px solid #3299BB;
+}
+
+/* Media Queries ----------- */
+@media screen and (max-width : 650px) {
+    #main_nav object{
+        width: 250px;
+        float: right;
+        margin-right: 10px;
+        margin-top: -55px;
+        position: relative;
+    }
+    #mobile_menu{
+        margin-right: 0;
+        float: right;
+    }
+    #logo {
+        margin-top: 20px;
+    }
+
+}

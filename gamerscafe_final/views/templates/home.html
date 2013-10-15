@@ -1,0 +1,174 @@
+<!-- Nav Top Bar -->
+<div class="top_bar">
+    <div class="top_half_bar">
+        <a href="#" class="login" data-reveal-id="login">Login</a>
+        <a href="#" class="become_a_gamer" data-reveal-id="become_a_gamer">Become A Gamer!</a>
+    </div>
+</div><!-- End top-bar -->
+
+<div id="top">
+    <div id="logo" class="row">
+        <!-- LOGO -->
+        <object data="views/images/logo.svg" type="image/svg+xml" class="gamer_logo">
+        </object> <!-- END LOGO -->
+    </div>
+
+    <!-- Navigation -->
+    <div id="main_nav" class="row">
+        <nav class="top-bar">
+            <section class="top-bar-section">
+                <ul class="left">
+                    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+                    <li id="mobile_menu" class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+                    <li class="divider"></li>
+                    <li class="active"><a href="#">League/Tournaments</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Games</a></li>
+                    <li class="divider"></li>
+                    <li class="has-dropdown"><a href="#">About Us</a>
+
+                        <ul class="dropdown">
+                            <li class="has-dropdown"><a href="#">Dropdown Level 1a</a>
+
+                                <ul class="dropdown">
+                                    <li><label>Dropdown Level 2 Label</label></li>
+                                    <li><a href="#">Dropdown Level 2a</a></li>
+                                    <li><a href="#">Dropdown Level 2b</a></li>
+                                    <li class="has-dropdown"><a href="#">Dropdown Level 2c</a>
+
+                                        <ul class="dropdown">
+                                            <li><label>Dropdown Level 3 Label</label></li>
+                                            <li><a href="#">Dropdown Level 3a</a></li>
+                                            <li><a href="#">Dropdown Level 3b</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="#">Dropdown Level 3c</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Dropdown Level 2d</a></li>
+                                    <li><a href="#">Dropdown Level 2e</a></li>
+                                    <li><a href="#">Dropdown Level 2f</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Dropdown Level 1b</a></li>
+                            <li><a href="#">Dropdown Level 1c</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Dropdown Level 1d</a></li>
+                            <li><a href="#">Dropdown Level 1e</a></li>
+                            <li><a href="#">Dropdown Level 1f</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">See all &rarr;</a></li>
+                        </ul>
+                </ul>
+            </section>
+        </nav>
+    </div> 
+    <!-- END NAVIGATION -->
+
+    <!-- SLIDER -->
+    <!-- Orbit Container -->
+    <div class="row">
+        <div class="orbit-container slider">
+            <ul data-orbit>
+                <li>
+                    <img src="views/images/1.jpg" height="400px" width="960px">
+                    <div class="orbit-caption">...</div>
+                </li>
+                <li class="active">
+                    <img src="views/images/2.jpg" height="400px" width="960px">
+                    <div class="orbit-caption">...</div>
+                </li>
+                <li>
+                    <img src="views/images/3.jpg" height="400px" width="960px">
+                    <div class="orbit-caption">...</div>
+                </li>
+                <li>
+                    <img src="views/images/3.jpg">
+                    <div class="orbit-caption">...</div>
+                </li>
+                <li>
+                    <img src="views/images/1.jpg" height="400px" width="960px">
+                    <div class="orbit-caption">...</div>
+                </li>
+            </ul>
+
+            <!-- Prev/Next Arrows -->
+            <a href="#" class="orbit-prev">Prev <span></span></a>
+            <a href="#" class="orbit-next">Next <span></span></a>
+
+            <!-- Slide Numbers -->
+            <div class="orbit-slide-number">
+                <span>1</span> of <span>3</span>
+            </div>
+
+            <!-- Timer and Play/Pause Button -->
+            <div class="orbit-timer">
+                <span></span>
+                <div class="orbit-progress" style="width: 100%; -webkit-transition: width 10s linear;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Columns -->
+<div class="middle">
+    <div class="row home_columns">
+        <div class="large-4 columns">
+            <!--<i class="icon-dribbble icons"></i>-->
+            <h2>Play!</h2>
+            <p>Choose between the Playstation 4, Xbox One, Nintendo Wii U or the PC.</p>
+        </div>
+        <div class="large-4 columns">
+            <!--<i class="icon-trophy icons"></i>-->
+            <h2>Competitive</h2>
+            <p>Play versus other Gamers in Leagues and Tournaments for a chance to win prizes.</p>
+        </div>
+        <div class="large-4 columns">
+            <!--<i class="icon-star icons"></i>-->
+            <h2>Benefits</h2>
+            <p>All Gamers get Member points to use towards their gameplay hours and such.</p>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div id="footer">
+
+    </div>
+</div>
+
+<!-- MODALS -->
+<!-- Login Modal -->
+<div id="login" class="reveal-modal small">
+    <form>
+        <fieldset>
+            <legend>Login</legend>
+
+            <label>Email Address</label>
+            <input class="input_login" type="text" placeholder="email@email.com">
+            <label>Password</label>
+            <input class="input_login" type="text" placeholder="Password">
+
+            <a href="#" class="button">Login</a> or <a href="#"><img class="fb_login" src="img/fb_login.png"></a>
+        </fieldset>
+
+    </form>
+</div>
+
+<!-- Registration Modal -->
+<div id="become_a_gamer" class="reveal-modal small">
+    <form>
+        <fieldset>
+            <legend>Become A Gamer</legend>
+
+            <label>Email Address</label>
+            <input class="become_email" type="text" placeholder="email@email.com">
+            <label>Password</label>
+            <input class="become_password" type="text" placeholder="Password">
+            <label>Confirm Passwrd</label>
+            <input class="become_confirm_password" type="text" placeholder="Password">
+            <a href="#" class="button">Sign up!</a> or <a href="#"><img class="fb_login" src="img/fb_login.png"></a>
+        </fieldset>
+
+    </form>
+</div>
