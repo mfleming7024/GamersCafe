@@ -305,10 +305,18 @@ h1, h2, h3, p, a {
 .station_3{
     background: grey!important;
 }
-.station_3 h3{
-    margin-left: 10%;
-    font-size: 2em;
+.station_3 h3 a{
+    margin-left: -10px;
+    font-size: 5em;
+    margin-top: -80px;
     float: left;
+    color: darkgray;
+}
+
+.station_avail{
+
+    margin-left: 200px;
+    width: 50px;
 }
 
 #admin_dd .a_dropdown{
