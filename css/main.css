@@ -290,6 +290,17 @@ h1, h2, h3, p, a {
     /*margin-bottom: 20px;*/
     border-bottom: 1px solid grey;
 }
+.avail{
+    background: #009933;
+    width: 100%;
+    height: 25px;
+    margin-top: -23px;
+    /*margin-bottom: 20px;*/
+    border-bottom: 1px solid grey;
+}
+.avail a{
+    color: #fff;
+}
 .q_name h6{
     color: lightgray;
     font-weight: 300;
@@ -311,6 +322,9 @@ h1, h2, h3, p, a {
 
 .station_3{
     background: grey!important;
+}
+.game_over{
+    background: red!important;
 }
 .station_3 h3 a{
     margin-left: -10px;
