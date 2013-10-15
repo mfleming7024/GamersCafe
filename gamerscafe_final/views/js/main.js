@@ -10,30 +10,19 @@ gamerscafe.run(['angularFireAuth', '$rootScope', function(angularFireAuth, $root
 gamerscafe.config(function ($routeProvider){
 	$routeProvider
 	.when("/",{
-		controller:"",
+		controller:"Core",
 		templateUrl:"views/templates/home.html"
 	})
 
-	.when(" ",{
-		controller:"Core",
+	.when("/admin",{
+		controller:"",
 		templateUrl:" "
 	})
 
-	.when(" ", {
+	.when("/staff", {
 		controller:"Core",
 		templateUrl:"",
 		authRequired: true	
-	})
-
-	.when(" ", {
-		controller:"Core",
-		templateUrl:"",
-		authRequired: true
-	})
-
-	.when(" ", {
-		controller:"Core",
-		templateUrl:""
 	})
 
 	.otherwise({redirectTo:"/"});
