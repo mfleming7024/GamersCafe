@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!--[if IE 8]> 				 
+    <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]>
+    <!--> <html class="no-js" lang="en" ng-app="gamerscafe"> 
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Gamers Cafe</title>
+
+    <link rel="stylesheet" href="views/css/main.css">
+    <link rel="stylesheet" href="views/css/normalize.css">
+    <link rel="stylesheet" href="views/css/foundation.css">
+    <link rel="stylesheet" href="views/css/font-awesome.css">
+    <link rel="stylesheet" href="views/css/font-awesome-ie7.css">
+
+    <!-- FONTS -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,300,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:600,700,700italic,900,400italic,400,300italic,300,200italic,200' rel='stylesheet' type='text/css'>
+
+    <script src="views/js/vendor/custom.modernizr.js"></script>
+
+</head>
+<body>
+
+    <!--Container for the view templates-->
+    <div id="container" ng-view="">
+
+    </div>
+
+    <!-- Firebase Conenctions -->
+    <script src="https://cdn.firebase.com/v0/firebase.js"></script>
+    
+    <!--simple login-->
+    <script type='text/javascript' src="https://cdn.firebase.com/v0/firebase-simple-login.js"></script>
+
+    <!--angular-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+
+    <!--angularFire-->
+    <script src="https://cdn.firebase.com/libs/angularfire/0.3.0/angularfire.min.js"></script>
+
+    <!--Main JS-->
+    <script type="text/javascript" src="views/js/main.js"></script>
+
+    <script>
+        document.write('<script src=' +
+                ('__proto__' in {} ? 'views/js/vendor/zepto' : 'views/js/vendor/jquery') +
+                '.js><\/script>')
+    </script>
+
+    <script src="views/js/foundation.min.js"></script>
+    <script src="views/js/foundation/foundation.orbit.js"></script>
+<!--
+<script src="js/foundation/foundation.js"></script>
+<script src="js/foundation/foundation.interchange.js"></script>
+<script src="js/foundation/foundation.abide.js"></script>
+<script src="js/foundation/foundation.dropdown.js"></script>
+<script src="js/foundation/foundation.placeholder.js"></script>
+<script src="js/foundation/foundation.forms.js"></script>
+<script src="js/foundation/foundation.alerts.js"></script>
+<script src="js/foundation/foundation.magellan.js"></script>
+<script src="js/foundation/foundation.reveal.js"></script>
+<script src="js/foundation/foundation.tooltips.js"></script>
+<script src="js/foundation/foundation.clearing.js"></script>
+<script src="js/foundation/foundation.cookie.js"></script>
+<script src="js/foundation/foundation.joyride.js"></script>
+<script src="js/foundation/foundation.section.js"></script>
+<script src="js/foundation/foundation.topbar.js"></script>
+-->
+
+    <script>
+        $(document).foundation();
+    </script>
+</body>
+</html>
