@@ -183,15 +183,7 @@ h1, h2, h3, p, a {
     height: 100px;
     margin: 0 auto;
 }
-.middle .staff_columns .cancel_gamer_button{
-    margin: 0 auto;
-    display: block;
-    width: 20%;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    background-color: crimson;
-    border: 1px solid crimson;
-}
+
 
 .gts{
     margin-top: 20px;
@@ -227,17 +219,32 @@ h1, h2, h3, p, a {
     margin-bottom: 10px!important;
 
 }
+.cancel_panel{
+
+}
+.cancel_panel_content{
+    margin-top: -15px!important;
+}
+
+.edit_gts {
+    margin-top: -25px;
+    margin-left: -10px;
+}
+.edit_gts a{
+  color: #333;
+  float: left;;
+}
 .station_number{
     float: left;
     margin-left: -5px;
-    margin-top: -15px;
+    margin-top: 0;
     opacity: .5;
     font-size: 1.2em;
     height: 30px;
 }
 .gts_pic img{
     float: left;
-    margin-top: -10px;
+    margin-top: 0;
     margin-left: 30px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -245,7 +252,7 @@ h1, h2, h3, p, a {
 }
 .gamer_name{
     float: left;
-    margin-top: -10px;
+    margin-top: 0;
     margin-left: 5px;
     font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
@@ -253,7 +260,7 @@ h1, h2, h3, p, a {
 .game_boxart img{
     height: 60px;
     float: right;
-    margin-top: -10px;
+    margin-top: 0;
 }
 .gts_timer{
     float: left;
@@ -264,7 +271,7 @@ h1, h2, h3, p, a {
     display: inline-block;
     font-size: 1.7em;
     margin-left: 4px;
-    margin-top: 0.4em;
+    margin-top: 0.6em;
 
 }
 .gts_timer .time_in{
@@ -322,6 +329,17 @@ h1, h2, h3, p, a {
 #admin_dd .a_dropdown{
     margin-bottom: 0;
 }
+
+.search{
+    margin-left: 25px;
+}
+.cancel_reason{
+    margin: 0 auto;
+}
+.cancel_button{
+    float: left;
+}
+
 
 /* Media Queries ----------- */
 @media screen and (max-width : 650px) {

@@ -101,38 +101,44 @@
 
         <div class="splitter"></div>
 
-        <div id="gts">
+        <div id="cancel_gamer">
             <h2>Cancel Gamer?</h2>
-            <!-- Table -->
-            <table class="gts">
-                <thead>
-                <tr>
-                    <th width="200">Gamer Name</th>
-                    <th>Station Number</th>
-                    <th>Game</th>
-                    <th width="150">Time In</th>
-                    <th width="150">Time Left</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>Erwin Angeles</td>
-                    <td>Station 2</td>
-                    <td>GTA V</td>
-                    <td>12:30 (10/08/13)</td>
-                    <td>00:59</td>
-                </tr>
-                </tbody>
-            </table>
-
-            <!-- Comment needed to cancel -->
-                <div class="cancel_comment">
-                    <label>Reason why canceling?</label>
-                    <textarea placeholder="Type here for the reason"></textarea>
-
+            <div class="cancel_panel">
+                <div class="small-6 large-4 columns gts_panel">
+                    <div class="panel callout radius station_1">
+                        <div class="cancel_panel_content">
+                            <div class="station_number">
+                                <h1>1</h1>
+                            </div>
+                            <div class="gts_pic">
+                                <img src="img/sm_profile.png" alt="Small Profile Picture">
+                            </div>
+                            <div class="gamer_name">
+                                <h6>Erwin Angeles</h6>
+                            </div>
+                            <div class="game_boxart">
+                                <img src="img/gtav.jpg" alt="Game Box Art">
+                            </div>
+                            <div class="gts_timer">
+                                <h6 class="time_in">12:30</h6>
+                                <h6 class="countdown">00:59</h6>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
+            </div>
+            <form class="custom cancel_reason">
+                <select id="cancel_dropdown" class="medium">
+                    <option>Left Early</option>
+                    <option>Some Reason</option>
+                </select>
+            </form>
+            <!-- Comment needed to cancel -->
+            <div class="cancel_button">
                 <a href="#" class="cancel_gamer_button button">Cancel Gamer</a>
+            </div>
+
         </div>
         <!-- Table -->
 
