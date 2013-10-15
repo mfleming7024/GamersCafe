@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en" ng-app="chatApp">
+<head>
+	<meta charset="utf-8">
+	<title>Dont forget your title</title>
+	<meta name="description" content="The HTML5 Herald">
+	<meta name="author" content="SitePoint">
+	
+	<link rel="stylesheet" href="css/styles.css" />
+	
+	<script src="https://cdn.firebase.com/v0/firebase.js"></script>
+	<script src="js/angular.min.js"></script>
+	<script src="js/angularfire.min.js"></script>
+	<script src="https://cdn.firebase.com/v0/firebase-auth-client.js"></script>
+	<script src="https://cdn.firebase.com/v0/firebase-simple-login.js"></script>
+		
+</head>
+<body>
+	
+	<div>
+		<h1>User information</h1>
+		<form ng-submit="addUser()" novalidate ng-controller="loginCtrl">
+			<label>Full Name:</label>
+			<input type="text"  ng-minlength="5" ng-model="user.name" ng-required />
+			<br />
+			<label>Email:</label>			
+			<input type="email"  ng-model="user.email" />
+			<br />
+			<label>Password</label>			
+			<input type="password" ng-model="user.password" ng-required />
+			<br />
+			<input type="submit" value="Email Signup" />
+			<input type="button" ng-click="login()" value="FB Signup" />
+			<br />
+			<ul>
+				<li ng-repeat="user in users">{{user}}</li>
+			</ul>
+		</form>
+	</div>
+
+
+	<script src="js/scripts.js"></script>
+</body>
+</html>

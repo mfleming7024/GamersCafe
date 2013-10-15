@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>Gamers Cafe :: Staff</title>
+    <title>Gamers Cafe :: Admin</title>
 
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/normalize.css">
@@ -22,8 +22,6 @@
 
 </head>
 <body>
-
-
 
 <!-- Nav Top Bar -->
 <div class="top_bar">
@@ -89,101 +87,104 @@
 
 
 
-<!-- Staff Page -->
-<div class="middle">
-    <div class="row staff_columns">
-        <div class="sub_nav">
-            <a href="#" data-reveal-id="add_gamer" class="button">Add Gamer</a>
-            <a href="#" class="button">Cancel</a>
-            <a href="#" class="button">History</a>
-            <a href="#" class="button">Gamer Points</a>
-        </div>
+    <!-- Staff Page -->
+    <div class="middle">
+        <div class="row staff_columns">
 
-        <div class="splitter"></div>
+            <ul class="admin_nav button-group">
+                <li><a href="#" class="small button">User List</a></li>
+                <li><a href="#" class="small button">Staff</a></li>
+                <li><a href="#" class="small button">Station</a></li>
+                <li><a href="#" class="small button">System</a></li>
+                <li><a href="#" class="small button">Games</a></li>
+                <li><a href="#" class="small button">Gamer Points</a></li>
+            </ul>
 
-        <div id="gts">
-            <h2>Gamer Tracking System</h2>
+            <div class="splitter"></div>
+
+            <div id="gts">
+                <h2>Gamer Tracking System</h2>
+                <!-- Table -->
+                <table class="gts">
+                    <thead>
+                    <tr>
+                        <th width="200">Gamer Name</th>
+                        <th>Station Number</th>
+                        <th>Game</th>
+                        <th width="150">Time In</th>
+                        <th width="150">Time Left</th>
+                        <th width="10%">Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Erwin Angeles</td>
+                        <td>Station 2</td>
+                        <td>GTA V</td>
+                        <td>12:30 (10/08/13)</td>
+                        <td>00:59</td>
+                        <td><a data-reveal-id="update_gamer" href="">Update</a> </td>
+                    </tr>
+                    <tr>
+                        <td>Mike Flemming</td>
+                        <td>Station 10</td>
+                        <td>Watch Dog</td>
+                        <td>02:10 (10/08/13)</td>
+                        <td>00:41</td>
+                        <td><a data-reveal-id="update_gamer" href="">Update</a> </td>
+                    </tr>
+                    <tr>
+                        <td>Chris Henry</td>
+                        <td>Station 4</td>
+                        <td>League Of Legends</td>
+                        <td>4:30 (10/08/13)</td>
+                        <td>00:02</td>
+                        <td><a data-reveal-id="update_gamer" href="">Update</a> </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
             <!-- Table -->
-            <table class="gts">
-                <thead>
-                <tr>
-                    <th width="200">Gamer Name</th>
-                    <th>Station Number</th>
-                    <th>Game</th>
-                    <th width="150">Time In</th>
-                    <th width="150">Time Left</th>
-                    <th width="10%">Action</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>Erwin Angeles</td>
-                    <td>Station 2</td>
-                    <td>GTA V</td>
-                    <td>12:30 (10/08/13)</td>
-                    <td>00:59</td>
-                    <td><a data-reveal-id="update_gamer" href="">Update</a> </td>
-                </tr>
-                <tr>
-                    <td>Mike Flemming</td>
-                    <td>Station 10</td>
-                    <td>Watch Dog</td>
-                    <td>02:10 (10/08/13)</td>
-                    <td>00:41</td>
-                    <td><a data-reveal-id="update_gamer" href="">Update</a> </td>
-                </tr>
-                <tr>
-                    <td>Chris Henry</td>
-                    <td>Station 4</td>
-                    <td>League Of Legends</td>
-                    <td>4:30 (10/08/13)</td>
-                    <td>00:02</td>
-                    <td><a data-reveal-id="update_gamer" href="">Update</a> </td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-        <!-- Table -->
 
-        <div id="queue_list">
-            <h2>Queue List</h2>
+            <div id="queue_list">
+                <h2>Queue List</h2>
+                <!-- Table -->
+                <table class="gts">
+                    <thead>
+                    <tr>
+                        <th width="200">Gamer Name</th>
+                        <th>Station Number</th>
+                        <th>Game</th>
+                        <th width="150">Time Queued</th>
+                        <th width="150">Time Bought</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Niwre Angeles</td>
+                        <td>Station 2</td>
+                        <td>Final Fantasy IV</td>
+                        <td>1:30 (10/08/13)</td>
+                        <td>30 Mins</td>
+                    </tr>
+                    <tr>
+                        <td>Ekim Flemming</td>
+                        <td>Station 10</td>
+                        <td>Watch Cat</td>
+                        <td>03:10 (10/08/13)</td>
+                        <td>60 Mins</td>
+                    </tr>
+                    <tr>
+                        <td>C Henry</td>
+                        <td>Station 4</td>
+                        <td>Tournaments of Legends</td>
+                        <td>5:30 (10/08/13)</td>
+                        <td>150 Mins</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
             <!-- Table -->
-            <table class="gts">
-                <thead>
-                <tr>
-                    <th width="200">Gamer Name</th>
-                    <th>Station Number</th>
-                    <th>Game</th>
-                    <th width="150">Time Queued</th>
-                    <th width="150">Time Bought</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>Niwre Angeles</td>
-                    <td>Station 2</td>
-                    <td>Final Fantasy IV</td>
-                    <td>1:30 (10/08/13)</td>
-                    <td>30 Mins</td>
-                </tr>
-                <tr>
-                    <td>Ekim Flemming</td>
-                    <td>Station 10</td>
-                    <td>Watch Cat</td>
-                    <td>03:10 (10/08/13)</td>
-                    <td>60 Mins</td>
-                </tr>
-                <tr>
-                    <td>C Henry</td>
-                    <td>Station 4</td>
-                    <td>Tournaments of Legends</td>
-                    <td>5:30 (10/08/13)</td>
-                    <td>150 Mins</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-        <!-- Table -->
         </div>
 
     </div>
