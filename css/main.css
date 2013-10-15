@@ -1,17 +1,39 @@
 #top{
     margin-top: 0;
 }
+#logo{
+    height: 40px;
+    width: 100%;
+    margin-left: 15px;
+}
 
 .top_bar{
     background-color: #424242;
     width: 100%;
-    height: 30px;
+    height: 35px;
 }
 .top_half_bar{
     border-top: 1.9em solid #3299BB;
     border-left: 2em solid transparent;
     width: 45%;
     float: right;
+}
+
+.user_panel{
+    color: #fff;
+    text-transform: uppercase;
+    margin-right: 20px;
+    float: right;
+    margin-top: -37px;
+}
+.user_panel img{
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+.user_login{
+    float: right;
+    margin-top: 30px;
 }
 
 #login form {
@@ -42,16 +64,25 @@
     background-color: #424242;
     width: 100%;
     height: 60px;
-    margin-top: 20px;
+    margin-top: 120px;
     border-top: 3px solid #3299BB;
+
 }
 #main_nav .top-bar section ul li a{
     text-shadow: -1px 1px #000;
     text-transform: uppercase;
 }
-#logo {
-
-
+#main_nav .top_nav{
+    margin-left: 0.8%;
+}
+#main_nav .home_icon{
+    font-size: 1.5em;
+}
+#main_nav a:hover{
+    color: #2ba6cb;
+    transition: color 0.3s ease-in-out;
+    -webkit-transition: color 0.3s ease-in-out;
+    -moz-:color 0.32s ease-in-out;
 }
 #logo object{
     width: 330px;
@@ -133,7 +164,6 @@ h1, h2, h3, p, a {
     font-weight: 400;
     color: #000;
 }
-
 .sub_nav{
     margin-left: 17px;
     margin-top: 20px;
@@ -169,13 +199,16 @@ h1, h2, h3, p, a {
     margin-left: auto;
     margin-right: auto;
 }
+.queue_list{
+    clear: both;
+}
 
 .staff_add_gamer{
     width: 45%;
 }
 
 .middle .admin_nav{
-    margin-left: 25px;
+    margin-left: 15px;
     margin-top: 20px;
 }
 
@@ -184,6 +217,102 @@ h1, h2, h3, p, a {
     width: 100%;
     height: 60px;
     border-top: 3px solid #3299BB;
+}
+
+/* GTS Panel */
+#gts_panel{
+
+}
+.gts_panel{
+    margin-bottom: 10px!important;
+
+}
+.station_number{
+    float: left;
+    margin-left: -5px;
+    margin-top: -15px;
+    opacity: .5;
+    font-size: 1.2em;
+    height: 30px;
+}
+.gts_pic img{
+    float: left;
+    margin-top: -10px;
+    margin-left: 30px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+.gamer_name{
+    float: left;
+    margin-top: -10px;
+    margin-left: 5px;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+}
+.game_boxart img{
+    height: 60px;
+    float: right;
+    margin-top: -10px;
+}
+.gts_timer{
+    float: left;
+    margin-left: -30px;
+    height: 30px;
+}
+.gts_timer h6{
+    display: inline-block;
+    font-size: 1.7em;
+    margin-left: 4px;
+    margin-top: 0.4em;
+
+}
+.gts_timer .time_in{
+    color: white;
+}
+.gts_timer .countdown{
+    color: red;
+}
+/* Station Panels */
+
+.station_q{
+    background: #058baa;
+    width: 100%;
+    height: 25px;
+    margin-top: -23px;
+    /*margin-bottom: 20px;*/
+    border-bottom: 1px solid grey;
+}
+.q_name h6{
+    color: lightgray;
+    font-weight: 300;
+    text-transform: uppercase;
+    float: left;
+    margin-left: 10px;
+    margin-top: 0;
+    font-size: 0.8em;
+}
+.q_time_in h6{
+    font-family: 'Oswald', sans-serif;
+    color: lightgray;
+    font-weight: 300;
+    float: right;
+    margin-right: 10px;
+    margin-top:0;
+    font-size: 0.8em;
+}
+
+.station_3{
+    background: grey!important;
+}
+.station_3 h3{
+    margin-left: 10%;
+    font-size: 2em;
+    float: left;
+}
+
+#admin_dd .a_dropdown{
+    margin-bottom: 0;
 }
 
 /* Media Queries ----------- */
@@ -199,8 +328,29 @@ h1, h2, h3, p, a {
         margin-right: 0;
         float: right;
     }
-    #logo {
-        margin-top: 20px;
-    }
 
+
+
+    /* GTS PANEL */
+    /*.gts_pic img{*/
+    /*float: left;*/
+    /*margin-top: -10px;*/
+    /*margin-left: 30px;*/
+    /*height: 50px;*/
+    /*}*/
+    /*.gamer_name{*/
+    /*float: left;*/
+    /*margin-top: -10px;*/
+    /*margin-left: 5px;*/
+    /*font-family: 'Oswald', sans-serif;*/
+    /*text-transform: uppercase;*/
+    /*font-size: 1.8em;*/
+    /*}*/
+    /*.gts_timer{*/
+    /*margin-top: -15px;*/
+    /*float: right;*/
+    /*font-size: 1.6em;*/
+    /*margin-right: 10px;*/
+    /*text-shadow: -1px 1px 1px #000;*/
+    /*}*/
 }

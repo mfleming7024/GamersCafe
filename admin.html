@@ -7,9 +7,11 @@
     <meta name="viewport" content="width=device-width">
     <title>Gamers Cafe :: Admin</title>
 
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/foundation.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/foundation.css">
+
     <link rel="stylesheet" href="css/font-awesome.css">
     <link rel="stylesheet" href="css/font-awesome-ie7.css">
 
@@ -25,166 +27,282 @@
 
 <!-- Nav Top Bar -->
 <div class="top_bar">
-    <div class="top_half_bar"></div>
+    <!--<div class="top_half_bar"></div>-->
+    <div class="bars row">
+        <div id="logo">
+            <!-- LOGO -->
+            <img src="img/logo.png" alt="Logo"> <!-- END LOGO -->
+        </div>
+        <div class="user_panel">
+            <img src="img/sm_profile.png" alt="Small Profile Picture">
+            <a href="#">Erwin Angeles</a>
+            <i class="icon-gear"></i>
+        </div>
+    </div><!-- End top_half_bar -->
 </div><!-- End top-bar -->
 
 <div id="top">
-    <div id="logo" class="row">
-        <!-- LOGO -->
-        <object data="img/logo.svg" type="image/svg+xml" class="gamer_logo">
-        </object> <!-- END LOGO -->
-    </div>
+<!--<div id="logo" class="row">-->
+<!--&lt;!&ndash; LOGO &ndash;&gt;-->
+<!--<object data="img/logo.svg" type="image/svg+xml" class="gamer_logo">-->
+<!--</object> &lt;!&ndash; END LOGO &ndash;&gt;-->
+<!--</div>-->
 
-    <!-- Navigation -->
-    <div id="main_nav" class="row">
-        <nav class="top-bar">
-            <section class="top-bar-section">
-                <ul class="left">
-                    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-                    <li id="mobile_menu" class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-                    <li class="divider"></li>
-                    <li class="active"><a href="#">League/Tournaments</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Games</a></li>
-                    <li class="divider"></li>
-                    <li class="has-dropdown"><a href="#">About Us</a>
+<!-- Navigation -->
+<div id="main_nav" class="row">
+    <nav class="top-bar">
+        <section class="top-bar-section">
+            <ul class="left top_nav">
+                <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+                <li id="mobile_menu" class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+                <li><a href="#"><i class="icon-home home_icon"></i></a> </li>
 
-                        <ul class="dropdown">
-                            <li class="has-dropdown"><a href="#">Dropdown Level 1a</a>
+                <li class="divider"></li>
+                <li class="active"><a href="#">League/Tournaments</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Games</a></li>
+                <li class="divider"></li>
+                <li class="has-dropdown"><a href="#">About Us</a>
 
-                                <ul class="dropdown">
-                                    <li><label>Dropdown Level 2 Label</label></li>
-                                    <li><a href="#">Dropdown Level 2a</a></li>
-                                    <li><a href="#">Dropdown Level 2b</a></li>
-                                    <li class="has-dropdown"><a href="#">Dropdown Level 2c</a>
+                    <ul class="dropdown">
+                        <li class="has-dropdown"><a href="#">Dropdown Level 1a</a>
 
-                                        <ul class="dropdown">
-                                            <li><label>Dropdown Level 3 Label</label></li>
-                                            <li><a href="#">Dropdown Level 3a</a></li>
-                                            <li><a href="#">Dropdown Level 3b</a></li>
-                                            <li class="divider"></li>
-                                            <li><a href="#">Dropdown Level 3c</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Dropdown Level 2d</a></li>
-                                    <li><a href="#">Dropdown Level 2e</a></li>
-                                    <li><a href="#">Dropdown Level 2f</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Dropdown Level 1b</a></li>
-                            <li><a href="#">Dropdown Level 1c</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">Dropdown Level 1d</a></li>
-                            <li><a href="#">Dropdown Level 1e</a></li>
-                            <li><a href="#">Dropdown Level 1f</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">See all &rarr;</a></li>
-                        </ul>
-                </ul>
-            </section>
-        </nav>
-    </div> <!-- END NAVIGATION -->
+                            <ul class="dropdown">
+                                <li><label>Dropdown Level 2 Label</label></li>
+                                <li><a href="#">Dropdown Level 2a</a></li>
+                                <li><a href="#">Dropdown Level 2b</a></li>
+                                <li class="has-dropdown"><a href="#">Dropdown Level 2c</a>
 
-
-
-    <!-- Staff Page -->
-    <div class="middle">
-        <div class="row staff_columns">
-
-            <ul class="admin_nav button-group">
-                <li><a href="#" class="small button">User List</a></li>
-                <li><a href="#" class="small button">Staff</a></li>
-                <li><a href="#" class="small button">Station</a></li>
-                <li><a href="#" class="small button">System</a></li>
-                <li><a href="#" class="small button">Games</a></li>
-                <li><a href="#" class="small button">Gamer Points</a></li>
+                                    <ul class="dropdown">
+                                        <li><label>Dropdown Level 3 Label</label></li>
+                                        <li><a href="#">Dropdown Level 3a</a></li>
+                                        <li><a href="#">Dropdown Level 3b</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="#">Dropdown Level 3c</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Dropdown Level 2d</a></li>
+                                <li><a href="#">Dropdown Level 2e</a></li>
+                                <li><a href="#">Dropdown Level 2f</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Dropdown Level 1b</a></li>
+                        <li><a href="#">Dropdown Level 1c</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Dropdown Level 1d</a></li>
+                        <li><a href="#">Dropdown Level 1e</a></li>
+                        <li><a href="#">Dropdown Level 1f</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">See all &rarr;</a></li>
+                    </ul>
             </ul>
+        </section>
+    </nav>
+</div> <!-- END NAVIGATION -->
 
-            <div class="splitter"></div>
 
-            <div id="gts">
-                <h2>Gamer Tracking System</h2>
-                <!-- Table -->
-                <table class="gts">
-                    <thead>
-                    <tr>
-                        <th width="200">Gamer Name</th>
-                        <th>Station Number</th>
-                        <th>Game</th>
-                        <th width="150">Time In</th>
-                        <th width="150">Time Left</th>
-                        <th width="10%">Action</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>Erwin Angeles</td>
-                        <td>Station 2</td>
-                        <td>GTA V</td>
-                        <td>12:30 (10/08/13)</td>
-                        <td>00:59</td>
-                        <td><a data-reveal-id="update_gamer" href="">Update</a> </td>
-                    </tr>
-                    <tr>
-                        <td>Mike Flemming</td>
-                        <td>Station 10</td>
-                        <td>Watch Dog</td>
-                        <td>02:10 (10/08/13)</td>
-                        <td>00:41</td>
-                        <td><a data-reveal-id="update_gamer" href="">Update</a> </td>
-                    </tr>
-                    <tr>
-                        <td>Chris Henry</td>
-                        <td>Station 4</td>
-                        <td>League Of Legends</td>
-                        <td>4:30 (10/08/13)</td>
-                        <td>00:02</td>
-                        <td><a data-reveal-id="update_gamer" href="">Update</a> </td>
-                    </tr>
-                    </tbody>
-                </table>
+
+<!-- Staff Page -->
+<div class="middle">
+    <div class="row staff_columns">
+        <ul class="admin_nav button-group">
+            <li><a href="#" data-dropdown="admin_dd" class="small button dropdown">Admin Settings</i> </a></li>
+        </ul>
+        <ul id="admin_dd" data-dropdown-content class="f-dropdown">
+            <li><a href="#" class="small button a_dropdown">Users</a></li>
+            <li><a href="#" class="small button a_dropdown">Staff</a></li>
+            <li><a href="#" class="small button a_dropdown">Station</a></li>
+
+        </ul>
+        <div class="splitter"></div>
+
+        <!-- Gamer Tracking System GTS -->
+        <div id="gts">
+            <h2>Gamer Tracking System</h2>
+
+            <div id="gts_panel">
+                <!-- Panel Starts here -->
+                <div class="small-6 large-4 columns gts_panel">
+                    <div class="panel callout radius station_1">
+                        <div class="panel_content">
+                            <div class="station_number">
+                                <h1>1</h1>
+                            </div>
+                            <div class="gts_pic">
+                                <img src="img/sm_profile.png" alt="Small Profile Picture">
+                            </div>
+                            <div class="gamer_name">
+                                <h6>Erwin Angeles</h6>
+                            </div>
+                            <div class="game_boxart">
+                                <img src="img/gtav.jpg" alt="Game Box Art">
+                            </div>
+                            <div class="gts_timer">
+                                <h6 class="time_in">12:30</h6>
+                                <h6 class="countdown">00:59</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Station Queue -->
+                    <div class="station_q">
+                        <div class="q_name">
+                            <h6>Niwre Sel</h6>
+                        </div>
+                        <div class="q_time_in">
+                            <h6>1:00</h6>
+                        </div>
+                    </div>
+                </div>
+                <!-- Panel Starts here -->
+                <div class="small-6 large-4 columns gts_panel">
+                    <div class="panel callout radius station_2">
+                        <div class="panel_content">
+                            <div class="station_number">
+                                <h1>2</h1>
+                            </div>
+                            <div class="gts_pic">
+                                <img src="img/sm_profile.png" alt="Small Profile Picture">
+                            </div>
+                            <div class="gamer_name">
+                                <h6>Erwin Angeles</h6>
+                            </div>
+                            <div class="game_boxart">
+                                <img src="img/watchdog.jpg" alt="Game Box Art">
+                            </div>
+                            <div class="gts_timer">
+                                <h6 class="time_in">12:30</h6>
+                                <h6 class="countdown">00:59</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Station Queue -->
+                    <div class="station_q">
+                        <div class="q_name">
+                            <h6></h6>
+                        </div>
+                        <div class="q_time_in">
+                            <h6></h6>
+                        </div>
+                    </div>
+                </div>
+                <!-- Panel Starts here -->
+                <div class="small-6 large-4 columns gts_panel">
+                    <div class="panel callout radius station_3">
+                        <div class="panel_content">
+                            <div class="station_number">
+                                <h1>3</h1>
+                            </div>
+                            <div class="station_avail">
+                                <h3>Available</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Station Queue -->
+                    <div class="station_q">
+                        <div class="q_name">
+                            <h6></h6>
+                        </div>
+                        <div class="q_time_in">
+                            <h6></h6>
+                        </div>
+                    </div>
+                </div>
+                <!-- Panel Starts here -->
+                <div class="small-6 large-4 columns gts_panel">
+                    <div class="panel callout radius station_2">
+                        <div class="panel_content">
+                            <div class="station_number">
+                                <h1>2</h1>
+                            </div>
+                            <div class="gts_pic">
+                                <img src="img/sm_profile.png" alt="Small Profile Picture">
+                            </div>
+                            <div class="gamer_name">
+                                <h6>Erwin Angeles</h6>
+                            </div>
+                            <div class="game_boxart">
+                                <img src="img/ffx.jpg" alt="Game Box Art">
+                            </div>
+                            <div class="gts_timer">
+                                <h6 class="time_in">12:30</h6>
+                                <h6 class="countdown">00:59</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Station Queue -->
+                    <div class="station_q">
+                        <div class="q_name">
+                            <h6></h6>
+                        </div>
+                        <div class="q_time_in">
+                            <h6></h6>
+                        </div>
+                    </div>
+                </div><!-- Panel Starts here -->
+                <div class="small-6 large-4 columns gts_panel">
+                    <div class="panel callout radius station_2">
+                        <div class="panel_content">
+                            <div class="station_number">
+                                <h1>2</h1>
+                            </div>
+                            <div class="gts_pic">
+                                <img src="img/sm_profile.png" alt="Small Profile Picture">
+                            </div>
+                            <div class="gamer_name">
+                                <h6>Erwin Angeles</h6>
+                            </div>
+                            <div class="game_boxart">
+                                <img src="img/gtav.jpg" alt="Game Box Art">
+                            </div>
+                            <div class="gts_timer">
+                                <h6 class="time_in">12:30</h6>
+                                <h6 class="countdown">00:59</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Station Queue -->
+                    <div class="station_q">
+                        <div class="q_name">
+                            <h6></h6>
+                        </div>
+                        <div class="q_time_in">
+                            <h6></h6>
+                        </div>
+                    </div>
+                </div><!-- Panel Starts here -->
+                <div class="small-6 large-4 columns gts_panel">
+                    <div class="panel callout radius station_2">
+                        <div class="panel_content">
+                            <div class="station_number">
+                                <h1>2</h1>
+                            </div>
+                            <div class="gts_pic">
+                                <img src="img/sm_profile.png" alt="Small Profile Picture">
+                            </div>
+                            <div class="gamer_name">
+                                <h6>Erwin Angeles</h6>
+                            </div>
+                            <div class="game_boxart">
+                                <img src="img/gtav.jpg" alt="Game Box Art">
+                            </div>
+                            <div class="gts_timer">
+                                <h6 class="time_in">12:30</h6>
+                                <h6 class="countdown">00:59</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Station Queue -->
+                    <div class="station_q">
+                        <div class="q_name">
+                            <h6></h6>
+                        </div>
+                        <div class="q_time_in">
+                            <h6></h6>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-            <!-- Table -->
-
-            <div id="queue_list">
-                <h2>Queue List</h2>
-                <!-- Table -->
-                <table class="gts">
-                    <thead>
-                    <tr>
-                        <th width="200">Gamer Name</th>
-                        <th>Station Number</th>
-                        <th>Game</th>
-                        <th width="150">Time Queued</th>
-                        <th width="150">Time Bought</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>Niwre Angeles</td>
-                        <td>Station 2</td>
-                        <td>Final Fantasy IV</td>
-                        <td>1:30 (10/08/13)</td>
-                        <td>30 Mins</td>
-                    </tr>
-                    <tr>
-                        <td>Ekim Flemming</td>
-                        <td>Station 10</td>
-                        <td>Watch Cat</td>
-                        <td>03:10 (10/08/13)</td>
-                        <td>60 Mins</td>
-                    </tr>
-                    <tr>
-                        <td>C Henry</td>
-                        <td>Station 4</td>
-                        <td>Tournaments of Legends</td>
-                        <td>5:30 (10/08/13)</td>
-                        <td>150 Mins</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-            <!-- Table -->
         </div>
 
     </div>
