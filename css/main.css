@@ -242,6 +242,17 @@ h1, h2, h3, p, a {
     font-size: 1.2em;
     height: 30px;
 }
+.station_number_avail{
+    float: left;
+    margin-left: -5px;
+    margin-top: -20px;
+    opacity: .5;
+    font-size: 1.2em;
+    height: 30px;
+}
+.station_avail{
+    margin-top: -10px;
+}
 .gts_pic img{
     float: left;
     margin-top: 0;
@@ -320,23 +331,22 @@ h1, h2, h3, p, a {
     font-size: 0.8em;
 }
 
-.station_3{
+.avail_station{
     background: grey!important;
 }
 .game_over{
     background: red!important;
 }
-.station_3 h3 a{
+.avail_station h3 a{
     margin-left: -10px;
-    font-size: 5em;
+    font-size: 6em;
     margin-top: -80px;
     float: left;
     color: darkgray;
 }
 
 .station_avail{
-
-    margin-left: 200px;
+    margin-left: 110px;
     width: 50px;
 }
 
