@@ -234,6 +234,13 @@ h1, h2, h3, p, a {
   color: #333;
   float: left;;
 }
+#form_add_gamer_gts{
+    width: 50%;
+    margin: 0 auto;
+}
+.center{
+    margin: 0 auto;
+}
 .station_number{
     float: left;
     margin-left: -5px;
