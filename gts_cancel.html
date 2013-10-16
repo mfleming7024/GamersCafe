@@ -23,27 +23,38 @@
 </head>
 <body>
 
-
-
 <!-- Nav Top Bar -->
 <div class="top_bar">
-    <div class="top_half_bar"></div>
+    <!--<div class="top_half_bar"></div>-->
+    <div class="bars row">
+        <div id="logo">
+            <!-- LOGO -->
+            <img src="img/logo.png" alt="Logo"> <!-- END LOGO -->
+        </div>
+        <div class="user_panel">
+            <img src="img/sm_profile.png" alt="Small Profile Picture">
+            <a href="#">Erwin Angeles</a>
+            <i class="icon-gear"></i>
+        </div>
+    </div><!-- End top_half_bar -->
 </div><!-- End top-bar -->
 
 <div id="top">
-<div id="logo" class="row">
-    <!-- LOGO -->
-    <object data="img/logo.svg" type="image/svg+xml" class="gamer_logo">
-    </object> <!-- END LOGO -->
-</div>
+<!--<div id="logo" class="row">-->
+<!--&lt;!&ndash; LOGO &ndash;&gt;-->
+<!--<object data="img/logo.svg" type="image/svg+xml" class="gamer_logo">-->
+<!--</object> &lt;!&ndash; END LOGO &ndash;&gt;-->
+<!--</div>-->
 
 <!-- Navigation -->
 <div id="main_nav" class="row">
     <nav class="top-bar">
         <section class="top-bar-section">
-            <ul class="left">
+            <ul class="right top_nav">
                 <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
                 <li id="mobile_menu" class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+                <li><a href="#"><i class="icon-home home_icon"></i></a> </li>
+
                 <li class="divider"></li>
                 <li class="active"><a href="#">League/Tournaments</a></li>
                 <li class="divider"></li>
@@ -92,62 +103,60 @@
 <!-- Staff Page -->
 <div class="middle">
     <div class="row staff_columns">
-        <div class="sub_nav">
-            <a href="#" data-reveal-id="add_gamer" class="button">Add Gamer</a>
-            <a href="#" class="button">Cancel</a>
-            <a href="#" class="button">History</a>
-            <a href="#" class="button">Gamer Points</a>
-        </div>
-
+        <ul class="admin_nav button-group">
+            <li><a href="#" data-dropdown="admin_dd" class="small button dropdown">Admin Settings</i> </a></li>
+        </ul>
+        <ul id="admin_dd" data-dropdown-content class="f-dropdown">
+            <li><a href="#" class="small button a_dropdown">Users</a></li>
+            <li><a href="#" class="small button a_dropdown">Staff</a></li>
+            <li><a href="#" class="small button a_dropdown">Station</a></li>
+            <li><a href="#" class="small button a_dropdown">Games</a></li>
+        </ul>
         <div class="splitter"></div>
-
         <div id="cancel_gamer">
             <h2>Cancel Gamer?</h2>
             <div class="cancel_panel">
-                <div class="small-6 large-4 columns gts_panel">
-                    <div class="panel callout radius station_1">
-                        <div class="cancel_panel_content">
-                            <div class="station_number">
-                                <h1>1</h1>
-                            </div>
-                            <div class="gts_pic">
-                                <img src="img/sm_profile.png" alt="Small Profile Picture">
-                            </div>
-                            <div class="gamer_name">
-                                <h6>Erwin Angeles</h6>
-                            </div>
-                            <div class="game_boxart">
-                                <img src="img/gtav.jpg" alt="Game Box Art">
-                            </div>
-                            <div class="gts_timer">
-                                <h6 class="time_in">12:30</h6>
-                                <h6 class="countdown">00:59</h6>
-                            </div>
-                        </div>
+                <div class="small-6 large-4 remove_panel">
+                    <!--<div class="panel callout radius station_1">-->
+                        <!--<div class="cancel_panel_content">-->
+                            <!--<div class="station_number">-->
+                                <!--<h1>1</h1>-->
+                            <!--</div>-->
+                            <!--<div class="gts_pic">-->
+                                <!--<img src="img/sm_profile.png" alt="Small Profile Picture">-->
+                            <!--</div>-->
+                            <!--<div class="gamer_name">-->
+                                <!--<h6>Erwin Angeles</h6>-->
+                            <!--</div>-->
+                            <!--<div class="game_boxart">-->
+                                <!--<img src="img/gtav.jpg" alt="Game Box Art">-->
+                            <!--</div>-->
+                            <!--<div class="gts_timer">-->
+                                <!--<h6 class="time_in">12:30</h6>-->
+                                <!--<h6 class="countdown">00:59</h6>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <form class="custom cancel_reason">
+                        <label>Reason</label>
+                        <select id="cancel_dropdown" class="medium">
+                            <option>Game Over</option>
+                            <option>Left Early</option>
+                            <option>Some Reason</option>
+                        </select>
+                    </form>
+                    <!-- Comment needed to cancel -->
+                    <div class="cancel_button">
+                        <a href="admin.html" class="back_button button">Back</a>
+                        <a href="#" class="cancel_gamer_button button">Cancel Gamer</a>
                     </div>
-
                 </div>
             </div>
-            <form class="custom cancel_reason">
-                <select id="cancel_dropdown" class="medium right">
-                    <option>Done</option>
-                    <option>Left Early</option>
-                    <option>Some Reason</option>
-                </select>
-            </form>
-            <!-- Comment needed to cancel -->
-            <div class="cancel_button">
-                <a href="#" class="cancel_gamer_button button">Cancel Gamer</a>
-            </div>
+
+
 
         </div>
-        <!-- Table -->
-
-
-
     </div>
-
-
 </div>
 
 <div class="row">

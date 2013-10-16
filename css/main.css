@@ -219,8 +219,12 @@ h1, h2, h3, p, a {
     margin-bottom: 10px!important;
 
 }
-.cancel_panel{
+.remove_panel{
+    margin: 0 auto;
 
+}
+.cancel_panel{
+    margin: 0 auto;
 }
 .cancel_panel_content{
     margin-top: -15px!important;
@@ -237,6 +241,13 @@ h1, h2, h3, p, a {
 #form_add_gamer_gts{
     width: 50%;
     margin: 0 auto;
+}
+#form_edit_gamer_gts{
+    width: 50%;
+    margin: 0 auto;
+}
+.gts_remove{
+    background: red;
 }
 .center{
     margin: 0 auto;
@@ -364,13 +375,22 @@ h1, h2, h3, p, a {
 .search{
     margin-left: 25px;
 }
+
 .cancel_reason{
-    margin: 0 auto;
+    margin-left: 13%;
 }
 .cancel_button{
-    float: left;
+    margin-left: 19%;
 }
-
+.cancel_button .cancel_gamer_button{
+    background: red;
+}
+.add_to_queue{
+    margin-left: 35%;
+}
+.add_gamer_q{
+    width: 290px;
+}
 
 /* Media Queries ----------- */
 @media screen and (max-width : 650px) {
@@ -384,6 +404,9 @@ h1, h2, h3, p, a {
     #mobile_menu{
         margin-right: 0;
         float: right;
+    }
+    .add_gamer_q{
+        width: 190px;
     }
 
 
