@@ -185,6 +185,7 @@ h1, h2, h3, p, a {
     color: #c0c0c0;
     position: relative;
     top: 50px;
+    text-shadow: -1px 1px 1px #999;
 }
 .home_columns{
     background-color:rgba(255,255,255,0.8);
