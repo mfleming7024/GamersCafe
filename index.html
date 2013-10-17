@@ -23,19 +23,13 @@
 </head>
 <body>
 
-
-
-
-<!--<div class="top_bar">-->
-    <!--<div class="top_half_bar">-->
-        <!--<a href="#" class="login" data-reveal-id="login">Login</a>-->
-        <!--<a href="#" class="become_a_gamer" data-reveal-id="become_a_gamer">Become A Gamer!</a>-->
-    <!--</div>-->
-
-
 <!-- Nav Top Bar -->
 <div class="top_bar">
     <div class="row">
+        <div id="logo">
+            <!-- LOGO -->
+            <img src="img/logo.png" alt="Logo"> <!-- END LOGO -->
+        </div>
         <div class="user_login">
         <a href="#" class="login" data-reveal-id="login">Login</a>
         <a href="#" class="become_a_gamer" data-reveal-id="become_a_gamer">Become A Gamer!</a>
@@ -44,17 +38,11 @@
 </div><!-- End top-bar -->
 
 <div id="top">
-    <div id="logo" class="row">
-        <!-- LOGO -->
-        <object data="img/logo.svg" type="image/svg+xml" class="gamer_logo">
-        </object> <!-- END LOGO -->
-    </div>
-
     <!-- Navigation -->
     <div id="main_nav" class="row">
         <nav class="top-bar">
             <section class="top-bar-section">
-                <ul class="left top_nav">
+                <ul class="right top_nav">
                     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
                     <li id="mobile_menu" class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
                     <li><a href="#"><i class="icon-home home_icon"></i></a> </li>
@@ -101,55 +89,36 @@
             </section>
         </nav>
     </div> <!-- END NAVIGATION -->
+</div>
 
-    <!-- SLIDER -->
-    <!-- Orbit Container -->
-    <div class="row">
-        <div class="orbit-container slider">
-            <ul data-orbit>
-                <li>
-                    <img src="./img/1.jpg" height="400px" width="960px">
-                    <div class="orbit-caption">...</div>
-                </li>
-                <li class="active">
-                    <img src="./img/2.jpg" height="400px" width="960px">
-                    <div class="orbit-caption">...</div>
-                </li>
-                <li>
-                    <img src="./img/3.jpg" height="400px" width="960px">
-                    <div class="orbit-caption">...</div>
-                </li>
-                <li>
-                    <img src="./img/3.jpg">
-                    <div class="orbit-caption">...</div>
-                </li>
-                <li>
-                    <img src="./img/1.jpg" height="400px" width="960px">
-                    <div class="orbit-caption">...</div>
-                </li>
-            </ul>
 
-            <!-- Prev/Next Arrows -->
-            <a href="#" class="orbit-prev">Prev <span></span></a>
-            <a href="#" class="orbit-next">Next <span></span></a>
-
-            <!-- Slide Numbers -->
-            <div class="orbit-slide-number">
-                <span>1</span> of <span>3</span>
+<!-- CTA -->
+<div class="home">
+    <div class="row home_cta">
+        <div class="large-6 columns">
+            <div class="cta_intro">
+                <h1>Welcome to Gamers Cafe </h1>
+                <p>Choose between the Playstation 4, Xbox One, Nintendo Wii U or the PC. Play versus other Gamers in Leagues and Tournaments for a chance to win prizes.
+                    All Gamers get Member points to use towards their gameplay hours and such.</p>
             </div>
-
-            <!-- Timer and Play/Pause Button -->
-            <div class="orbit-timer">
-                <span></span>
-                <div class="orbit-progress" style="width: 100%; -webkit-transition: width 10s linear;"></div>
+        </div>
+        <div class="large-6 columns">
+            <div class="sign_up">
+                <h1>Become A Gamer!</h1>
+                <form>
+                    <input type="text" class="email_input" placeholder="Email">
+                    <input type="text" class="signup_name" placeholder="Full Name">
+                    <input type="password" class="password_input" placeholder="Password">
+                    <input type="password" class="confirm_password_input" placeholder="Confirm Password">
+                    <a href="#" class="button">Join</a> or <a href="#"><img class="fb_login_2" src="img/fb_login.png"></a>
+                </form>
             </div>
         </div>
     </div>
 </div>
 
-
-<!-- Columns -->
-<div class="middle">
+<!-- 3 Column Info-->
+<div class="home_middle">
     <div class="row home_columns">
         <div class="large-4 columns">
             <i class="icon-dribbble icons"></i>
@@ -171,7 +140,9 @@
 
 <div class="row">
     <div id="footer">
+        <div class="test">
 
+        </div>
     </div>
 </div>
 
