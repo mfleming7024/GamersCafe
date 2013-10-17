@@ -10,7 +10,7 @@ body {
     font-size: 100%; }
 
 body {
-    background-image: url("../images/dark_wall.png");
+    background-image: url("../img/dark_wall.png");
     color: #222222;
     padding: 0;
     margin: 0;
@@ -1062,12 +1062,13 @@ p aside {
 
 /* Default header styles */
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Open Sans', sans-serif;
+    /*font-family: 'Open Sans', sans-serif;*/
+    font-family: 'Oswald', sans-serif;
     font-weight: bold;
     font-style: normal;
     color: #222222;
     text-rendering: optimizeLegibility;
-    margin-top: 0.2em;
+    /*margin-top: 0.2em;*/
     margin-bottom: 0.5em;
     line-height: 1.2125em; }
 h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
@@ -1306,11 +1307,11 @@ blockquote p {
     .show-for-print {
         display: inherit !important; } }
 button, .button {
-    border-style: solid;
+    /*border-style: solid;*/
     border-width: 1px;
     cursor: pointer;
     font-family: inherit;
-    font-weight: bold;
+    /*font-weight: bold;*/
     line-height: 1;
     margin: 0 0 1.25em;
     position: relative;
@@ -1322,8 +1323,10 @@ button, .button {
     padding-bottom: 0.8125em;
     padding-left: 1.5em;
     font-size: 1em;
+    text-transform: uppercase;
     background-color: #2ba6cb;
     border-color: #2284a1;
+    font-family: 'Oswald', sans-serif;
     color: white; }
 button:hover, button:focus, .button:hover, .button:focus {
     background-color: #2284a1; }
@@ -1364,7 +1367,7 @@ button.small, .button.small {
     padding-right: 1.125em;
     padding-bottom: 0.625em;
     padding-left: 1.125em;
-    font-size: 0.8125em; }
+    font-size: 1.0em; }
 button.tiny, .button.tiny {
     padding-top: 0.4375em;
     padding-right: 0.875em;
@@ -2813,7 +2816,8 @@ label.error {
     height: 45px;
     line-height: 45px;
     position: relative;
-    background: #111111;
+    /*background: #111111;*/
+    z-index: 9;
     margin-bottom: 1.875em; }
 .top-bar ul {
     margin-bottom: 0;
@@ -4164,13 +4168,17 @@ ul.pagination li {
     padding: 1.25em;
     background: #2ba6cb;
     -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
-    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset; }
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+    height: 80px}
 .panel.callout > :first-child {
     margin-top: 0; }
 .panel.callout > :last-child {
     margin-bottom: 0; }
 .panel.callout h1, .panel.callout h2, .panel.callout h3, .panel.callout h4, .panel.callout h5, .panel.callout h6, .panel.callout p {
-    color: white; }
+    /*color: white;*/
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    font-weight: 500}
 .panel.callout h1, .panel.callout h2, .panel.callout h3, .panel.callout h4, .panel.callout h5, .panel.callout h6 {
     line-height: 1;
     margin-bottom: 0.625em; }

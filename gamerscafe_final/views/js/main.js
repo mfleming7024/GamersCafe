@@ -15,14 +15,18 @@ gamerscafe.config(function ($routeProvider){
 	})
 
 	.when("/admin",{
-		controller:"",
-		templateUrl:" "
+		controller:"Core",
+		templateUrl:"views/templates/admin.html"
 	})
 
 	.when("/staff", {
 		controller:"Core",
-		templateUrl:"",
-		authRequired: true	
+		templateUrl:"views/templates/staff.html",
+	})
+
+	.when("/gts_edit_gamer", {
+		controller:"Core",
+		templateUrl:"views/templates/gts_edit_gamer.html",
 	})
 
 	.otherwise({redirectTo:"/"});

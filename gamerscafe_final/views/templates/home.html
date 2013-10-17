@@ -1,8 +1,10 @@
 <!-- Nav Top Bar -->
 <div class="top_bar">
-    <div class="top_half_bar">
-        <a href="#" class="login" data-reveal-id="login" ng-click="test({{itemName.$id}})">Login</a>
+    <div class="row">
+        <div class="user_login">
+        <a href="#" class="login" data-reveal-id="login">Login</a>
         <a href="#" class="become_a_gamer" data-reveal-id="become_a_gamer">Become A Gamer!</a>
+        </div>
     </div>
 </div><!-- End top-bar -->
 
@@ -17,9 +19,11 @@
     <div id="main_nav" class="row">
         <nav class="top-bar">
             <section class="top-bar-section">
-                <ul class="left">
+                <ul class="left top_nav">
                     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
                     <li id="mobile_menu" class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+                    <li><a href="#"><i class="icon-home home_icon"></i></a> </li>
+
                     <li class="divider"></li>
                     <li class="active"><a href="#">League/Tournaments</a></li>
                     <li class="divider"></li>
@@ -61,32 +65,23 @@
                 </ul>
             </section>
         </nav>
-    </div> 
-    <!-- END NAVIGATION -->
-
-    <!-- SLIDER -->
-    <!-- Orbit Container -->
-    <div class="row">
-        
-    </div>
-</div>
-
+    </div> <!-- END NAVIGATION -->
 
 <!-- Columns -->
 <div class="middle">
     <div class="row home_columns">
         <div class="large-4 columns">
-            <!--<i class="icon-dribbble icons"></i>-->
+            <i class="icon-dribbble icons"></i>
             <h2>Play!</h2>
             <p>Choose between the Playstation 4, Xbox One, Nintendo Wii U or the PC.</p>
         </div>
         <div class="large-4 columns">
-            <!--<i class="icon-trophy icons"></i>-->
+            <i class="icon-trophy icons"></i>
             <h2>Competitive</h2>
             <p>Play versus other Gamers in Leagues and Tournaments for a chance to win prizes.</p>
         </div>
         <div class="large-4 columns">
-            <!--<i class="icon-star icons"></i>-->
+            <i class="icon-star icons"></i>
             <h2>Benefits</h2>
             <p>All Gamers get Member points to use towards their gameplay hours and such.</p>
         </div>

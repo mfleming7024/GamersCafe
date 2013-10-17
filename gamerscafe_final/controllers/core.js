@@ -7,6 +7,7 @@ gamerscafe.controller('Core', ['$scope', 'angularFireCollection', 'angularFireAu
 	$scope.test = function(){
 		console.log("Test working.")
 	}
+
 	//************************************Games database***************************************************
 
 	//url to the data needed
@@ -137,6 +138,87 @@ gamerscafe.controller('Core', ['$scope', 'angularFireCollection', 'angularFireAu
 		console.log("deleteStaff clicked");
 	}
 
+	//************************************Active stations database***************************************************
+
+	//url to the data needed
+	var urlActiveStations = new Firebase('https://gamerscafe.firebaseio.com/gamerscafe/activeStations');
+
+	//collects the info from the database for use.
+	$scope.activeStations = angularFireCollection(urlActiveStations);
+
+	//create a active station and adds it to the database
+	$scope.addActiveStation = function(){
+		$scope.activeStations.add({stationNumber: "1", userPic:"http://graph.facebook.com/chris.henry/picture?type=small", username:"Laothud", boxart:"views/images/gtav.jpg", currentTime:time, countdownHours:"24", countdownMin: "00", quedName:"None", quedTime:"00:00"});
+		console.log("add ActiveStations clicked");
+	}
+
+	//removes activeStations based on a unique id
+	$scope.deleteActiveStation = function(myid){
+		$scope.activeStations.remove(myid);
+		console.log("delete ActiveStations clicked");
+	}
+
+	//updates the activeStations database
+	//have fields instead of string literal
+	$scope.updateActiveStation = function(station){
+		$scope.activeStations.update(station);
+	}
+
+	//************************************Qued stations database***************************************************
+
+	//url to the data needed
+	var urlQuedStations = new Firebase('https://gamerscafe.firebaseio.com/gamerscafe/quedStations');
+
+	//collects the info from the database for use.
+	$scope.quedStations = angularFireCollection(urlQuedStations);
+
+	//create a active station and adds it to the database
+	$scope.addQuedStation = function(){
+		$scope.quedStations.add({stationNumber: "5", userPic:"http://graph.facebook.com/chris.henry/picture?type=small", username:"Laothud", boxart:"views/images/gtav.jpg", currentTime:time, countdownHours:"24", countdownMin: "00", quedName:"None", quedTime:"00:00"});
+		console.log("add ActiveStations clicked");
+	}
+
+	//removes quedStations based on a unique id
+	$scope.deleteQuedStation = function(myid){
+		$scope.quedStations.remove(myid);
+		console.log("delete ActiveStations clicked");
+	}
+
+	//updates the quedStations database
+	//have fields instead of string literal
+	$scope.updateQuedStation = function(station){
+		$scope.quedStations.update(station);
+	}
+
+	//************************************Empty stations database***************************************************
+
+	//url to the data needed
+	var urlEmptyStations = new Firebase('https://gamerscafe.firebaseio.com/gamerscafe/emptyStations');
+
+	//collects the info from the database for use.
+	$scope.emptyStations = angularFireCollection(urlEmptyStations);
+
+	//create a active station and adds it to the database
+	$scope.addEmptyStation = function(){
+		$scope.emptyStations.add({stationNumber: "11"});
+		console.log("add EmptyStations clicked");
+	}
+
+	//removes emptyStations based on a unique id
+	$scope.deleteEmptyStation = function(myid){
+		$scope.emptyStations.remove(myid);
+		console.log("delete EmptyStations clicked");
+	}
+
+	//updates the emptyStations database
+	//have fields instead of string literal
+	$scope.updateEmptyStation = function(station){
+		$scope.emptyStations.update(station);
+	}
+
+
+	
+
 }]);
 
 gamerscafe.filter('range', function() {
@@ -147,12 +229,6 @@ gamerscafe.filter('range', function() {
     return input;
   };
 });
-
-
-
-
-
-
 
 
 

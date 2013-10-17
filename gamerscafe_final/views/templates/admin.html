@@ -1,40 +1,13 @@
-<!DOCTYPE html>
-<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>Gamers Cafe :: Admin</title>
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/foundation.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/normalize.css">
-
-    <link rel="stylesheet" href="css/font-awesome.css">
-    <link rel="stylesheet" href="css/font-awesome-ie7.css">
-
-    <!-- FONTS -->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,300,700,800' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:600,700,700italic,900,400italic,400,300italic,300,200italic,200' rel='stylesheet' type='text/css'>
-
-    <script src="js/vendor/custom.modernizr.js"></script>
-
-</head>
-<body>
-
 <!-- Nav Top Bar -->
 <div class="top_bar">
     <!--<div class="top_half_bar"></div>-->
     <div class="bars row">
         <div id="logo">
             <!-- LOGO -->
-            <img src="img/logo.png" alt="Logo"> <!-- END LOGO -->
+            <img src="views/images/logo.png" alt="Logo"> <!-- END LOGO -->
         </div>
         <div class="user_panel">
-            <img src="img/sm_profile.png" alt="Small Profile Picture">
+            <img src="views/images/sm_profile.png" alt="Small Profile Picture">
             <a href="#">Erwin Angeles</a>
             <i class="icon-gear"></i>
         </div>
@@ -119,84 +92,94 @@
 
         <!-- Gamer Tracking System GTS -->
         <div id="gts">
-            <h2>Gamer Tracking System</h2>
+            <h2>Active Stations</h2>
 
             <div id="gts_panel">
                 <!-- Panel Starts here -->
-                <div class="small-6 large-4 columns gts_panel">
-                    <div class="panel callout radius station_1">
-                        <div class="panel_content">
-                            <div class="edit_gts">
-                                <h6><a href="gts_edit_gamer.html">Edit</a> </h6>
-                            </div>
-                            <div class="station_number">
-                                <h1>1</h1>
-                            </div>
-                            <div class="gts_pic">
-                                <img src="img/sm_profile.png" alt="Small Profile Picture">
-                            </div>
-                            <div class="gamer_name">
-                                <h6>Erwin Angeles</h6>
-                            </div>
-                            <div class="game_boxart">
-                                <img src="img/gtav.jpg" alt="Game Box Art">
-                            </div>
-                            <div class="gts_timer">
-                                <h6 class="time_in">12:30</h6>
-                                <h6 class="countdown">00:59</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Station Queue -->
-                    <div class="station_q">
-                        <div class="q_name">
-                            <h6>Niwre Sel</h6>
-                        </div>
-                        <div class="q_time_in">
-                            <h6>1:00</h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="small-6 large-4 columns gts_panel">
-                    <div class="panel callout radius station_1">
-                        <div class="panel_content">
-                            <div class="edit_gts">
-                                <h6><a href="gts_edit_gamer.html">Edit</a> </h6>
-                            </div>
-                            <div class="station_number">
-                                <h1>1</h1>
-                            </div>
-                            <div class="gts_pic">
-                                <img src="img/sm_profile.png" alt="Small Profile Picture">
-                            </div>
-                            <div class="gamer_name">
-                                <h6>Erwin Angeles</h6>
-                            </div>
-                            <div class="game_boxart">
-                                <img src="img/gtav.jpg" alt="Game Box Art">
-                            </div>
-                            <div class="gts_timer">
-                                <h6 class="time_in">12:30</h6>
-                                <h6 class="countdown">00:59</h6>
+                <div ng-repeat="station in activeStations | orderBy:'stationNumber'">
+                    <div class="small-6 large-4 columns gts_panel">
+                        <div class="panel callout radius station_1">
+                            <div class="panel_content">
+                                <div class="edit_gts">
+                                    <h6><a href="#/gts_edit_gamer">Edit</a> </h6>
+                                </div>
+                                <div class="station_number">
+                                    <h1>{{station.stationNumber}}</h1>
+                                </div>
+                                <div class="gts_pic">
+                                    <img src="{{station.userPic}}" alt="Small Profile Picture">
+                                </div>
+                                <div class="gamer_name">
+                                    <h6>{{station.username}}</h6>
+                                </div>
+                                <div class="game_boxart">
+                                    <img src="{{station.boxart}}" alt="Game Box Art">
+                                </div>
+                                <div class="gts_timer">
+                                    <h6 class="time_in">{{staion.currentTime}}</h6>
+                                    <h6 class="countdown">{{station.countdownHours}}:{{station.countdownMin}}</h6>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- Station Queue -->
-                    <div class="station_q">
-                        <div class="q_name">
-                            <h6>Niwre Sel</h6>
-                        </div>
-                        <div class="q_time_in">
-                            <h6>1:00</h6>
+                        <!-- Station Queue -->
+                        <div class="station_q">
+                            <div class="q_name">
+                                <h6>{{station.quedName}}</h6>
+                            </div>
+                            <div class="q_time_in">
+                                <h6>{{station.quedTime}}</h6>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <!-- Panel Starts here -->
+
+                <h2>Qued:</h2>
+
+                <div ng-repeat="station in quedStations | orderBy:'stationNumber'">
+                    <div class="small-6 large-4 columns gts_panel">
+                        <div class="panel callout radius station_1">
+                            <div class="panel_content">
+                                <div class="edit_gts">
+                                    <h6><a href="gts_edit_gamer.html">Edit</a> </h6>
+                                </div>
+                                <div class="station_number">
+                                    <h1>{{station.stationNumber}}</h1>
+                                </div>
+                                <div class="gts_pic">
+                                    <img src="{{station.userPic}}" alt="Small Profile Picture">
+                                </div>
+                                <div class="gamer_name">
+                                    <h6>{{station.username}}</h6>
+                                </div>
+                                <div class="game_boxart">
+                                    <img src="{{station.boxart}}" alt="Game Box Art">
+                                </div>
+                                <div class="gts_timer">
+                                    <h6 class="time_in">{{staion.currentTime}}</h6>
+                                    <h6 class="countdown">{{station.countdown}}</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Station Queue -->
+                        <div class="avail">
+                            <div class="q_name">
+                                <h6><a href="gts_add_q.html">Add</a> </h6>
+                            </div>
+                            <div class="q_time_in">
+                                <h6></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>Empty Stations</h2>
+                
+                <div ng-repeat="station in emptyStations | orderBy:'stationNumber'">
                 <div class="small-6 large-4 columns gts_panel">
-                    <div class="panel callout radius station_3">
+                    <div class="panel callout radius avail_station">
                         <div class="panel_content">
-                            <div class="station_number">
-                                <h1>3</h1>
+                            <div class="station_number_avail">
+                                <h1>{{station.stationNumber}}</h1>
                             </div>
                             <div class="station_avail">
                                 <h3><a href="gts_add_gamer.html">+</a> </h3>
@@ -279,35 +262,3 @@
         </fieldset>
     </form>
 </div>
-<script>
-    document.write('<script src=' +
-            ('__proto__' in {} ? 'js/vendor/zepto' : 'js/vendor/jquery') +
-            '.js><\/script>')
-</script>
-
-<script src="js/foundation.min.js"></script>
-<script src="js/foundation/foundation.orbit.js"></script>
-<script src="js/foundation/foundation.reveal.js"></script>
-<!--
-<script src="js/foundation/foundation.js"></script>
-<script src="js/foundation/foundation.interchange.js"></script>
-<script src="js/foundation/foundation.abide.js"></script>
-<script src="js/foundation/foundation.dropdown.js"></script>
-<script src="js/foundation/foundation.placeholder.js"></script>
-<script src="js/foundation/foundation.forms.js"></script>
-<script src="js/foundation/foundation.alerts.js"></script>
-<script src="js/foundation/foundation.magellan.js"></script>
-<script src="js/foundation/foundation.reveal.js"></script>
-<script src="js/foundation/foundation.tooltips.js"></script>
-<script src="js/foundation/foundation.clearing.js"></script>
-<script src="js/foundation/foundation.cookie.js"></script>
-<script src="js/foundation/foundation.joyride.js"></script>
-<script src="js/foundation/foundation.section.js"></script>
-<script src="js/foundation/foundation.topbar.js"></script>
--->
-
-<script>
-    $(document).foundation();
-</script>
-</body>
-</html>
