@@ -40,7 +40,8 @@ gamerscafe.controller('Core', ['$scope', 'angularFireCollection', 'angularFireAu
 
 	//removes game based on a unique id
 	$scope.deleteGame = function(myid){
-		$scope.games.remove(myid);
+		//$scope.games.remove(myid);
+		console.log(myid);
 		console.log("deleteGame clicked");
 	}
 

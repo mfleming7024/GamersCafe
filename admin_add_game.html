@@ -138,9 +138,9 @@
                     </form>
                     <label>System</label>
                     <form class="custom">
-                        <select id="systemDropdown" class="medium" ng-options="system.name for system in systems" ng-model="game.gameSystem">
-                        																					label for (key , value) in object
-	                        <!-- Options populated through ng-options from database -->
+                        <select id="systemDropdown" class="medium" ng-model="game.gameSystem">
+	                        <!----------------------  Options populated through ng-options from database BUGGGYYYYYYYYYYYYYYYY!!!!!!!!!!!!!!!!	------------------------------->
+	                        <option ng-repeat="system in systems">{{system.name}}</option>
                         </select>
                     </form>
                     <label>Quantity</label>
