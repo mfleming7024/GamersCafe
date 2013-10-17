@@ -19,11 +19,18 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,300,700,800' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Titillium+Web:600,700,700italic,900,400italic,400,300italic,300,200italic,200' rel='stylesheet' type='text/css'>
+    
+    <!-- JS Files -->
+    <script src="https://cdn.firebase.com/v0/firebase.js"></script>
+	<script src="js/vendor/angular.min.js"></script>
+	<script src="js/vendor/angularfire.min.js"></script>
+	<script src="https://cdn.firebase.com/v0/firebase-auth-client.js"></script>
+	<script src="https://cdn.firebase.com/v0/firebase-simple-login.js"></script>
 
     <script src="js/vendor/custom.modernizr.js"></script>
 
 </head>
-<body>
+<body ng-app="gamerscafe" ng-controller="Core">
 
 <!-- Nav Top Bar -->
 <div class="top_bar">
@@ -140,29 +147,13 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td><input type="text" class="gameName" value="GTA V"></td>
-            <td><input type="text" class="system" value="Playstation 3"></td>
+        <tr ng-repeat="game in games">
+            <td><input type="text" class="gameName" value="{{game.gameTitle}}"></td>
+            <td><input type="text" class="system" value="{{game.gameSystem}}"></td>
             <td>09/16/2013</td>
-            <td><input type="text" class="gameQuantity" value="4"></td>
+            <td><input type="text" class="gameQuantity" value="{{game.gameQuantity}}"></td>
             <td>2</td>
-            <td><a href="">Update</a> / <a href="">Delete</a> </td>
-        </tr>
-        <tr>
-            <td><input type="text" class="gameName" value="NBA 2k14"></td>
-            <td><input type="text" class="system" value="Xbox One"></td>
-            <td>09/16/2013</td>
-            <td><input type="text" class="gameQuantity" value="2"></td>
-            <td>0</td>
-            <td><a href="">Update</a> / <a href="">Delete</a> </td>
-        </tr>
-        <tr>
-            <td><input type="text" class="gameName" value="Watch Dog"></td>
-            <td><input type="text" class="system" value="Playstation 4"></td>
-            <td>09/16/2013</td>
-            <td><input type="text" class="gameQuantity" value="2"></td>
-            <td>2</td>
-            <td><a href="">Update</a> / <a href="">Delete</a> </td>
+            <td><a href="" ng-click="updateGame(game)">Update</a> / <a href="" ng-click="deleteGame(game.$id)">Delete</a></td>
         </tr>
         </tbody>
     </table>
@@ -209,5 +200,6 @@
 <script>
     $(document).foundation();
 </script>
+<script src="gamerscafe_final/controllers/core.js"></script>
 </body>
 </html>
