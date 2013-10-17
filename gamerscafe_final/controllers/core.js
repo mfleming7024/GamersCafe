@@ -33,16 +33,15 @@ gamerscafe.controller('Core', ['$scope', 'angularFireCollection', 'angularFireAu
 			} else if ($scope.game.gameQuantity == "" || $scope.game.gameQuantity == null) {
 				console.log("No game quantity given");
 			} else {
-				console.log("addGame clicked", $scope.game);
+				console.log($scope.game);
+				$scope.games.add($scope.game);
 			}
 		}
 	}
 
 	//removes game based on a unique id
 	$scope.deleteGame = function(myid){
-		//$scope.games.remove(myid);
-		console.log(myid);
-		console.log("deleteGame clicked");
+		$scope.games.remove(myid);
 	}
 
 	//updates the games database
