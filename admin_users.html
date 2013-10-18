@@ -5,11 +5,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>Gamers Cafe :: Login/Sign Up!</title>
+    <title>Gamers Cafe :: Admin Users</title>
 
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/foundation.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/foundation.css">
+
     <link rel="stylesheet" href="css/font-awesome.css">
     <link rel="stylesheet" href="css/font-awesome-ie7.css">
 
@@ -18,23 +20,32 @@
     <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Titillium+Web:600,700,700italic,900,400italic,400,300italic,300,200italic,200' rel='stylesheet' type='text/css'>
 
+    <!-- JS Files -->
+    <script src="https://cdn.firebase.com/v0/firebase.js"></script>
+    <script src="js/vendor/angular.min.js"></script>
+    <script src="js/vendor/angularfire.min.js"></script>
+    <script src="https://cdn.firebase.com/v0/firebase-auth-client.js"></script>
+    <script src="https://cdn.firebase.com/v0/firebase-simple-login.js"></script>
+
     <script src="js/vendor/custom.modernizr.js"></script>
 
 </head>
-<body>
+<body ng-app="gamerscafe" ng-controller="Core">
 
 <!-- Nav Top Bar -->
 <div class="top_bar">
-    <div class="row">
+    <!--<div class="top_half_bar"></div>-->
+    <div class="bars row">
         <div id="logo">
             <!-- LOGO -->
             <img src="img/logo.png" alt="Logo"> <!-- END LOGO -->
         </div>
-        <div class="user_login">
-            <a href="login.html" class="login">Login</a>
-            <a href="login.html" class="become_a_gamer">Become A Gamer!</a>
+        <div class="user_panel">
+            <img src="img/sm_profile.png" alt="Small Profile Picture">
+            <a href="#">Erwin Angeles</a>
+            <i class="icon-gear"></i>
         </div>
-    </div>
+    </div><!-- End top_half_bar -->
 </div><!-- End top-bar -->
 
 <div id="top">
@@ -51,7 +62,7 @@
                 <ul class="right top_nav">
                     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
                     <li id="mobile_menu" class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-                    <li><a href="index.html"><i class="icon-home home_icon"></i></a> </li>
+                    <li><a href="#"><i class="icon-home home_icon"></i></a> </li>
 
                     <li class="divider"></li>
                     <li class="active"><a href="#">League/Tournaments</a></li>
@@ -98,7 +109,7 @@
 
 
 
-    <!-- Login/Signup Page -->
+    <!-- Staff Page -->
     <div class="middle">
         <div class="row staff_columns">
             <ul class="admin_nav button-group">
@@ -110,49 +121,52 @@
                 <li><a href="#" class="small button a_dropdown">Station</a></li>
                 <li><a href="#" class="small button a_dropdown">Games</a></li>
             </ul>
+
             <div class="splitter"></div>
 
-            <div id="queue_content">
-                <h2>Login/Become A Gamer?</h2>
-                <div class="large-6 columns">
-                    <div class="login_form">
-                        <h1>Login</h1>
-                        <form>
-                                <label>Email Address</label>
-                                <input class="input_login" type="text" placeholder="email@email.com">
-                                <label>Password</label>
-                                <input class="input_login" type="text" placeholder="Password">
+            <!-- Gamer Tracking System GTS -->
+            <div id="admin_games">
+                <h2>Systems List</h2>
 
-                                <a href="#" class="button">Login</a> or <a href="#"><img class="fb_login" src="img/fb_login.png"></a>
-                        </form>
-                    </div>
+                <div class="search">
+                    <form>
+                        <input type="text" class="systemSearch" placeholder="Search System">
+                    </form>
+                    <a href="admin_add_system.html" class="small button a_dropdown">Add System</a>
                 </div>
-                <div class="large-6 columns">
-                    <div class="sign_up_page">
-                        <h1>Become A Gamer!</h1>
-                        <form>
-                            <input type="text" class="email_input" placeholder="Email">
-                            <input type="text" class="signup_name" placeholder="Full Name">
-                            <input type="password" class="password_input" placeholder="Password">
-                            <input type="password" class="confirm_password_input" placeholder="Confirm Password">
-                            <a href="#" class="button">Join</a> or <a href="#"><img class="fb_login_2" src="img/fb_login.png"></a>
-                        </form>
-                    </div>
-                </div>
-
+                <!-- Table -->
+                <table class="gts">
+                    <thead>
+                    <tr>
+                        <th width="200">System Name</th>
+                        <th>Serial Number</th>
+                        <th>Assigned Station</th>
+                        <th width="150">Date Added</th>
+                        <th width="10%">Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="game in games">
+                        <td><input type="text" class="systemName" value="Playstation 4"></td>
+                        <td><input type="text" class="systemSerial" value="012x8734hasd9"></td>
+                        <td><input type="text" class="systemStation" value="None"></td>
+                        <td><input type="text" class="systemAddedDate" value="09/23/2014"></td>
+                        <td><a href="" ng-click="updateGame(game)">Update</a> / <a href="" ng-click="deleteGame(game.$id)">Delete</a></td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
+
         </div>
-
-        <div class="row">
-            <div id="footer">
-
-            </div>
-        </div>
-
 
 
     </div>
 
+    <div class="row">
+        <div id="footer">
+
+        </div>
+    </div>
 
     <script>
         document.write('<script src=' +
@@ -184,5 +198,6 @@
     <script>
         $(document).foundation();
     </script>
+    <script src="gamerscafe_final/controllers/core.js"></script>
 </body>
 </html>
