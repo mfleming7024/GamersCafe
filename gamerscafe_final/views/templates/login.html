@@ -1,17 +1,15 @@
 <!-- Nav Top Bar -->
 <div class="top_bar">
-    <!--<div class="top_half_bar"></div>-->
-    <div class="bars row">
+    <div class="row">
         <div id="logo">
             <!-- LOGO -->
-            <img src="views/images/logo.png" alt="Logo"> <!-- END LOGO -->
+            <img src="img/logo.png" alt="Logo"> <!-- END LOGO -->
         </div>
-        <div class="user_panel">
-            <img src="views/images/sm_profile.png" alt="Small Profile Picture">
-            <a href="#">Erwin Angeles</a>
-            <i class="icon-gear"></i>
+        <div class="user_login">
+            <a href="login.html" class="login">Login</a>
+            <a href="login.html" class="become_a_gamer">Become A Gamer!</a>
         </div>
-    </div><!-- End top_half_bar -->
+    </div>
 </div><!-- End top-bar -->
 
 <div id="top">
@@ -28,7 +26,7 @@
                 <ul class="right top_nav">
                     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
                     <li id="mobile_menu" class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-                    <li><a href="#"><i class="icon-home home_icon"></i></a> </li>
+                    <li><a href="index.html"><i class="icon-home home_icon"></i></a> </li>
 
                     <li class="divider"></li>
                     <li class="active"><a href="#">League/Tournaments</a></li>
@@ -75,7 +73,7 @@
 
 
 
-    <!-- Staff Page -->
+    <!-- Login/Signup Page -->
     <div class="middle">
         <div class="row staff_columns">
             <ul class="admin_nav button-group">
@@ -87,67 +85,45 @@
                 <li><a href="#" class="small button a_dropdown">Station</a></li>
                 <li><a href="#" class="small button a_dropdown">Games</a></li>
             </ul>
-
-
-
             <div class="splitter"></div>
 
-            <!-- Add Gamer to GTS -->
-            <form>
-                <fieldset>
+            <div id="queue_content">
+                <h2>Login/Become A Gamer?</h2>
+                <div class="large-6 columns">
+                    <div class="login_form">
+                        <h1>Login</h1>
+                        <form>
+                                <label>Email Address</label>
+                                <input class="input_login" type="text" placeholder="email@email.com">
+                                <label>Password</label>
+                                <input class="input_login" type="text" placeholder="Password">
 
-                    <label>Email Address</label>
-                    <input class="staff_add_gamer" type="text" placeholder="Enter Gamers Email" value="{{tempStation.username}}">
-                    <form class="custom">
-                    </form>
-                    <label>Station</label>
-                    <form class="custom">
-                        <select id="customDropdown" class="medium">
-                            <option>Station 1 (PS4)</option>
-                            <option>Station 5 (XBOX One)</option>
-                            <option>Station 12 (PC)</option>
-                        </select>
-                    </form>
-                    <label>Games</label>
-                    <form class="custom">
-                        <select id="games_option" class="medium">
-                            <option>GTA V</option>
-                            <option>Hello Kitty</option>
-                            <option>Beyond Two Souls</option>
-                        </select>
-                    </form>
-                    <div id="points">
-                        <h5>Points:</h5>
-                        <p>1000</p>
-                        <form class="custom">
-                            <label for="checkbox1">
-                                <input type="checkbox" id="checkbox1" style="display: none;">
-                                <span class="custom checkbox"></span> Use 500 Points?
-                            </label>
+                                <a href="#" class="button">Login</a> or <a href="#"><img class="fb_login" src="img/fb_login.png"></a>
                         </form>
                     </div>
-                    <label>Time</label>
-                    <form class="custom">
-                        <select id="time_dropdown" class="medium">
-                            <option>30 Minutes</option>
-                            <option>60 Minutes</option>
-                            <option>90 Minutes</option>
-                            <option>120 Minutes</option>
-                            <option>150 Minutes</option>
-                        </select>
-                    </form>
-                    <a href="#" class="button">Extend!</a>
-                    <a href="#/admin" class="button">Cancel</a>
-                    <a href="#/gts_cancel" class="button">Remove</a>
-                </fieldset>
-            </form>
+                </div>
+                <div class="large-6 columns">
+                    <div class="sign_up_page">
+                        <h1>Become A Gamer!</h1>
+                        <form>
+                            <input type="text" class="email_input" placeholder="Email">
+                            <input type="text" class="signup_name" placeholder="Full Name">
+                            <input type="password" class="password_input" placeholder="Password">
+                            <input type="password" class="confirm_password_input" placeholder="Confirm Password">
+                            <a href="#" class="button">Join</a> or <a href="#"><img class="fb_login_2" src="img/fb_login.png"></a>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div id="footer">
+
+            </div>
         </div>
 
 
-    </div>
 
-    <div class="row">
-        <div id="footer">
-
-        </div>
     </div>

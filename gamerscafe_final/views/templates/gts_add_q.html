@@ -4,10 +4,10 @@
     <div class="bars row">
         <div id="logo">
             <!-- LOGO -->
-            <img src="views/images/logo.png" alt="Logo"> <!-- END LOGO -->
+            <img src="img/logo.png" alt="Logo"> <!-- END LOGO -->
         </div>
         <div class="user_panel">
-            <img src="views/images/sm_profile.png" alt="Small Profile Picture">
+            <img src="img/sm_profile.png" alt="Small Profile Picture">
             <a href="#">Erwin Angeles</a>
             <i class="icon-gear"></i>
         </div>
@@ -87,67 +87,79 @@
                 <li><a href="#" class="small button a_dropdown">Station</a></li>
                 <li><a href="#" class="small button a_dropdown">Games</a></li>
             </ul>
-
-
-
             <div class="splitter"></div>
 
-            <!-- Add Gamer to GTS -->
-            <form>
-                <fieldset>
-
-                    <label>Email Address</label>
-                    <input class="staff_add_gamer" type="text" placeholder="Enter Gamers Email" value="{{tempStation.username}}">
-                    <form class="custom">
+            <div id="queue_content">
+                <h2>Add To Queue?</h2>
+                <div class="add_to_queue">
+                    <form>
+                        <label>Name</label>
+                        <input class="staff_add_gamer" type="text" placeholder="Enter Person Name">
                     </form>
-                    <label>Station</label>
-                    <form class="custom">
-                        <select id="customDropdown" class="medium">
-                            <option>Station 1 (PS4)</option>
-                            <option>Station 5 (XBOX One)</option>
-                            <option>Station 12 (PC)</option>
-                        </select>
-                    </form>
-                    <label>Games</label>
-                    <form class="custom">
-                        <select id="games_option" class="medium">
-                            <option>GTA V</option>
-                            <option>Hello Kitty</option>
-                            <option>Beyond Two Souls</option>
-                        </select>
-                    </form>
-                    <div id="points">
-                        <h5>Points:</h5>
-                        <p>1000</p>
-                        <form class="custom">
-                            <label for="checkbox1">
-                                <input type="checkbox" id="checkbox1" style="display: none;">
-                                <span class="custom checkbox"></span> Use 500 Points?
-                            </label>
-                        </form>
-                    </div>
-                    <label>Time</label>
-                    <form class="custom">
-                        <select id="time_dropdown" class="medium">
-                            <option>30 Minutes</option>
-                            <option>60 Minutes</option>
-                            <option>90 Minutes</option>
-                            <option>120 Minutes</option>
-                            <option>150 Minutes</option>
-                        </select>
-                    </form>
-                    <a href="#" class="button">Extend!</a>
-                    <a href="#/admin" class="button">Cancel</a>
-                    <a href="#/gts_cancel" class="button">Remove</a>
-                </fieldset>
-            </form>
+                    <div class="add_gamer_q button">Add</div>
+                </div>
+            </div>
         </div>
+
+        <div class="row">
+            <div id="footer">
+
+            </div>
+        </div>
+
 
 
     </div>
 
-    <div class="row">
-        <div id="footer">
+    <!-- Update gamer -->
+    <!-- MODALS -->
+    <div id="update_gamer" class="reveal-modal small">
+        <form>
+            <fieldset>
+                <legend>Update Gamer</legend>
 
-        </div>
+                <label>Email Address</label>
+                <input class="staff_add_gamer" type="text" placeholder="Enter Gamers Email">
+                <form class="custom">
+                </form>
+                <label>Station</label>
+                <form class="custom">
+                    <select class="customDropdown" class="medium">
+                        <option>Station 1 (PS4)</option>
+                        <option>Station 5 (XBOX One)</option>
+                        <option>Station 12 (PC)</option>
+                    </select>
+                </form>
+                <label>Games</label>
+                <form class="custom">
+                    <select class="games_option" class="medium">
+                        <option>GTA V</option>
+                        <option>Hello Kitty</option>
+                        <option>Beyond Two Souls</option>
+                    </select>
+                </form>
+                <div class="points">
+                    <h5>Points:</h5>
+                    <p>1000</p>
+                    <form class="custom">
+                        <label for="checkbox1">
+                            <input type="checkbox" id="checkbox2" style="display: none;">
+                            <span class="custom checkbox"></span> Use 500 Points?
+                        </label>
+                    </form>
+                </div>
+                <label>Time</label>
+                <form class="custom">
+                    <select id="time_dropdown2" class="medium">
+                        <option>30 Minutes</option>
+                        <option>60 Minutes</option>
+                        <option>90 Minutes</option>
+                        <option>120 Minutes</option>
+                        <option>150 Minutes</option>
+                    </select>
+                </form>
+                <a href="#" class="button">Update!</a>
+                <a href="#" class="button">Cancel</a>
+            </fieldset>
+        </form>
     </div>

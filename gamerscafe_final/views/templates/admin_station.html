@@ -4,10 +4,10 @@
     <div class="bars row">
         <div id="logo">
             <!-- LOGO -->
-            <img src="views/images/logo.png" alt="Logo"> <!-- END LOGO -->
+            <img src="img/logo.png" alt="Logo"> <!-- END LOGO -->
         </div>
         <div class="user_panel">
-            <img src="views/images/sm_profile.png" alt="Small Profile Picture">
+            <img src="img/sm_profile.png" alt="Small Profile Picture">
             <a href="#">Erwin Angeles</a>
             <i class="icon-gear"></i>
         </div>
@@ -88,59 +88,41 @@
                 <li><a href="#" class="small button a_dropdown">Games</a></li>
             </ul>
 
-
-
             <div class="splitter"></div>
 
-            <!-- Add Gamer to GTS -->
-            <form>
-                <fieldset>
+            <!-- Gamer Tracking System GTS -->
+            <div id="admin_games">
+                <h2>Station List</h2>
 
-                    <label>Email Address</label>
-                    <input class="staff_add_gamer" type="text" placeholder="Enter Gamers Email" value="{{tempStation.username}}">
-                    <form class="custom">
+                <div class="search">
+                    <form>
+                        <input type="text" class="stationSearch" placeholder="Search Station">
                     </form>
-                    <label>Station</label>
-                    <form class="custom">
-                        <select id="customDropdown" class="medium">
-                            <option>Station 1 (PS4)</option>
-                            <option>Station 5 (XBOX One)</option>
-                            <option>Station 12 (PC)</option>
-                        </select>
-                    </form>
-                    <label>Games</label>
-                    <form class="custom">
-                        <select id="games_option" class="medium">
-                            <option>GTA V</option>
-                            <option>Hello Kitty</option>
-                            <option>Beyond Two Souls</option>
-                        </select>
-                    </form>
-                    <div id="points">
-                        <h5>Points:</h5>
-                        <p>1000</p>
-                        <form class="custom">
-                            <label for="checkbox1">
-                                <input type="checkbox" id="checkbox1" style="display: none;">
-                                <span class="custom checkbox"></span> Use 500 Points?
-                            </label>
-                        </form>
-                    </div>
-                    <label>Time</label>
-                    <form class="custom">
-                        <select id="time_dropdown" class="medium">
-                            <option>30 Minutes</option>
-                            <option>60 Minutes</option>
-                            <option>90 Minutes</option>
-                            <option>120 Minutes</option>
-                            <option>150 Minutes</option>
-                        </select>
-                    </form>
-                    <a href="#" class="button">Extend!</a>
-                    <a href="#/admin" class="button">Cancel</a>
-                    <a href="#/gts_cancel" class="button">Remove</a>
-                </fieldset>
-            </form>
+                    <a href="admin_add_station.html" class="small button a_dropdown">Add Station</a>
+                </div>
+                <!-- Table -->
+                <table class="gts">
+                    <thead>
+                    <tr>
+                        <th width="200">Station Number</th>
+                        <th>System</th>
+                        <th>Television Model</th>
+                        <th width="150">Television Serial</th>
+                        <th width="150">Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="game in games">
+                        <td><input type="text" class="stationNumber" value="1"></td>
+                        <td><input type="text" class="stationSystem" value="Playstation 4"></td>
+                        <td><input type="text" class="stationTV" value="Sony 42inch LED"></td>
+                        <td><input type="text" class="stationTVSerial" value="asad123235"></td>
+                        <td><a href="" ng-click="updateGame(game)">Update</a> / <a href="" ng-click="deleteGame(game.$id)">Delete</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
         </div>
 
 

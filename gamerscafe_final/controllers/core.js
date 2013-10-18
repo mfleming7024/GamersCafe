@@ -1,5 +1,3 @@
-var gamerscafe = angular.module("gamerscafe", ["firebase"]);
-
 gamerscafe.controller('Core', ['$scope', 'angularFireCollection', 'angularFireAuth', function mtCtrl($scope, angularFireCollection, angularFireAuth){
 
 	// Creates an instance of Firebase and connects to our URL
@@ -20,28 +18,14 @@ gamerscafe.controller('Core', ['$scope', 'angularFireCollection', 'angularFireAu
 
 	//create a game and adds it to the database
 	$scope.addGame = function(){
-		//$scope.games.add({title: "Halo 4", information: "blah blah", images: ["url1","url2"], system: "Xbox 360", genre: "Shooter"});
-		if ($scope.game == "" || $scope.game == null) {
-			console.log("game does not exist");
-		} else {	
-			if ($scope.game.gameSystem == "" || $scope.game.gameSystem == null) {
-				console.log("No game system given");
-			} else if ($scope.game.gameTitle == "" || $scope.game.gameTitle == null) {
-				console.log("No game name given");
-			} else if ($scope.game.gameArtUrl == "" || $scope.game.gameArtUrl == null) {
-				console.log("No game art url given");
-			} else if ($scope.game.gameQuantity == "" || $scope.game.gameQuantity == null) {
-				console.log("No game quantity given");
-			} else {
-				console.log($scope.game);
-				$scope.games.add($scope.game);
-			}
-		}
+		$scope.games.add({title: "Halo 4", information: "blah blah", images: ["url1","url2"], system: "Xbox 360", genre: "Shooter"});
+		console.log("addGame clicked");
 	}
 
 	//removes game based on a unique id
 	$scope.deleteGame = function(myid){
 		$scope.games.remove(myid);
+		console.log("deleteGame clicked");
 	}
 
 	//updates the games database
@@ -127,6 +111,11 @@ gamerscafe.controller('Core', ['$scope', 'angularFireCollection', 'angularFireAu
 
 	$scope.addStationToHistory = function(){
 		$scope.stationHistory.add($scope.startTicket);
+	}
+
+	$scope.editGamerStation = function(tempStation){
+		$scope.tempStation = tempStation;
+		console.log("station :"+ $scope.tempStation);
 	}
 
 	//************************************Staff CRUD***************************************************
