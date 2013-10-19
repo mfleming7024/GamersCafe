@@ -48,9 +48,9 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', 'angularFireCollection'
 	//have fields instead of string literal
 	$scope.updateGame = function(game){
 		//Grabs the game properties from the scope to pass into the game object and update it
-		var tempGameTitle = document.querySelector("#tempGameTitle").value;
-		var tempGameSystem = document.querySelector("#tempGameSystem").value;
-		var tempGameQuantity = document.querySelector("#tempGameQuantity").value;
+		var tempGameTitle = document.querySelector("#tempGameTitle" + game.$id).value;
+		var tempGameSystem = document.querySelector("#tempGameSystem" + game.$id).value;
+		var tempGameQuantity = document.querySelector("#tempGameQuantity" + game.$id).value;
 		
 		//Sets the game properties equal to whatever value is in the text inputs
 		game.gameTitle = tempGameTitle;

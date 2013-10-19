@@ -113,10 +113,10 @@
         </thead>
         <tbody>
         <tr ng-repeat="game in games">
-            <td><input type="text" class="gameName" value="{{game.gameTitle}}" id="tempGameTitle"></td>
-            <td><input type="text" class="system" value="{{game.gameSystem}}" id="tempGameSystem"></td>
+            <td><input type="text" class="gameName" value="{{game.gameTitle}}" id="tempGameTitle{{game.$id}}"></td>
+            <td><input type="text" class="system" value="{{game.gameSystem}}" id="tempGameSystem{{game.$id}}"></td>
 	        <td>09/16/2013</td>
-	        <td><input type="text" class="gameQuantity" value="{{game.gameQuantity}}" id="tempGameQuantity"></td>
+	        <td><input type="text" class="gameQuantity" value="{{game.gameQuantity}}" id="tempGameQuantity{{game.$id}}"></td>
 	        <td>2</td>
 	        <td><a href="" ng-click="updateGame(game)">Update</a> / <a href="" ng-click="deleteGame(tempGame.$id)">Delete</a></td>
 	     </tr>        
