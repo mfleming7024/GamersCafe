@@ -109,12 +109,12 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr ng-repeat="system in systems">
-                        <td><input type="text" class="systemName" value="{{system.systemName}}"></td>
-                        <td><input type="text" class="systemSerial" value="{{system.systemSerial}}"></td>
-                        <td><input type="text" class="systemStation" value="{{system.systemStation}}"></td>
-                        <td><input type="text" class="systemAddedDate" value="{{system.AddedDate}}"></td>
-                        <td><a href="" ng-click="updateGame(game)">Update</a> / <a href="" ng-click="deleteSystem(system.$id)">Delete</a></td>
+                    <tr ng-repeat="tempSystem in systems">
+                        <td><input type="text" class="systemName" value="{{tempSystem.systemName}}" id="tempSystemName{{tempSystem.$id}}"></td>
+                        <td><input type="text" class="systemSerial" value="{{tempSystem.systemSerial}}" id="tempSystemSerial{{tempSystem.$id}}"></td>
+                        <td><input type="text" class="systemStation" value="{{tempSystem.systemStation}}" id="tempSystemStation{{tempSystem.$id}}"></td>
+                        <td><input type="text" class="systemAddedDate" value="{{tempSystem.addedDate}}" ></td>
+                        <td><a href="" ng-click="updateSystem(tempSystem)">Update</a> / <a href="" ng-click="deleteSystem(tempSystem.$id)">Delete</a></td>
                     </tr>
                     </tbody>
                 </table>
