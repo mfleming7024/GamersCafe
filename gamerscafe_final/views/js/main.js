@@ -89,7 +89,7 @@ gamerscafe.config(function ($routeProvider){
 		templateUrl:"views/templates/gts_cancel.html",
 	})
 
-	.when("/gts_edit_gamer", {
+	.when("/gts_edit_gamer/:staionId", {
 		controller:"Core",
 		templateUrl:"views/templates/gts_edit_gamer.html",
 	})
