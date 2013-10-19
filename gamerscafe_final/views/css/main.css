@@ -282,11 +282,6 @@ h1, h2, h3, p, a {
 #gts_panel{
 
 }
-
-#gts_panel h2{
-    clear: both;
-}
-
 .gts_panel{
     margin-bottom: 10px!important;
 
