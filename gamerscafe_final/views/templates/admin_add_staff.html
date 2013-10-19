@@ -1,20 +1,3 @@
-<!-- Nav Top Bar -->
-<div class="top_bar">
-    <!--<div class="top_half_bar"></div>-->
-    <div class="bars row">
-        <div id="logo">
-            <!-- LOGO -->
-            <img src="views/img/logo.png" alt="Logo"> <!-- END LOGO -->
-        </div>
-        <div class="user_panel">
-            <img src="views/img/sm_profile.png" alt="Small Profile Picture">
-            <a href="#/admin">Erwin Angeles</a>
-            <i class="icon-gear"></i>
-        </div>
-    </div><!-- End top_half_bar -->
-</div><!-- End top-bar -->
-
-<div id="top">
     <!-- Navigation -->
     <div id="main_nav" class="row">
         <nav class="top-bar">
@@ -85,41 +68,38 @@
                 <li><a href="#/admin_gp" class="small button a_dropdown">Gamer Points</a></li>
                 <li><a href="#/admin_analytics" class="small button a_dropdown">Analytics</a></li>
             </ul>
+
             <div class="splitter"></div>
 
             <!-- Gamer Tracking System GTS -->
-            <div id="admin_games">
-                <h2>Station List</h2>
+            <div id="admin_staff" ng-controller="Core">
+                <h2>Add Staff</h2>
 
-                <div class="search">
-                    <form>
-                        <input type="text" class="stationSearch" placeholder="Search Station">
-                    </form>
-                    <a href="admin_add_station.html" class="small button a_dropdown">Add Station</a>
-                </div>
-                <!-- Table -->
-                <table class="gts">
-                    <thead>
-                    <tr>
-                        <th width="200">Station Number</th>
-                        <th>System</th>
-                        <th>Television Model</th>
-                        <th width="150">Television Serial</th>
-                        <th width="150">Action</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr ng-repeat="game in games">
-                        <td><input type="text" class="stationNumber" value="1"></td>
-                        <td><input type="text" class="stationSystem" value="Playstation 4"></td>
-                        <td><input type="text" class="stationTV" value="Sony 42inch LED"></td>
-                        <td><input type="text" class="stationTVSerial" value="asad123235"></td>
-                        <td><a href="" ng-click="updateGame(game)">Update</a> / <a href="" ng-click="deleteGame(game.$id)">Delete</a></td>
-                    </tr>
-                    </tbody>
-                </table>
+                <form>
+                    <fieldset>
+                        <label>Name</label>
+                        <input class="input_add_staffName" type="text" placeholder="Staff Name" ng-model="staff.staffName">
+                        <input class="input_add_staffNumber" type="text" placeholder="Cell Number" ng-model="staff.staffNumber">
+                        <input class="input_add_staffEmail" type="email" placeholder="Email" ng-model="staff.staffEmail">
+                        <input class="input_add_staffPassword" type="password" placeholder="Password" ng-model="staff.staffPassword">
+                        <form class="custom">
+                        </form>
+                        <label>Permission</label>
+                        <form class="custom">
+                            <select id="permissionSelection" class="small" ng-model="staff.staffPermission">
+                                <!----------------------  Options populated through ng-options from database BUGGGYYYYYYYYYYYYYYYY!!!!!!!!!!!!!!!!	------------------------------->
+                                <!--  <option ng-repeat="system in systems">{{system.name}}</option> -->
+                                <option>GTS</option>
+                                <option>League</option>
+                            </select>
+                        </form>
+                        <form novalidate ng-submit="addStaff()">
+                            <input type="submit" class="button" value="Add" />
+                            <a href="#/admin_staff" class="button">Cancel</a>
+                        </form>
+                    </fieldset>
+                </form>
             </div>
-
         </div>
 
 
@@ -130,3 +110,5 @@
 
         </div>
     </div>
+
+

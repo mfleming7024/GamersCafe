@@ -15,11 +15,6 @@
 </div><!-- End top-bar -->
 
 <div id="top">
-    <!--<div id="logo" class="row">-->
-    <!--&lt;!&ndash; LOGO &ndash;&gt;-->
-    <!--<object data="img/logo.svg" type="image/svg+xml" class="gamer_logo">-->
-    <!--</object> &lt;!&ndash; END LOGO &ndash;&gt;-->
-    <!--</div>-->
 
     <!-- Navigation -->
     <div id="main_nav" class="row">
@@ -82,50 +77,49 @@
                 <li><a href="#" data-dropdown="admin_dd" class="small button dropdown">Admin Settings</i> </a></li>
             </ul>
             <ul id="admin_dd" data-dropdown-content class="f-dropdown">
+                <li><a href="#/admin" class="small button a_dropdown">GTS</a></li>
                 <li><a href="#/admin_users" class="small button a_dropdown">Users</a></li>
                 <li><a href="#/admin_staff" class="small button a_dropdown">Staff</a></li>
                 <li><a href="#/admin_station" class="small button a_dropdown">Station</a></li>
+                <li><a href="#/admin_systems" class="small button a_dropdown">System</a></li>
                 <li><a href="#/admin_games" class="small button a_dropdown">Games</a></li>
-
+                <li><a href="#/admin_gp" class="small button a_dropdown">Gamer Points</a></li>
+                <li><a href="#/admin_analytics" class="small button a_dropdown">Analytics</a></li>
             </ul>
             <div class="splitter"></div>
 
-            <!-- Gamer Tracking System GTS -->
-            <div id="admin_games">
-                <h2>Systems List</h2>
-
+            <!-- Admin Users -->
+            <div id="admin_users">
+                <h2>User List</h2>
                 <div class="search">
                     <form>
-                        <input type="text" class="systemSearch" placeholder="Search System">
+                        <input type="text" class="systemSearch" placeholder="Search Gamer">
                     </form>
-                    <a href="admin_add_system.html" class="small button a_dropdown">Add System</a>
+                    <a href="admin_add_user.html" class="small button a_dropdown">Add Gamer</a>
                 </div>
                 <!-- Table -->
                 <table class="gts">
                     <thead>
                     <tr>
-                        <th width="200">System Name</th>
-                        <th>Serial Number</th>
-                        <th>Assigned Station</th>
-                        <th width="150">Date Added</th>
+                        <th width="200">Name</th>
+                        <th>Email</th>
+                        <th>Joined Date</th>
+                        <th width="150">Gamer Points</th>
                         <th width="10%">Action</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr ng-repeat="game in games">
-                        <td><input type="text" class="systemName" value="Playstation 4"></td>
-                        <td><input type="text" class="systemSerial" value="012x8734hasd9"></td>
-                        <td><input type="text" class="systemStation" value="None"></td>
-                        <td><input type="text" class="systemAddedDate" value="09/23/2014"></td>
+                        <td><input type="text" class="userName" value="Erwin Angeles"></td>
+                        <td><input type="text" class="userEmail" value="dropthatthunthun@gmail.com"></td>
+                        <td><input type="text" class="userJoinDate" value="10/28/13"></td>
+                        <td><input type="text" class="userGamerPoints" value="1,500"></td>
                         <td><a href="" ng-click="updateGame(game)">Update</a> / <a href="" ng-click="deleteGame(game.$id)">Delete</a></td>
                     </tr>
                     </tbody>
                 </table>
             </div>
-
         </div>
-
-
     </div>
 
     <div class="row">
