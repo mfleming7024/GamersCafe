@@ -189,29 +189,37 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', 'angularFireCollection'
 
     //************************************Active stations database***************************************************
 
-    //url to the data needed
-    var urlActiveStations = new Firebase('https://gamerscafe.firebaseio.com/gamerscafe/activeStations');
+   //url to the data needed
+   var urlActiveStations = new Firebase('https://gamerscafe.firebaseio.com/gamerscafe/activeStations');
 
-    //collects the info from the database for use.
-    $scope.activeStations = angularFireCollection(urlActiveStations);
+   //collects the info from the database for use.
+   $scope.activeStations = angularFireCollection(urlActiveStations,function(snap)
+   {
+       var stations = snap.val();
+       if(typeof $routeParams !== "undefined"){
+           $scope.tempStation =  stations[$routeParams.stationId];
+       }
+   });
 
-    //create a active station and adds it to the database
-    $scope.addActiveStation = function(){
-        $scope.activeStations.add({stationNumber: "1", userPic:"http://graph.facebook.com/chris.henry/picture?type=small", username:"Laothud", boxart:"views/images/gtav.jpg", currentTime:time, countdownHours:"24", countdownMin: "00", quedName:"None", quedTime:"00:00"});
-        console.log("add ActiveStations clicked");
-    }
+   //create a active station and adds it to the database
+   $scope.addActiveStation = function(){
+       $scope.activeStations.add({stationNumber: "1", userPic:"http://graph.facebook.com/chris.henry/picture?type=small", username:"Laothud", boxart:"views/images/gtav.jpg", currentTime:time, countdownHours:"24", countdownMin: "00", quedName:"None", quedTime:"00:00"});
+       console.log("add ActiveStations clicked");
+   }
 
-    //removes activeStations based on a unique id
-    $scope.deleteActiveStation = function(myid){
-        $scope.activeStations.remove(myid);
-        console.log("delete ActiveStations clicked");
-    }
+   //removes activeStations based on a unique id
+   $scope.deleteActiveStation = function(myid){
+       $scope.activeStations.remove(myid);
+       console.log("delete ActiveStations clicked");
+   }
 
-    //updates the activeStations database
-    //have fields instead of string literal
-    $scope.updateActiveStation = function(station){
-        $scope.activeStations.update(station);
-    }
+   //updates the activeStations database
+   //have fields instead of string literal
+   $scope.updateActiveStation = function(station){
+       $scope.activeStations.update(station);
+   }
+
+
 
     //************************************Qued stations database***************************************************
 
