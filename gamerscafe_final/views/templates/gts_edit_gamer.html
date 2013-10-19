@@ -97,38 +97,27 @@
                 <fieldset>
 
                     <label>Email Address:</label>
-                    <input class="staff_add_gamer" type="text" value="{{tempStation.username}}">
+                    <input class="staff_add_gamer" type="text" ng-model="tempStation.username">
                     <form class="custom">
                     </form>
                     <label>Station</label>
                     <form class="custom">
+                        <!--dropdown should be populated with empty stations and current station. -->
                         <select id="customDropdown" class="medium">
-                            <option>Station 1 (PS4)</option>
-                            <option>Station 5 (XBOX One)</option>
-                            <option>Station 12 (PC)</option>
+                            
                         </select>
                     </form>
                     <label>Games</label>
                     <form class="custom">
+                        <!--dropdown should be populated with games-->
                         <select id="games_option" class="medium">
-                            <option>GTA V</option>
-                            <option>Hello Kitty</option>
-                            <option>Beyond Two Souls</option>
+                            
                         </select>
                     </form>
-                    <div id="points">
-                        <h5>Points:</h5>
-                        <p>1000</p>
-                        <form class="custom">
-                            <label for="checkbox1">
-                                <input type="checkbox" id="checkbox1" style="display: none;">
-                                <span class="custom checkbox"></span> Use 500 Points?
-                            </label>
-                        </form>
-                    </div>
                     <label>Time</label>
                     <form class="custom">
                         <select id="time_dropdown" class="medium">
+                            <option>0 Minutes</option>
                             <option>30 Minutes</option>
                             <option>60 Minutes</option>
                             <option>90 Minutes</option>
