@@ -92,6 +92,10 @@ gamerscafe.config(function ($routeProvider){
             controller:"Core",
             templateUrl:"views/templates/admin_add_staff.html"
         })
+        .when("/admin_add_station", {
+            controller:"Core",
+            templateUrl:"views/templates/admin_add_station.html"
+        })
 
         .when("/gts_edit_gamer/:staionId", {
             controller:"Core",

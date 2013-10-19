@@ -4,11 +4,11 @@
     <div class="bars row">
         <div id="logo">
             <!-- LOGO -->
-            <img src="views/img/logo.png" alt="Logo"> <!-- END LOGO -->
+            <img src="img/logo.png" alt="Logo"> <!-- END LOGO -->
         </div>
         <div class="user_panel">
-            <img src="views/img/sm_profile.png" alt="Small Profile Picture">
-            <a href="#/admin">Erwin Angeles</a>
+            <img src="img/sm_profile.png" alt="Small Profile Picture">
+            <a href="#">Erwin Angeles</a>
             <i class="icon-gear"></i>
         </div>
     </div><!-- End top_half_bar -->
@@ -75,67 +75,59 @@
 
 
 
-<!-- Staff Page -->
-<div class="middle">
-    <div class="row staff_columns">
-        <ul class="admin_nav button-group">
-            <li><a href="#" data-dropdown="admin_dd" class="small button dropdown">Admin Settings</i> </a></li>
-        </ul>
-        <ul id="admin_dd" data-dropdown-content class="f-dropdown">
-            <li><a href="#" class="small button a_dropdown">Users</a></li>
-            <li><a href="#" class="small button a_dropdown">Staff</a></li>
-            <li><a href="#" class="small button a_dropdown">Station</a></li>
-            <li><a href="#" class="small button a_dropdown">Games</a></li>
-        </ul>
+    <!-- Staff Page -->
+    <div class="middle">
+        <div class="row staff_columns">
+            <ul class="admin_nav button-group">
+                <li><a href="#" data-dropdown="admin_dd" class="small button dropdown">Admin Settings</i> </a></li>
+            </ul>
+            <ul id="admin_dd" data-dropdown-content class="f-dropdown">
+                <li><a href="#" class="small button a_dropdown">Users</a></li>
+                <li><a href="#" class="small button a_dropdown">Staff</a></li>
+                <li><a href="#" class="small button a_dropdown">Station</a></li>
+                <li><a href="#" class="small button a_dropdown">Games</a></li>
+            </ul>
 
+            <div class="splitter"></div>
 
+            <!-- Gamer Tracking System GTS -->
+            <div id="admin_games" ng-controller="Core">
+                <h2>Add Station</h2>
 
-        <div class="splitter"></div>
-
-        <!-- Gamer Tracking System GTS -->
-        <div id="admin_games" ng-controller="Core">
-            <h2>Add Game</h2>
-
-            <form>
-                <fieldset>
-                    <label>Game Name</label>
-                    <input class="staff_add_gamer" type="text" placeholder="Game Name" ng-model="game.gameTitle">
-                    <form class="custom">
-                    </form>
-                    <label>System</label>
-                    <form class="custom">
-                        <select id="systemDropdown" class="medium" ng-model="game.gameSystem">
-	                        <!----------------------  Options populated through ng-options from database BUGGGYYYYYYYYYYYYYYYY!!!!!!!!!!!!!!!!	------------------------------->
-	                       <!--  <option ng-repeat="system in systems">{{system.name}}</option> -->
-	                       <option>Playstation 4</option>
-	                       <option>Playstation 3</option>
-	                       <option>Xbox 360</option>
-	                       <option>Xbox One</option>
-                        </select>
-                    </form>          
-                    <label>Quantity</label>
-                    <form class="custom">
-                        <input type="number" class="small" name="quantity" min="1" max="10" ng-model="game.gameQuantity">
-                    </form>
-                    <label>Box Art URL</label>
-                    <form class="custom">
-                        <input type="text" class="medium" ng-model="game.gameArtUrl">
-                        <img src="{{game.gameArtUrl}}" width="200" height="300" />
-                    </form>
-                    <form novalidate ng-submit="addGame()">
-                    	<input type="submit" class="button" value="Add" />
-                    	<a href="admin_games.html" class="button">Cancel</a>
-                    </form>
-                </fieldset>
-            </form>
+                <form>
+                    <fieldset>
+                        <label>Station Number</label>
+                        <input class="input_add_stationNumber" type="number" placeholder="System Number" ng-model="game.gameTitle">
+                        <form class="custom">
+                        </form>
+                        <label>Serial Number</label>
+                        <form class="custom">
+                            <select id="systemSelection" class="small" ng-model="game.gameSystem">
+                                <!----------------------  Options populated through ng-options from database BUGGGYYYYYYYYYYYYYYYY!!!!!!!!!!!!!!!!	------------------------------->
+                                <!--  <option ng-repeat="system in systems">{{system.name}}</option> -->
+                                <option>Playstation 4</option>
+                                <option>Playstation 3</option>
+                            </select>
+                        </form>
+                        <label>Television</label>
+                        <input class="input_add_stationTelevision" type="text" placeholder="100inch LED Sony Bravia" ng-model="game.gameTitle">
+                        <label>Television Serial</label>
+                        <input class="input_add_stationTelevisionSerial" type="text" placeholder="Serial Number" ng-model="game.gameTitle">
+                        <form novalidate ng-submit="addStation()">
+                            <input type="submit" class="button" value="Add" />
+                            <a href="#/admin_station" class="button">Cancel</a>
+                        </form>
+                    </fieldset>
+                </form>
+            </div>
         </div>
+
+
     </div>
 
+    <div class="row">
+        <div id="footer">
 
-</div>
-
-<div class="row">
-    <div id="footer">
-
+        </div>
     </div>
 </div>
