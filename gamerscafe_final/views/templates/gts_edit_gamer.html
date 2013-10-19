@@ -104,14 +104,16 @@
                     <form class="custom">
                         <!--dropdown should be populated with empty stations and current station. -->
                         <select id="customDropdown" class="medium">
-                            
+                            <option ng-repeat="station in stations">{{station.number}}</option>
                         </select>
                     </form>
                     <label>Games</label>
                     <form class="custom">
                         <!--dropdown should be populated with games-->
                         <select id="games_option" class="medium">
-                            
+                            <div ng-repeat="game in games">
+                                <option>{{game.gameTitle}}</option>
+                            </div>
                         </select>
                     </form>
                     <label>Time</label>
