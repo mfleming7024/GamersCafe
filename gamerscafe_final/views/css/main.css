@@ -33,7 +33,10 @@
 }
 .user_login{
     float: right;
-    margin-top: 30px;
+    margin-top: -5px;
+}
+.user_login a{
+    color: #3299BB;
 }
 
 #login form {
@@ -50,8 +53,61 @@
 .fb_login{
     width: 30%;
 }
+.fb_login_2{
+    width: 45%;
+}
 .input_login{
     width: 40%;
+}
+
+.cta_intro{
+    margin-top: 20px;
+}
+.cta_intro h1{
+    text-transform: uppercase;
+    color: #3299BB;
+    text-align: center;
+    text-shadow: -1px 1px #888888;
+}
+
+.sign_up {
+    margin-top: 20px;
+}
+.sign_up h1{
+    text-transform: uppercase;
+    text-align: center;
+    color: #3299BB;
+    text-shadow: -1px 1px #888888;
+}
+.sign_up form{
+    margin-left: 29%;
+}
+.sign_up_page h1{
+    text-transform: uppercase;
+    text-align: center;
+    color: #3299BB;
+    text-shadow: -1px 1px #888888;
+}
+.sign_up_page form{
+    margin-left: 29%;
+}
+.sign_up_page input{
+    width: 250px;
+}
+.sign_up input{
+    width: 250px;
+}
+.login_form form{
+    margin-left: 29%;
+}
+.login_form h1{
+    text-transform: uppercase;
+    text-align: center;
+    color: #3299BB;
+    text-shadow: -1px 1px #888888;
+}
+.login_form input{
+    width: 250px;
 }
 .become_a_gamer{
     color: #fff;
@@ -109,30 +165,41 @@ h1, h2, h3, p, a {
 
 .middle{
     background-image: url("../img/mooning.png");
+}
+.home_middle{
 
+}
+.home{
+    background-image: url("../img/mooning.png");
+}
+.home_cta{
+
+    background-color:rgba(255,255,255,0.5);
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,0.75);
+    box-shadow: 0 0 10px rgba(0,0,0,0.75);
 }
 
 .icons{
     font-size: 5em;
+    color: #c0c0c0;
     position: relative;
-    margin-left: 40%;
     top: 50px;
+    text-shadow: -1px 1px 1px #999;
 }
 .home_columns{
-    /*background-color:rgba(255,255,255,1.0);*/
-    background-color: #f2f2f2;
-    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0 0 10px rgba(0,0,0,0.75);
-    box-shadow: 0 0 10px rgba(0,0,0,0.75);
+    background-color:rgba(255,255,255,0.8);
+    text-align: center;
+
 
 }
 .home_columns h2{
-    margin-top: 100px;
+    margin-top: 80px;
     font-family: 'Oswald', sans-serif;
     font-weight: 400;
     color: #3299BB;
     text-transform: uppercase;
-    text-shadow: -1px 1px #000;
+    text-shadow: -1px 1px #888888;
     text-align: center;
 }
 .home_columns h2 p{
@@ -150,13 +217,12 @@ h1, h2, h3, p, a {
 
 }
 .staff_columns h2{
-    clear: both;
     margin-top: 20px;
     font-family: 'Oswald', sans-serif;
     font-weight: 400;
     color: #3299BB;
     text-transform: uppercase;
-    text-shadow: -1px 1px #000;
+    text-shadow: -1px 1px #888;
     text-align: center;
 }
 .staff_columns h2 p{
@@ -216,6 +282,11 @@ h1, h2, h3, p, a {
 #gts_panel{
 
 }
+
+#gts_panel h2{
+    clear: both;
+}
+
 .gts_panel{
     margin-bottom: 10px!important;
 

@@ -82,10 +82,10 @@
             <li><a href="#" data-dropdown="admin_dd" class="small button dropdown">Admin Settings</i> </a></li>
         </ul>
         <ul id="admin_dd" data-dropdown-content class="f-dropdown">
-            <li><a href="#" class="small button a_dropdown">Users</a></li>
-            <li><a href="#" class="small button a_dropdown">Staff</a></li>
-            <li><a href="#" class="small button a_dropdown">Station</a></li>
-            <li><a href="#" class="small button a_dropdown">Games</a></li>
+            <li><a href="#/admin_users" class="small button a_dropdown">Users</a></li>
+            <li><a href="#/admin_staff" class="small button a_dropdown">Staff</a></li>
+            <li><a href="#/admin_station" class="small button a_dropdown">Station</a></li>
+            <li><a href="#/admin_games" class="small button a_dropdown">Games</a></li>
 
         </ul>
         <div class="splitter"></div>
@@ -101,7 +101,7 @@
                         <div class="panel callout radius station_1">
                             <div class="panel_content">
                                 <div class="edit_gts">
-                                    <h6><a href="#/gts_edit_gamer">Edit</a> </h6>
+                                    <h6><a ng-click="editGamerStation({{station}})">Edit</a> </h6>
                                 </div>
                                 <div class="station_number">
                                     <h1>{{station.stationNumber}}</h1>
@@ -140,7 +140,7 @@
                         <div class="panel callout radius station_1">
                             <div class="panel_content">
                                 <div class="edit_gts">
-                                    <h6><a href="gts_edit_gamer.html">Edit</a> </h6>
+                                    <h6><a href="#/gts_edit_gamer" ng-click="editGamerStation({{station}})">Edit</a> </h6>
                                 </div>
                                 <div class="station_number">
                                     <h1>{{station.stationNumber}}</h1>
@@ -182,7 +182,7 @@
                                 <h1>{{station.stationNumber}}</h1>
                             </div>
                             <div class="station_avail">
-                                <h3><a href="gts_add_gamer.html">+</a> </h3>
+                                <h3><a href="#/gts_add_gamer">+</a> </h3>
                             </div>
                         </div>
                     </div>
