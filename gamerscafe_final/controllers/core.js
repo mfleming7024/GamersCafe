@@ -98,12 +98,23 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', 'angularFireCollection'
     //updates the systems database
     //have fields instead of string literal
     $scope.updateSystem = function(system){
-        system.name = "PS3";
-        system.station = "9999";
-        system.model_number = "0987654321";
-        system.purchased_date = "10/30/2013";
-        system.info = "updated Blah";
-        $scope.systems.update(system);
+        
+        //Grabs the game properties from the scope to pass into the game object and update it
+		var tempSystemName = document.querySelector("#tempSystemName" + system.$id).value;
+		var tempSystemSerial = document.querySelector("#tempSystemSerial" + system.$id).value;
+		var tempSystemStation = document.querySelector("#tempSystemStation" + system.$id).value;
+				
+		//Sets the game properties equal to whatever value is in the text inputs
+		system.systemName = tempSystemName;
+		system.systemSerial = tempSystemSerial; 
+		system.systemStation = tempSystemStation;
+		
+		//visual of game update
+		console.log("system updated", system);
+		$scope.systems.update(system);
+        
+        
+        
     }
 
     //************************************Users database***************************************************
