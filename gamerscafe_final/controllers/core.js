@@ -44,16 +44,15 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', 'angularFireCollection'
     }
 
     //updates the games database
-    //have fields instead of string literal
-    $scope.updateGame = function(game){
-        game.title = "Gears of War 3";
-        game.information = "This is an updated information";
-        game.images = ["url3","url4"]
-        game.system = "Xbox 360";
-        game.genre = "Shooter";
-
-        $scope.games.update(game);
-    }
+	//have fields instead of string literal
+	$scope.updateGame = function(game){
+		//Grabs the game properties from the scope to pass into the game object and update it
+		game.title = $scope.game.title;
+		game.images = $scope.game.imageUrl
+		game.system = $scope.game.system; 
+		console.log(game, $scope.game)
+		//$scope.games.update(game);
+	}
 
     //************************************Systems database***************************************************
 //url to the data needed
