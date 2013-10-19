@@ -34,7 +34,7 @@ gamerscafe.controller('Core', ['$scope', 'angularFireCollection', 'angularFireAu
 		game.title = "Gears of War 3";
 		game.information = "This is an updated information";
 		game.images = ["url3","url4"]
-		game.system = "Xbox 360"; 
+		game.system = "Xbox 360";
 		game.genre = "Shooter";
 
 		$scope.games.update(game);
@@ -79,12 +79,12 @@ gamerscafe.controller('Core', ['$scope', 'angularFireCollection', 'angularFireAu
 	$scope.updateSystem = function(system){
 		system.name = "PS3";
 		system.station = "9999";
-		system.model_number = "0987654321"; 
-		system.purchased_date = "10/30/2013"; 
+		system.model_number = "0987654321";
+		system.purchased_date = "10/30/2013";
 		system.info = "updated Blah";
 		$scope.systems.update(system);
 	}
-	
+
 	//************************************Users database***************************************************
 
 	//url to the data needed
@@ -253,7 +253,7 @@ gamerscafe.controller('Core', ['$scope', 'angularFireCollection', 'angularFireAu
 	}
 
 
-	
+
 
 }]);
 
