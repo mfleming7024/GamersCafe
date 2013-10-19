@@ -15,12 +15,6 @@
 </div><!-- End top-bar -->
 
 <div id="top">
-    <!--<div id="logo" class="row">-->
-    <!--&lt;!&ndash; LOGO &ndash;&gt;-->
-    <!--<object data="img/logo.svg" type="image/svg+xml" class="gamer_logo">-->
-    <!--</object> &lt;!&ndash; END LOGO &ndash;&gt;-->
-    <!--</div>-->
-
     <!-- Navigation -->
     <div id="main_nav" class="row">
         <nav class="top-bar">
@@ -82,13 +76,15 @@
                 <li><a href="#" data-dropdown="admin_dd" class="small button dropdown">Admin Settings</i> </a></li>
             </ul>
             <ul id="admin_dd" data-dropdown-content class="f-dropdown">
-                <li><a href="#" class="small button a_dropdown">Users</a></li>
-                <li><a href="#" class="small button a_dropdown">Staff</a></li>
-                <li><a href="#" class="small button a_dropdown">Station</a></li>
-                <li><a href="#" class="small button a_dropdown">Games</a></li>
+                <li><a href="#/admin" class="small button a_dropdown">GTS</a></li>
+                <li><a href="#/admin_users" class="small button a_dropdown">Users</a></li>
+                <li><a href="#/admin_staff" class="small button a_dropdown">Staff</a></li>
+                <li><a href="#/admin_station" class="small button a_dropdown">Station</a></li>
+                <li><a href="#/admin_systems" class="small button a_dropdown">System</a></li>
+                <li><a href="#/admin_games" class="small button a_dropdown">Games</a></li>
+                <li><a href="#/admin_gp" class="small button a_dropdown">Gamer Points</a></li>
+                <li><a href="#/admin_analytics" class="small button a_dropdown">Analytics</a></li>
             </ul>
-
-
 
             <div class="splitter"></div>
 
@@ -99,14 +95,14 @@
                 <form>
                     <fieldset>
                         <label>System Name</label>
-                        <input class="input_add_systemName" type="text" placeholder="System Name" ng-model="game.gameTitle">
+                        <input class="input_add_systemName" type="text" placeholder="System Name" ng-model="system.systemName">
                         <form class="custom">
                         </form>
                         <label>Serial Number</label>
-                        <input class="input_add_systemSerial" type="text" placeholder="Serial Number" ng-model="game.gameTitle">
+                        <input class="input_add_systemSerial" type="text" placeholder="Serial Number" ng-model="system.systemSerial">
                         <label>Assigned Station</label>
                         <form class="custom">
-                            <select id="systemDropdown" class="small" ng-model="game.gameSystem">
+                            <select id="systemDropdown" class="small" ng-model="system.systemStation">
                                 <!----------------------  Options populated through ng-options from database BUGGGYYYYYYYYYYYYYYYY!!!!!!!!!!!!!!!!	------------------------------->
                                 <!--  <option ng-repeat="system in systems">{{system.name}}</option> -->
                                 <option>None</option>
@@ -118,7 +114,7 @@
 
                         <form novalidate ng-submit="addSystem()">
                             <input type="submit" class="button" value="Add" />
-                            <a href="admin_systems.html" class="button">Cancel</a>
+                            <a href="#/admin_systems" class="button">Cancel</a>
                         </form>
                     </fieldset>
                 </form>
@@ -133,3 +129,4 @@
 
         </div>
     </div>
+</div>
