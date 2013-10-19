@@ -48,7 +48,7 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', 'angularFireCollection'
 	$scope.updateGame = function(game){
 		//Grabs the game properties from the scope to pass into the game object and update it
 		game.title = $scope.game.title;
-		game.images = $scope.game.imageUrl
+		game.images = $scope.game.imageUrl;
 		game.system = $scope.game.system; 
 		console.log(game, $scope.game)
 		//$scope.games.update(game);
