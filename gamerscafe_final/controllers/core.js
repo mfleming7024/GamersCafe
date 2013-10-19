@@ -22,6 +22,7 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', 'angularFireCollection'
         if ($scope.game == "" || $scope.game == null) {
             console.log("game does not exist");
         } else {
+        	//error checking for if fields are null
             if ($scope.game.gameSystem == "" || $scope.game.gameSystem == null) {
                 console.log("No game system given");
             } else if ($scope.game.gameTitle == "" || $scope.game.gameTitle == null) {
@@ -47,11 +48,18 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', 'angularFireCollection'
 	//have fields instead of string literal
 	$scope.updateGame = function(game){
 		//Grabs the game properties from the scope to pass into the game object and update it
-		game.title = $scope.game.title;
-		game.images = $scope.game.imageUrl;
-		game.system = $scope.game.system; 
-		console.log(game, $scope.game)
-		//$scope.games.update(game);
+		var tempGameTitle = document.querySelector("#tempGameTitle").value;
+		var tempGameSystem = document.querySelector("#tempGameSystem").value;
+		var tempGameQuantity = document.querySelector("#tempGameQuantity").value;
+		
+		//Sets the game properties equal to whatever value is in the text inputs
+		game.gameTitle = tempGameTitle;
+		game.gameSystem = tempGameSystem; 
+		game.gameQuantity = tempGameQuantity;
+		
+		//visual of game update
+		console.log("game updated", game);
+		$scope.games.update(game);
 	}
 
     //************************************Systems database***************************************************
