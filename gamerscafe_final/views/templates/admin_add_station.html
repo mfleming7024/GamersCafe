@@ -4,23 +4,17 @@
     <div class="bars row">
         <div id="logo">
             <!-- LOGO -->
-            <img src="img/logo.png" alt="Logo"> <!-- END LOGO -->
+            <img src="views/img/logo.png" alt="Logo"> <!-- END LOGO -->
         </div>
         <div class="user_panel">
-            <img src="img/sm_profile.png" alt="Small Profile Picture">
-            <a href="#">Erwin Angeles</a>
+            <img src="views/img/sm_profile.png" alt="Small Profile Picture">
+            <a href="#/admin">Erwin Angeles</a>
             <i class="icon-gear"></i>
         </div>
     </div><!-- End top_half_bar -->
 </div><!-- End top-bar -->
 
 <div id="top">
-    <!--<div id="logo" class="row">-->
-    <!--&lt;!&ndash; LOGO &ndash;&gt;-->
-    <!--<object data="img/logo.svg" type="image/svg+xml" class="gamer_logo">-->
-    <!--</object> &lt;!&ndash; END LOGO &ndash;&gt;-->
-    <!--</div>-->
-
     <!-- Navigation -->
     <div id="main_nav" class="row">
         <nav class="top-bar">
@@ -82,10 +76,14 @@
                 <li><a href="#" data-dropdown="admin_dd" class="small button dropdown">Admin Settings</i> </a></li>
             </ul>
             <ul id="admin_dd" data-dropdown-content class="f-dropdown">
-                <li><a href="#" class="small button a_dropdown">Users</a></li>
-                <li><a href="#" class="small button a_dropdown">Staff</a></li>
-                <li><a href="#" class="small button a_dropdown">Station</a></li>
-                <li><a href="#" class="small button a_dropdown">Games</a></li>
+                <li><a href="#/admin" class="small button a_dropdown">GTS</a></li>
+                <li><a href="#/admin_users" class="small button a_dropdown">Users</a></li>
+                <li><a href="#/admin_staff" class="small button a_dropdown">Staff</a></li>
+                <li><a href="#/admin_station" class="small button a_dropdown">Station</a></li>
+                <li><a href="#/admin_systems" class="small button a_dropdown">System</a></li>
+                <li><a href="#/admin_games" class="small button a_dropdown">Games</a></li>
+                <li><a href="#/admin_gp" class="small button a_dropdown">Gamer Points</a></li>
+                <li><a href="#/admin_analytics" class="small button a_dropdown">Analytics</a></li>
             </ul>
 
             <div class="splitter"></div>
@@ -97,12 +95,12 @@
                 <form>
                     <fieldset>
                         <label>Station Number</label>
-                        <input class="input_add_stationNumber" type="number" placeholder="System Number" ng-model="game.gameTitle">
+                        <input class="input_add_stationNumber" type="number" placeholder="System Number" ng-model="station.stationNumber">
                         <form class="custom">
                         </form>
                         <label>Serial Number</label>
                         <form class="custom">
-                            <select id="systemSelection" class="small" ng-model="game.gameSystem">
+                            <select id="systemSelection" class="small" ng-model="station.stationSystem">
                                 <!----------------------  Options populated through ng-options from database BUGGGYYYYYYYYYYYYYYYY!!!!!!!!!!!!!!!!	------------------------------->
                                 <!--  <option ng-repeat="system in systems">{{system.name}}</option> -->
                                 <option>Playstation 4</option>
@@ -110,9 +108,9 @@
                             </select>
                         </form>
                         <label>Television</label>
-                        <input class="input_add_stationTelevision" type="text" placeholder="100inch LED Sony Bravia" ng-model="game.gameTitle">
+                        <input class="input_add_stationTelevision" type="text" placeholder="100inch LED Sony Bravia" ng-model="station.stationTV">
                         <label>Television Serial</label>
-                        <input class="input_add_stationTelevisionSerial" type="text" placeholder="Serial Number" ng-model="game.gameTitle">
+                        <input class="input_add_stationTelevisionSerial" type="text" placeholder="Serial Number" ng-model="station.stationTVSerial">
                         <form novalidate ng-submit="addStation()">
                             <input type="submit" class="button" value="Add" />
                             <a href="#/admin_station" class="button">Cancel</a>

@@ -95,7 +95,7 @@
                     <form>
                         <input type="text" class="systemSearch" placeholder="Search System">
                     </form>
-                    <a href="admin_add_system.html" class="small button a_dropdown">Add System</a>
+                    <a href="#/admin_add_system" class="small button a_dropdown">Add System</a>
                 </div>
                 <!-- Table -->
                 <table class="gts">
@@ -109,12 +109,12 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr ng-repeat="game in games">
-                        <td><input type="text" class="systemName" value="Playstation 4"></td>
-                        <td><input type="text" class="systemSerial" value="012x8734hasd9"></td>
-                        <td><input type="text" class="systemStation" value="None"></td>
-                        <td><input type="text" class="systemAddedDate" value="09/23/2014"></td>
-                        <td><a href="" ng-click="updateGame(game)">Update</a> / <a href="" ng-click="deleteGame(game.$id)">Delete</a></td>
+                    <tr ng-repeat="system in systems">
+                        <td><input type="text" class="systemName" value="{{system.systemName}}"></td>
+                        <td><input type="text" class="systemSerial" value="{{system.systemSerial}}"></td>
+                        <td><input type="text" class="systemStation" value="{{system.systemStation}}"></td>
+                        <td><input type="text" class="systemAddedDate" value="{{system.AddedDate}}"></td>
+                        <td><a href="" ng-click="updateGame(game)">Update</a> / <a href="" ng-click="deleteSystem(system.$id)">Delete</a></td>
                     </tr>
                     </tbody>
                 </table>

@@ -1,114 +1,129 @@
-    <!-- Navigation -->
-    <div id="main_nav" class="row">
-        <nav class="top-bar">
-            <section class="top-bar-section">
-                <ul class="right top_nav">
-                    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-                    <li id="mobile_menu" class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-                    <li><a href="#"><i class="icon-home home_icon"></i></a> </li>
-
-                    <li class="divider"></li>
-                    <li class="active"><a href="#">League/Tournaments</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Games</a></li>
-                    <li class="divider"></li>
-                    <li class="has-dropdown"><a href="#">About Us</a>
-
-                        <ul class="dropdown">
-                            <li class="has-dropdown"><a href="#">Dropdown Level 1a</a>
-
-                                <ul class="dropdown">
-                                    <li><label>Dropdown Level 2 Label</label></li>
-                                    <li><a href="#">Dropdown Level 2a</a></li>
-                                    <li><a href="#">Dropdown Level 2b</a></li>
-                                    <li class="has-dropdown"><a href="#">Dropdown Level 2c</a>
-
-                                        <ul class="dropdown">
-                                            <li><label>Dropdown Level 3 Label</label></li>
-                                            <li><a href="#">Dropdown Level 3a</a></li>
-                                            <li><a href="#">Dropdown Level 3b</a></li>
-                                            <li class="divider"></li>
-                                            <li><a href="#">Dropdown Level 3c</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Dropdown Level 2d</a></li>
-                                    <li><a href="#">Dropdown Level 2e</a></li>
-                                    <li><a href="#">Dropdown Level 2f</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Dropdown Level 1b</a></li>
-                            <li><a href="#">Dropdown Level 1c</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">Dropdown Level 1d</a></li>
-                            <li><a href="#">Dropdown Level 1e</a></li>
-                            <li><a href="#">Dropdown Level 1f</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">See all &rarr;</a></li>
-                        </ul>
-                </ul>
-            </section>
-        </nav>
-    </div> <!-- END NAVIGATION -->
-
-
-
-    <!-- Staff Page -->
-    <div class="middle">
-        <div class="row staff_columns">
-            <ul class="admin_nav button-group">
-                <li><a href="#" data-dropdown="admin_dd" class="small button dropdown">Admin Settings</i> </a></li>
-            </ul>
-            <ul id="admin_dd" data-dropdown-content class="f-dropdown">
-                <li><a href="#/admin" class="small button a_dropdown">GTS</a></li>
-                <li><a href="#/admin_users" class="small button a_dropdown">Users</a></li>
-                <li><a href="#/admin_staff" class="small button a_dropdown">Staff</a></li>
-                <li><a href="#/admin_station" class="small button a_dropdown">Station</a></li>
-                <li><a href="#/admin_systems" class="small button a_dropdown">System</a></li>
-                <li><a href="#/admin_games" class="small button a_dropdown">Games</a></li>
-                <li><a href="#/admin_gp" class="small button a_dropdown">Gamer Points</a></li>
-                <li><a href="#/admin_analytics" class="small button a_dropdown">Analytics</a></li>
-            </ul>
-
-            <div class="splitter"></div>
-
-            <!-- Gamer Tracking System GTS -->
-            <div id="admin_staff" ng-controller="Core">
-                <h2>Add Staff</h2>
-
-                <form>
-                    <fieldset>
-                        <label>Name</label>
-                        <input class="input_add_staffName" type="text" placeholder="Staff Name" ng-model="staff.staffName">
-                        <input class="input_add_staffNumber" type="text" placeholder="Cell Number" ng-model="staff.staffNumber">
-                        <input class="input_add_staffEmail" type="email" placeholder="Email" ng-model="staff.staffEmail">
-                        <input class="input_add_staffPassword" type="password" placeholder="Password" ng-model="staff.staffPassword">
-                        <form class="custom">
-                        </form>
-                        <label>Permission</label>
-                        <form class="custom">
-                            <select id="permissionSelection" class="small" ng-model="staff.staffPermission">
-                                <!----------------------  Options populated through ng-options from database BUGGGYYYYYYYYYYYYYYYY!!!!!!!!!!!!!!!!	------------------------------->
-                                <!--  <option ng-repeat="system in systems">{{system.name}}</option> -->
-                                <option>GTS</option>
-                                <option>League</option>
-                            </select>
-                        </form>
-                        <form novalidate ng-submit="addStaff()">
-                            <input type="submit" class="button" value="Add" />
-                            <a href="#/admin_staff" class="button">Cancel</a>
-                        </form>
-                    </fieldset>
-                </form>
-            </div>
+<!-- Nav Top Bar -->
+<div class="top_bar">
+    <!--<div class="top_half_bar"></div>-->
+    <div class="bars row">
+        <div id="logo">
+            <!-- LOGO -->
+            <img src="views/img/logo.png" alt="Logo"> <!-- END LOGO -->
         </div>
+        <div class="user_panel">
+            <img src="views/img/sm_profile.png" alt="Small Profile Picture">
+            <a href="#/admin">Erwin Angeles</a>
+            <i class="icon-gear"></i>
+        </div>
+    </div><!-- End top_half_bar -->
+</div><!-- End top-bar -->
+<!-- Navigation -->
+<div id="main_nav" class="row">
+    <nav class="top-bar">
+        <section class="top-bar-section">
+            <ul class="right top_nav">
+                <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+                <li id="mobile_menu" class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+                <li><a href="#"><i class="icon-home home_icon"></i></a> </li>
+
+                <li class="divider"></li>
+                <li class="active"><a href="#">League/Tournaments</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Games</a></li>
+                <li class="divider"></li>
+                <li class="has-dropdown"><a href="#">About Us</a>
+
+                    <ul class="dropdown">
+                        <li class="has-dropdown"><a href="#">Dropdown Level 1a</a>
+
+                            <ul class="dropdown">
+                                <li><label>Dropdown Level 2 Label</label></li>
+                                <li><a href="#">Dropdown Level 2a</a></li>
+                                <li><a href="#">Dropdown Level 2b</a></li>
+                                <li class="has-dropdown"><a href="#">Dropdown Level 2c</a>
+
+                                    <ul class="dropdown">
+                                        <li><label>Dropdown Level 3 Label</label></li>
+                                        <li><a href="#">Dropdown Level 3a</a></li>
+                                        <li><a href="#">Dropdown Level 3b</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="#">Dropdown Level 3c</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Dropdown Level 2d</a></li>
+                                <li><a href="#">Dropdown Level 2e</a></li>
+                                <li><a href="#">Dropdown Level 2f</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Dropdown Level 1b</a></li>
+                        <li><a href="#">Dropdown Level 1c</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Dropdown Level 1d</a></li>
+                        <li><a href="#">Dropdown Level 1e</a></li>
+                        <li><a href="#">Dropdown Level 1f</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">See all &rarr;</a></li>
+                    </ul>
+            </ul>
+        </section>
+    </nav>
+</div> <!-- END NAVIGATION -->
 
 
+
+<!-- Staff Page -->
+<div class="middle">
+    <div class="row staff_columns">
+        <ul class="admin_nav button-group">
+            <li><a href="#" data-dropdown="admin_dd" class="small button dropdown">Admin Settings</i> </a></li>
+        </ul>
+        <ul id="admin_dd" data-dropdown-content class="f-dropdown">
+            <li><a href="#/admin" class="small button a_dropdown">GTS</a></li>
+            <li><a href="#/admin_users" class="small button a_dropdown">Users</a></li>
+            <li><a href="#/admin_staff" class="small button a_dropdown">Staff</a></li>
+            <li><a href="#/admin_station" class="small button a_dropdown">Station</a></li>
+            <li><a href="#/admin_systems" class="small button a_dropdown">System</a></li>
+            <li><a href="#/admin_games" class="small button a_dropdown">Games</a></li>
+            <li><a href="#/admin_gp" class="small button a_dropdown">Gamer Points</a></li>
+            <li><a href="#/admin_analytics" class="small button a_dropdown">Analytics</a></li>
+        </ul>
+
+        <div class="splitter"></div>
+
+        <!-- Gamer Tracking System GTS -->
+        <div id="admin_staff" ng-controller="Core">
+            <h2>Add Staff</h2>
+
+            <form>
+                <fieldset>
+                    <label>Name</label>
+                    <input class="input_add_staffName" type="text" placeholder="Staff Name" ng-model="staff.staffName">
+                    <input class="input_add_staffNumber" type="text" placeholder="Cell Number" ng-model="staff.staffNumber">
+                    <input class="input_add_staffEmail" type="email" placeholder="Email" ng-model="staff.staffEmail">
+                    <input class="input_add_staffPassword" type="password" placeholder="Password" ng-model="staff.staffPassword">
+                    <form class="custom">
+                    </form>
+                    <label>Permission</label>
+                    <form class="custom">
+                        <select id="permissionSelection" class="small" ng-model="staff.staffPermission">
+                            <!----------------------  Options populated through ng-options from database BUGGGYYYYYYYYYYYYYYYY!!!!!!!!!!!!!!!!	------------------------------->
+                            <!--  <option ng-repeat="system in systems">{{system.name}}</option> -->
+                            <option>GTS</option>
+                            <option>League</option>
+                        </select>
+                    </form>
+                    <form novalidate ng-submit="addStaff()">
+                        <input type="submit" class="button" value="Add" />
+                        <a href="#/admin_staff" class="button">Cancel</a>
+                    </form>
+                </fieldset>
+            </form>
+        </div>
     </div>
 
-    <div class="row">
-        <div id="footer">
 
-        </div>
+</div>
+
+<div class="row">
+    <div id="footer">
+
     </div>
+</div>
 
 
