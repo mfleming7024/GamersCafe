@@ -126,7 +126,22 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', 'angularFireCollection'
 
     //create a system and adds it to the database
     $scope.addStation = function(){
-        $scope.stations.add({number: "1", system: "Xbox One"});
+        if ($scope.station == "" || $scope.station == null) {
+            console.log("Station does not exist");
+        } else {
+            if ($scope.station.stationNumber == "" || $scope.station.stationNumber == null) {
+                console.log("No Station Chosen");
+            } else if ($scope.station.stationSystem == "" || $scope.station.stationSystem == null) {
+                console.log("Select A System");
+            } else if ($scope.station.stationTV == "" || $scope.station.stationTV == null) {
+                console.log("Please enter a TV");
+            } else if ($scope.station.stationTVSerial == "" || $scope.station.stationTVSerial == null) {
+                console.log("Please enter a TV Serial");
+            } else {
+                console.log($scope.station);
+                $scope.stations.add($scope.station);
+            }
+        }
         console.log("addStation clicked");
     }
 
@@ -137,10 +152,21 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', 'angularFireCollection'
     }
 
 
-    $scope.updateStation = function(stations){
-        station.number = "number here";
-        station.system = "system here";
+    //updates the games database
+    //have fields instead of string literal
+    $scope.updateStation = function(station){
+        //Grabs the game properties from the scope to pass into the game object and update it
+        var tempGameTitle = document.querySelector("#tempGameTitle" + game.$id).value;
+        var tempGameSystem = document.querySelector("#tempGameSystem" + game.$id).value;
+        var tempGameQuantity = document.querySelector("#tempGameQuantity" + game.$id).value;
 
+        //Sets the game properties equal to whatever value is in the text inputs
+        game.gameTitle = tempGameTitle;
+        game.gameSystem = tempGameSystem;
+        game.gameQuantity = tempGameQuantity;
+
+        //visual of game update
+        console.log("game updated", game);
         $scope.games.update(game);
     }
 
