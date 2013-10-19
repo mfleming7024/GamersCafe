@@ -100,7 +100,7 @@
         <form>
             <input type="text" class="game_search" placeholder="Search Game">
         </form>
-        <a href="admin_add_game.html" class="small button a_dropdown">Add Game</a>
+        <a href="#/admin_add_game" class="small button a_dropdown">Add Game</a>
     </div>
     <!-- Table -->
     <table class="gts">
@@ -115,31 +115,15 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td><input type="text" class="gameName" value="GTA V"></td>
-            <td><input type="text" class="system" value="Playstation 3"></td>
-            <td>09/16/2013</td>
-            <td><input type="text" class="gameQuantity" value="4"></td>
-            <td>2</td>
-            <td><a href="">Update</a> / <a href="">Delete</a> </td>
-        </tr>
-        <tr>
-            <td><input type="text" class="gameName" value="NBA 2k14"></td>
-            <td><input type="text" class="system" value="Xbox One"></td>
-            <td>09/16/2013</td>
-            <td><input type="text" class="gameQuantity" value="2"></td>
-            <td>0</td>
-            <td><a href="">Update</a> / <a href="">Delete</a> </td>
-        </tr>
-        <tr>
-            <td><input type="text" class="gameName" value="Watch Dog"></td>
-            <td><input type="text" class="system" value="Playstation 4"></td>
-            <td>09/16/2013</td>
-            <td><input type="text" class="gameQuantity" value="2"></td>
-            <td>2</td>
-            <td><a href="">Update</a> / <a href="">Delete</a> </td>
-        </tr>
-        </tbody>
+        <tr ng-repeat="game in games">
+            <td><input type="text" class="gameName" value="{{game.gameTitle}}"></td>
+            <td><input type="text" class="system" value="{{game.gameSystem}}"></td>
+	        <td>09/16/2013</td>
+	        <td><input type="text" class="gameQuantity" value="{{game.gameQuantity}}"></td>
+	        <td>2</td>
+	        <td><a href="" ng-click="updateGame(game)">Update</a> / <a href="" ng-click="deleteGame(game.$id)">Delete</a></td>
+	     </tr>        
+	     </tbody>
     </table>
 </div>
 
