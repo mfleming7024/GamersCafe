@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>Gamers Cafe :: Admin Staff</title>
+    <title>Gamers Cafe :: Admin Games Systems</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/foundation.css">
@@ -45,16 +45,10 @@
             <a href="#">Erwin Angeles</a>
             <i class="icon-gear"></i>
         </div>
-    </div><!-- End top_half_bar -->
+    </div>
 </div><!-- End top-bar -->
 
 <div id="top">
-    <!--<div id="logo" class="row">-->
-    <!--&lt;!&ndash; LOGO &ndash;&gt;-->
-    <!--<object data="img/logo.svg" type="image/svg+xml" class="gamer_logo">-->
-    <!--</object> &lt;!&ndash; END LOGO &ndash;&gt;-->
-    <!--</div>-->
-
     <!-- Navigation -->
     <div id="main_nav" class="row">
         <nav class="top-bar">
@@ -116,21 +110,24 @@
                 <li><a href="#" data-dropdown="admin_dd" class="small button dropdown">Admin Settings</i> </a></li>
             </ul>
             <ul id="admin_dd" data-dropdown-content class="f-dropdown">
-                <li><a href="#" class="small button a_dropdown">Users</a></li>
-                <li><a href="#" class="small button a_dropdown">Staff</a></li>
-                <li><a href="#" class="small button a_dropdown">Station</a></li>
-                <li><a href="#" class="small button a_dropdown">Games</a></li>
+                <li><a href="admin_users.html" class="small button a_dropdown">Users</a></li>
+                <li><a href="admin_staff.html" class="small button a_dropdown">Staff</a></li>
+                <li><a href="admin_station.html" class="small button a_dropdown">Station</a></li>
+                <li><a href="admin_systems.html" class="small button a_dropdown">System</a></li>
+                <li><a href="admin_games.html" class="small button a_dropdown">Games</a></li>
+                <li><a href="admin_gp.html" class="small button a_dropdown">Gamer Points</a></li>
+                <li><a href="admin_analytics.html" class="small button a_dropdown">Analytics</a></li>
             </ul>
 
             <div class="splitter"></div>
 
             <!-- Gamer Tracking System GTS -->
-            <div id="admin_games">
+            <div id="admin_staff">
                 <h2>Staff List</h2>
 
                 <div class="search">
                     <form>
-                        <input type="text" class="systemSearch" placeholder="Search System">
+                        <input type="text" class="systemSearch" placeholder="Search Staff">
                     </form>
                     <a href="admin_add_staff.html" class="small button a_dropdown">Add Staff</a>
                 </div>
@@ -138,20 +135,24 @@
                 <table class="gts">
                     <thead>
                     <tr>
-                        <th width="200">System Name</th>
-                        <th>Serial Number</th>
-                        <th>Assigned Station</th>
-                        <th width="150">Date Added</th>
+                        <th width="200">Name</th>
+                        <th>Cell Number</th>
+                        <th>Email</th>
+                        <th>Password</th>
+                        <th>Permission</th>
+                        <th width="150">Date Hired</th>
                         <th width="10%">Action</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr ng-repeat="game in games">
-                        <td><input type="text" class="systemName" value="Playstation 4"></td>
-                        <td><input type="text" class="systemSerial" value="012x8734hasd9"></td>
-                        <td><input type="text" class="systemStation" value="None"></td>
-                        <td><input type="text" class="systemAddedDate" value="09/23/2014"></td>
-                        <td><a href="" ng-click="updateGame(game)">Update</a> / <a href="" ng-click="deleteGame(game.$id)">Delete</a></td>
+                    <tr ng-repeat="staff in staffs">
+                        <td><input type="text" class="staffName" value="{{staff.staffName}}"></td>
+                        <td><input type="text" class="staffCellNumber" value="{{staff.staffCellNumber}}"></td>
+                        <td><input type="text" class="staffEmail" value="{{staff.staffEmail}}"></td>
+                        <td><input type="text" class="staffPassword" value="{{staff.staffPassword}}"></td>
+                        <td><input type="text" class="staffHiredDate" value="{{staff.staffHiredDate}}"></td>
+                        <td><input type="text" class="staffPermission" value="{{staff.staffPermission}}"></td>
+                        <td><a href="" ng-click="updateStaff(staff)">Update</a> / <a href="" ng-click="deleteStaff(staff.$id)">Delete</a></td>
                     </tr>
                     </tbody>
                 </table>

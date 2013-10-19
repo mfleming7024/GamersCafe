@@ -66,7 +66,21 @@ gamerscafe.controller('Core', ['$scope', 'angularFireCollection', 'angularFireAu
 
 	//create a system and adds it to the database
 	$scope.addSystem = function(){
-		$scope.systems.add({name: "Xbox 360",station:"number here", model_number:"1234567890", purchased_date:"10/31/2013", info:"Blah Blah Blah"});
+//		$scope.systems.add({name: "Xbox 360",station:"number here", model_number:"1234567890", purchased_date:"10/31/2013", info:"Blah Blah Blah"});
+        if ($scope.system == "" || $scope.system == null) {
+            console.log("game does not exist");
+        } else {
+            if ($scope.system.systemName == "" || $scope.system.systemName == null) {
+                console.log("No System Name Given");
+            } else if ($scope.system.systemSerial == "" || $scope.system.systemSerial == null) {
+                console.log("No System Serial Given");
+            } else if ($scope.system.systemStation == "" || $scope.system.systemStation == null) {
+                console.log("Please select a station or None");
+            } else {
+                console.log($scope.system);
+                $scope.systems.add($scope.system);
+            }
+        }
 		console.log("addSystem clicked");
 	}
 
@@ -116,8 +130,6 @@ gamerscafe.controller('Core', ['$scope', 'angularFireCollection', 'angularFireAu
 		$scope.stations.remove(myid);
 		console.log("deleteStation clicked");
 	}
-
-
 	$scope.updateStation = function(stations){
 		station.number = "number here";
 		station.system = "system here";
@@ -135,11 +147,30 @@ gamerscafe.controller('Core', ['$scope', 'angularFireCollection', 'angularFireAu
 	var urlStaff = new Firebase('https://gamerscafe.firebaseio.com/gamerscafe/staff');
 
 	//collects the info from the database for use.
-	$scope.staff = angularFireCollection(urlStaff);
+	$scope.staffs = angularFireCollection(urlStaff);
 
 	//create a staff member and adds it to the staff database
 	$scope.addStaff = function(){
-		$scope.staff.add({email:"", password:""});
+//		$scope.staff.add({email:"", password:""});
+        if ($scope.staff == "" || $scope.staff == null) {
+            console.log("staff does not exist");
+        } else {
+            if ($scope.staff.staffName == "" || $scope.staff.staffName == null) {
+                console.log("No Staff Name Given");
+            } else if ($scope.staff.staffNumber == "" || $scope.staff.staffNumber == null) {
+                console.log("No Number Given");
+            } else if ($scope.staff.staffEmail == "" || $scope.staff.staffEmail == null) {
+                console.log("Please Enter an Email");
+            } else if ($scope.staff.staffPassword == "" || $scope.staff.staffPassword == null) {
+                console.log("Please Enter A Password");
+            } else if ($scope.staff.staffPermission == "" || $scope.staff.staffPermission == null) {
+                console.log("Please select a permission");
+            } else {
+                console.log($scope.staff);
+                $scope.staffs.add($scope.staff);
+            }
+        }
+        console.log("addStaff clicked");
 
 		auth.createUser(email, password, function(error, user) {
 			if (!error) {
@@ -150,7 +181,7 @@ gamerscafe.controller('Core', ['$scope', 'angularFireCollection', 'angularFireAu
 
 	//remove from the databse object but not from the auth list.
 	$scope.deleteStaff = function(myid){
-		$scope.staff.remove(myid);
+		$scope.staffs.remove(myid);
 		console.log("deleteStaff clicked");
 	}
 

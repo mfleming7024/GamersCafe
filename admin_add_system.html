@@ -133,14 +133,14 @@
                 <form>
                     <fieldset>
                         <label>System Name</label>
-                        <input class="input_add_systemName" type="text" placeholder="System Name" ng-model="game.gameTitle">
+                        <input class="input_add_systemName" type="text" placeholder="System Name" ng-model="system.systemName">
                         <form class="custom">
                         </form>
                         <label>Serial Number</label>
-                        <input class="input_add_systemSerial" type="text" placeholder="Serial Number" ng-model="game.gameTitle">
+                        <input class="input_add_systemSerial" type="text" placeholder="Serial Number" ng-model="system.systemSerial">
                         <label>Assigned Station</label>
                         <form class="custom">
-                            <select id="systemDropdown" class="small" ng-model="game.gameSystem">
+                            <select id="systemDropdown" class="small" ng-model="system.systemStation">
                                 <!----------------------  Options populated through ng-options from database BUGGGYYYYYYYYYYYYYYYY!!!!!!!!!!!!!!!!	------------------------------->
                                 <!--  <option ng-repeat="system in systems">{{system.name}}</option> -->
                                 <option>None</option>

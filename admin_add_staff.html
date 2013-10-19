@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>Gamers Cafe :: Admin Users</title>
+    <title>Gamers Cafe :: Add Staff</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/foundation.css">
@@ -30,7 +30,7 @@
     <script src="js/vendor/custom.modernizr.js"></script>
 
 </head>
-<body ng-app="gamerscafe" ng-controller="Core">
+<body ng-app="gamerscafe">
 
 <!-- Nav Top Bar -->
 <div class="top_bar">
@@ -111,49 +111,48 @@
                 <li><a href="#" data-dropdown="admin_dd" class="small button dropdown">Admin Settings</i> </a></li>
             </ul>
             <ul id="admin_dd" data-dropdown-content class="f-dropdown">
-                <li><a href="admin_users.html" class="small button a_dropdown">Users</a></li>
-                <li><a href="admin_staff.html" class="small button a_dropdown">Staff</a></li>
-                <li><a href="admin_station.html" class="small button a_dropdown">Station</a></li>
-                <li><a href="admin_systems.html" class="small button a_dropdown">System</a></li>
-                <li><a href="admin_games.html" class="small button a_dropdown">Games</a></li>
-                <li><a href="admin_gp.html" class="small button a_dropdown">Gamer Points</a></li>
-                <li><a href="admin_analytics.html" class="small button a_dropdown">Analytics</a></li>
+                <li><a href="#" class="small button a_dropdown">Users</a></li>
+                <li><a href="#" class="small button a_dropdown">Staff</a></li>
+                <li><a href="#" class="small button a_dropdown">Station</a></li>
+                <li><a href="#" class="small button a_dropdown">Games</a></li>
             </ul>
+
+
 
             <div class="splitter"></div>
 
-            <!-- Admin Users -->
-            <div id="admin_users">
-                <h2>User List</h2>
-                <div class="search">
-                    <form>
-                        <input type="text" class="systemSearch" placeholder="Search Gamer">
-                    </form>
-                    <a href="admin_add_user.html" class="small button a_dropdown">Add Gamer</a>
-                </div>
-                <!-- Table -->
-                <table class="gts">
-                    <thead>
-                    <tr>
-                        <th width="200">Name</th>
-                        <th>Email</th>
-                        <th>Joined Date</th>
-                        <th width="150">Gamer Points</th>
-                        <th width="10%">Action</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr ng-repeat="game in games">
-                        <td><input type="text" class="userName" value="Erwin Angeles"></td>
-                        <td><input type="text" class="userEmail" value="dropthatthunthun@gmail.com"></td>
-                        <td><input type="text" class="userJoinDate" value="10/28/13"></td>
-                        <td><input type="text" class="userGamerPoints" value="1,500"></td>
-                        <td><a href="" ng-click="updateGame(game)">Update</a> / <a href="" ng-click="deleteGame(game.$id)">Delete</a></td>
-                    </tr>
-                    </tbody>
-                </table>
+            <!-- Gamer Tracking System GTS -->
+            <div id="admin_staff" ng-controller="Core">
+                <h2>Add Staff</h2>
+
+                <form>
+                    <fieldset>
+                        <label>Name</label>
+                        <input class="input_add_staffName" type="text" placeholder="Staff Name" ng-model="staff.staffName">
+                        <input class="input_add_staffNumber" type="text" placeholder="Cell Number" ng-model="staff.staffNumber">
+                        <input class="input_add_staffEmail" type="email" placeholder="Email" ng-model="staff.staffEmail">
+                        <input class="input_add_staffPassword" type="text" placeholder="Password" ng-model="staff.staffPassword">
+                        <form class="custom">
+                        </form>
+                        <label>Permission</label>
+                        <form class="custom">
+                            <select id="permissionSelection" class="small" ng-model="staff.staffPermission">
+                                <!----------------------  Options populated through ng-options from database BUGGGYYYYYYYYYYYYYYYY!!!!!!!!!!!!!!!!	------------------------------->
+                                <!--  <option ng-repeat="system in systems">{{system.name}}</option> -->
+                                <option>GTS</option>
+                                <option>League</option>
+                            </select>
+                        </form>
+                        <form novalidate ng-submit="addStaff()">
+                            <input type="submit" class="button" value="Add" />
+                            <a href="admin_staff.html" class="button">Cancel</a>
+                        </form>
+                    </fieldset>
+                </form>
             </div>
         </div>
+
+
     </div>
 
     <div class="row">
@@ -162,6 +161,8 @@
         </div>
     </div>
 
+
+
     <script>
         document.write('<script src=' +
                 ('__proto__' in {} ? 'js/vendor/zepto' : 'js/vendor/jquery') +
@@ -169,6 +170,8 @@
     </script>
 
     <script src="js/foundation.min.js"></script>
+    <script src="js/foundation/foundation.orbit.js"></script>
+    <script src="js/foundation/foundation.reveal.js"></script>
     <!--
     <script src="js/foundation/foundation.js"></script>
     <script src="js/foundation/foundation.interchange.js"></script>
