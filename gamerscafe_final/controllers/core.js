@@ -122,7 +122,15 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', 'angularFireCollection'
     var urlUsers = new Firebase('https://gamerscafe.firebaseio.com/gamerscafe/users');
 
     //collects the info from the database for use.
-    $scope.users = angularFireCollection(urlUsers, $scope, 'users', []);
+    $scope.users = angularFireCollection(urlUsers, function(snap)
+    {
+        var users = snap.val();
+        if(typeof $routeParams !== "undefined"){
+            if(typeof $routeParams.user !== "undefined"){
+                $scope.tempUser =  $routeParams.user;
+            }
+        }
+    });
 
     //************************************Stations CRUD***************************************************
 
@@ -233,39 +241,66 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', 'angularFireCollection'
         console.log("deleteStaff clicked");
     }
 
-    //************************************Active stations database***************************************************
+   //************************************Active stations database***************************************************
 
-   //url to the data needed
-   var urlActiveStations = new Firebase('https://gamerscafe.firebaseio.com/gamerscafe/activeStations');
+    //url to the data needed
+    var urlActiveStations = new Firebase('https://gamerscafe.firebaseio.com/gamerscafe/activeStations');
 
-   //collects the info from the database for use.
-   $scope.activeStations = angularFireCollection(urlActiveStations,function(snap)
-   {
-       var stations = snap.val();
-       if(typeof $routeParams !== "undefined"){
-           $scope.tempStation =  stations[$routeParams.stationId];
-       }
-   });
+    //collects the info from the database for use.
+    $scope.activeStations = angularFireCollection(urlActiveStations,function(snap)
+    {
+        var stations = snap.val();
+        if(typeof $routeParams !== "undefined"){
+            if(typeof $routeParams.stationId !== "undefined"){
+                console.log("routeParams child"+$routeParams);
+                $scope.tempStation =  stations[$routeParams.stationId];
+                $scope.tempStation.$id = $routeParams.stationId;
+            }
+        }
+    });
 
-   //create a active station and adds it to the database
-   $scope.addActiveStation = function(){
-       $scope.activeStations.add({stationNumber: "1", userPic:"http://graph.facebook.com/chris.henry/picture?type=small", username:"Laothud", boxart:"views/images/gtav.jpg", currentTime:time, countdownHours:"24", countdownMin: "00", quedName:"None", quedTime:"00:00"});
-       console.log("add ActiveStations clicked");
-   }
+    //create a active station and adds it to the database
+    $scope.addActiveStation = function(){
+        console.log(document.getElementById("#tempStationNumber"));
+        var updateStationItem = {};
+         updateStationItem.stationNumber = document.getElementById("#tempStationNumber").text;
+         updateStationItem.boxart = document.getElementById("#tempStationBoxart").text;
+         updateStationItem.username = document.getElementById("#tempStationUsername").text;
+         updateStationItem.countdownMin = parseInt(updateStationItem.countdownMin) + parseInt(document.getElementById("#tempStationAddTime").text);
+        // $scope.activeStations.add();
+        console.log("add ActiveStations clicked");
+    }
 
-   //removes activeStations based on a unique id
-   $scope.deleteActiveStation = function(myid){
-       $scope.activeStations.remove(myid);
-       console.log("delete ActiveStations clicked");
-   }
+    //removes activeStations based on a unique id
+    $scope.deleteActiveStation = function(removeStation){
+        if(typeof $scope.activeStations == "undefined"){
+            $scope.activeStations = angularFireCollection(urlActiveStations,function(snap){
+                var stations = snap.val();
+                if(typeof $routeParams !== "undefined"){
+                    $scope.tempStation =  stations[$routeParams.stationId];
+                    $scope.tempStation.$id = $routeParams.stationId;
+                }       
+                $scope.activeStations.remove($scope.tempStation.$id);
+                $location.path("/admin");
+            });
+        }else{
+            $scope.activeStations.remove($scope.tempStation.$id);
+            $location.path("/admin");
+        }
+    }
 
-   //updates the activeStations database
-   //have fields instead of string literal
-   $scope.updateActiveStation = function(station){
-       $scope.activeStations.update(station);
-   }
+    //updates the activeStations database
+    $scope.updateActiveStation = function(stationToBeChanged){
+        console.log("activeStations update called.");
+        var updateStationItem = stationToBeChanged;
+        //Grabs the station properties from the scope to pass into the station object and update it
+        updateStationItem.stationNumber = document.querySelector("#tempStationNumber").value;
+        updateStationItem.boxart = document.querySelector("#tempStationBoxart").value;
+        updateStationItem.username = document.querySelector("#tempStationUsername").value;
+        updateStationItem.countdownMin = parseInt(updateStationItem.countdownMin) + parseInt(document.querySelector("#tempStationAddTime").value);
 
-
+        $scope.activeStations.update(updateStationItem);
+    }
 
     //************************************Qued stations database***************************************************
 
@@ -276,9 +311,19 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', 'angularFireCollection'
     $scope.quedStations = angularFireCollection(urlQuedStations);
 
     //create a active station and adds it to the database
-    $scope.addQuedStation = function(){
-        $scope.quedStations.add({stationNumber: "5", userPic:"http://graph.facebook.com/chris.henry/picture?type=small", username:"Laothud", boxart:"views/images/gtav.jpg", currentTime:time, countdownHours:"24", countdownMin: "00", quedName:"None", quedTime:"00:00"});
-        console.log("add ActiveStations clicked");
+    $scope.addQuedStation = function(tempuser){
+
+        var hours = new Date().getHours();
+        var min =  new Date().getMinutes();
+        if(parseInt(min) < 10){
+            var time = hours+":0"+min;
+        }else{
+            var time = hours+":"+min;
+        }
+
+        $scope.quedStations.add({username:tempuser, currentTime:time});
+        console.log("addQuedStations clicked");
+        $location.path("/admin");
     }
 
     //removes quedStations based on a unique id
@@ -303,7 +348,7 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', 'angularFireCollection'
 
     //create a active station and adds it to the database
     $scope.addEmptyStation = function(){
-        $scope.emptyStations.add({stationNumber: "11"});
+        $scope.emptyStations.add({stationNumber: " "});
         console.log("add EmptyStations clicked");
     }
 

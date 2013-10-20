@@ -96,47 +96,35 @@
             <form>
                 <fieldset>
 
-                    <label>Email Address</label>
-                    <input class="staff_add_gamer" type="text" placeholder="Enter Gamers Email">
+                   <label>Email Address:</label>
+                    <input class="staff_add_gamer" type="text" ng-model="tempUser">
                     <form class="custom">
                     </form>
                     <label>Station</label>
                     <form class="custom">
-                        <select id="customDropdown" class="medium">
-                            <option>Station 1 (PS4)</option>
-                            <option>Station 5 (XBOX One)</option>
-                            <option>Station 12 (PC)</option>
+                        <select id="customDropdown" class="medium" id="tempStationNumber">
+                            <option ng-repeat="station in stations" value="{{station.number}}">{{station.number}}</option>
                         </select>
                     </form>
                     <label>Games</label>
                     <form class="custom">
-                        <select id="games_option" class="medium">
-                            <option>GTA V</option>
-                            <option>Hello Kitty</option>
-                            <option>Beyond Two Souls</option>
+                        <select id="games_option" class="medium" id="tempStationBoxart">
+                            <option ng-repeat="game in games" value="{{game.gameTitle}}">{{game.gameTitle}}</option>
                         </select>
                     </form>
-                    <div id="points">
-                        <h5>Points:</h5>
-                        <p>1000</p>
-                        <form class="custom">
-                            <label for="checkbox1">
-                                <input type="checkbox" id="checkbox1" style="display: none;">
-                                <span class="custom checkbox"></span> Use 500 Points?
-                            </label>
-                        </form>
-                    </div>
-                    <label>Time</label>
+                    <label>Time(Minutes)</label>
                     <form class="custom">
-                        <select id="time_dropdown" class="medium">
-                            <option>30 Minutes</option>
-                            <option>60 Minutes</option>
-                            <option>90 Minutes</option>
-                            <option>120 Minutes</option>
-                            <option>150 Minutes</option>
+                        <select id="time_dropdown" class="medium" id="tempStationAddTime">
+                            <option value="0">0</option>
+                            <option value="30">30</option>
+                            <option value="60">60</option>
+                            <option value="90">90</option>
+                            <option value="120">120</option>
+                            <option value="150">150</option>
                         </select>
                     </form>
-                    <a href="#" class="button">Play!</a>
+
+                    <button ng-click="addActiveStation()">Play!</button>
                     <a href="#/admin" class="button">Cancel</a>
                 </fieldset>
             </form>

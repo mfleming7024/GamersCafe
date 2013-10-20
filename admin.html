@@ -119,87 +119,87 @@
 
         <!-- Gamer Tracking System GTS -->
         <div id="gts">
-            <h2>Gamer Tracking System</h2>
+            <h2>Active Stations</h2>
 
             <div id="gts_panel">
                 <!-- Panel Starts here -->
-                <div class="small-6 large-4 columns gts_panel">
-                    <div class="panel callout radius station_1">
-                        <div class="panel_content">
-                            <div class="edit_gts">
-                                <h6><a href="gts_edit_gamer.html">Edit</a> </h6>
-                            </div>
-                            <div class="station_number">
-                                <h1>1</h1>
-                            </div>
-                            <div class="gts_pic">
-                                <img src="img/sm_profile.png" alt="Small Profile Picture">
-                            </div>
-                            <div class="gamer_name">
-                                <h6>Erwin Angeles</h6>
-                            </div>
-                            <div class="game_boxart">
-                                <img src="img/gtav.jpg" alt="Game Box Art">
-                            </div>
-                            <div class="gts_timer">
-                                <h6 class="time_in">12:30</h6>
-                                <h6 class="countdown">00:59</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Station Queue -->
-                    <div class="station_q">
-                        <div class="q_name">
-                            <h6>Niwre Sel</h6>
-                        </div>
-                        <div class="q_time_in">
-                            <h6>1:00</h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="small-6 large-4 columns gts_panel">
-                    <div class="panel callout radius station_1">
-                        <div class="panel_content">
-                            <div class="edit_gts">
-                                <h6><a href="gts_edit_gamer.html">Edit</a> </h6>
-                            </div>
-                            <div class="station_number">
-                                <h1>1</h1>
-                            </div>
-                            <div class="gts_pic">
-                                <img src="img/sm_profile.png" alt="Small Profile Picture">
-                            </div>
-                            <div class="gamer_name">
-                                <h6>Erwin Angeles</h6>
-                            </div>
-                            <div class="game_boxart">
-                                <img src="img/gtav.jpg" alt="Game Box Art">
-                            </div>
-                            <div class="gts_timer">
-                                <h6 class="time_in">12:30</h6>
-                                <h6 class="countdown">00:59</h6>
+                <div ng-repeat="station in activeStations | orderBy:'stationNumber'">
+                    <div class="small-6 large-4 columns gts_panel">
+                        <div class="panel callout radius station_1">
+                            <div class="panel_content">
+                                <div class="edit_gts">
+                                    <a href="#/gts_edit_gamer/{{station.$id}}">Edit</a>
+                                </div>
+                                <div class="station_number">
+                                    <h1>{{station.stationNumber}}</h1>
+                                </div>
+                                <div class="gts_pic">
+                                    <img src="{{station.userPic}}" alt="Small Profile Picture">
+                                </div>
+                                <div class="gamer_name">
+                                    <h6>{{station.username}}</h6>
+                                </div>
+                                <div class="game_boxart">
+                                    <img src="{{station.boxart}}" alt="Game Box Art">
+                                </div>
+                                <div class="gts_timer">
+                                    <h6 class="time_in">{{staion.currentTime}}</h6>
+                                    <h6 class="countdown">{{station.countdownHours}}:{{station.countdownMin}}</h6>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- Station Queue -->
-                    <div class="avail">
-                        <div class="q_name">
-                            <h6><a href="gts_add_q.html">Add</a> </h6>
-                        </div>
-                        <div class="q_time_in">
-                            <h6></h6>
+                        <!-- Station Queue -->
+                        <div class="station_q">
+                            <div class="q_name">
+                                <h6>{{station.quedName}}</h6>
+                            </div>
+                            <div class="q_time_in">
+                                <h6>{{station.quedTime}}</h6>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <!-- Panel Starts here AVAILABLE -->
+
+                <h2>Qued:</h2>
+
+                <div ng-repeat="station in quedStations | orderBy:'username'">
+                    <div class="small-6 large-4 columns gts_panel">
+                        <div class="panel callout radius station_1">
+                            <div class="panel_content">
+                                <div class="edit_gts">
+                                    <h6><a href="#/gts_edit_gamer/{{station.$id}}">Edit</a> </h6>
+                                </div>
+                                <div class="gamer_name">
+                                    <h6>{{station.username}}</h6>
+                                </div>
+                                <div class="gts_timer">
+                                    <h6 class="time_in">{{staion.currentTime}}</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Station Queue -->
+                        <div class="avail">
+                            <div class="q_name">
+                                <h6><a href="#/gts_add_gamer/{{station.username}}">Add</a> </h6>
+                            </div>
+                            <div class="q_time_in">
+                                <h6></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>Empty Stations</h2>
+                
+                <div ng-repeat="station in emptyStations | orderBy:'stationNumber'">
                 <div class="small-6 large-4 columns gts_panel">
                     <div class="panel callout radius avail_station">
                         <div class="panel_content">
                             <div class="station_number_avail">
-                                <h1>3</h1>
+                                <h1>{{station.stationNumber}}</h1>
                             </div>
                             <div class="station_avail">
-                                <h3><a href="gts_add_gamer.html">+</a> </h3>
+                                <h3><a href="#/gts_add_q">+</a> </h3>
                             </div>
                         </div>
                     </div>
@@ -210,41 +210,6 @@
                         </div>
                         <div class="q_time_in">
                             <h6></h6>
-                        </div>
-                    </div>
-                </div>
-                <!-- Panel Starts here -->
-                <div class="small-6 large-4 columns gts_panel">
-                    <div class="panel callout radius game_over">
-                        <div class="panel_content">
-                            <div class="edit_gts">
-                                <h6><a href="gts_edit_gamer.html">Edit</a> </h6>
-                            </div>
-                            <div class="station_number">
-                                <h1>1</h1>
-                            </div>
-                            <div class="gts_pic">
-                                <img src="img/sm_profile.png" alt="Small Profile Picture">
-                            </div>
-                            <div class="gamer_name">
-                                <h6>Erwin Angeles</h6>
-                            </div>
-                            <div class="game_boxart">
-                                <img src="img/gtav.jpg" alt="Game Box Art">
-                            </div>
-                            <div class="gts_timer">
-                                <h6 class="time_in">12:30</h6>
-                                <h6 class="countdown">00:59</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Station Queue -->
-                    <div class="station_q">
-                        <div class="q_name">
-                            <h6>Niwre Sel</h6>
-                        </div>
-                        <div class="q_time_in">
-                            <h6>1:00</h6>
                         </div>
                     </div>
                 </div>

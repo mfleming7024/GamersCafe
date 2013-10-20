@@ -74,20 +74,26 @@ gamerscafe.config(function ($routeProvider){
             templateUrl:"views/templates/admin_systems.html"
         })
 
-        .when("/gts_add_gamer", {
+        .when("/gts_add_gamer/:user", {
             controller:"Core",
-            templateUrl:"views/templates/gts_add_gamer.html"
+            templateUrl:"views/templates/gts_add_gamer.html",
         })
 
         .when("/gts_add_q", {
             controller:"Core",
-            templateUrl:"views/templates/gts_add_q.html"
+            templateUrl:"views/templates/gts_add_q.html",
         })
 
-        .when("/gts_cancel", {
+        .when("/gts_cancel/:stationId", {
             controller:"Core",
-            templateUrl:"views/templates/gts_cancel.html"
+            templateUrl:"views/templates/gts_cancel.html",
         })
+
+        .when("/gts_edit_gamer/:stationId", {
+            controller:"Core",
+            templateUrl:"views/templates/gts_edit_gamer.html",
+        })
+        
         .when("/admin_add_staff", {
             controller:"Core",
             templateUrl:"views/templates/admin_add_staff.html"
@@ -95,11 +101,6 @@ gamerscafe.config(function ($routeProvider){
         .when("/admin_add_station", {
             controller:"Core",
             templateUrl:"views/templates/admin_add_station.html"
-        })
-
-        .when("/gts_edit_gamer/:staionId", {
-            controller:"Core",
-            templateUrl:"views/templates/gts_edit_gamer.html"
         })
 
         .otherwise({redirectTo:"/"});

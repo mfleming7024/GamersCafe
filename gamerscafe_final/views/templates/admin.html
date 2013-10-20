@@ -129,35 +129,25 @@
 
                 <h2>Qued:</h2>
 
-                <div ng-repeat="station in quedStations | orderBy:'stationNumber'">
+                <div ng-repeat="station in quedStations | orderBy:'username'">
                     <div class="small-6 large-4 columns gts_panel">
                         <div class="panel callout radius station_1">
                             <div class="panel_content">
                                 <div class="edit_gts">
                                     <h6><a href="#/gts_edit_gamer/{{station.$id}}">Edit</a> </h6>
                                 </div>
-                                <div class="station_number">
-                                    <h1>{{station.stationNumber}}</h1>
-                                </div>
-                                <div class="gts_pic">
-                                    <img src="{{station.userPic}}" alt="Small Profile Picture">
-                                </div>
                                 <div class="gamer_name">
                                     <h6>{{station.username}}</h6>
                                 </div>
-                                <div class="game_boxart">
-                                    <img src="{{station.boxart}}" alt="Game Box Art">
-                                </div>
                                 <div class="gts_timer">
                                     <h6 class="time_in">{{staion.currentTime}}</h6>
-                                    <h6 class="countdown">{{station.countdown}}</h6>
                                 </div>
                             </div>
                         </div>
                         <!-- Station Queue -->
                         <div class="avail">
                             <div class="q_name">
-                                <h6><a href="#/gts_add_q">Add</a> </h6>
+                                <h6><a href="#/gts_add_gamer/{{station.username}}">Add</a> </h6>
                             </div>
                             <div class="q_time_in">
                                 <h6></h6>
@@ -176,7 +166,7 @@
                                 <h1>{{station.stationNumber}}</h1>
                             </div>
                             <div class="station_avail">
-                                <h3><a href="#/gts_add_gamer">+</a> </h3>
+                                <h3><a href="#/gts_add_q">+</a> </h3>
                             </div>
                         </div>
                     </div>
