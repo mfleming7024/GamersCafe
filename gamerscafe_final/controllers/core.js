@@ -113,8 +113,7 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', 'angularFireCollection'
 		console.log("system updated", system);
 		$scope.systems.update(system);
         
-        
-        
+
     }
 
     //************************************Users database***************************************************
@@ -163,22 +162,24 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', 'angularFireCollection'
     }
 
 
-    //updates the games database
+    //updates the station database
     //have fields instead of string literal
     $scope.updateStation = function(station){
-        //Grabs the game properties from the scope to pass into the game object and update it
-        var tempGameTitle = document.querySelector("#tempGameTitle" + game.$id).value;
-        var tempGameSystem = document.querySelector("#tempGameSystem" + game.$id).value;
-        var tempGameQuantity = document.querySelector("#tempGameQuantity" + game.$id).value;
+        //Grabs the station properties from the scope to pass into the station object and update it
+        var tempStationNumber = document.querySelector("#tempStationNumber" + station.$id).value;
+        var tempStationSystem = document.querySelector("#tempStationSystem" + station.$id).value;
+        var tempStationTV = document.querySelector("#tempStationTV" + station.$id).value;
+        var tempStationTVSerial = document.querySelector("#tempStationTVSerial" + station.$id).value;
 
-        //Sets the game properties equal to whatever value is in the text inputs
-        game.gameTitle = tempGameTitle;
-        game.gameSystem = tempGameSystem;
-        game.gameQuantity = tempGameQuantity;
+        //Sets the station properties equal to whatever value is in the text inputs
+        station.stationNumber = tempStationNumber;
+        station.stationSystem = tempStationSystem;
+        station.stationTV = tempStationTV;
+        station.stationTVSerial = tempStationTVSerial;
 
-        //visual of game update
-        console.log("game updated", game);
-        $scope.games.update(game);
+        //visual of station update
+        console.log("station updated", station);
+        $scope.stations.update(station);
     }
 
     //$scope.tempStation = $scope.$routeParams.stationID;

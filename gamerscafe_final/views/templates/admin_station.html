@@ -111,10 +111,10 @@
                     </thead>
                     <tbody>
                     <tr ng-repeat="station in stations">
-                        <td><input type="text" class="stationNumber" value="{{station.stationNumber}}"></td>
-                        <td><input type="text" class="stationSystem" value="{{station.stationSystem}}"></td>
-                        <td><input type="text" class="stationTV" value="{{station.stationTV}}"></td>
-                        <td><input type="text" class="stationTVSerial" value="{{station.stationTVSerial}}"></td>
+                        <td><input type="text" class="stationNumber" value="{{station.stationNumber}}" id="tempStationNumber{{station.$id}}"></td>
+                        <td><input type="text" class="stationSystem" value="{{station.stationSystem}}" id="tempStationSystem{{station.$id}}"></td>
+                        <td><input type="text" class="stationTV" value="{{station.stationTV}}" id="tempStationTV{{station.$id}}"></td>
+                        <td><input type="text" class="stationTVSerial" value="{{station.stationTVSerial}}" id="tempStationTVSerial{{station.$id}}"></td>
                         <td><a href="" ng-click="updateStation(station)">Update</a> / <a href="" ng-click="deleteStation(station.$id)">Delete</a></td>
                     </tr>
                     </tbody>
