@@ -1,4 +1,4 @@
-gamerscafe.controller('Core', ['$scope', '$routeParams', 'angularFireCollection', 'angularFireAuth', function mtCtrl($scope, $routeParams, angularFireCollection, angularFireAuth){
+gamerscafe.controller('Core', ['$scope', '$routeParams','$location', 'angularFireCollection', 'angularFireAuth', function mtCtrl($scope, $routeParams, $location, angularFireCollection, angularFireAuth){
 
     // Creates an instance of Firebase and connects to our URL
     var myConn 	= new Firebase('https://gamerscafe.firebaseio.com/gamerscafe');
