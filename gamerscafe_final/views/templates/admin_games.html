@@ -116,7 +116,7 @@
                         <td>09/16/2013</td>
                         <td><input type="text" class="gameQuantity" value="{{game.gameQuantity}}" id="tempGameQuantity{{game.$id}}"></td>
                         <td>2</td>
-                        <td><a href="" class="button" ng-click="updateGame(game)" id="game_update_button">Update</a><a href="" class="button" ng-click="deleteGame(tempGame.$id)">Delete</a></td>
+                        <td><a href="" class="button" ng-click="updateGame(game)" id="game_update_button{{game.$id}}">Update</a><a href="" class="button" ng-click="deleteGame(game.$id)" id="game_delete_button{{game.$id}}">Delete</a></td>
                     </tr>
                     </tbody>
                 </table>
