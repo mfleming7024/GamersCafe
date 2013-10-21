@@ -46,16 +46,29 @@ gamerscafe.controller('Core', ['$scope', '$routeParams','$location', 'angularFir
         }
     }
 
+    var game_delete_confirmed = false;
     //removes game based on a unique id
     $scope.deleteGame = function(myid){
-        $scope.games.remove(myid);
-        console.log("deleteGame clicked");
+    	if (game_delete_confirmed) {
+    		
+    		$("#game_delete_button" + myid).css("background", "#2ba6cb").html("Delete");
+    		
+	    	$scope.games.remove(myid);
+	    	console.log("deleteGame clicked");
+	    	
+	    	game_delete_confirmed = false;
+    	} else {
+	    	$("#game_delete_button" + myid).css("background", "red").html("Are you sure");
+	    	
+	    	game_delete_confirmed = true;
+    	}
+        
     }
     
-    var confirmed = false;
+    var game_update_confirmed = false;
     //updates the games database have fields instead of string literal
 	$scope.updateGame = function(game){
-		if (confirmed) {
+		if (game_update_confirmed) {
 		
 			//Grabs the game properties from the scope to pass into the game object and update it
 			var tempGameTitle = document.querySelector("#tempGameTitle" + game.$id).value;
@@ -71,15 +84,11 @@ gamerscafe.controller('Core', ['$scope', '$routeParams','$location', 'angularFir
 			console.log("game updated", game);
 			$scope.games.update(game);
 			
-			$("#game_update_button").css("background", "#2ba6cb").html("Update");
-			
-			confirmed = false;
+			$("#game_update_button" + game.$id).css("background", "#2ba6cb").html("Update");
+			game_update_confirmed = false;
 		} else {
-			$("#game_update_button").css("background", "green").html("Are you sure").focusout(function(){
-				$(this).css("background", "#2ba6cb").html("Update");
-				confirmed = false;
-			});
-			confirmed = true;
+			$("#game_update_button" + game.$id).css("background", "green").html("Are you sure");
+			game_update_confirmed = true;
 		}
 	}
 
