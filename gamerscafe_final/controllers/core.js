@@ -1,7 +1,11 @@
+<<<<<<< HEAD
 
 gamerscafe.controller('Core', ['$scope', '$routeParams', 'angularFireCollection', 'angularFireAuth', function mtCtrl($scope, $routeParams, angularFireCollection, angularFireAuth, $location){
 
 //gamerscafe.controller('Core', ['$scope', '$routeParams','$location', 'angularFireCollection', 'angularFireAuth', function mtCtrl($scope, $routeParams, $location, angularFireCollection, angularFireAuth){
+=======
+gamerscafe.controller('Core', ['$scope', '$routeParams','$location', 'angularFireCollection', 'angularFireAuth', function mtCtrl($scope, $routeParams, $location, angularFireCollection, angularFireAuth, $location){
+>>>>>>> 6fdf6e93726994c01d51cfa9652cc2eda1707360
 
 
     // Creates an instance of Firebase and connects to our URL
@@ -47,23 +51,36 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', 'angularFireCollection'
         $scope.games.remove(myid);
         console.log("deleteGame clicked");
     }
-
-    //updates the games database
-	//have fields instead of string literal
+    
+    var confirmed = false;
+    //updates the games database have fields instead of string literal
 	$scope.updateGame = function(game){
-		//Grabs the game properties from the scope to pass into the game object and update it
-		var tempGameTitle = document.querySelector("#tempGameTitle" + game.$id).value;
-		var tempGameSystem = document.querySelector("#tempGameSystem" + game.$id).value;
-		var tempGameQuantity = document.querySelector("#tempGameQuantity" + game.$id).value;
+		if (confirmed) {
 		
-		//Sets the game properties equal to whatever value is in the text inputs
-		game.gameTitle = tempGameTitle;
-		game.gameSystem = tempGameSystem; 
-		game.gameQuantity = tempGameQuantity;
-		
-		//visual of game update
-		console.log("game updated", game);
-		$scope.games.update(game);
+			//Grabs the game properties from the scope to pass into the game object and update it
+			var tempGameTitle = document.querySelector("#tempGameTitle" + game.$id).value;
+			var tempGameSystem = document.querySelector("#tempGameSystem" + game.$id).value;
+			var tempGameQuantity = document.querySelector("#tempGameQuantity" + game.$id).value;
+			
+			//Sets the game properties equal to whatever value is in the text inputs
+			game.gameTitle = tempGameTitle;
+			game.gameSystem = tempGameSystem; 
+			game.gameQuantity = tempGameQuantity;
+			
+			//visual of game update
+			console.log("game updated", game);
+			$scope.games.update(game);
+			
+			$("#game_update_button").css("background", "#2ba6cb").html("Update");
+			
+			confirmed = false;
+		} else {
+			$("#game_update_button").css("background", "green").html("Are you sure").focusout(function(){
+				$(this).css("background", "#2ba6cb").html("Update");
+				confirmed = false;
+			});
+			confirmed = true;
+		}
 	}
 
     //************************************Systems database***************************************************
