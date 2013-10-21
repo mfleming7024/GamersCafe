@@ -1,11 +1,6 @@
-<<<<<<< HEAD
 
-gamerscafe.controller('Core', ['$scope', '$routeParams', 'angularFireCollection', 'angularFireAuth', function mtCtrl($scope, $routeParams, angularFireCollection, angularFireAuth, $location){
-
-//gamerscafe.controller('Core', ['$scope', '$routeParams','$location', 'angularFireCollection', 'angularFireAuth', function mtCtrl($scope, $routeParams, $location, angularFireCollection, angularFireAuth){
-=======
 gamerscafe.controller('Core', ['$scope', '$routeParams','$location', 'angularFireCollection', 'angularFireAuth', function mtCtrl($scope, $routeParams, $location, angularFireCollection, angularFireAuth, $location){
->>>>>>> 6fdf6e93726994c01d51cfa9652cc2eda1707360
+
 
 
     // Creates an instance of Firebase and connects to our URL
