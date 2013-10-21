@@ -93,7 +93,7 @@ gamerscafe.config(function ($routeProvider){
             controller:"Core",
             templateUrl:"views/templates/gts_edit_gamer.html",
         })
-        
+
         .when("/admin_add_staff", {
             controller:"Core",
             templateUrl:"views/templates/admin_add_staff.html"

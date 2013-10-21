@@ -33,7 +33,6 @@
 
                         <ul class="dropdown">
                             <li class="has-dropdown"><a href="#">Dropdown Level 1a</a>
-
                                 <ul class="dropdown">
                                     <li><label>Dropdown Level 2 Label</label></li>
                                     <li><a href="#">Dropdown Level 2a</a></li>
@@ -88,34 +87,36 @@
                 <h2>Staff List</h2>
 
                 <div class="search">
-                    <form>
-                        <input type="text" class="systemSearch" placeholder="Search Staff">
+                    <form class="adminSearch">
+                        <input type="text" class="systemSearch" placeholder="Search Staff" ng-model="filter.staffName">
                     </form>
                     <a href="#/admin_add_staff" class="small button a_dropdown">Add Staff</a>
                 </div>
                 <!-- Table -->
-                <table class="staff_info">
+                <table class="table_info">
                     <thead>
                     <tr>
-                        <th width="200">Name</th>
-                        <th>Cell Number</th>
-                        <th>Email</th>
-                        <th>Password</th>
-                        <th>Permission</th>
+                        <th width="20%">Name</th>
+                        <th width="20%">Cell Number</th>
+                        <th width="20%">Email</th>
+                        <th width="5%">Password</th>
+                        <th width="5%">Permission</th>
                         <th width="150">Date Hired</th>
                         <th width="10%">Action</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr ng-repeat="staff in staffs">
-                        <td><input type="text" class="staffName" value="{{staff.staffName}}"></td>
-                        <td><input type="text" class="staffNumber" value="{{staff.staffNumber}}"></td>
-                        <td><input type="text" class="staffEmail" value="{{staff.staffEmail}}"></td>
-                        <td><input type="password" class="staffPassword" value="{{staff.staffPassword}}"></td>
-                        <td><p>{{staff.staffPermission}}</p></td>
-                        <td><p>{{staff.staffHiredDate}}</p></td>
-                        <td><a href="" ng-click="updateStaff(staff)">Update</a> / <a href="" ng-click="deleteStaff(staff.$id)">Delete</a></td>
-                    </tr>
+                    <form name="form">
+                        <tr ng-repeat="staff in staffs | filter:filter.staffName">
+                            <td><input type="text" class="staffName" value="{{staff.staffName}}" id="tempStaffName{{staff.$id}}"></td>
+                            <td><input type="text" class="staffNumber" value="{{staff.staffNumber}}" id="tempStaffNumber{{staff.$id}}"></td>
+                            <td><input type="text" class="staffEmail" value="{{staff.staffEmail}}" id="tempStaffEmail{{staff.$id}}"></td>
+                            <td><input type="password" class="staffPassword" value="{{staff.staffPassword}}" id="tempStaffPassword{{staff.$id}}"></td>
+                            <td><p>{{staff.staffPermission}}</p></td>
+                            <td><p>{{staff.staffHiredDate}}</p></td>
+                            <td><a href="" ng-click="updateStaff(staff)">Update</a> / <a href="" ng-click="deleteStaff(staff.$id)">Delete</a></td>
+                        </tr>
+                    </form>
                     </tbody>
                 </table>
             </div>

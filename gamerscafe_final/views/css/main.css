@@ -442,7 +442,6 @@ h1, h2, h3, p, a {
 .search{
     margin-left: 25px;
 }
-
 .cancel_reason{
     margin-left: 13%;
 }
@@ -457,6 +456,47 @@ h1, h2, h3, p, a {
 }
 .add_gamer_q{
     width: 290px;
+}
+
+.errorMessage {
+    background-color: #FA787E;
+    margin-top: -15px;
+    margin-bottom: 10px;
+    width: 100%;
+    font-family: 'Oswald', sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+}
+.form input.ng-valid.ng-dirty {
+    border: 1px solid #2ba6cb;
+    background: #b4e6ed;
+}
+.form input.ng-invalid.ng-dirty {
+    border: 1px solid #FA787E;
+}
+
+#admin_staff{
+    margin: 0 auto;
+    width: 500px;
+}
+.form{
+    margin: 0 auto;
+}
+#form{
+    width: 500px;
+}
+.formButtons{
+    margin: 0 auto;
+    width: 200px;
+}
+
+.adminSearch{
+    width: 30%;
+}
+.table_info{
+    width: 960px;
+    margin: 0 auto;
 }
 
 /* Media Queries ----------- */

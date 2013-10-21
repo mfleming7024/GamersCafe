@@ -1,4 +1,4 @@
-gamerscafe.controller('Core', ['$scope', '$routeParams', 'angularFireCollection', 'angularFireAuth', function mtCtrl($scope, $routeParams, angularFireCollection, angularFireAuth){
+gamerscafe.controller('Core', ['$scope', '$routeParams', 'angularFireCollection', 'angularFireAuth', function mtCtrl($scope, $routeParams, angularFireCollection, angularFireAuth, $location){
 
     // Creates an instance of Firebase and connects to our URL
     var myConn 	= new Firebase('https://gamerscafe.firebaseio.com/gamerscafe');
@@ -224,6 +224,7 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', 'angularFireCollection'
             } else {
                 console.log($scope.staff);
                 $scope.staffs.add($scope.staff);
+                $location.path('/admin_staff');
             }
         }
         console.log("addStaff clicked");
@@ -233,6 +234,26 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', 'angularFireCollection'
                 console.log('User Id: ' + user.id + ', Email: ' + user.email);
             }
         });
+    }
+
+    //updates the staff database
+    //have fields instead of string literal
+    $scope.updateStaff = function(staff){
+        //Grabs the staff properties from the scope to pass into the staff object and update it
+        var tempStaffName = document.querySelector("#tempStaffName" + staff.$id).value;
+        var tempStaffNumber = document.querySelector("#tempStaffNumber" + staff.$id).value;
+        var tempStaffEmail = document.querySelector("#tempStaffEmail" + staff.$id).value;
+        var tempStaffPassword = document.querySelector("#tempStaffPassword" + staff.$id).value;
+
+        //Sets the staff properties equal to whatever value is in the text inputs
+        staff.staffName = tempStaffName;
+        staff.staffNumber = tempStaffNumber;
+        staff.staffEmail = tempStaffEmail;
+        staff.staffPassword = tempStaffPassword;
+
+        //visual of staff update
+        console.log("staff updated", staff);
+        $scope.staffs.update(staff);
     }
 
     //remove from the databse object but not from the auth list.
@@ -363,9 +384,6 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', 'angularFireCollection'
     $scope.updateEmptyStation = function(station){
         $scope.emptyStations.update(station);
     }
-
-
-
 
 }]);
 
