@@ -112,7 +112,7 @@
                         <td><input type="text" class="systemSerial" value="{{tempSystem.systemSerial}}" id="tempSystemSerial{{tempSystem.$id}}"></td>
                         <td><input type="text" class="systemStation" value="{{tempSystem.systemStation}}" id="tempSystemStation{{tempSystem.$id}}"></td>
                         <td><input type="text" class="systemAddedDate" value="{{tempSystem.addedDate}}" ></td>
-                        <td><a href="" ng-click="updateSystem(tempSystem)">Update</a> / <a href="" ng-click="deleteSystem(tempSystem.$id)">Delete</a></td>
+                        <td><a href="" class="button" id="system_update_button{{tempSystem.$id}}" ng-click="updateSystem(tempSystem)">Update</a><a href="" class="button" id="system_delete_button{{tempSystem.$id}}" ng-click="deleteSystem(tempSystem.$id)">Delete</a></td>
                     </tr>
                     </tbody>
                 </table>

@@ -88,7 +88,7 @@ gamerscafe.controller('Core', ['$scope', '$routeParams','$location', 'angularFir
 	}
 
     //************************************Systems database***************************************************
-//url to the data needed
+    //url to the data needed
     var urlSystem = new Firebase('https://gamerscafe.firebaseio.com/gamerscafe/systems');
 
     //collects the info from the database for use.
@@ -96,7 +96,6 @@ gamerscafe.controller('Core', ['$scope', '$routeParams','$location', 'angularFir
 
     //create a system and adds it to the database
     $scope.addSystem = function(){
-//		$scope.systems.add({name: "Xbox 360",station:"number here", model_number:"1234567890", purchased_date:"10/31/2013", info:"Blah Blah Blah"});
         if ($scope.system == "" || $scope.system == null) {
             console.log("game does not exist");
         } else {
@@ -114,31 +113,48 @@ gamerscafe.controller('Core', ['$scope', '$routeParams','$location', 'angularFir
         console.log("addSystem clicked");
     }
 
+    var system_delete_confirmed = false;
     //removes system based on a unique id
     $scope.deleteSystem = function(myid){
-        $scope.systems.remove(myid);
-        console.log("deleteSystem clicked");
+    	if (system_delete_confirmed) {
+	    	$scope.systems.remove(myid);
+	    	console.log("deleteSystem clicked");
+	    	$("#system_delete_button" + myid).css("background", "#2ba6cb").html("Delete");
+			system_delete_confirmed = false;
+		} else {
+			$("#system_delete_button" + myid).css("background", "red").html("Are you sure");
+			system_delete_confirmed = true;
+		}
     }
 
+    var system_update_confirmed = false;
     //updates the systems database
     //have fields instead of string literal
     $scope.updateSystem = function(system){
         
-        //Grabs the game properties from the scope to pass into the game object and update it
-		var tempSystemName = document.querySelector("#tempSystemName" + system.$id).value;
-		var tempSystemSerial = document.querySelector("#tempSystemSerial" + system.$id).value;
-		var tempSystemStation = document.querySelector("#tempSystemStation" + system.$id).value;
-				
-		//Sets the game properties equal to whatever value is in the text inputs
-		system.systemName = tempSystemName;
-		system.systemSerial = tempSystemSerial; 
-		system.systemStation = tempSystemStation;
-		
-		//visual of game update
-		console.log("system updated", system);
-		$scope.systems.update(system);
-        
+        if (system_update_confirmed) {
+	        //Grabs the game properties from the scope to pass into the game object and update it
+			var tempSystemName = document.querySelector("#tempSystemName" + system.$id).value;
+			var tempSystemSerial = document.querySelector("#tempSystemSerial" + system.$id).value;
+			var tempSystemStation = document.querySelector("#tempSystemStation" + system.$id).value;
+					
+			//Sets the game properties equal to whatever value is in the text inputs
+			system.systemName = tempSystemName;
+			system.systemSerial = tempSystemSerial; 
+			system.systemStation = tempSystemStation;
+			
+			//visual of game update
+			console.log("system updated", system);
+			$scope.systems.update(system);
+			
+			$("#system_update_button" + system.$id).css("background", "#2ba6cb").html("Update");
+			system_update_confirmed = false;
+		} else {
+			$("#system_update_button" + system.$id).css("background", "green").html("Are you sure");
+			system_update_confirmed = true;
+		}
 
+        
     }
 
     //************************************Users database***************************************************
@@ -232,7 +248,6 @@ gamerscafe.controller('Core', ['$scope', '$routeParams','$location', 'angularFir
 
     //create a staff member and adds it to the staff database
     $scope.addStaff = function(){
-//		$scope.staff.add({email:"", password:""});
         if ($scope.staff == "" || $scope.staff == null) {
             console.log("staff does not exist");
         } else {
