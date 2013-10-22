@@ -85,34 +85,38 @@
             <div class="splitter"></div>
 
             <!-- Admin Add System Page -->
-            <div id="admin_games" ng-controller="Core">
+            <div id="admin_system" ng-controller="Core">
                 <h2>Add System</h2>
 
-                <form>
-                    <fieldset>
-                        <label>System Name</label>
-                        <input class="input_add_systemName" type="text" placeholder="System Name" ng-model="system.systemName">
-                        <form class="custom">
-                        </form>
-                        <label>Serial Number</label>
-                        <input class="input_add_systemSerial" type="text" placeholder="Serial Number" ng-model="system.systemSerial">
-                        <label>Assigned Station</label>
-                        <form class="custom">
-                            <select id="systemDropdown" class="small" ng-model="system.systemStation">
-                                <!----------------------  Options populated through ng-options from database BUGGGYYYYYYYYYYYYYYYY!!!!!!!!!!!!!!!!	------------------------------->
-                                <!--  <option ng-repeat="system in systems">{{system.name}}</option> -->
-                                <option>None</option>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                            </select>
-                        </form>
+                <form name="form" novalidate ng-submit="addSystem()">
+                    <div class="row">
+                        <div class="large-12 columns form">
+                            <fieldset>
+                                <input class="input_add_systemName" name="name" type="text" placeholder="System Name" ng-model="system.systemName" ng-minlength="2" required="">
+                                <div class="errorMessage" ng-show="form.name.$dirty && form.name.$invalid">
+                                    <span ng-show="form.name.$error.required">Please Enter A Name</span>
+                                    <span ng-show="form.name.$error.minlength">Name Must Be At Least 2 Characters Long</span>
+                                </div>
+                                <input class="input_add_systemSerial" name="serial" type="text" placeholder="Serial Number" ng-model="system.systemSerial" required="">
+                                <div class="errorMessage" ng-show="form.serial.$dirty && form.serial.$invalid">
+                                    <span ng-show="form.serial.$error.required">Please Enter A Name</span>
+                                    <span ng-show="form.serial.$error.minlength">Name Must Be At Least 2 Characters Long</span>
+                                </div>
+                                <label>Assigned Station</label>
+                                <select id="systemDropdown" class="small" ng-model="system.systemStation" required="">
+                                    <option>None</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                </select>
+                                <div class="formButtons">
+                                    <input type="submit" class="button" value="Add" ng-disabled="form.$invalid" />
+                                    <a href="#/admin_systems" class="button">Cancel</a>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
 
-                        <form novalidate ng-submit="addSystem()">
-                            <input type="submit" class="button" value="Add" />
-                            <a href="#/admin_systems" class="button">Cancel</a>
-                        </form>
-                    </fieldset>
                 </form>
             </div>
         </div>
