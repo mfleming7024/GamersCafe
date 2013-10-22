@@ -464,8 +464,8 @@ h1, h2, h3, p, a {
 }
 
 .search{
-    margin-left: 25px;
-    margin-right: 25px;
+    margin-left: 10px;
+
 }
 .cancel_reason{
     margin-left: 13%;
@@ -553,6 +553,9 @@ h1, h2, h3, p, a {
     }
     .add_gamer_q{
         width: 190px;
+    }
+    .search{
+        margin-left: 0;
     }
 
 
