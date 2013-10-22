@@ -2,7 +2,6 @@
 gamerscafe.controller('Core', ['$scope', '$routeParams','$location', 'angularFireCollection', 'angularFireAuth', function mtCtrl($scope, $routeParams, $location, angularFireCollection, angularFireAuth){
 
 
-
     // Creates an instance of Firebase and connects to our URL
     var myConn 	= new Firebase('https://gamerscafe.firebaseio.com/gamerscafe');
     var auth = new FirebaseSimpleLogin(myConn, function(error, user) {});
@@ -11,7 +10,7 @@ gamerscafe.controller('Core', ['$scope', '$routeParams','$location', 'angularFir
         console.log("Test working.")
     }
 
-    //************************************Games database***************************************************
+    //************************************Games CRUD***************************************************
 
     //url to the data needed
     var urlGames = new Firebase("https://gamerscafe.firebaseio.com/gamerscafe/games");
@@ -44,6 +43,7 @@ gamerscafe.controller('Core', ['$scope', '$routeParams','$location', 'angularFir
     var game_delete_confirmed = false;
     //removes game based on a unique id
     $scope.deleteGame = function(myid){
+<<<<<<< HEAD
         if (game_delete_confirmed) {
 
             $("#game_delete_button" + myid).css("background", "#2ba6cb").html("Delete");
@@ -58,6 +58,21 @@ gamerscafe.controller('Core', ['$scope', '$routeParams','$location', 'angularFir
             game_delete_confirmed = true;
         }
 
+=======
+    	if (game_delete_confirmed) {
+    		//Changes appearance of button to ask for confirmation
+    		$("#game_delete_button" + myid).css("background", "#2ba6cb").html("Delete");
+	    	$scope.games.remove(myid);
+	    	console.log("deleteGame clicked", myid); 	
+	    	//resets boolean on delete
+	    	game_delete_confirmed = false;
+    	} else {
+    		//changes html and color to reflect a confirmation
+	    	$("#game_delete_button" + myid).css("background", "red").html("Are you sure");
+	    	game_delete_confirmed = true;
+    	}
+        
+>>>>>>> eca2e7f77f4e071e6ccbb44062828480094f50f8
     }
 
     var game_update_confirmed = false;
@@ -87,7 +102,7 @@ gamerscafe.controller('Core', ['$scope', '$routeParams','$location', 'angularFir
         }
     }
 
-    //************************************Systems database***************************************************
+    //************************************Systems CRUD***************************************************
     //url to the data needed
     var urlSystem = new Firebase('https://gamerscafe.firebaseio.com/gamerscafe/systems');
 
@@ -128,8 +143,7 @@ gamerscafe.controller('Core', ['$scope', '$routeParams','$location', 'angularFir
     }
 
     var system_update_confirmed = false;
-    //updates the systems database
-    //have fields instead of string literal
+    //updates the systems database have fields instead of string literal
     $scope.updateSystem = function(system){
 
         if (system_update_confirmed) {
@@ -157,14 +171,13 @@ gamerscafe.controller('Core', ['$scope', '$routeParams','$location', 'angularFir
 
     }
 
-    //************************************Users database***************************************************
+    //************************************Users CRUD***************************************************
 
     //url to the data needed
     var urlUsers = new Firebase('https://gamerscafe.firebaseio.com/gamerscafe/users');
 
     //collects the info from the database for use.
-    $scope.users = angularFireCollection(urlUsers, function(snap)
-    {
+    $scope.users = angularFireCollection(urlUsers, function(snap){
         var users = snap.val();
         if(typeof $routeParams !== "undefined"){
             if(typeof $routeParams.user !== "undefined"){
@@ -172,6 +185,43 @@ gamerscafe.controller('Core', ['$scope', '$routeParams','$location', 'angularFir
             }
         }
     });
+	
+	var user_delete_confirmed = false;
+	$scope.deleteUser = function(itemId){
+		if (user_delete_confirmed) {
+			$scope.users.remove(itemId);
+			$("#user_delete_button" + itemId).css("background", "#2ba6cb").html("Delete");
+			user_delete_confirmed = false;
+		} else {
+			$("#user_delete_button" + itemId).css("background", "red").html("Are you sure");
+			user_delete_confirmed = true;
+		}
+	}
+	
+	var user_update_confirmed = false;
+	$scope.updateUser = function(user) {
+		if (user_update_confirmed) {
+			$("#user_update_button" + user.$id).css("background", "#2ba6cb").html("Update");
+			user_update_confirmed = false;
+			
+			//sets variables for all of the input field values
+			var tempUserName = document.querySelector("#tempUserName" + user.$id).value;
+	        var tempUserEmail = document.querySelector("#tempUserEmail" + user.$id).value;
+	        var tempUserJoinDate = document.querySelector("#tempUserJoinDate" + user.$id).value;
+	
+	        //Sets the station properties equal to whatever value is in the text inputs
+	        user.displayName = tempUserName;
+	        user.email = tempUserEmail;
+	        user.joinedOn = tempUserJoinDate;
+	
+	        //visual of station update
+	        console.log("user updated", user);
+	        $scope.users.update(user);
+		} else {
+			$("#user_update_button" + user.$id).css("background", "green").html("Are you sure");
+			user_update_confirmed = true;
+		}
+	}
 
     //************************************Stations CRUD***************************************************
 
@@ -211,8 +261,7 @@ gamerscafe.controller('Core', ['$scope', '$routeParams','$location', 'angularFir
     }
 
 
-    //updates the station database
-    //have fields instead of string literal
+    //updates the station database have fields instead of string literal
     $scope.updateStation = function(station){
         //Grabs the station properties from the scope to pass into the station object and update it
         var tempStationNumber = document.querySelector("#tempStationNumber" + station.$id).value;
@@ -278,8 +327,7 @@ gamerscafe.controller('Core', ['$scope', '$routeParams','$location', 'angularFir
 
 
     var staff_update_confirmed = false;
-    //updates the staff database
-    //have fields instead of string literal
+    //updates the staff database have fields instead of string literal
     $scope.updateStaff = function(staff){
         if (staff_update_confirmed) {
             //Grabs the staff properties from the scope to pass into the staff object and update it
@@ -412,8 +460,7 @@ gamerscafe.controller('Core', ['$scope', '$routeParams','$location', 'angularFir
         console.log("delete ActiveStations clicked");
     }
 
-    //updates the quedStations database
-    //have fields instead of string literal
+    //updates the quedStations database have fields instead of string literal
     $scope.updateQuedStation = function(station){
         $scope.quedStations.update(station);
     }
@@ -438,8 +485,7 @@ gamerscafe.controller('Core', ['$scope', '$routeParams','$location', 'angularFir
         console.log("delete EmptyStations clicked");
     }
 
-    //updates the emptyStations database
-    //have fields instead of string literal
+    //updates the emptyStations database have fields instead of string literal
     $scope.updateEmptyStation = function(station){
         $scope.emptyStations.update(station);
     }

@@ -91,7 +91,7 @@
                     <form>
                         <input type="text" class="systemSearch" placeholder="Search Gamer">
                     </form>
-                    <a href="admin_add_user.html" class="small button a_dropdown">Add Gamer</a>
+                    <a href="#/admin_add_user" class="small button a_dropdown">Add Gamer</a>
                 </div>
                 <!-- Table -->
                 <table class="gts">
@@ -100,18 +100,16 @@
                         <th width="200">Name</th>
                         <th>Email</th>
                         <th>Joined Date</th>
-                        <th width="150">Gamer Points</th>
                         <th width="10%">Action</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr ng-repeat="game in games">
-                        <td><input type="text" class="userName" value="Erwin Angeles"></td>
-                        <td><input type="text" class="userEmail" value="dropthatthunthun@gmail.com"></td>
-                        <td><input type="text" class="userJoinDate" value="10/28/13"></td>
-                        <td><input type="text" class="userGamerPoints" value="1,500"></td>
-                        <td><a href="" ng-click="updateGame(game)">Update</a> / <a href="" ng-click="deleteGame(game.$id)">Delete</a></td>
-                    </tr>
+	                    <tr ng-repeat="tempUser in users">
+	                        <td><input type="text" class="userName" id="tempUserName{{tempUser.$id}}" value="{{tempUser.displayName}}"></td>
+	                        <td><input type="text" class="userEmail" id="tempUserEmail{{tempUser.$id}}" value="{{tempUser.email}}"></td>
+	                        <td><input type="date" class="userJoinDate" id="tempUserJoinDate{{tempUser.$id}}" value="{{tempUser.joinedOn}}"></td>
+	                        <td><a href="" class="button"  id="user_update_button{{tempUser.$id}}" ng-click="updateUser(tempUser)">Update</a><a href="" class="button" id="user_delete_button{{tempUser.$id}}" ng-click="deleteUser(tempUser.$id)">Delete</a></td>
+	                    </tr>
                     </tbody>
                 </table>
             </div>
