@@ -384,59 +384,93 @@ gamerscafe.controller('Core', ['$scope', '$routeParams','$location', 'angularFir
     var urlActiveStations = new Firebase('https://gamerscafe.firebaseio.com/gamerscafe/activeStations');
 
     //collects the info from the database for use.
-    $scope.activeStations = angularFireCollection(urlActiveStations,function(snap)
-    {
-        var stations = snap.val();
-        if(typeof $routeParams !== "undefined"){
-            if(typeof $routeParams.stationId !== "undefined"){
-                console.log("routeParams child"+$routeParams);
-                $scope.tempStation =  stations[$routeParams.stationId];
-                $scope.tempStation.$id = $routeParams.stationId;
-            }
+    $scope.activeStations = angularFireCollection(urlActiveStations,function()
+        {
+            //starts the clocks
+            $timeout(wrapper);
+        });
+
+    if(typeof $routeParams !== "undefined"){
+        if(typeof $routeParams.stationId !== "undefined"){
+            $scope.tempStation = {};
+            angularFire(urlActiveStations.child($routeParams.stationId),$scope,'tempStation');
+            $scope.tempStation.id = $routeParams.stationId;
+            console.log('$scope.tempStation',$scope.tempStation);
         }
-    });
+    }
+
+    var updateTimer = function(){
+        //runs a loop for each station on the active stations database
+        for (var i = $scope.activeStations.length - 1; i >= 0; i--) {
+            //checks to see if the timer is 0 and will change the status from nomral to red.
+            //sets the minutes to the new time
+            var time = new Date().getTime() - $scope.activeStations[i].startTime;
+            $scope.activeStations[i].displayTime = parseInt($scope.activeStations[i].countdown - (time/1000/60));
+            console.log('$scope.activeStations[i].displayTime',$scope.activeStations[i].displayTime);
+
+            if($scope.activeStations[i].displayTime <= 0){
+                console.log("Time is up on Station " + $scope.activeStations[i].stationNumber);
+                console.log("the countdown is at " + $scope.activeStations[i].countdown);
+                $scope.activeStations[i].displayTime = 0;
+            }
+        };
+    };
+
+    var wrapper = function () {
+        updateTimer();
+        $timeout(wrapper, 30000);
+    }
+
+    
 
     //create a active station and adds it to the database
     $scope.addActiveStation = function(){
-        console.log(document.getElementById("#tempStationNumber"));
+
         var updateStationItem = {};
-        updateStationItem.stationNumber = document.getElementById("#tempStationNumber").text;
-        updateStationItem.boxart = document.getElementById("#tempStationBoxart").text;
-        updateStationItem.username = document.getElementById("#tempStationUsername").text;
-        updateStationItem.countdownMin = parseInt(updateStationItem.countdownMin) + parseInt(document.getElementById("#tempStationAddTime").text);
-        // $scope.activeStations.add();
+        updateStationItem.stationNumber = document.querySelector("#customDropdown").value;
+        updateStationItem.boxart = document.querySelector("#games_option").value;
+        updateStationItem.username = document.querySelector("#username").value;
+        updateStationItem.countdown = document.querySelector("#time_dropdown").value;
+
+        $scope.activeStations.add({
+            stationNumber:updateStationItem.stationNumber, 
+            username:updateStationItem.username, 
+            boxart:"views/img/gtav.jpg", 
+            countdown: updateStationItem.countdown, 
+            startTime: new Date().getTime()
+        });
+        $location.path("/admin");
         console.log("add ActiveStations clicked");
     }
 
     //removes activeStations based on a unique id
     $scope.deleteActiveStation = function(removeStation){
+            $scope.stationHistory.add($scope.tempHistStation);
+            $scope.tempStation = null;
+            $location.path("/admin");
+    }
+
+    //updates the activeStations database
+    $scope.updateActiveStation = function(){
+        console.log('urlActiveStations',urlActiveStations)
         if(typeof $scope.activeStations == "undefined"){
             $scope.activeStations = angularFireCollection(urlActiveStations,function(snap){
                 var stations = snap.val();
                 if(typeof $routeParams !== "undefined"){
-                    $scope.tempStation =  stations[$routeParams.stationId];
-                    $scope.tempStation.$id = $routeParams.stationId;
+                    $scope.tempStation.stationNumber = document.querySelector("#customDropdown").value;
+                    $scope.tempStation.boxart = "views/images/watchdog.jpg";
+                    $scope.tempStation.username = document.querySelector("#username").value;;
+                    $scope.tempStation.countdown = parseFloat($scope.tempStation.countdown) + parseFloat(document.querySelector("#time_dropdown").value);
+                    $location.path("/admin");
                 }
-                $scope.activeStations.remove($scope.tempStation.$id);
-                $location.path("/admin");
-            });
+            })
         }else{
-            $scope.activeStations.remove($scope.tempStation.$id);
+            $scope.tempStation.stationNumber = document.querySelector("#customDropdown").value;
+            $scope.tempStation.boxart = "views/images/watchdog.jpg";
+            $scope.tempStation.username = document.querySelector("#username").value;;
+            $scope.tempStation.countdown = parseFloat($scope.tempStation.countdown) + parseFloat(document.querySelector("#time_dropdown").value);
             $location.path("/admin");
         }
-    }
-
-    //updates the activeStations database
-    $scope.updateActiveStation = function(stationToBeChanged){
-        console.log("activeStations update called.");
-        var updateStationItem = stationToBeChanged;
-        //Grabs the station properties from the scope to pass into the station object and update it
-        updateStationItem.stationNumber = document.querySelector("#tempStationNumber").value;
-        updateStationItem.boxart = document.querySelector("#tempStationBoxart").value;
-        updateStationItem.username = document.querySelector("#tempStationUsername").value;
-        updateStationItem.countdownMin = parseInt(updateStationItem.countdownMin) + parseInt(document.querySelector("#tempStationAddTime").value);
-
-        $scope.activeStations.update(updateStationItem);
     }
 
     //************************************Qued stations database***************************************************
