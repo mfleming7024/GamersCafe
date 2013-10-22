@@ -97,24 +97,24 @@
                 <fieldset>
 
                    <label>Email Address:</label>
-                    <input class="staff_add_gamer" type="text" ng-model="tempUser">
+                    <input id="username"class="staff_add_gamer" type="text" ng-model="tempUser">
                     <form class="custom">
                     </form>
                     <label>Station</label>
                     <form class="custom">
-                        <select id="customDropdown" class="medium" id="tempStationNumber">
+                        <select id="customDropdown" class="medium">
                             <option ng-repeat="station in stations" value="{{station.number}}">{{station.number}}</option>
                         </select>
                     </form>
                     <label>Games</label>
                     <form class="custom">
-                        <select id="games_option" class="medium" id="tempStationBoxart">
+                        <select id="games_option" class="medium">
                             <option ng-repeat="game in games" value="{{game.gameTitle}}">{{game.gameTitle}}</option>
                         </select>
                     </form>
                     <label>Time(Minutes)</label>
                     <form class="custom">
-                        <select id="time_dropdown" class="medium" id="tempStationAddTime">
+                        <select id="time_dropdown" class="medium">
                             <option value="0">0</option>
                             <option value="30">30</option>
                             <option value="60">60</option>

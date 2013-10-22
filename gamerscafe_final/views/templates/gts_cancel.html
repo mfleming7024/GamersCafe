@@ -81,20 +81,17 @@
                     <div class="panel callout radius station_1">
                         <div class="cancel_panel_content">
                             <div class="station_number">
-                                <h1>1</h1>
-                            </div>
-                            <div class="gts_pic">
-                                <img src="views/img/sm_profile.png" alt="Small Profile Picture">
+                                <h1>{{tempStation.stationNumber}}</h1>
                             </div>
                             <div class="gamer_name">
-                                <h6>Erwin Angeles</h6>
+                                <h6>{{tempStation.username}}</h6>
                             </div>
                             <div class="game_boxart">
-                                <img src="img/gtav.jpg" alt="Game Box Art">
+                                <img src="{{tempStation.boxart}}" alt="Game Box Art">
                             </div>
                             <div class="gts_timer">
-                                <h6 class="time_in">12:30</h6>
-                                <h6 class="countdown">00:59</h6>
+                                <h6 class="time_in">{{tempStation.currentTime}}</h6>
+                                <h6 class="countdown">{{tempStation.countdownHours}}:{{tempStation.countdownMin}}</h6>
                             </div>
                         </div>
                     </div>
@@ -109,7 +106,7 @@
             </form>
             <!-- Comment needed to cancel -->
             <div class="cancel_button">
-                <a href="#" class="cancel_gamer_button button">Cancel Gamer</a>
+                <a class="cancel_gamer_button button" ng-click="deleteActiveStation(tempStation)">Cancel Gamer</a>
             </div>
 
         </div>

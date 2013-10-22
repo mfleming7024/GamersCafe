@@ -95,10 +95,12 @@
                 <h2>Add To Queue?</h2>
                 <div class="add_to_queue">
                     <form>
-                        <label>Name</label>
-                        <input class="staff_add_gamer" type="text" placeholder="Enter Person Name">
+                        <label>Email</label>
+                        <select id="customDropdown" class="medium" ng-model="tempusername">
+                            <option ng-repeat="user in users">{{user.email}}</option>
+                        </select>
                     </form>
-                    <div class="add_gamer_q button">Add</div>
+                    <div class="add_gamer_q button" ng-click="addQuedStation(tempusername)">Add</div>
                 </div>
             </div>
         </div>
