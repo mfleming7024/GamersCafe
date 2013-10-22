@@ -44,16 +44,12 @@ gamerscafe.controller('Core', ['$scope', '$routeParams','$location', 'angularFir
     //removes game based on a unique id
     $scope.deleteGame = function(myid){
         if (game_delete_confirmed) {
-
             $("#game_delete_button" + myid).css("background", "#2ba6cb").html("Delete");
-
             $scope.games.remove(myid);
             console.log("deleteGame clicked");
-
             game_delete_confirmed = false;
         } else {
             $("#game_delete_button" + myid).css("background", "red").html("Are you sure");
-
             game_delete_confirmed = true;
         }
 
@@ -244,37 +240,53 @@ gamerscafe.controller('Core', ['$scope', '$routeParams','$location', 'angularFir
             } else if ($scope.station.stationTVSerial == "" || $scope.station.stationTVSerial == null) {
                 console.log("Please enter a TV Serial");
             } else {
-                console.log($scope.station);
+                console.log("Station added", $scope.station);
                 $scope.stations.add($scope.station);
             }
         }
         console.log("addStation clicked");
     }
 
+    var station_delete_confirmed = false;
     //removes system based on a unique id
     $scope.deleteStation = function(myid){
-        $scope.stations.remove(myid);
-        console.log("deleteStation clicked");
+    	if(station_delete_confirmed) {
+	    	$("#station_delete_button" + myid).css("background", "#2ba6cb").html("Delete");
+            station_delete_confirmed = false;
+            $scope.stations.remove(myid);
+	    	console.log("deleteStation clicked", myid);
+        } else {
+            $("#station_delete_button" + myid).css("background", "red").html("Are you sure");
+            station_delete_confirmed = true;
+        }
+        
     }
 
-
+    var station_update_confirmed = false;
     //updates the station database have fields instead of string literal
     $scope.updateStation = function(station){
-        //Grabs the station properties from the scope to pass into the station object and update it
-        var tempStationNumber = document.querySelector("#tempStationNumber" + station.$id).value;
-        var tempStationSystem = document.querySelector("#tempStationSystem" + station.$id).value;
-        var tempStationTV = document.querySelector("#tempStationTV" + station.$id).value;
-        var tempStationTVSerial = document.querySelector("#tempStationTVSerial" + station.$id).value;
-
-        //Sets the station properties equal to whatever value is in the text inputs
-        station.stationNumber = tempStationNumber;
-        station.stationSystem = tempStationSystem;
-        station.stationTV = tempStationTV;
-        station.stationTVSerial = tempStationTVSerial;
-
-        //visual of station update
-        console.log("station updated", station);
-        $scope.stations.update(station);
+    	if (station_update_confirmed) {
+	        //Grabs the station properties from the scope to pass into the station object and update it
+	        var tempStationNumber = document.querySelector("#tempStationNumber" + station.$id).value;
+	        var tempStationSystem = document.querySelector("#tempStationSystem" + station.$id).value;
+	        var tempStationTV = document.querySelector("#tempStationTV" + station.$id).value;
+	        var tempStationTVSerial = document.querySelector("#tempStationTVSerial" + station.$id).value;
+	
+	        //Sets the station properties equal to whatever value is in the text inputs
+	        station.stationNumber = tempStationNumber;
+	        station.stationSystem = tempStationSystem;
+	        station.stationTV = tempStationTV;
+	        station.stationTVSerial = tempStationTVSerial;
+	
+	        //visual of station update
+	        console.log("station updated", station);
+	        $scope.stations.update(station);
+	         $("#station_update_button" + station.$id).css("background", "#2ba6cb").html("Update");
+            station_update_confirmed = false;
+        } else {
+            $("#station_update_button" + station.$id).css("background", "green").html("Are you sure");
+            station_update_confirmed = true;
+        }
     }
 
     //$scope.tempStation = $scope.$routeParams.stationID;
