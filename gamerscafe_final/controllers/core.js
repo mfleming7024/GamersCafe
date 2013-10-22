@@ -43,7 +43,6 @@ gamerscafe.controller('Core', ['$scope', '$routeParams','$location', 'angularFir
     var game_delete_confirmed = false;
     //removes game based on a unique id
     $scope.deleteGame = function(myid){
-<<<<<<< HEAD
         if (game_delete_confirmed) {
 
             $("#game_delete_button" + myid).css("background", "#2ba6cb").html("Delete");
@@ -58,7 +57,6 @@ gamerscafe.controller('Core', ['$scope', '$routeParams','$location', 'angularFir
             game_delete_confirmed = true;
         }
 
-=======
     	if (game_delete_confirmed) {
     		//Changes appearance of button to ask for confirmation
     		$("#game_delete_button" + myid).css("background", "#2ba6cb").html("Delete");
@@ -71,8 +69,7 @@ gamerscafe.controller('Core', ['$scope', '$routeParams','$location', 'angularFir
 	    	$("#game_delete_button" + myid).css("background", "red").html("Are you sure");
 	    	game_delete_confirmed = true;
     	}
-        
->>>>>>> eca2e7f77f4e071e6ccbb44062828480094f50f8
+
     }
 
     var game_update_confirmed = false;
