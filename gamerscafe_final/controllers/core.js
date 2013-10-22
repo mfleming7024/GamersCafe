@@ -549,7 +549,9 @@ gamerscafe.controller('Core', ['$scope', '$routeParams','$location', 'angularFir
         });
         console.log('test');
     };
-
+    $scope.logout = function(){
+        authenticate.logout();
+    };
 
 
 }]);

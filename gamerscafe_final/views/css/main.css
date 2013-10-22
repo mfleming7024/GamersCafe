@@ -32,6 +32,10 @@
     border-radius: 10px;
     height: 30px;
     width: 30px;
+    margin-left: -40px;
+}
+.user_nav{
+    margin-top: -30px!important;
 }
 .user_login{
     float: right;
