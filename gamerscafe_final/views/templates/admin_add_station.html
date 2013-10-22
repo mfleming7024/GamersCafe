@@ -67,9 +67,7 @@
         </nav>
     </div> <!-- END NAVIGATION -->
 
-
-
-    <!-- Staff Page -->
+    <!-- Add Station Page -->
     <div class="middle">
         <div class="row staff_columns">
             <ul class="admin_nav button-group">
@@ -89,30 +87,34 @@
             <!-- Admin Add Station Page -->
             <div id="admin_station" ng-controller="Core">
                 <h2>Add Station</h2>
-                <form>
-                    <fieldset>
-                        <label>Station Number</label>
-                        <input class="input_add_stationNumber" type="number" placeholder="Station Number" ng-model="station.stationNumber">
-                        <form class="custom">
-                        </form>
-                        <label>Select Available System</label>
-                        <form class="custom">
-                            <select id="systemSelection" class="small" ng-model="station.stationSystem">
-                                <!----------------------  Options populated through ng-options from database BUGGGYYYYYYYYYYYYYYYY!!!!!!!!!!!!!!!!	------------------------------->
-                                <!--  <option ng-repeat="system in systems">{{system.name}}</option> -->
-                                <option>Playstation 4</option>
-                                <option>Playstation 3</option>
-                            </select>
-                        </form>
-                        <label>Television</label>
-                        <input class="input_add_stationTelevision" type="text" placeholder="100inch LED Sony Bravia" ng-model="station.stationTV">
-                        <label>Television Serial</label>
-                        <input class="input_add_stationTelevisionSerial" type="text" placeholder="Serial Number" ng-model="station.stationTVSerial">
-                        <form novalidate ng-submit="addStation()">
-                            <input type="submit" class="button" value="Add" />
-                            <a href="#/admin_station" class="button">Cancel</a>
-                        </form>
-                    </fieldset>
+                <form id="form" name="form" novalidate ng-submit="addStation()">
+                    <div class="row">
+                        <div class="large-12 columns form">
+                            <fieldset>
+                                <input class="input_add_stationNumber" name="stationNumber" type="number" placeholder="Station Number" ng-model="station.stationNumber" required="">
+                                <div class="errorMessage" ng-show="form.stationNumber.$dirty && form.stationNumber.$invalid">
+                                    <span ng-show="form.stationNumber.$error.required">Please Select A Station Number</span>
+                                </div>
+                                <label>Select Available System</label>
+                                <select id="systemSelection" class="small" ng-model="station.stationSystem" required="">
+                                    <option>Playstation 4</option>
+                                    <option>Playstation 3</option>
+                                </select>
+                                <input class="input_add_stationTelevision" name="stationTV" type="text" placeholder="Television" ng-model="station.stationTV" required="">
+                                <div class="errorMessage" ng-show="form.stationTV.$dirty && form.stationTV.$invalid">
+                                    <span ng-show="form.stationTV.$error.required">Please Enter A TV</span>
+                                </div>
+                                <input class="input_add_stationTelevisionSerial" name="tvSerial" type="text" placeholder="TV Serial Number" ng-model="station.stationTVSerial" required="">
+                                <div class="errorMessage" ng-show="form.tvSerial.$dirty && form.tvSerial.$invalid">
+                                    <span ng-show="form.tvSerial.$error.required">Please Enter The TV Serial</span>
+                                </div>
+                                <div class="formButtons">
+                                    <input type="submit" class="button" value="Add" ng-disabled="form.$invalid"  />
+                                    <a href="#/admin_station" class="button">Cancel</a>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>

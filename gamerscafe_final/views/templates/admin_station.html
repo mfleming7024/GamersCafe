@@ -87,12 +87,12 @@
             <div class="splitter"></div>
 
             <!-- Admin Station -->
-            <div id="admin_station">
+            <div id="admin_stations">
                 <h2>Station List</h2>
 
                 <div class="search">
-                    <form>
-                        <input type="text" class="stationSearch" placeholder="Search Station">
+                    <form class="adminSearch">
+                        <input type="text" class="stationSearch" placeholder="Search Station" ng-model="filter.stationNumber">
                     </form>
                     <a href="#/admin_add_station" class="small button a_dropdown">Add Station</a>
                 </div>
@@ -100,15 +100,15 @@
                 <table class="gts">
                     <thead>
                     <tr>
-                        <th width="200">Station Number</th>
-                        <th>System</th>
-                        <th>Television Model</th>
-                        <th width="150">Television Serial</th>
-                        <th width="150">Action</th>
+                        <th width="5%">Station Number</th>
+                        <th width="15%">System</th>
+                        <th width="20%">Television Model</th>
+                        <th width="15%">Television Serial</th>
+                        <th width="10%">Action</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr ng-repeat="station in stations">
+                    <tr ng-repeat="station in stations | filter:filter.stationNumber">
                         <td><input type="text" class="stationNumber" value="{{station.stationNumber}}" id="tempStationNumber{{station.$id}}"></td>
                         <td><input type="text" class="stationSystem" value="{{station.stationSystem}}" id="tempStationSystem{{station.$id}}"></td>
                         <td><input type="text" class="stationTV" value="{{station.stationTV}}" id="tempStationTV{{station.$id}}"></td>
