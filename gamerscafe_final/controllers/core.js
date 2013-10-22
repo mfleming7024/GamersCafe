@@ -53,18 +53,18 @@ gamerscafe.controller('Core', ['$scope', '$routeParams','$location', 'angularFir
             game_delete_confirmed = true;
         }
 
-    	if (game_delete_confirmed) {
-    		//Changes appearance of button to ask for confirmation
-    		$("#game_delete_button" + myid).css("background", "#2ba6cb").html("Delete");
-	    	$scope.games.remove(myid);
-	    	console.log("deleteGame clicked", myid); 	
-	    	//resets boolean on delete
-	    	game_delete_confirmed = false;
-    	} else {
-    		//changes html and color to reflect a confirmation
-	    	$("#game_delete_button" + myid).css("background", "red").html("Are you sure");
-	    	game_delete_confirmed = true;
-    	}
+        if (game_delete_confirmed) {
+            //Changes appearance of button to ask for confirmation
+            $("#game_delete_button" + myid).css("background", "#2ba6cb").html("Delete");
+            $scope.games.remove(myid);
+            console.log("deleteGame clicked", myid);
+            //resets boolean on delete
+            game_delete_confirmed = false;
+        } else {
+            //changes html and color to reflect a confirmation
+            $("#game_delete_button" + myid).css("background", "red").html("Are you sure");
+            game_delete_confirmed = true;
+        }
 
     }
 
@@ -178,43 +178,43 @@ gamerscafe.controller('Core', ['$scope', '$routeParams','$location', 'angularFir
             }
         }
     });
-	
-	var user_delete_confirmed = false;
-	$scope.deleteUser = function(itemId){
-		if (user_delete_confirmed) {
-			$scope.users.remove(itemId);
-			$("#user_delete_button" + itemId).css("background", "#2ba6cb").html("Delete");
-			user_delete_confirmed = false;
-		} else {
-			$("#user_delete_button" + itemId).css("background", "red").html("Are you sure");
-			user_delete_confirmed = true;
-		}
-	}
-	
-	var user_update_confirmed = false;
-	$scope.updateUser = function(user) {
-		if (user_update_confirmed) {
-			$("#user_update_button" + user.$id).css("background", "#2ba6cb").html("Update");
-			user_update_confirmed = false;
-			
-			//sets variables for all of the input field values
-			var tempUserName = document.querySelector("#tempUserName" + user.$id).value;
-	        var tempUserEmail = document.querySelector("#tempUserEmail" + user.$id).value;
-	        var tempUserJoinDate = document.querySelector("#tempUserJoinDate" + user.$id).value;
-	
-	        //Sets the station properties equal to whatever value is in the text inputs
-	        user.displayName = tempUserName;
-	        user.email = tempUserEmail;
-	        user.joinedOn = tempUserJoinDate;
-	
-	        //visual of station update
-	        console.log("user updated", user);
-	        $scope.users.update(user);
-		} else {
-			$("#user_update_button" + user.$id).css("background", "green").html("Are you sure");
-			user_update_confirmed = true;
-		}
-	}
+
+    var user_delete_confirmed = false;
+    $scope.deleteUser = function(itemId){
+        if (user_delete_confirmed) {
+            $scope.users.remove(itemId);
+            $("#user_delete_button" + itemId).css("background", "#2ba6cb").html("Delete");
+            user_delete_confirmed = false;
+        } else {
+            $("#user_delete_button" + itemId).css("background", "red").html("Are you sure");
+            user_delete_confirmed = true;
+        }
+    }
+
+    var user_update_confirmed = false;
+    $scope.updateUser = function(user) {
+        if (user_update_confirmed) {
+            $("#user_update_button" + user.$id).css("background", "#2ba6cb").html("Update");
+            user_update_confirmed = false;
+
+            //sets variables for all of the input field values
+            var tempUserName = document.querySelector("#tempUserName" + user.$id).value;
+            var tempUserEmail = document.querySelector("#tempUserEmail" + user.$id).value;
+            var tempUserJoinDate = document.querySelector("#tempUserJoinDate" + user.$id).value;
+
+            //Sets the station properties equal to whatever value is in the text inputs
+            user.displayName = tempUserName;
+            user.email = tempUserEmail;
+            user.joinedOn = tempUserJoinDate;
+
+            //visual of station update
+            console.log("user updated", user);
+            $scope.users.update(user);
+        } else {
+            $("#user_update_button" + user.$id).css("background", "green").html("Are you sure");
+            user_update_confirmed = true;
+        }
+    }
 
     //************************************Stations CRUD***************************************************
 
@@ -250,38 +250,38 @@ gamerscafe.controller('Core', ['$scope', '$routeParams','$location', 'angularFir
     var station_delete_confirmed = false;
     //removes system based on a unique id
     $scope.deleteStation = function(myid){
-    	if(station_delete_confirmed) {
-	    	$("#station_delete_button" + myid).css("background", "#2ba6cb").html("Delete");
+        if(station_delete_confirmed) {
+            $("#station_delete_button" + myid).css("background", "#2ba6cb").html("Delete");
             station_delete_confirmed = false;
             $scope.stations.remove(myid);
-	    	console.log("deleteStation clicked", myid);
+            console.log("deleteStation clicked", myid);
         } else {
             $("#station_delete_button" + myid).css("background", "red").html("Are you sure");
             station_delete_confirmed = true;
         }
-        
+
     }
 
     var station_update_confirmed = false;
     //updates the station database have fields instead of string literal
     $scope.updateStation = function(station){
-    	if (station_update_confirmed) {
-	        //Grabs the station properties from the scope to pass into the station object and update it
-	        var tempStationNumber = document.querySelector("#tempStationNumber" + station.$id).value;
-	        var tempStationSystem = document.querySelector("#tempStationSystem" + station.$id).value;
-	        var tempStationTV = document.querySelector("#tempStationTV" + station.$id).value;
-	        var tempStationTVSerial = document.querySelector("#tempStationTVSerial" + station.$id).value;
-	
-	        //Sets the station properties equal to whatever value is in the text inputs
-	        station.stationNumber = tempStationNumber;
-	        station.stationSystem = tempStationSystem;
-	        station.stationTV = tempStationTV;
-	        station.stationTVSerial = tempStationTVSerial;
-	
-	        //visual of station update
-	        console.log("station updated", station);
-	        $scope.stations.update(station);
-	         $("#station_update_button" + station.$id).css("background", "#2ba6cb").html("Update");
+        if (station_update_confirmed) {
+            //Grabs the station properties from the scope to pass into the station object and update it
+            var tempStationNumber = document.querySelector("#tempStationNumber" + station.$id).value;
+            var tempStationSystem = document.querySelector("#tempStationSystem" + station.$id).value;
+            var tempStationTV = document.querySelector("#tempStationTV" + station.$id).value;
+            var tempStationTVSerial = document.querySelector("#tempStationTVSerial" + station.$id).value;
+
+            //Sets the station properties equal to whatever value is in the text inputs
+            station.stationNumber = tempStationNumber;
+            station.stationSystem = tempStationSystem;
+            station.stationTV = tempStationTV;
+            station.stationTVSerial = tempStationTVSerial;
+
+            //visual of station update
+            console.log("station updated", station);
+            $scope.stations.update(station);
+            $("#station_update_button" + station.$id).css("background", "#2ba6cb").html("Update");
             station_update_confirmed = false;
         } else {
             $("#station_update_button" + station.$id).css("background", "green").html("Are you sure");
@@ -385,10 +385,10 @@ gamerscafe.controller('Core', ['$scope', '$routeParams','$location', 'angularFir
 
     //collects the info from the database for use.
     $scope.activeStations = angularFireCollection(urlActiveStations,function()
-        {
-            //starts the clocks
-            $timeout(wrapper);
-        });
+    {
+        //starts the clocks
+        $timeout(wrapper);
+    });
 
     if(typeof $routeParams !== "undefined"){
         if(typeof $routeParams.stationId !== "undefined"){
@@ -421,7 +421,7 @@ gamerscafe.controller('Core', ['$scope', '$routeParams','$location', 'angularFir
         $timeout(wrapper, 30000);
     }
 
-    
+
 
     //create a active station and adds it to the database
     $scope.addActiveStation = function(){
@@ -433,10 +433,10 @@ gamerscafe.controller('Core', ['$scope', '$routeParams','$location', 'angularFir
         updateStationItem.countdown = document.querySelector("#time_dropdown").value;
 
         $scope.activeStations.add({
-            stationNumber:updateStationItem.stationNumber, 
-            username:updateStationItem.username, 
-            boxart:"views/img/gtav.jpg", 
-            countdown: updateStationItem.countdown, 
+            stationNumber:updateStationItem.stationNumber,
+            username:updateStationItem.username,
+            boxart:"views/img/gtav.jpg",
+            countdown: updateStationItem.countdown,
             startTime: new Date().getTime()
         });
         $location.path("/admin");
@@ -445,9 +445,9 @@ gamerscafe.controller('Core', ['$scope', '$routeParams','$location', 'angularFir
 
     //removes activeStations based on a unique id
     $scope.deleteActiveStation = function(removeStation){
-            $scope.stationHistory.add($scope.tempHistStation);
-            $scope.tempStation = null;
-            $location.path("/admin");
+        $scope.stationHistory.add($scope.tempHistStation);
+        $scope.tempStation = null;
+        $location.path("/admin");
     }
 
     //updates the activeStations database
@@ -573,6 +573,7 @@ gamerscafe.controller('Core', ['$scope', '$routeParams','$location', 'angularFir
                 //login the user
                 $location.path('/admin_staff');
 
+
             } else {
                 console.log("user email does not exist");
                 //creates a user object from all of the fields and pushes it to the firebase table
@@ -598,6 +599,53 @@ gamerscafe.controller('Core', ['$scope', '$routeParams','$location', 'angularFir
     $scope.logout = function(){
         authenticate.logout();
     };
+
+//    var ref = new Firebase("https://gamerscafe.firebaseio.com/gamerscafe/users");
+//    angularFireAuth.initialize(ref, {scope: $scope, name: "user"});
+//
+//    $scope.login = function() {
+//        angularFireAuth.login("facebook");
+//        console.log('lol');
+//    };
+
+//    var ref = new Firebase("https://gamerscafe.firebaseio.com/gamerscafe/users");
+//    angularFireAuth.initialize(ref, {
+//        scope: $scope, name: "user",
+//        callback: function(err, user) {
+//            if(user){
+//
+//            }
+//        }
+//    });
+
+
+//    var ref = new Firebase("https://gamerscafe.firebaseio.com/gamerscafe/users");
+//    angularFireAuth.initialize(ref, {
+//        scope: $scope, name: "user", path: "/admin_staff",
+//        callback: function(err, user) {
+//            // Called whenever there is a change in authentication state.
+//            console.log(user);
+//        }
+//    });
+//
+//    $scope.login = function() {
+//        angularFireAuth.login("facebook");
+//        console.log('lol');
+//    }
+//    $scope.logout = function(){
+//        angularFireAuth.logout();
+//    };
+
+
+//    $scope.login = function() {
+//        angularFireAuth.login("facebook");
+//        console.log('1');
+//    };
+//    $scope.$on("angularFireAuth:login", function(evt, user) {
+//        // User logged in.
+//        console.log(user.displayName);
+//        $location.path('/admin_staff')
+//    });
 
 
 }]);
