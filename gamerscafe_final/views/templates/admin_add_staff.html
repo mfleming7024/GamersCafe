@@ -93,7 +93,6 @@
                             <input class="input_add_staffName" name="staffName" type="text" placeholder="Staff Name" ng-minlength=2 ng-model="staff.staffName" required>
                             <div class="errorMessage" ng-show="form.staffName.$dirty && form.staffName.$invalid">
                                 <span ng-show="form.staffName.$error.required">Please Enter A Name</span>
-                                <span>Please Entar A Name</span>
                                 <span ng-show="form.staffName.$error.minlength">Name Must Be At Least 2 Characters Long</span>
                             </div>
                             <input class="input_add_staffNumber" name="cellNumber" type="tel" placeholder="Cell Number" ng-minlength=11 ng-maxlength=11 ng-model="staff.staffNumber" required>

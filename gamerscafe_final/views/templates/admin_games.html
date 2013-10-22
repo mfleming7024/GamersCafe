@@ -67,9 +67,7 @@
         </nav>
     </div> <!-- END NAVIGATION -->
 
-
-
-    <!-- Staff Page -->
+    <!-- GamePage -->
     <div class="middle">
         <div class="row staff_columns">
 
@@ -87,13 +85,13 @@
 
             <div class="splitter"></div>
 
-            <!-- Gamer Tracking System GTS -->
+            <!-- Games Page -->
             <div id="admin_games">
                 <h2>Games List</h2>
 
                 <div class="search">
-                    <form>
-                        <input type="text" class="game_search" placeholder="Search Game">
+                    <form class="adminSearch">
+                        <input type="text" class="game_search" placeholder="Search Game" ng-model="filter.gameName">
                     </form>
                     <a href="#/admin_add_game" class="small button a_dropdown">Add Game</a>
                 </div>
@@ -101,16 +99,16 @@
                 <table class="gts">
                     <thead>
                     <tr>
-                        <th width="200">Name</th>
-                        <th>System</th>
-                        <th>Date Added</th>
-                        <th width="150">Quantity</th>
-                        <th width="150">Available</th>
+                        <th width="30%">Name</th>
+                        <th width="20%">System</th>
+                        <th width="10%">Date Added</th>
+                        <th width="10%">Quantity</th>
+                        <th width="10%">Available</th>
                         <th width="10%">Action</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr ng-repeat="game in games">
+                    <tr ng-repeat="game in games | filter:filter.gameName">
                         <td><input type="text" class="gameName" value="{{game.gameTitle}}" id="tempGameTitle{{game.$id}}"></td>
                         <td><input type="text" class="system" value="{{game.gameSystem}}" id="tempGameSystem{{game.$id}}"></td>
                         <td>09/16/2013</td>
@@ -121,7 +119,6 @@
                     </tbody>
                 </table>
             </div>
-
         </div>
 
 
