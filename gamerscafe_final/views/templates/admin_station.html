@@ -113,7 +113,7 @@
                         <td><input type="text" class="stationSystem" value="{{station.stationSystem}}" id="tempStationSystem{{station.$id}}"></td>
                         <td><input type="text" class="stationTV" value="{{station.stationTV}}" id="tempStationTV{{station.$id}}"></td>
                         <td><input type="text" class="stationTVSerial" value="{{station.stationTVSerial}}" id="tempStationTVSerial{{station.$id}}"></td>
-                        <td><a href="" ng-click="updateStation(station)">Update</a> / <a href="" ng-click="deleteStation(station.$id)">Delete</a></td>
+                        <td><a href="" class="button" id="station_update_button{{station.$id}}" ng-click="updateStation(station)">Update</a><a href="" class="button" id="station_delete_button{{station.$id}}" ng-click="deleteStation(station.$id)">Delete</a></td>
                     </tr>
                     </tbody>
                 </table>
