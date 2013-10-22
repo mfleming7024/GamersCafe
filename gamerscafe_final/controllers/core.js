@@ -383,6 +383,11 @@ gamerscafe.controller('Core', ['$scope', '$routeParams','$location', 'angularFir
     //url to the data needed
     var urlActiveStations = new Firebase('https://gamerscafe.firebaseio.com/gamerscafe/activeStations');
 
+    var wrapper = function () {
+        updateTimer();
+        $timeout(wrapper, 30000);
+    }
+
     //collects the info from the database for use.
     $scope.activeStations = angularFireCollection(urlActiveStations,function()
         {
@@ -395,7 +400,7 @@ gamerscafe.controller('Core', ['$scope', '$routeParams','$location', 'angularFir
             $scope.tempStation = {};
             angularFire(urlActiveStations.child($routeParams.stationId),$scope,'tempStation');
             $scope.tempStation.id = $routeParams.stationId;
-            console.log('$scope.tempStation',$scope.tempStation);
+            
         }
     }
 
@@ -416,11 +421,6 @@ gamerscafe.controller('Core', ['$scope', '$routeParams','$location', 'angularFir
         };
     };
 
-    var wrapper = function () {
-        updateTimer();
-        $timeout(wrapper, 30000);
-    }
-
     
 
     //create a active station and adds it to the database
@@ -440,6 +440,13 @@ gamerscafe.controller('Core', ['$scope', '$routeParams','$location', 'angularFir
             startTime: new Date().getTime()
         });
         $location.path("/admin");
+
+        if(typeof $routeParams.user !== "undefined"){
+            if(typeof $routeParams.stationId !== "undefined"){
+                $scope.deleteQuedStation($routeParams.stationId);
+            }
+        }
+
         console.log("add ActiveStations clicked");
     }
 
