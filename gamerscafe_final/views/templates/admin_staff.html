@@ -114,7 +114,7 @@
                             <td><input type="password" class="staffPassword" value="{{staff.staffPassword}}" id="tempStaffPassword{{staff.$id}}"></td>
                             <td><p>{{staff.staffPermission}}</p></td>
                             <td><p>{{staff.staffHiredDate}}</p></td>
-                            <td><a href="" ng-click="updateStaff(staff)">Update</a> / <a href="" ng-click="deleteStaff(staff.$id)">Delete</a></td>
+                            <td><a href="" class="button" id="staff_update_button{{staff.$id}}" ng-click="updateStaff(staff)">Update</a><a href="" class="button" id="staff_delete_button{{staff.$id}}" ng-click="deleteStaff(staff.$id)">Delete</a></td>
                         </tr>
                     </form>
                     </tbody>
