@@ -68,28 +68,42 @@
 
 
 <!-- CTA -->
-<div class="home">
+<div id="home" ng-controller="Core">
     <div class="row home_cta">
-        <div class="large-6 columns">
-            <div class="cta_intro">
-                <h1>Welcome to Gamers Cafe </h1>
-                <p>Choose between the Playstation 4, Xbox One, Nintendo Wii U or the PC. Play versus other Gamers in Leagues and Tournaments for a chance to win prizes.
-                    All Gamers get Member points to use towards their gameplay hours and such.</p>
+        <div class="home">
+            <div class="col1">
+                <div class="large-6 columns">
+                    <div class="cta_intro">
+                        <h1>Welcome to Gamers Cafe </h1>
+                        <p>Choose between the Playstation 4, Xbox One, Nintendo Wii U or the PC. Play versus other Gamers in Leagues and Tournaments for a chance to win prizes.
+                            All Gamers get Member points to use towards their gameplay hours and such.</p>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="large-6 columns">
-            <div class="sign_up">
-                <h1>Become A Gamer!</h1>
-                <form>
-                    <input type="text" class="email_input" placeholder="Email">
-                    <input type="text" class="signup_name" placeholder="Full Name">
-                    <input type="password" class="password_input" placeholder="Password">
-                    <input type="password" class="confirm_password_input" placeholder="Confirm Password">
-                    <a href="#" class="button">Join</a> or <a href="#"><img class="fb_login_2" src="views/img/fb_login.png"></a>
-                </form>
+            <div class="col1">
+                <div class="large-6 columns">
+                    <div class="sign_up">
+                        <form novalidate ng-submit="login()">
+                            <h1>Become A Gamer!</h1>
+                                <div class="large-12 column form">
+
+                                    <input type="text" class="email_input" placeholder="Email">
+                                    <input type="text" class="signup_name" placeholder="Full Name">
+                                    <input type="password" class="password_input" placeholder="Password">
+                                    <input type="password" class="confirm_password_input" placeholder="Confirm Password">
+                                    <div class="formButtons">
+                                        <a href="#" class="button">Join</a> or <a href="#" ><img class="fb_login_2" src="views/img/fb_login.png"></a>
+                                        <input type="submit" value="FB">
+                                    </div>
+                                </div>
+                        </form>
+                    </div>
+                </div>
             </div>
+
         </div>
     </div>
+
 </div>
 
 <!-- 3 Column Info-->
@@ -133,7 +147,7 @@
             <label>Password</label>
             <input class="input_login" type="text" placeholder="Password">
 
-            <a href="#" class="button">Login</a> or <a href="#"><img class="fb_login" src="views/img/fb_login.png"></a>
+            <a href="#" class="button">Login</a> or <a href="#"><img id="logi" class="fb_login" src="views/img/fb_login.png"></a>
         </fieldset>
 
     </form>
