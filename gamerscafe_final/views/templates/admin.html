@@ -96,20 +96,20 @@
                             <div class="panel_content">
                                 <div class="edit_gts">
                                     <a href="#/gts_edit_gamer/{{station.$id}}">Edit</a>
+                                </div>                             
+                                <div class="gamer_name">
+                                    <h6>{{station.username}}</h6>
                                 </div>
                                 <div class="station_number">
                                     <h1>{{station.stationNumber}}</h1>
                                 </div>
-                                <div class="gamer_name">
-                                    <h6>{{station.username}}</h6>
+                                <div class="gts_timer">                                   
+                                    <h6 class="countdown">117{{station.displayTime}}</h6>
+                                    <h5>min</h5>
                                 </div>
                                 <div class="game_boxart">
                                     <img src="{{station.boxart}}" alt="Game Box Art">
-                                </div>
-                                <div class="gts_timer">
-                                    <h6 class="time_in">{{staion.currentTime}}</h6>
-                                    <h6 class="countdown">{{station.displayTime}}</h6>
-                                </div>
+                                </div>                               
                             </div>
                         </div>
                         <!-- Station Queue -->
@@ -124,7 +124,7 @@
                     </div>
                 </div>
 
-                <h2>Qued:</h2>
+                <h2 class="clearfix">Qued:</h2>
 
                 <div ng-repeat="station in quedStations | orderBy:'username'">
                     <div class="small-6 large-4 columns gts_panel">
@@ -153,7 +153,7 @@
                     </div>
                 </div>
 
-                <h2>Empty Stations</h2>
+                <h2 class="clearfix">Empty Stations</h2>
                 
                 <div ng-repeat="station in emptyStations | orderBy:'stationNumber'">
                 <div class="small-6 large-4 columns gts_panel">
