@@ -1,5 +1,6 @@
 
-gamerscafe.controller('Core', ['$scope', '$routeParams','$location', 'angularFireCollection', 'angularFireAuth', function mtCtrl($scope, $routeParams, $location, angularFireCollection, angularFireAuth){
+gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFireCollection', 'angularFireAuth','angularFire','$timeout', function mtCtrl($scope, $routeParams, $location, angularFireCollection, angularFireAuth,angularFire,$timeout){
+
 
 
     // Creates an instance of Firebase and connects to our URL
@@ -383,6 +384,11 @@ gamerscafe.controller('Core', ['$scope', '$routeParams','$location', 'angularFir
     //url to the data needed
     var urlActiveStations = new Firebase('https://gamerscafe.firebaseio.com/gamerscafe/activeStations');
 
+    var wrapper = function () {
+        updateTimer();
+        $timeout(wrapper, 30000);
+    }
+
     //collects the info from the database for use.
     $scope.activeStations = angularFireCollection(urlActiveStations,function()
     {
@@ -395,7 +401,7 @@ gamerscafe.controller('Core', ['$scope', '$routeParams','$location', 'angularFir
             $scope.tempStation = {};
             angularFire(urlActiveStations.child($routeParams.stationId),$scope,'tempStation');
             $scope.tempStation.id = $routeParams.stationId;
-            console.log('$scope.tempStation',$scope.tempStation);
+            
         }
     }
 
@@ -416,12 +422,16 @@ gamerscafe.controller('Core', ['$scope', '$routeParams','$location', 'angularFir
         };
     };
 
+<<<<<<< HEAD
     var wrapper = function () {
         updateTimer();
         $timeout(wrapper, 30000);
     }
 
 
+=======
+    
+>>>>>>> c3a6b705a8e8d2e97725415876590cb2f284be88
 
     //create a active station and adds it to the database
     $scope.addActiveStation = function(){
@@ -440,6 +450,13 @@ gamerscafe.controller('Core', ['$scope', '$routeParams','$location', 'angularFir
             startTime: new Date().getTime()
         });
         $location.path("/admin");
+
+        if(typeof $routeParams.user !== "undefined"){
+            if(typeof $routeParams.stationId !== "undefined"){
+                $scope.deleteQuedStation($routeParams.stationId);
+            }
+        }
+
         console.log("add ActiveStations clicked");
     }
 

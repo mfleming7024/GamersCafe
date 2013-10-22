@@ -76,7 +76,7 @@ gamerscafe.config(function ($routeProvider){
             templateUrl:"views/templates/admin_systems.html"
         })
 
-        .when("/gts_add_gamer/:user", {
+        .when("/gts_add_gamer/:user/:stationId", {
             controller:"Core",
             templateUrl:"views/templates/gts_add_gamer.html",
         })
