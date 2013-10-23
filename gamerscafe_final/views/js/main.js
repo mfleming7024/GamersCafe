@@ -10,7 +10,8 @@ gamerscafe.run(['angularFireAuth', '$rootScope', function(angularFireAuth, $root
 gamerscafe.config(function ($routeProvider){
     $routeProvider
         .when("/",{
-            controller:"Core",
+            controller: function($scope){
+                $scope.things =['Core', 'Login']},
             templateUrl:"views/templates/home.html"
         })
 
@@ -25,7 +26,8 @@ gamerscafe.config(function ($routeProvider){
         })
 
         .when("/admin",{
-            controller:"Core",
+            controller: function($scope){
+                $scope.things =['Core', 'Login']},
             templateUrl:"views/templates/admin.html"
         })
 
@@ -35,8 +37,10 @@ gamerscafe.config(function ($routeProvider){
         })
 
         .when("/admin_users", {
-            controller:"Core",
-            templateUrl:"views/templates/admin_users.html"
+            controller: function($scope){
+                $scope.things =['Core', 'Login']},
+            templateUrl:"views/templates/admin_users.html",
+            authRequired: true
         })
 
         .when("/admin_games", {
@@ -50,13 +54,14 @@ gamerscafe.config(function ($routeProvider){
         })
 
         .when("/admin_staff", {
-            controller:"Core",
+            controller: 'Core' ,
             templateUrl:"views/templates/admin_staff.html",
             authRequired: true
         })
 
         .when("/admin_add_game", {
-            controller:"Core",
+            controller: function($scope){
+                $scope.things =['Core', 'Login']},
             templateUrl:"views/templates/admin_add_game.html"
         })
 
