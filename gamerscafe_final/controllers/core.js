@@ -538,27 +538,52 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
 
     var ref = new Firebase("https://gamerscafe.firebaseio.com/gamerscafe/users/");
     angularFireAuth.initialize(ref, {scope: $scope, name: "user",path: '/admin_staff'});
-    $scope.$on("angularFireAuth:logins", function(evt, user) {
+    $scope.$on("angularFireAuth:login", function(evt, user) {
         // User logged in.
 
 
     });
 
-
-//    $scope.login = function() {
-//        // console.log(user);
-//        // when the user login successfully then run the following function
-//        angularFireAuth.login('facebook', {
-//            rememberMe: true,
-//            scope: 'email,user_likes'
-//        });
-//    }
-
     $scope.login = function() {
         // when the user login successfully then run the following function
-        angularFireAuth.login('facebook').then(function(fbData) {
+        angularFireAuth.login('facebook').then(function(user) {
             // If the user login successfully it will take them to create shirt page
-           $location.path('/admin_staff');
+
+
+           $location.path('/admin_users');
+            console.log(user, 'lol');
+
+            if (user) {
+                console.log('2');
+                //generates a url to get the image based on their unique username
+
+                //checks the database against what user email is passed in to see if it
+                //exists then sets a boolean to say so
+                var userExists = true;
+                for (var i = 0, max = $scope.users.length; i<max; i++) {
+                    if ($scope.users[i].email != user.email) {
+                        userExists = false;
+                    } else {
+                        userExists = true;
+                        break;
+                    }
+                }
+                if (userExists) {
+                    console.log("user email exists");
+                    //login the user
+
+
+                } else {
+                    console.log("user email does not exist");
+                    //creates a user object from all of the fields and pushes it to the firebase table
+                    $scope.users.add({"displayName": user.name, "email": user.email, "profilePic": picurl, "facebook": true});
+                    //login the user
+                }
+
+            } else {
+                //visual feedback of error
+                console.log("No user Detected");
+            }
 
         });
     }
@@ -567,45 +592,15 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
         angularFireAuth.logout();
     };
 
-    // Check if the user is login
+//    Check if the user is login
     $scope.$on("angularFireAuth:login", function(evt, user) {
-        console.log("User Login", user.displayName);
+        console.log("Logged In");
 
-        if (user) {
+        var picurl = "http://graph.facebook.com/" + user.username + "/picture?type=small";
+        var displayName = user.displayName;
 
-            //generates a url to get the image based on their unique username
-            var picurl = "http://graph.facebook.com/" + user.username + "/picture?type=small";
-            var displayName = user.displayName;
-
-            $('#profilePic').attr('src', picurl);
-            $('#displayName').text(displayName);
-            //checks the database against what user email is passed in to see if it
-            //exists then sets a boolean to say so
-            var userExists = true;
-            for (var i = 0, max = $scope.users.length; i<max; i++) {
-                if ($scope.users[i].email != user.email) {
-                    userExists = false;
-                } else {
-                    userExists = true;
-                    break;
-                }
-            }
-            if (userExists) {
-                console.log("user email exists");
-                //login the user
-
-
-            } else {
-                console.log("user email does not exist");
-                //creates a user object from all of the fields and pushes it to the firebase table
-                $scope.users.add({"displayName": user.name, "email": user.email, "profilePic": picurl, "facebook": true});
-                //login the user
-            }
-
-        } else {
-            //visual feedback of error
-            console.log("No user Detected");
-        }
+        $('#profilePic').attr('src', picurl);
+        $('#displayName').text(displayName);
     })
 
 }])
