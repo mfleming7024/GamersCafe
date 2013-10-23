@@ -37,7 +37,7 @@ gamerscafe.config(function ($routeProvider){
         .when("/admin_users", {
             controller:"Core",
             templateUrl:"views/templates/admin_users.html",
-            authRequired: true
+            authRequired: false
         })
 
         .when("/admin_games", {

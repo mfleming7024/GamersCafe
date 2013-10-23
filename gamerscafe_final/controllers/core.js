@@ -558,7 +558,7 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
         // when the user login successfully then run the following function
         angularFireAuth.login('facebook').then(function(fbData) {
             // If the user login successfully it will take them to create shirt page
-           //$location.path('/admin_staff');
+           $location.path('/admin_staff');
 
         });
     }
