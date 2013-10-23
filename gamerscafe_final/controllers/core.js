@@ -550,7 +550,7 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
             // If the user login successfully it will take them to create shirt page
 
 
-           $location.path('/admin_users');
+            $location.path('/admin_users');
             console.log(user, 'lol');
 
             if (user) {
@@ -574,10 +574,11 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
 
 
                 } else {
+                    console.log('ADD:', user);
                     console.log("user email does not exist");
+                    var picurl = "http://graph.facebook.com/" + user.username + "/picture?type=small";
                     //creates a user object from all of the fields and pushes it to the firebase table
                     $scope.users.add({"displayName": user.name, "email": user.email, "profilePic": picurl, "facebook": true});
-                    //login the user
                 }
 
             } else {
