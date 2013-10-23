@@ -53,20 +53,6 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
             $("#game_delete_button" + myid).css("background", "red").html("Are you sure");
             game_delete_confirmed = true;
         }
-
-        if (game_delete_confirmed) {
-            //Changes appearance of button to ask for confirmation
-            $("#game_delete_button" + myid).css("background", "#2ba6cb").html("Delete");
-            $scope.games.remove(myid);
-            console.log("deleteGame clicked", myid);
-            //resets boolean on delete
-            game_delete_confirmed = false;
-        } else {
-            //changes html and color to reflect a confirmation
-            $("#game_delete_button" + myid).css("background", "red").html("Are you sure");
-            game_delete_confirmed = true;
-        }
-
     }
 
     var game_update_confirmed = false;
