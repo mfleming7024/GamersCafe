@@ -15,58 +15,65 @@
 </div><!-- End top-bar -->
 
 <div id="top">
+<!--<div id="logo" class="row">-->
+<!--&lt;!&ndash; LOGO &ndash;&gt;-->
+<!--<object data="img/logo.svg" type="image/svg+xml" class="gamer_logo">-->
+<!--</object> &lt;!&ndash; END LOGO &ndash;&gt;-->
+<!--</div>-->
 
-    <!-- Navigation -->
-    <div id="main_nav" class="row">
-        <nav class="top-bar">
-            <section class="top-bar-section">
-                <ul class="right top_nav">
-                    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-                    <li id="mobile_menu" class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-                    <li><a href="#"><i class="icon-home home_icon"></i></a> </li>
+<!-- Navigation -->
+<div id="main_nav" class="row">
+    <nav class="top-bar">
+        <section class="top-bar-section">
+            <ul class="right top_nav">
+                <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+                <li id="mobile_menu" class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+                <li><a href="#"><i class="icon-home home_icon"></i></a> </li>
 
-                    <li class="divider"></li>
-                    <li class="active"><a href="#">League/Tournaments</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Games</a></li>
-                    <li class="divider"></li>
-                    <li class="has-dropdown"><a href="#">About Us</a>
+                <li class="divider"></li>
+                <li class="active"><a href="#">League/Tournaments</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Games</a></li>
+                <li class="divider"></li>
+                <li class="has-dropdown"><a href="#">About Us</a>
 
-                        <ul class="dropdown">
-                            <li class="has-dropdown"><a href="#">Dropdown Level 1a</a>
+                    <ul class="dropdown">
+                        <li class="has-dropdown"><a href="#">Dropdown Level 1a</a>
 
-                                <ul class="dropdown">
-                                    <li><label>Dropdown Level 2 Label</label></li>
-                                    <li><a href="#">Dropdown Level 2a</a></li>
-                                    <li><a href="#">Dropdown Level 2b</a></li>
-                                    <li class="has-dropdown"><a href="#">Dropdown Level 2c</a>
+                            <ul class="dropdown">
+                                <li><label>Dropdown Level 2 Label</label></li>
+                                <li><a href="#">Dropdown Level 2a</a></li>
+                                <li><a href="#">Dropdown Level 2b</a></li>
+                                <li class="has-dropdown"><a href="#">Dropdown Level 2c</a>
 
-                                        <ul class="dropdown">
-                                            <li><label>Dropdown Level 3 Label</label></li>
-                                            <li><a href="#">Dropdown Level 3a</a></li>
-                                            <li><a href="#">Dropdown Level 3b</a></li>
-                                            <li class="divider"></li>
-                                            <li><a href="#">Dropdown Level 3c</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Dropdown Level 2d</a></li>
-                                    <li><a href="#">Dropdown Level 2e</a></li>
-                                    <li><a href="#">Dropdown Level 2f</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Dropdown Level 1b</a></li>
-                            <li><a href="#">Dropdown Level 1c</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">Dropdown Level 1d</a></li>
-                            <li><a href="#">Dropdown Level 1e</a></li>
-                            <li><a href="#">Dropdown Level 1f</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">See all &rarr;</a></li>
-                        </ul>
-                </ul>
-            </section>
-        </nav>
-    </div> <!-- END NAVIGATION -->
+                                    <ul class="dropdown">
+                                        <li><label>Dropdown Level 3 Label</label></li>
+                                        <li><a href="#">Dropdown Level 3a</a></li>
+                                        <li><a href="#">Dropdown Level 3b</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="#">Dropdown Level 3c</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Dropdown Level 2d</a></li>
+                                <li><a href="#">Dropdown Level 2e</a></li>
+                                <li><a href="#">Dropdown Level 2f</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Dropdown Level 1b</a></li>
+                        <li><a href="#">Dropdown Level 1c</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Dropdown Level 1d</a></li>
+                        <li><a href="#">Dropdown Level 1e</a></li>
+                        <li><a href="#">Dropdown Level 1f</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">See all &rarr;</a></li>
+                    </ul>
+            </ul>
+        </section>
+    </nav>
+</div> <!-- END NAVIGATION -->
+
+
 
 <!-- Staff Page -->
 <div class="middle">
@@ -75,12 +82,11 @@
             <li><a href="#" data-dropdown="admin_dd" class="small button dropdown">Admin Settings</i> </a></li>
         </ul>
         <ul id="admin_dd" data-dropdown-content class="f-dropdown">
-            <li><a href="#/admin" class="small button a_dropdown">GTS</a></li>
             <li><a href="#/admin_users" class="small button a_dropdown">Users</a></li>
             <li><a href="#/admin_staff" class="small button a_dropdown">Staff</a></li>
             <li><a href="#/admin_station" class="small button a_dropdown">Station</a></li>
-            <li><a href="#/admin_systems" class="small button a_dropdown">System</a></li>
             <li><a href="#/admin_games" class="small button a_dropdown">Games</a></li>
+
         </ul>
         <div class="splitter"></div>
 
@@ -96,20 +102,20 @@
                             <div class="panel_content">
                                 <div class="edit_gts">
                                     <a href="#/gts_edit_gamer/{{station.$id}}">Edit</a>
-                                </div>                             
-                                <div class="gamer_name">
-                                    <h6>{{station.username}}</h6>
                                 </div>
                                 <div class="station_number">
                                     <h1>{{station.stationNumber}}</h1>
                                 </div>
-                                <div class="gts_timer">                                   
-                                    <h6 class="countdown">{{station.displayTime}}</h6>
-                                    <h5>min</h5>
+                                <div class="gamer_name">
+                                    <h6>{{station.username}}</h6>
                                 </div>
                                 <div class="game_boxart">
                                     <img src="{{station.boxart}}" alt="Game Box Art">
-                                </div>                               
+                                </div>
+                                <div class="gts_timer">
+                                    <h6 class="time_in">{{station.currentTime}}</h6>
+                                    <h6 class="countdown">{{station.displayTime}}</h6>
+                                </div>
                             </div>
                         </div>
                         <!-- Station Queue -->
@@ -124,7 +130,7 @@
                     </div>
                 </div>
 
-                <h2 class="clearfix">Qued:</h2>
+                <h2>Qued:</h2>
 
                 <div ng-repeat="station in quedStations | orderBy:'username'">
                     <div class="small-6 large-4 columns gts_panel">
@@ -137,14 +143,14 @@
                                     <h6>{{station.username}}</h6>
                                 </div>
                                 <div class="gts_timer">
-                                    <h6 class="time_in">{{staion.currentTime}}</h6>
+                                    <h6 class="time_in">{{station.currentTime}}</h6>
                                 </div>
                             </div>
                         </div>
                         <!-- Station Queue -->
                         <div class="avail">
                             <div class="q_name">
-                                <h6><a href="#/gts_add_gamer/{{station.username}}">Add</a> </h6>
+                                <h6><a href="#/gts_add_gamer/{{station.username}}/{{station.$id}}">Add</a> </h6>
                             </div>
                             <div class="q_time_in">
                                 <h6></h6>
@@ -153,93 +159,93 @@
                     </div>
                 </div>
 
-                <h2 class="clearfix">Empty Stations</h2>
-                
+                <h2>Empty Stations</h2>
+
                 <div ng-repeat="station in emptyStations | orderBy:'stationNumber'">
-                <div class="small-6 large-4 columns gts_panel">
-                    <div class="panel callout radius avail_station">
-                        <div class="panel_content">
-                            <div class="station_number_avail">
-                                <h1>{{station.stationNumber}}</h1>
-                            </div>
-                            <div class="station_avail">
-                                <h3><a href="#/gts_add_q">+</a> </h3>
+                    <div class="small-6 large-4 columns gts_panel">
+                        <div class="panel callout radius avail_station">
+                            <div class="panel_content">
+                                <div class="station_number_avail">
+                                    <h1>{{station.stationNumber}}</h1>
+                                </div>
+                                <div class="station_avail">
+                                    <h3><a href="#/gts_add_q">+</a> </h3>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- Station Queue -->
-                    <div class="station_q">
-                        <div class="q_name">
-                            <h6></h6>
-                        </div>
-                        <div class="q_time_in">
-                            <h6></h6>
+                        <!-- Station Queue -->
+                        <div class="station_q">
+                            <div class="q_name">
+                                <h6></h6>
+                            </div>
+                            <div class="q_time_in">
+                                <h6></h6>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
 
-    </div>
-
-
-</div>
-
-<div class="row">
-    <div id="footer">
 
     </div>
-</div>
 
-<!-- Update gamer -->
-<!-- MODALS -->
-<div id="update_gamer" class="reveal-modal small">
-    <form>
-        <fieldset>
-            <legend>Update Gamer</legend>
+    <div class="row">
+        <div id="footer">
 
-            <label>Email Address</label>
-            <input class="staff_add_gamer" type="text" placeholder="Enter Gamers Email">
-            <form class="custom">
-            </form>
-            <label>Station</label>
-            <form class="custom">
-                <select class="customDropdown" class="medium">
-                    <option>Station 1 (PS4)</option>
-                    <option>Station 5 (XBOX One)</option>
-                    <option>Station 12 (PC)</option>
-                </select>
-            </form>
-            <label>Games</label>
-            <form class="custom">
-                <select class="games_option" class="medium">
-                    <option>GTA V</option>
-                    <option>Hello Kitty</option>
-                    <option>Beyond Two Souls</option>
-                </select>
-            </form>
-            <div class="points">
-                <h5>Points:</h5>
-                <p>1000</p>
+        </div>
+    </div>
+
+    <!-- Update gamer -->
+    <!-- MODALS -->
+    <div id="update_gamer" class="reveal-modal small">
+        <form>
+            <fieldset>
+                <legend>Update Gamer</legend>
+
+                <label>Email Address</label>
+                <input class="staff_add_gamer" type="text" placeholder="Enter Gamers Email">
                 <form class="custom">
-                    <label for="checkbox1">
-                        <input type="checkbox" id="checkbox2" style="display: none;">
-                        <span class="custom checkbox"></span> Use 500 Points?
-                    </label>
                 </form>
-            </div>
-            <label>Time</label>
-            <form class="custom">
-                <select id="time_dropdown2" class="medium">
-                    <option>30 Minutes</option>
-                    <option>60 Minutes</option>
-                    <option>90 Minutes</option>
-                    <option>120 Minutes</option>
-                    <option>150 Minutes</option>
-                </select>
-            </form>
-            <a href="#" class="button">Update!</a>
-            <a href="#" class="button">Cancel</a>
-        </fieldset>
-    </form>
-</div>
+                <label>Station</label>
+                <form class="custom">
+                    <select class="customDropdown" class="medium">
+                        <option>Station 1 (PS4)</option>
+                        <option>Station 5 (XBOX One)</option>
+                        <option>Station 12 (PC)</option>
+                    </select>
+                </form>
+                <label>Games</label>
+                <form class="custom">
+                    <select class="games_option" class="medium">
+                        <option>GTA V</option>
+                        <option>Hello Kitty</option>
+                        <option>Beyond Two Souls</option>
+                    </select>
+                </form>
+                <div class="points">
+                    <h5>Points:</h5>
+                    <p>1000</p>
+                    <form class="custom">
+                        <label for="checkbox1">
+                            <input type="checkbox" id="checkbox2" style="display: none;">
+                            <span class="custom checkbox"></span> Use 500 Points?
+                        </label>
+                    </form>
+                </div>
+                <label>Time</label>
+                <form class="custom">
+                    <select id="time_dropdown2" class="medium">
+                        <option>30 Minutes</option>
+                        <option>60 Minutes</option>
+                        <option>90 Minutes</option>
+                        <option>120 Minutes</option>
+                        <option>150 Minutes</option>
+                    </select>
+                </form>
+                <a href="#" class="button">Update!</a>
+                <a href="#" class="button">Cancel</a>
+            </fieldset>
+        </form>
+    </div>

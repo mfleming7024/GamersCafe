@@ -51,9 +51,7 @@ gamerscafe.config(function ($routeProvider){
 
         .when("/admin_staff", {
             controller:"Core",
-            templateUrl:"views/templates/admin_staff.html",
-            authRequired: true,
-            pathTo: '/login'
+            templateUrl:"views/templates/admin_staff.html"
         })
 
         .when("/admin_add_game", {
@@ -78,31 +76,22 @@ gamerscafe.config(function ($routeProvider){
 
         .when("/gts_add_gamer/:user/:stationId", {
             controller:"Core",
-            templateUrl:"views/templates/gts_add_gamer.html",
+            templateUrl:"views/templates/gts_add_gamer.html"
         })
 
         .when("/gts_add_q", {
             controller:"Core",
-            templateUrl:"views/templates/gts_add_q.html",
+            templateUrl:"views/templates/gts_add_q.html"
         })
 
         .when("/gts_cancel/:stationId", {
             controller:"Core",
-            templateUrl:"views/templates/gts_cancel.html",
+            templateUrl:"views/templates/gts_cancel.html"
         })
 
         .when("/gts_edit_gamer/:stationId", {
             controller:"Core",
-            templateUrl:"views/templates/gts_edit_gamer.html",
-        })
-
-        .when("/admin_add_staff", {
-            controller:"Core",
-            templateUrl:"views/templates/admin_add_staff.html"
-        })
-        .when("/admin_add_station", {
-            controller:"Core",
-            templateUrl:"views/templates/admin_add_station.html"
+            templateUrl:"views/templates/gts_edit_gamer.html"
         })
 
         .otherwise({redirectTo:"/"});

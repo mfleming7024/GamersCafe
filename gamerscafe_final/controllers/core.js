@@ -401,7 +401,7 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
             $scope.tempStation = {};
             angularFire(urlActiveStations.child($routeParams.stationId),$scope,'tempStation');
             $scope.tempStation.id = $routeParams.stationId;
-            
+
         }
     }
 
@@ -422,16 +422,7 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
         };
     };
 
-<<<<<<< HEAD
-    var wrapper = function () {
-        updateTimer();
-        $timeout(wrapper, 30000);
-    }
 
-
-=======
-    
->>>>>>> c3a6b705a8e8d2e97725415876590cb2f284be88
 
     //create a active station and adds it to the database
     $scope.addActiveStation = function(){
@@ -489,7 +480,6 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
             $location.path("/admin");
         }
     }
-
     //************************************Qued stations database***************************************************
 
     //url to the data needed
@@ -516,14 +506,17 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
 
     //removes quedStations based on a unique id
     $scope.deleteQuedStation = function(myid){
+        console.log(myid)
         $scope.quedStations.remove(myid);
         console.log("delete ActiveStations clicked");
     }
 
-    //updates the quedStations database have fields instead of string literal
+    //updates the quedStations database
+    //have fields instead of string literal
     $scope.updateQuedStation = function(station){
         $scope.quedStations.update(station);
     }
+
 
     //************************************Empty stations database***************************************************
 
@@ -545,7 +538,8 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
         console.log("delete EmptyStations clicked");
     }
 
-    //updates the emptyStations database have fields instead of string literal
+    //updates the emptyStations database
+    //have fields instead of string literal
     $scope.updateEmptyStation = function(station){
         $scope.emptyStations.update(station);
     }
@@ -554,68 +548,68 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
 
 
     //********************************** USER LOGIN/SIGN UP ***********************************
-
-//links up to firebase and grabs all the users and stores it in the scope.users array
-    var usersUrl = new Firebase("https://gamerscafe.firebaseio.com/gamerscafe/users");
-    $scope.users = angularFireCollection(usersUrl);
-
-
-    var userRef = new Firebase("https://gamerscafe.firebaseio.com/");
-//uses facebook login to grab the user info and prepopulate all the fields
-    var authenticate = new FirebaseSimpleLogin(userRef, function(error, user) {
-        if (user) {
-            console.log(user);
-
-            //generates a url to get the image based on their unique username
-
-            var picurl = "http://graph.facebook.com/" + user.username + "/picture?type=small";
-            var displayName = user.displayName;
-
-            console.log(displayName);
-            $('#profilePic').attr('src', picurl);
-            $('#displayName').text(displayName);
-            //checks the database against what user email is passed in to see if it
-            //exists then sets a boolean to say so
-            var userExists = true;
-            for (var i = 0, max = $scope.users.length; i<max; i++) {
-                if ($scope.users[i].email != user.email) {
-                    userExists = false;
-                } else {
-                    userExists = true;
-                    break;
-                }
-            }
-            if (userExists) {
-                console.log("user email exists");
-                //login the user
-                $location.path('/admin_staff');
-
-
-            } else {
-                console.log("user email does not exist");
-                //creates a user object from all of the fields and pushes it to the firebase table
-                $scope.users.add({"displayName": user.name, "email": user.email, "profilePic": picurl, "facebook": true});
-                //login the user
-            }
-
-        } else {
-            //visual feedback of error
-            console.log("No user Detected");
-        }
-    });
-
-    $scope.login = function(){
-        //calls the login function of the firebase login
-        authenticate.login('facebook', {
-            //asks for email for each user as well
-
-            scope: "email"
-        });
-        console.log('test');
-    };
-    $scope.logout = function(){
-        authenticate.logout();
-    };
+//
+////links up to firebase and grabs all the users and stores it in the scope.users array
+//    var usersUrl = new Firebase("https://gamerscafe.firebaseio.com/gamerscafe/users");
+//    $scope.users = angularFireCollection(usersUrl);
+//
+//
+//    var userRef = new Firebase("https://gamerscafe.firebaseio.com/");
+////uses facebook login to grab the user info and prepopulate all the fields
+//    var authenticate = new FirebaseSimpleLogin(userRef, function(error, user) {
+//        if (user) {
+//            console.log(user);
+//
+//            //generates a url to get the image based on their unique username
+//
+//            var picurl = "http://graph.facebook.com/" + user.username + "/picture?type=small";
+//            var displayName = user.displayName;
+//
+//            console.log(displayName);
+//            $('#profilePic').attr('src', picurl);
+//            $('#displayName').text(displayName);
+//            //checks the database against what user email is passed in to see if it
+//            //exists then sets a boolean to say so
+//            var userExists = true;
+//            for (var i = 0, max = $scope.users.length; i<max; i++) {
+//                if ($scope.users[i].email != user.email) {
+//                    userExists = false;
+//                } else {
+//                    userExists = true;
+//                    break;
+//                }
+//            }
+//            if (userExists) {
+//                console.log("user email exists");
+//                //login the user
+//                $location.path('/admin_staff');
+//
+//
+//            } else {
+//                console.log("user email does not exist");
+//                //creates a user object from all of the fields and pushes it to the firebase table
+//                $scope.users.add({"displayName": user.name, "email": user.email, "profilePic": picurl, "facebook": true});
+//                //login the user
+//            }
+//
+//        } else {
+//            //visual feedback of error
+//            console.log("No user Detected");
+//        }
+//    });
+//
+//    $scope.login = function(){
+//        //calls the login function of the firebase login
+//        authenticate.login('facebook', {
+//            //asks for email for each user as well
+//
+//            scope: "email"
+//        });
+//        console.log('test');
+//    };
+//    $scope.logout = function(){
+//        authenticate.logout();
+//    };
 
 //    var ref = new Firebase("https://gamerscafe.firebaseio.com/gamerscafe/users");
 //    angularFireAuth.initialize(ref, {scope: $scope, name: "user"});
