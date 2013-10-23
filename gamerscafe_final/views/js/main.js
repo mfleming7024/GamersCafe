@@ -51,7 +51,8 @@ gamerscafe.config(function ($routeProvider){
 
         .when("/admin_staff", {
             controller:"Core",
-            templateUrl:"views/templates/admin_staff.html"
+            templateUrl:"views/templates/admin_staff.html",
+            authRequired: true
         })
 
         .when("/admin_add_game", {
@@ -62,6 +63,10 @@ gamerscafe.config(function ($routeProvider){
         .when("/admin_add_station", {
             controller:"Core",
             templateUrl:"views/templates/admin_add_station.html"
+        })
+        .when("/admin_add_staff", {
+            controller:"Core",
+            templateUrl:"views/templates/admin_add_staff.html"
         })
 
         .when("/admin_add_system", {
@@ -93,7 +98,6 @@ gamerscafe.config(function ($routeProvider){
             controller:"Core",
             templateUrl:"views/templates/gts_edit_gamer.html"
         })
-
         .otherwise({redirectTo:"/"});
 
 }).directive('autoComplete', function($timeout) {

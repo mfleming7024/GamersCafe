@@ -1,16 +1,4 @@
-<!-- Nav Top Bar -->
-<div class="top_bar">
-    <div class="row">
-        <div id="logo">
-            <!-- LOGO -->
-            <img src="views/img/logo.png" alt="Logo"> <!-- END LOGO -->
-        </div>
-        <div class="user_login">
-        <a href="#/login" class="login">Login</a>
-        <a href="#/login" class="become_a_gamer">Become A Gamer!</a>
-        </div>
-    </div>
-</div><!-- End top-bar -->
+
 
 <div id="top">
     <!-- Navigation -->
@@ -68,7 +56,7 @@
 
 
 <!-- CTA -->
-<div id="home" ng-controller="Core">
+<div id="home" ng-controller="Login">
     <div class="row home_cta">
         <div class="home">
             <div class="col1">
@@ -83,7 +71,7 @@
             <div class="col1">
                 <div class="large-6 columns">
                     <div class="sign_up">
-                        <form novalidate ng-click="login()">
+                        <form novalidate ng-click="logins()">
                             <h1>Become A Gamer!</h1>
                                 <div class="large-12 column form">
 
@@ -92,7 +80,11 @@
                                     <input type="password" class="password_input" placeholder="Password">
                                     <input type="password" class="confirm_password_input" placeholder="Confirm Password">
                                     <div class="formButtons">
-                                        <a href="#" class="button">Join</a> or <a href="#" ><img class="fb_login_2" src="views/img/fb_login.png"></a>
+                                        <a href="#" class="button">Join</a> or <a href="#/logged" ><img class="fb_login_2" src="views/img/fb_login.png"></a>
+                                        <span ng-show="user">
+  {{user.name}} | <a ng-click="logout()">Logout</a>
+</span>
+                                        <span ng-hide="user"><a ng-click="login()">Login</a></span>
                                     </div>
                                 </div>
                         </form>
@@ -132,40 +124,4 @@
 
         </div>
     </div>
-</div>
-
-<!-- MODALS -->
-<!-- Login Modal -->
-<div id="login" class="reveal-modal small">
-    <form>
-        <fieldset>
-            <legend>Login</legend>
-
-            <label>Email Address</label>
-            <input class="input_login" type="text" placeholder="email@email.com">
-            <label>Password</label>
-            <input class="input_login" type="text" placeholder="Password">
-
-            <a href="#" class="button">Login</a> or <a href="#/admin_staff"><img id="logi" class="fb_login" src="views/img/fb_login.png"></a>
-        </fieldset>
-
-    </form>
-</div>
-
-<!-- Registration Modal -->
-<div id="become_a_gamer" class="reveal-modal small">
-    <form>
-        <fieldset>
-            <legend>Become A Gamer</legend>
-
-            <label>Email Address</label>
-            <input class="become_email" type="text" placeholder="email@email.com">
-            <label>Password</label>
-            <input class="become_password" type="text" placeholder="Password">
-            <label>Confirm Passwrd</label>
-            <input class="become_confirm_password" type="text" placeholder="Password">
-            <a href="#" class="button">Sign up!</a> or <a href="#"><img class="fb_login" src="views/img/fb_login.png"></a>
-        </fieldset>
-
-    </form>
 </div>

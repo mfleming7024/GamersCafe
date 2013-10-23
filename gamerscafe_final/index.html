@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<!--[if IE 8]> 				 
+<!--[if IE 8]>
     <html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]>
-    <!--> <html class="no-js" lang="en" ng-app="gamerscafe"> 
+    <!--> <html class="no-js" lang="en" ng-app="gamerscafe">
 <!--<![endif]-->
 
 <head>
@@ -24,7 +24,29 @@
     <script src="views/js/vendor/custom.modernizr.js"></script>
 
 </head>
-<body>
+<!-- Nav Top Bar -->
+<div class="top_bar" ng-controller="Core">
+    <!--<div class="top_half_bar"></div>-->
+    <div class="bars row">
+        <div id="logo">
+            <!-- LOGO -->
+            <a href="#/"><img src="views/img/logo.png" alt="Logo"></a>  <!-- END LOGO -->
+        </div>
+        <div class="user_panel">
+
+            <ul class="user_nav button-group">
+                <li><a id="displayName" href="#" data-dropdown="user_settings" class="small button dropdown">User Settings</i> </a></li>
+            </ul>
+            <form novalidate ng-click="logout()">
+                <ul id="user_settings" data-dropdown-content class="f-dropdown">
+                    <li><a href="#" id="logout" class="small button a_dropdown">Logout</a></li>
+                </ul>
+            </form>
+            <img id="profilePic" src="" alt="Small Profile Picture">
+        </div>
+    </div><!-- End top_half_bar -->
+</div><!-- End top-bar --><body>
+
 
     <!--Container for the view templates-->
     <div id="container" ng-view="">
@@ -63,7 +85,7 @@
 
     <!-- Firebase Conenctions -->
     <script src="https://cdn.firebase.com/v0/firebase.js"></script>
-    
+
     <!--simple login-->
     <script type='text/javascript' src="https://cdn.firebase.com/v0/firebase-simple-login.js"></script>
 
@@ -72,7 +94,7 @@
 
     <!--angularFire-->
     <script src="https://cdn.firebase.com/libs/angularfire/0.3.0/angularfire.min.js"></script>
-    
+
     <!--Main JS-->
     <script type="text/javascript" src="views/js/main.js"></script>
 
