@@ -24,6 +24,7 @@
     <script src="views/js/vendor/custom.modernizr.js"></script>
 
 </head>
+<body>
 <!-- Nav Top Bar -->
 <div class="top_bar" ng-controller="Core">
     <!--<div class="top_half_bar"></div>-->
@@ -45,7 +46,63 @@
         </div>
 
     </div><!-- End top_half_bar -->
-</div><!-- End top-bar --><body>
+</div><!-- End top-bar -->
+
+
+
+<div id="top">
+    <!-- Navigation -->
+    <div id="main_nav" class="row">
+        <nav class="top-bar">
+            <section class="top-bar-section">
+                <ul class="right top_nav">
+                    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+                    <li id="mobile_menu" class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+                    <li><a href="#"><i class="icon-home home_icon"></i></a> </li>
+
+                    <li class="divider"></li>
+                    <li class="active"><a href="#">League/Tournaments</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Games</a></li>
+                    <li class="divider"></li>
+                    <li class="has-dropdown"><a href="#">About Us</a>
+
+                        <ul class="dropdown">
+                            <li class="has-dropdown"><a href="#">Dropdown Level 1a</a>
+
+                                <ul class="dropdown">
+                                    <li><label>Dropdown Level 2 Label</label></li>
+                                    <li><a href="#">Dropdown Level 2a</a></li>
+                                    <li><a href="#">Dropdown Level 2b</a></li>
+                                    <li class="has-dropdown"><a href="#">Dropdown Level 2c</a>
+
+                                        <ul class="dropdown">
+                                            <li><label>Dropdown Level 3 Label</label></li>
+                                            <li><a href="#">Dropdown Level 3a</a></li>
+                                            <li><a href="#">Dropdown Level 3b</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="#">Dropdown Level 3c</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Dropdown Level 2d</a></li>
+                                    <li><a href="#">Dropdown Level 2e</a></li>
+                                    <li><a href="#">Dropdown Level 2f</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Dropdown Level 1b</a></li>
+                            <li><a href="#">Dropdown Level 1c</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Dropdown Level 1d</a></li>
+                            <li><a href="#">Dropdown Level 1e</a></li>
+                            <li><a href="#">Dropdown Level 1f</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">See all &rarr;</a></li>
+                        </ul>
+                </ul>
+            </section>
+        </nav>
+    </div> <!-- END NAVIGATION -->
+</div>
 
 
     <!--Container for the view templates-->

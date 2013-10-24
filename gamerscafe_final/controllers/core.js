@@ -546,14 +546,16 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
 
     $scope.login = function() {
         // when the user login successfully then run the following function
-        angularFireAuth.login('facebook').then(function(user) {
+        angularFireAuth.login('facebook').then(function() {
             // If the user login successfully it will take them to create shirt page
 
 
-            $location.path('/admin_users');
-            console.log(user, 'lol');
+            $location.path('/admin_staff');
+//            if($routeParams.type = '/admin_users'){
+//                $location.path('/admin_users')
+//            }
 
-            if (user) {
+                if (user) {
                 console.log('2');
                 //generates a url to get the image based on their unique username
 
