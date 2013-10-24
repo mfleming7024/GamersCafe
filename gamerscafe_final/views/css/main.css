@@ -99,12 +99,11 @@
 	text-align:center;
 	text-shadow:-1px 1px #888;
 }
-
 .sign_up form {
 	margin:0 auto;
 }
 
-.sign_up h1 {
+.sign_up h2 {
 	text-transform:uppercase;
 	text-align:center;
 	color:#3299BB;
@@ -329,6 +328,7 @@ h1,h2,h3,p,a {
 	width:100%;
 	height:60px;
 	border-top:3px solid #3299BB;
+    margin-bottom: 30px;
 }
 .social{
     float: left;

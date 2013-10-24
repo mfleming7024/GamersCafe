@@ -42,7 +42,7 @@
 
                             <input class="input_add_staffPassword" name="staffPassword" type="password" placeholder="Password" ng-model="staff.staffPassword" ng-minlength=8 ng-maxlength=20 required>
                             <div class="errorMessage" ng-show="form.staffPassword.$dirty && form.staffPassword.$invalid">
-                                <span ng-show="form.cellNumber.$error.required">Please Enter A Password</span>
+                                <span ng-show="form.staffPassword.$error.required">Please Enter A Password</span>
                                 <span ng-show="form.staffPassword.$error.minlength">Min 8 Characters</span>
                                 <span ng-show="form.staffPassword.$error.maxlength">Max 20 Characters</span>
                             </div>
