@@ -1,21 +1,18 @@
-
 gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFireCollection', 'angularFireAuth','angularFire','$timeout', function mtCtrl($scope, $routeParams, $location, angularFireCollection, angularFireAuth,angularFire,$timeout){
-
-
 
     // Creates an instance of Firebase and connects to our URL
     var myConn 	= new Firebase('https://gamerscafe.firebaseio.com/gamerscafe');
 
-    $scope.test = function(){
-        console.log("Test working.")
-    }
-
     //****** Facebook Login
     //Checks if the user is login
     $scope.$on("angularFireAuth:login", function(evt, user) {
-        console.log('logged in');
-        $scope.picurl = "http://graph.facebook.com/" + user.username + "/picture?type=small";
-        $scope.displayName = user.displayName;
+    	if (user.provider == "facebook") {
+	        console.log("logged in", user);
+	        $scope.picurl = "http://graph.facebook.com/" + user.username + "/picture?type=small";
+	        $scope.displayName = user.displayName;
+        } else {
+	                 
+        }
     })
 
 
@@ -247,7 +244,6 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
                 $scope.stations.add($scope.station);
             }
         }
-        console.log("addStation clicked");
     }
 
     var station_delete_confirmed = false;
@@ -292,9 +288,6 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
         }
     }
 
-    //$scope.tempStation = $scope.$routeParams.stationID;
-    //console.log(tempStation);
-
     $scope.addStationToHistory = function(){
         $scope.stationHistory.add($scope.startTicket);
     }
@@ -328,7 +321,6 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
                 $location.path('/admin_staff');
             }
         }
-        console.log("addStaff clicked");
 
         auth.createUser(email, password, function(error, user) {
             if (!error) {
@@ -392,7 +384,7 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
     $scope.login = function() {
         // when the user login successfully then run the following function
         angularFireAuth.login('facebook').then(function() {
-            // If the user login successfully it will take them to create shirt page
+            // If the user login successfully it will take them to admin page
             $location.path('/admin');
             if (user) {
                 //checks the database against what user email is passed in to see if it
@@ -428,7 +420,6 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
         angularFireAuth.logout();
         $location.path('/home')
     };
-
 
 
 }])

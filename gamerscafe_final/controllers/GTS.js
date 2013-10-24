@@ -50,19 +50,11 @@ gamerscafe.controller('GTS', ['$scope', '$routeParams', '$location', 'angularFir
     //create a active station and adds it to the database
     $scope.addActiveStation = function(){
 
-        var updateStationItem = {};
-        updateStationItem.stationNumber = document.querySelector("#customDropdown").value;
-        updateStationItem.boxart = document.querySelector("#games_option").value;
-        updateStationItem.username = document.querySelector("#username").value;
-        updateStationItem.countdown = document.querySelector("#time_dropdown").value;
-
-        $scope.activeStations.add({
-            stationNumber:updateStationItem.stationNumber,
-            username:updateStationItem.username,
-            boxart:"views/img/gtav.jpg",
-            countdown: updateStationItem.countdown,
-            startTime: new Date().getTime()
-        });
+        $scope.tempStation.stationNumber = document.querySelector("#customDropdown").value;
+        $scope.tempStation.boxart = document.querySelector("#games_option").value;
+        $scope.tempStation.username = document.querySelector("#username").value;
+        $scope.tempStation.countdown = document.querySelector("#time_dropdown").value;
+        $scope.tempStation.startTime = new Date().getTime()
         $location.path("/admin");
 
         if(typeof $routeParams.user !== "undefined"){
@@ -70,7 +62,6 @@ gamerscafe.controller('GTS', ['$scope', '$routeParams', '$location', 'angularFir
                 $scope.deleteQuedStation($routeParams.stationId);
             }
         }
-
         console.log("add ActiveStations clicked");
     }
 
@@ -78,6 +69,12 @@ gamerscafe.controller('GTS', ['$scope', '$routeParams', '$location', 'angularFir
     $scope.deleteActiveStation = function(removeStation){
         $scope.stationHistory.add($scope.tempHistStation);
         $scope.tempStation = null;
+        $location.path("/admin");
+    }
+    
+    $scope.cancelActiveStation = function(){
+        $scope.tempStation = null;
+        console.log('hello');
         $location.path("/admin");
     }
 
@@ -103,13 +100,13 @@ gamerscafe.controller('GTS', ['$scope', '$routeParams', '$location', 'angularFir
             $location.path("/admin");
         }
     }
-    //************************************Qued stations database***************************************************
+    //************************************Queued stations database***************************************************
 
     //url to the data needed
-    var urlQuedStations = new Firebase('https://gamerscafe.firebaseio.com/gamerscafe/quedStations');
+    var urlQueuedStations = new Firebase('https://gamerscafe.firebaseio.com/gamerscafe/quedStations');
 
     //collects the info from the database for use.
-    $scope.quedStations = angularFireCollection(urlQuedStations);
+    $scope.quedStations = angularFireCollection(urlQueuedStations);
 
     //create a active station and adds it to the database
     $scope.addQuedStation = function(tempuser){
