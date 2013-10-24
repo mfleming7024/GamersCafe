@@ -16,9 +16,6 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
         console.log('logged in');
         $scope.picurl = "http://graph.facebook.com/" + user.username + "/picture?type=small";
         $scope.displayName = user.displayName;
-        //This display the profile image and name in the top bar
-        //$('#profilePic').attr('src', picurl);
-        //$('#displayName').text(displayName);
     })
 
 
