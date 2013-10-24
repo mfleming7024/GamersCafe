@@ -34,11 +34,7 @@
                                     <span ng-show="form.password.$error.maxlength">Max 20 Characters</span>
                                 </div>
                                 <div class="formButtons">
-                                    <a href="#" class="button" ng-disabled="form.$invalid"  >Join</a> or <a href="#/logged" ><img class="fb_login_2" src="views/img/fb_login.png"></a>
-                                        <span ng-show="user">
-  {{user.name}} | <a ng-click="logout()">Logout</a>
-</span>
-                                    <span ng-hide="user"><a ng-click="login()">Login</a></span>
+                                    <a href="#" class="button" ng-disabled="form.$invalid"  >Join</a> or <a href="" ng-click="login()"><img class="fb_login_2" src="views/img/fb_login.png"></a>                                        
                                 </div>
                             </div>
                         </form>
