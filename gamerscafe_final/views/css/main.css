@@ -195,15 +195,8 @@
 }
 
 h1,h2,h3,p,a {
-/*font-family: 'Open Sans', sans-serif;*/
 	font-family:'Oswald',sans-serif;
 	font-weight:300;
-/*text-transform: uppercase;*/
-}
-
-.orbit-container ul li img {
-	width:1000px;
-	height:400px;
 }
 
 .middle {
@@ -533,7 +526,14 @@ h1,h2,h3,p,a {
 }
 
 .search {
-	margin-left:10px;
+	width: 95%;
+	margin: 0 auto;
+}
+
+.add_button {
+	float: right;
+	width: 20%;
+	clear: none;
 }
 
 .cancel_reason {
@@ -618,10 +618,6 @@ h1,h2,h3,p,a {
 	width:200px;
 }
 
-.adminSearch {
-	width:30%;
-}
-
 #user_settings {
 	height: 63px;
 	padding: 0;
@@ -654,3 +650,4 @@ h1,h2,h3,p,a {
 	}
 	
 }
+
