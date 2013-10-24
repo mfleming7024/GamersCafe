@@ -44,7 +44,6 @@ gamerscafe.controller('GTS', ['$scope', '$routeParams', '$location', 'angularFir
             $timeout(function (){
                 $scope.tempStation.id = $routeParams.stationId
             });
-
         }
     }
 

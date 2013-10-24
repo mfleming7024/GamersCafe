@@ -23,24 +23,27 @@
                 </form>
             </div>
             <!-- Table -->
-            <table class="gts">
-                <thead>
-                <tr>
-                    <th width="200">Name</th>
-                    <th>Email</th>
-                    <th>Joined Date</th>
-                    <th width="10%">Action</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr ng-repeat="tempUser in users | filter:filter.displayName">
-                    <td><input type="text" class="userName" id="tempUserName{{tempUser.$id}}" value="{{tempUser.displayName}}"></td>
-                    <td><input type="text" class="userEmail" id="tempUserEmail{{tempUser.$id}}" value="{{tempUser.email}}"></td>
-                    <td><input type="date" class="userJoinDate" id="tempUserJoinDate{{tempUser.$id}}" value="{{tempUser.joinedOn}}"></td>
-                    <td><a href="" class="button"  id="user_update_button{{tempUser.$id}}" ng-click="updateUser(tempUser)">Update</a><a href="" class="button" id="user_delete_button{{tempUser.$id}}" ng-click="deleteUser(tempUser.$id)">Delete</a></td>
-                </tr>
-                </tbody>
-            </table>
+            <!--<table class="gts">-->
+                <!--<thead>-->
+                <!--<tr>-->
+                    <!--<th width="200">Name</th>-->
+                    <!--<th>Email</th>-->
+                    <!--&lt;!&ndash;<th>Joined Date</th>&ndash;&gt;-->
+                    <!--<th width="10%">Action</th>-->
+                <!--</tr>-->
+                <!--</thead>-->
+                <!--<tbody>-->
+                <!--<tr ng-repeat="tempUser in users | filter:filter.displayName">-->
+                    <!--<td><input type="text" class="userName large-12 columns" id="tempUserName{{tempUser.$id}}" value="{{tempUser.displayName}}"></td>-->
+                    <!--<td><input type="text" class="userEmail" id="tempUserEmail{{tempUser.$id}}" value="{{tempUser.email}}"></td>-->
+                    <!--&lt;!&ndash;<td><input type="date" class="userJoinDate" id="tempUserJoinDate{{tempUser.$id}}" value="{{tempUser.joinedOn}}"></td>&ndash;&gt;-->
+                    <!--<td><a href="" class="button cust"  id="user_update_button{{tempUser.$id}}" ng-click="updateUser(tempUser)">Update</a><a href="" class="button cust" id="user_delete_button{{tempUser.$id}}" ng-click="deleteUser(tempUser.$id)">Delete</a></td>-->
+                <!--</tr>-->
+                <!--</tbody>-->
+            <!--</table>-->
+            <ul class="pricing-table" ng-repeat="tempUser in users | filter:filter.displayName">
+                <a href="#/admin_user_profile/{{tempUser.displayName}}/{{tempUser.$id}}"><li class="price">{{tempUser.displayName}}</li></a>
+            </ul>
         </div>
     </div>
 </div>

@@ -109,6 +109,11 @@ gamerscafe.config(function ($routeProvider){
             templateUrl:"views/templates/gts_edit_gamer.html",
             authRequired: true
         })
+        .when("/admin_user_profile/:displayName/:userId", {
+            controller:"Core",
+            templateUrl:"views/templates/admin_user_profile.html",
+            authRequired: true
+        })
 
         .otherwise({redirectTo:"/"});
 

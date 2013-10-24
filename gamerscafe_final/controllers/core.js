@@ -174,6 +174,14 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
         }
     });
 
+    if(typeof $routeParams !== "undefined"){
+        if(typeof $routeParams.userId !== "undefined"){
+             //collects the info from the database for use.
+
+             angularFire(urlUsers.child($routeParams.userId),$scope,'user_profile');
+        }
+    }
+
     var user_delete_confirmed = false;
     $scope.deleteUser = function(itemId){
         if (user_delete_confirmed) {

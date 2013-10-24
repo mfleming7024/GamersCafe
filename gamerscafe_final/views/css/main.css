@@ -83,6 +83,10 @@
 
 .fb_login_2 {
 	width:45%;
+    margin-bottom: 10px;
+}
+.join{
+    margin-right: 20px!important;
 }
 
 .input_login {
@@ -655,7 +659,10 @@ h1,h2,h3,p,a {
 
 .formButtons {
 	margin:0 auto;
-	width:200px;
+}
+
+.joinButton{
+    /*width: 200px;*/
 }
 
 #user_settings {
@@ -669,7 +676,14 @@ h1,h2,h3,p,a {
 	margin-left:auto;
 	margin-right:auto;
 }
-
+.cust{
+    width: 70px!important;
+    margin-bottom: 0!important;
+    text-align: center!important;
+}
+.joinForm{
+    padding: 0!important;
+}
 /* Media Queries ----------- */
 @media screen and (max-width : 650px) {
 	#main_nav object {
@@ -689,5 +703,24 @@ h1,h2,h3,p,a {
 		width:190px;
 	}
 	
+}
+/* iPhone 4 ----------- */
+@media
+only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5) {
+/* Styles */
+    .fb_login_2{
+        width: 100%;
+    }
+    .game_boxart {
+        float:right;
+        width:40%;
+    }
+
+    .game_boxart img {
+        height:60px;
+        float:right;
+        margin-top:0;
+    }
 }
 

@@ -21,7 +21,7 @@
             <div id="gts_panel">
                 <!-- Panel Starts here -->
                 <div ng-repeat="station in activeStations | orderBy:'stationNumber'">
-                    <div class="small-6 large-4 columns gts_panel">
+                    <div class="small-12 large-4 columns gts_panel">
                         <div class="panel callout radius station_1">
                             <div class="panel_content">
                                 <div class="edit_gts">
@@ -55,10 +55,10 @@
                     </div>
                 </div>
 
-                <h2 class="clearfix">Qued:</h2>
+                <h2 class="clearfix">Queued:</h2>
 
                 <div ng-repeat="station in quedStations | orderBy:'username'">
-                    <div class="small-6 large-4 columns gts_panel">
+                    <div class="small-12 large-4 columns gts_panel">
                         <div class="panel callout radius station_1">
                             <div class="panel_content">
                                 <div class="edit_gts">
@@ -87,7 +87,7 @@
                 <h2 class="clearfix">Empty Stations</h2>
 
                 <div ng-repeat="station in emptyStations | orderBy:'stationNumber'">
-                    <div class="small-6 large-4 columns gts_panel">
+                    <div class="small-12 large-4 columns gts_panel">
                         <div class="panel callout radius avail_station">
                             <div class="panel_content">
                                 <div class="station_number_avail">
