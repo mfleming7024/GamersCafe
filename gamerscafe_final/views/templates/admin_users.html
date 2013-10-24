@@ -19,7 +19,7 @@
             <h2>User List</h2>
             <div class="search">
                 <form class="small-12 large-6 columns">
-                    <input type="text" class="systemSearch" placeholder="Search Gamer">
+                    <input type="text" class="systemSearch" placeholder="Search Gamer" ng-model="filter.displayName">
                 </form>
             </div>
             <!-- Table -->
@@ -33,7 +33,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr ng-repeat="tempUser in users">
+                <tr ng-repeat="tempUser in users | filter:filter.displayName">
                     <td><input type="text" class="userName" id="tempUserName{{tempUser.$id}}" value="{{tempUser.displayName}}"></td>
                     <td><input type="text" class="userEmail" id="tempUserEmail{{tempUser.$id}}" value="{{tempUser.email}}"></td>
                     <td><input type="date" class="userJoinDate" id="tempUserJoinDate{{tempUser.$id}}" value="{{tempUser.joinedOn}}"></td>

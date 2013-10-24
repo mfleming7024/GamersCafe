@@ -54,7 +54,7 @@ function loginCtrl($scope, angularFireCollection) {
 		//exists then sets a boolean to say so
 		var userExists = false;
 		for (var i = 0, max = $scope.users.length; i<max; i++) {
-			if ($scope.users[i].email != $scope.user.email) {
+			if ($scope.users[i].email != $scope.newUser.email) {
 				userExists = false;
 			} else {
 				userExists = true;
@@ -62,7 +62,6 @@ function loginCtrl($scope, angularFireCollection) {
 			}
 		}
 		//checks that boolean to determine appropriate user action
-		//
 		if (userExists) {
 			console.log("user email exists");
 		} else {
