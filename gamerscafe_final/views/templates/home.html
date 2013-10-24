@@ -14,7 +14,7 @@
             <div class="col1">
                 <div class="large-6 columns">
                     <div class="sign_up">
-                        <form novalidate ng-click="logins()">
+                        <form novalidate>
                             <h1>Become A Gamer!</h1>
                                 <div class="large-12 column form">
                                     <input type="text" class="email_input" placeholder="Email">
@@ -22,11 +22,7 @@
                                     <input type="password" class="password_input" placeholder="Password">
                                     <input type="password" class="confirm_password_input" placeholder="Confirm Password">
                                     <div class="formButtons">
-                                        <a href="#" class="button">Join</a> or <a href="#/logged" ><img class="fb_login_2" src="views/img/fb_login.png"></a>
-                                        <span ng-show="user">
-  {{user.name}} | <a ng-click="logout()">Logout</a>
-</span>
-                                        <span ng-hide="user"><a ng-click="login()">Login</a></span>
+                                        <a href="#" class="button">Join</a> or <a href="" ng-click="login()"><img class="fb_login_2" src="views/img/fb_login.png"></a>                                       
                                     </div>
                                 </div>
                         </form>
