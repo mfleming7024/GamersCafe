@@ -37,9 +37,9 @@
             <ul class="user_nav button-group">
                 <li><a id="displayName" href="#" data-dropdown="user_settings" class="small button dropdown">User Settings</i> </a></li>
             </ul>
-            <form novalidate ng-click="logout()">
+            <form novalidate>
                 <ul id="user_settings" data-dropdown-content class="f-dropdown">
-                    <li><a href="#" id="logout" class="small button a_dropdown">Logout</a></li>
+                    <li><a href="#" id="logout" class="small button a_dropdown" ng-click="logout()" >Logout</a></li>
                     <li><a href="#/admin" class="small button a_dropdown">Admin</a></li>
                 </ul>
             </form>
