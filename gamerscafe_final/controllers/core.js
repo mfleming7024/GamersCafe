@@ -539,8 +539,6 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
     var ref = new Firebase("https://gamerscafe.firebaseio.com/gamerscafe/users/");
     angularFireAuth.initialize(ref, {scope: $scope, name: "user",path: '/admin_staff'});
     $scope.$on("angularFireAuth:login", function(evt, user) {
-        // User logged in.
-
 
     });
 
@@ -548,17 +546,8 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
         // when the user login successfully then run the following function
         angularFireAuth.login('facebook').then(function() {
             // If the user login successfully it will take them to create shirt page
-
-
             $location.path('/admin_staff');
-//            if($routeParams.type = '/admin_users'){
-//                $location.path('/admin_users')
-//            }
-
-                if (user) {
-                console.log('2');
-                //generates a url to get the image based on their unique username
-
+            if (user) {
                 //checks the database against what user email is passed in to see if it
                 //exists then sets a boolean to say so
                 var userExists = true;
@@ -573,35 +562,30 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
                 if (userExists) {
                     console.log("user email exists");
                     //login the user
-
-
                 } else {
-                    console.log('ADD:', user);
-                    console.log("user email does not exist");
+                    //FB profile image
                     var picurl = "http://graph.facebook.com/" + user.username + "/picture?type=small";
                     //creates a user object from all of the fields and pushes it to the firebase table
                     $scope.users.add({"displayName": user.name, "email": user.email, "profilePic": picurl, "facebook": true});
                 }
-
             } else {
                 //visual feedback of error
                 console.log("No user Detected");
             }
-
         });
     }
-
+    //Logs out of Facebook
     $scope.logout = function() {
         angularFireAuth.logout();
+        $location.path('/home')
     };
 
-//    Check if the user is login
+    //Checks if the user is login
     $scope.$on("angularFireAuth:login", function(evt, user) {
-        console.log("Logged In");
 
         var picurl = "http://graph.facebook.com/" + user.username + "/picture?type=small";
         var displayName = user.displayName;
-
+        //This display the profile image and name in the top bar
         $('#profilePic').attr('src', picurl);
         $('#displayName').text(displayName);
     })
