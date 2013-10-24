@@ -492,6 +492,7 @@ h1,h2,h3,p,a {
 
 .gts_timer .countdown {
 	color:red;
+	width: 60px;
 }
 
 /* Station Panels */
