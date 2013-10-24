@@ -622,6 +622,11 @@ h1,h2,h3,p,a {
 	width:30%;
 }
 
+#user_settings {
+	height: 63px;
+	padding: 0;
+}
+
 .table_info {
 	margin-top:20px;
 	width:95%;
@@ -648,7 +653,4 @@ h1,h2,h3,p,a {
 		width:190px;
 	}
 	
-	.search {
-		margin-left:0;
-	}
 }
