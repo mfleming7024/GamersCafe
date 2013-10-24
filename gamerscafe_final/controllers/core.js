@@ -536,17 +536,13 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
     //********************************** USER LOGIN/SIGN UP ***********************************
 
 
-    var ref = new Firebase("https://gamerscafe.firebaseio.com/gamerscafe/users/");
-    angularFireAuth.initialize(ref, {scope: $scope, name: "user",path: '/admin_staff'});
-    $scope.$on("angularFireAuth:login", function(evt, user) {
-
-    });
+//    var ref = new Firebase("https://gamerscafe.firebaseio.com/gamerscafe/users/");
 
     $scope.login = function() {
         // when the user login successfully then run the following function
         angularFireAuth.login('facebook').then(function() {
             // If the user login successfully it will take them to create shirt page
-            $location.path('/admin_staff');
+            $location.path('/admin');
             if (user) {
                 //checks the database against what user email is passed in to see if it
                 //exists then sets a boolean to say so
@@ -582,7 +578,7 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
 
     //Checks if the user is login
     $scope.$on("angularFireAuth:login", function(evt, user) {
-
+        console.log('logged in');
         var picurl = "http://graph.facebook.com/" + user.username + "/picture?type=small";
         var displayName = user.displayName;
         //This display the profile image and name in the top bar
@@ -591,7 +587,6 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
     })
 
 }])
-
 
 gamerscafe.filter('range', function() {
     return function(input, total) {

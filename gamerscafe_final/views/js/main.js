@@ -2,9 +2,7 @@ var gamerscafe = angular.module('gamerscafe', ['firebase']);
 
 gamerscafe.run(['angularFireAuth', '$rootScope', function(angularFireAuth, $rootScope){
     var url = new Firebase("https://gamerscafe.firebaseio.com/");
-    angularFireAuth.initialize(url, {name:'user', scope: $rootScope,callback: function(err, user) {
-
-    }});
+    angularFireAuth.initialize(url, {scope: $rootScope, name: "user",path: '/home'});
 }]);
 
 gamerscafe.config(function ($routeProvider){
@@ -12,94 +10,104 @@ gamerscafe.config(function ($routeProvider){
 
         .when("/",{
             controller:"Core",
-            templateUrl:"views/templates/home.html"
+            templateUrl:"views/templates/home.html",
+            authRequired: false
         })
 
         .when("/login", {
             controller:"Core",
-            templateUrl:"views/templates/login.html"
+            templateUrl:"views/templates/login.html",
+            authRequired: false
         })
 
         .when("/staff", {
             controller:"Core",
-            templateUrl:"views/templates/staff.html"
+            templateUrl:"views/templates/staff.html",
+            authRequired: true
         })
 
         .when("/admin",{
             controller:"Core",
-            templateUrl:"views/templates/admin.html"
-        })
-
-        .when("/staff", {
-            controller:"Core",
-            templateUrl:"views/templates/staff.html"
+            templateUrl:"views/templates/admin.html",
+            authRequired: true
         })
 
         .when("/admin_users", {
             controller:"Core",
             templateUrl:"views/templates/admin_users.html",
-            authRequired: false
+            authRequired: true
         })
 
         .when("/admin_games", {
             controller:"Core",
-            templateUrl:"views/templates/admin_games.html"
+            templateUrl:"views/templates/admin_games.html",
+            authRequired: true
         })
 
         .when("/admin_station", {
             controller:"Core",
-            templateUrl:"views/templates/admin_station.html"
+            templateUrl:"views/templates/admin_station.html",
+            authRequired: true
         })
 
         .when("/admin_staff", {
             controller:"Core",
             templateUrl:"views/templates/admin_staff.html",
-            authRequired: false
+            authRequired: true
 
         })
 
         .when("/admin_add_game", {
             controller:"Core",
-            templateUrl:"views/templates/admin_add_game.html"
+            templateUrl:"views/templates/admin_add_game.html",
+            authRequired: true
         })
 
         .when("/admin_add_station", {
             controller:"Core",
-            templateUrl:"views/templates/admin_add_station.html"
+            templateUrl:"views/templates/admin_add_station.html",
+            authRequired: true
         })
         .when("/admin_add_staff", {
             controller:"Core",
-            templateUrl:"views/templates/admin_add_staff.html"
+            templateUrl:"views/templates/admin_add_staff.html",
+            authRequired: true
         })
 
         .when("/admin_add_system", {
             controller:"Core",
-            templateUrl:"views/templates/admin_add_system.html"
+            templateUrl:"views/templates/admin_add_system.html",
+            authRequired: true
         })
 
         .when("/admin_systems", {
             controller:"Core",
-            templateUrl:"views/templates/admin_systems.html"
+            templateUrl:"views/templates/admin_systems.html",
+            authRequired: true
         })
 
         .when("/gts_add_gamer/:user/:stationId", {
             controller:"Core",
-            templateUrl:"views/templates/gts_add_gamer.html"
+            templateUrl:"views/templates/gts_add_gamer.html",
+            authRequired: true
         })
 
         .when("/gts_add_q", {
             controller:"Core",
-            templateUrl:"views/templates/gts_add_q.html"
+            templateUrl:"views/templates/gts_add_q.html",
+            authRequired: true
         })
 
         .when("/gts_cancel/:stationId", {
             controller:"Core",
-            templateUrl:"views/templates/gts_cancel.html"
+            templateUrl:"views/templates/gts_cancel.html",
+            authRequired: true
         })
 
         .when("/gts_edit_gamer/:stationId", {
             controller:"Core",
-            templateUrl:"views/templates/gts_edit_gamer.html"
+            templateUrl:"views/templates/gts_edit_gamer.html",
+            authRequired: true
         })
 //        .when("/logged", {
 //            controller:"Core",

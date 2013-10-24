@@ -338,7 +338,42 @@ h1,h2,h3,p,a {
 	height:60px;
 	border-top:3px solid #3299BB;
 }
+.social{
+    float: left;
+    font-size: 2em;
+    margin-left: 10px;
+    margin-top: 5px;
+}
 
+#fbIcon{
+    color: #3B5998;
+}
+#fbIcon:hover{
+    color: #3B5998;
+    opacity: 0.7;
+}
+#gPlusIcon{
+    color: #D34836;
+}
+#twitterIcon:hover{
+    color: #3299BB;
+    opacity: 0.7;
+}
+#gPlusIcon:hover{
+    color: #D34836;
+    opacity: 0.7;
+}
+
+.copyright{
+    float: right;
+    color: #3299BB;
+    margin-right: 10px;
+    margin-top: 10px;
+
+}
+.social a{
+    padding-right: 5px;
+}
 /* GTS Panel */
 #gts_panel {
 }
