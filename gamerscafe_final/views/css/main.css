@@ -491,6 +491,7 @@ h1,h2,h3,p,a {
 
 .gts_timer .countdown {
 	color:red;
+	width: 60px;
 }
 
 /* Station Panels */
@@ -637,6 +638,11 @@ h1,h2,h3,p,a {
 #admin_system {
 	margin:0 auto;
 	width:500px;
+}
+
+.search form {
+	margin: 0 auto;
+	padding: 0;
 }
 
 .form {
