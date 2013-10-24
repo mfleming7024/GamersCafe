@@ -1,108 +1,47 @@
-<div id="top">
+<!-- Admin user Page -->
+<div class="middle">
+    <div class="row staff_columns">
+        <ul class="admin_nav button-group">
+            <li><a href="#" data-dropdown="admin_dd" class="small button dropdown">Admin Settings</i> </a></li>
+        </ul>
+        <ul id="admin_dd" data-dropdown-content class="f-dropdown">
+            <li><a href="#/admin" class="small button a_dropdown">GTS</a></li>
+            <li><a href="#/admin_users" class="small button a_dropdown">Users</a></li>
+            <li><a href="#/admin_staff" class="small button a_dropdown">Staff</a></li>
+            <li><a href="#/admin_station" class="small button a_dropdown">Station</a></li>
+            <li><a href="#/admin_systems" class="small button a_dropdown">System</a></li>
+            <li><a href="#/admin_games" class="small button a_dropdown">Games</a></li>
+        </ul>
+        <div class="splitter"></div>
 
-    <!-- Navigation -->
-    <div id="main_nav" class="row">
-        <nav class="top-bar">
-            <section class="top-bar-section">
-                <ul class="right top_nav">
-                    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-                    <li id="mobile_menu" class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-                    <li><a href="#"><i class="icon-home home_icon"></i></a> </li>
-
-                    <li class="divider"></li>
-                    <li class="active"><a href="#">League/Tournaments</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Games</a></li>
-                    <li class="divider"></li>
-                    <li class="has-dropdown"><a href="#">About Us</a>
-
-                        <ul class="dropdown">
-                            <li class="has-dropdown"><a href="#">Dropdown Level 1a</a>
-
-                                <ul class="dropdown">
-                                    <li><label>Dropdown Level 2 Label</label></li>
-                                    <li><a href="#">Dropdown Level 2a</a></li>
-                                    <li><a href="#">Dropdown Level 2b</a></li>
-                                    <li class="has-dropdown"><a href="#">Dropdown Level 2c</a>
-
-                                        <ul class="dropdown">
-                                            <li><label>Dropdown Level 3 Label</label></li>
-                                            <li><a href="#">Dropdown Level 3a</a></li>
-                                            <li><a href="#">Dropdown Level 3b</a></li>
-                                            <li class="divider"></li>
-                                            <li><a href="#">Dropdown Level 3c</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Dropdown Level 2d</a></li>
-                                    <li><a href="#">Dropdown Level 2e</a></li>
-                                    <li><a href="#">Dropdown Level 2f</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Dropdown Level 1b</a></li>
-                            <li><a href="#">Dropdown Level 1c</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">Dropdown Level 1d</a></li>
-                            <li><a href="#">Dropdown Level 1e</a></li>
-                            <li><a href="#">Dropdown Level 1f</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">See all &rarr;</a></li>
-                        </ul>
-                </ul>
-            </section>
-        </nav>
-    </div> <!-- END NAVIGATION -->
-
-    <!-- Staff Page -->
-    <div class="middle">
-        <div class="row staff_columns">
-            <ul class="admin_nav button-group">
-                <li><a href="#" data-dropdown="admin_dd" class="small button dropdown">Admin Settings</i> </a></li>
-            </ul>
-            <ul id="admin_dd" data-dropdown-content class="f-dropdown">
-                <li><a href="#/admin" class="small button a_dropdown">GTS</a></li>
-                <li><a href="#/admin_users" class="small button a_dropdown">Users</a></li>
-                <li><a href="#/admin_staff" class="small button a_dropdown">Staff</a></li>
-                <li><a href="#/admin_station" class="small button a_dropdown">Station</a></li>
-                <li><a href="#/admin_systems" class="small button a_dropdown">System</a></li>
-                <li><a href="#/admin_games" class="small button a_dropdown">Games</a></li>
-            </ul>
-            <div class="splitter"></div>
-
-            <!-- Admin Users -->
-            <div id="admin_users">
-                <h2>User List</h2>
-                <div class="search">
-                    <form>
-                        <input type="text" class="systemSearch" placeholder="Search Gamer">
-                    </form>
-                    <a href="#/admin_add_user" class="small button a_dropdown">Add Gamer</a>
-                </div>
-                <!-- Table -->
-                <table class="gts">
-                    <thead>
-                    <tr>
-                        <th width="200">Name</th>
-                        <th>Email</th>
-                        <th>Joined Date</th>
-                        <th width="10%">Action</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-	                    <tr ng-repeat="tempUser in users">
-	                        <td><input type="text" class="userName" id="tempUserName{{tempUser.$id}}" value="{{tempUser.displayName}}"></td>
-	                        <td><input type="text" class="userEmail" id="tempUserEmail{{tempUser.$id}}" value="{{tempUser.email}}"></td>
-	                        <td><input type="date" class="userJoinDate" id="tempUserJoinDate{{tempUser.$id}}" value="{{tempUser.joinedOn}}"></td>
-	                        <td><a href="" class="button"  id="user_update_button{{tempUser.$id}}" ng-click="updateUser(tempUser)">Update</a><a href="" class="button" id="user_delete_button{{tempUser.$id}}" ng-click="deleteUser(tempUser.$id)">Delete</a></td>
-	                    </tr>
-                    </tbody>
-                </table>
+        <!-- Admin Users -->
+        <div id="admin_users">
+            <h2>User List</h2>
+            <div class="search">
+                <form>
+                    <input type="text" class="systemSearch" placeholder="Search Gamer">
+                </form>
+                <a href="#/admin_add_user" class="small button a_dropdown">Add Gamer</a>
             </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div id="footer">
-
+            <!-- Table -->
+            <table class="gts">
+                <thead>
+                <tr>
+                    <th width="200">Name</th>
+                    <th>Email</th>
+                    <th>Joined Date</th>
+                    <th width="10%">Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="tempUser in users">
+                    <td><input type="text" class="userName" id="tempUserName{{tempUser.$id}}" value="{{tempUser.displayName}}"></td>
+                    <td><input type="text" class="userEmail" id="tempUserEmail{{tempUser.$id}}" value="{{tempUser.email}}"></td>
+                    <td><input type="date" class="userJoinDate" id="tempUserJoinDate{{tempUser.$id}}" value="{{tempUser.joinedOn}}"></td>
+                    <td><a href="" class="button"  id="user_update_button{{tempUser.$id}}" ng-click="updateUser(tempUser)">Update</a><a href="" class="button" id="user_delete_button{{tempUser.$id}}" ng-click="deleteUser(tempUser.$id)">Delete</a></td>
+                </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
