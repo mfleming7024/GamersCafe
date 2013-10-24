@@ -5,11 +5,22 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
 
     // Creates an instance of Firebase and connects to our URL
     var myConn 	= new Firebase('https://gamerscafe.firebaseio.com/gamerscafe');
-    var auth = new FirebaseSimpleLogin(myConn, function(error, user) {});
 
     $scope.test = function(){
         console.log("Test working.")
     }
+
+    //****** Facebook Login
+    //Checks if the user is login
+    $scope.$on("angularFireAuth:login", function(evt, user) {
+        console.log('logged in');
+        var picurl = "http://graph.facebook.com/" + user.username + "/picture?type=small";
+        var displayName = user.displayName;
+        //This display the profile image and name in the top bar
+        $('#profilePic').attr('src', picurl);
+        $('#displayName').text(displayName);
+    })
+
 
     //************************************Games CRUD***************************************************
 
@@ -536,7 +547,7 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
     //********************************** USER LOGIN/SIGN UP ***********************************
 
 
-//    var ref = new Firebase("https://gamerscafe.firebaseio.com/gamerscafe/users/");
+    var ref = new Firebase("https://gamerscafe.firebaseio.com/gamerscafe/users/");
 
     $scope.login = function() {
         // when the user login successfully then run the following function
@@ -570,21 +581,15 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
             }
         });
     }
+
+
     //Logs out of Facebook
     $scope.logout = function() {
         angularFireAuth.logout();
         $location.path('/home')
     };
 
-    //Checks if the user is login
-    $scope.$on("angularFireAuth:login", function(evt, user) {
-        console.log('logged in');
-        var picurl = "http://graph.facebook.com/" + user.username + "/picture?type=small";
-        var displayName = user.displayName;
-        //This display the profile image and name in the top bar
-        $('#profilePic').attr('src', picurl);
-        $('#displayName').text(displayName);
-    })
+
 
 }])
 

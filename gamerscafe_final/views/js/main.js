@@ -109,27 +109,7 @@ gamerscafe.config(function ($routeProvider){
             templateUrl:"views/templates/gts_edit_gamer.html",
             authRequired: true
         })
-//        .when("/logged", {
-//            controller:"Core",
-//            templateUrl:"views/templates/admin.html",
-//            resolve: {
-//                validate: function($q, $location) {
-//                    console.log($q);
-//                    // Either you could maintain an array of hashes on client side
-//                    // a user do not have access to without login
-//                    // Or hit the backend url to check it more securely
-//                    var validateAccess = $q.defer();
-//                    var isAllowed = ['admin_staff'].indexOf($location.hash()) !== -1;
-//
-//                    if (!isAllowed) {
-//                        $location.path('/home');
-//                    }
-//
-//                    validateAccess.resolve();
-//                    return validateAccess.promise;
-//                }
-//            }
-//        })
+
         .otherwise({redirectTo:"/"});
 
 }).directive('autoComplete', function($timeout) {
