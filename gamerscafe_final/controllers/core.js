@@ -14,11 +14,11 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
     //Checks if the user is login
     $scope.$on("angularFireAuth:login", function(evt, user) {
         console.log('logged in');
-        var picurl = "http://graph.facebook.com/" + user.username + "/picture?type=small";
-        var displayName = user.displayName;
+        $scope.picurl = "http://graph.facebook.com/" + user.username + "/picture?type=small";
+        $scope.displayName = user.displayName;
         //This display the profile image and name in the top bar
-        $('#profilePic').attr('src', picurl);
-        $('#displayName').text(displayName);
+        //$('#profilePic').attr('src', picurl);
+        //$('#displayName').text(displayName);
     })
 
 

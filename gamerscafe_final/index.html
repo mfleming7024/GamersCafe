@@ -35,7 +35,7 @@
         </div>
         <div class="user_panel">
             <ul class="user_nav button-group">
-                <li><a id="displayName" href="#" data-dropdown="user_settings" class="small button dropdown">User Settings</i> </a></li>
+                <li><a id="displayName" href="#" data-dropdown="user_settings" class="small button dropdown">{{displayName}}</i> </a></li>
             </ul>
             <form novalidate>
                 <ul id="user_settings" data-dropdown-content class="f-dropdown">
@@ -43,7 +43,7 @@
                     <li><a href="#/admin" class="small button a_dropdown">Admin</a></li>
                 </ul>
             </form>
-            <img id="profilePic" src="" alt="Small Profile Picture">
+            <img id="profilePic" src="{{picurl}}" alt="Small Profile Picture">
         </div>
 
     </div><!-- End top_half_bar -->
