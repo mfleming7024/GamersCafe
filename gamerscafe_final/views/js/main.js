@@ -124,6 +124,11 @@ gamerscafe.config(function ($routeProvider){
             templateUrl:"views/templates/admin_station_info.html",
             authRequired: true
         })
+        .when("/admin_system_info/:systemName/:systemId", {
+            controller:"Core",
+            templateUrl:"views/templates/admin_system_info.html",
+            authRequired: true
+        })
 
         .otherwise({redirectTo:"/"});
 

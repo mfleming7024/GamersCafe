@@ -52,7 +52,7 @@
             <div class="row"></div>
             <!-- foundation table -->
             <div class="adminGames">
-                <ul class="pricing-table large-2 small-6" ng-repeat="game in games | filter:filter.displayName">
+                <ul class="pricing-table large-2 small-6 columns" ng-repeat="game in games | filter:filter.displayName">
                     <a href="#/admin_game_info/{{game.gameTitle}}/{{game.$id}}"><li class="price">
                         <div class="adminGameArt"><img src="{{game.gameArtUrl}}"></div>
                         <div class="adminGameTitle">{{game.gameTitle}} <i class="icon-arrow-right"></i></div>
