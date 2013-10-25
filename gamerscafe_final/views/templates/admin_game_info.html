@@ -16,15 +16,19 @@
 
         <!-- Admin Users -->
         <div id="admin_users">
-            <h2>Game Info</h2>
-            <div class="search">
-                <form class="small-12 large-6 columns">
-                    <input type="text" class="systemSearch" placeholder="Search Gamer" ng-model="filter.displayName">
-                </form>
+            <div class="panel large-6 center gamesPanel">
+                <h2>{{game_profile.gameTitle}}</h2>
+                <div class="gameInfoImage">
+                    <img src="{{game_profile.gameArtUrl}}">
+
+                </div>
+                <input type="text" class="gameName" value="{{game_profile.gameArtUrl}}" id="tempGameTitle{{game.$id}}">
+                <input type="text" class="system" value="{{game_profile.gameSystem}}" id="tempGameSystem{{game.$id}}">
+                <input type="tel" class="gameQuantity" value="{{game_profile.gameQuantity}}" id="tempGameQuantity{{game.$id}}">
+                <a href="" class="button" ng-click="updateGame(game)" id="game_update_button{{game.$id}}">Update</a>
+                <a href="" class="button" ng-click="deleteGame(game.$id)" id="game_delete_button{{game.$id}}">Delete</a>
             </div>
-            <img src="{{game_profile.gameArtUrl}}">
-            {{game_profile.gameTitle}} <br />
-            {{user_profile.email}}
+
 
         </div>
     </div>

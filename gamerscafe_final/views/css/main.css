@@ -730,7 +730,13 @@ h1,h2,h3,p,a {
     font-size: 0.5em;
     opacity: 0.2;
 }
-
+.gamesPanel{
+    margin-top: 20px;
+}
+.gameInfoImage{
+    width: 150px;
+    margin: 0 auto;
+}
 /* Media Queries ----------- */
 @media screen and (max-width : 650px) {
 	#main_nav object {
