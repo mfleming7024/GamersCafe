@@ -27,28 +27,41 @@
                 <a href="#/admin_add_game" class="small button a_dropdown large-3 columns">Add Game</a>
             </div>
             <!-- Table -->
-            <table class="gts">
-                <thead>
-                <tr>
-                    <th width="30%">Name</th>
-                    <th width="20%">System</th>
-                    <th width="10%">Date Added</th>
-                    <th width="10%">Quantity</th>
-                    <th width="10%">Available</th>
-                    <th width="10%">Action</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr ng-repeat="game in games | filter:filter.gameName">
-                    <td><input type="text" class="gameName" value="{{game.gameTitle}}" id="tempGameTitle{{game.$id}}"></td>
-                    <td><input type="text" class="system" value="{{game.gameSystem}}" id="tempGameSystem{{game.$id}}"></td>
-                    <td>09/16/2013</td>
-                    <td><input type="text" class="gameQuantity" value="{{game.gameQuantity}}" id="tempGameQuantity{{game.$id}}"></td>
-                    <td>2</td>
-                    <td><a href="" class="button" ng-click="updateGame(game)" id="game_update_button{{game.$id}}">Update</a><a href="" class="button" ng-click="deleteGame(game.$id)" id="game_delete_button{{game.$id}}">Delete</a></td>
-                </tr>
-                </tbody>
-            </table>
+            <!--<table class="gts">-->
+                <!--<thead>-->
+                <!--<tr>-->
+                    <!--<th width="30%">Name</th>-->
+                    <!--<th width="20%">System</th>-->
+                    <!--<th width="10%">Date Added</th>-->
+                    <!--<th width="10%">Quantity</th>-->
+                    <!--<th width="10%">Available</th>-->
+                    <!--<th width="10%">Action</th>-->
+                <!--</tr>-->
+                <!--</thead>-->
+                <!--<tbody>-->
+                <!--<tr ng-repeat="game in games | filter:filter.gameName">-->
+                    <!--<td><input type="text" class="gameName" value="{{game.gameTitle}}" id="tempGameTitle{{game.$id}}"></td>-->
+                    <!--<td><input type="text" class="system" value="{{game.gameSystem}}" id="tempGameSystem{{game.$id}}"></td>-->
+                    <!--<td>09/16/2013</td>-->
+                    <!--<td><input type="text" class="gameQuantity" value="{{game.gameQuantity}}" id="tempGameQuantity{{game.$id}}"></td>-->
+                    <!--<td>2</td>-->
+                    <!--<td><a href="" class="button" ng-click="updateGame(game)" id="game_update_button{{game.$id}}">Update</a><a href="" class="button" ng-click="deleteGame(game.$id)" id="game_delete_button{{game.$id}}">Delete</a></td>-->
+                <!--</tr>-->
+                <!--</tbody>-->
+            <!--</table>-->
+            <div class="row"></div>
+            <!-- foundation table -->
+            <div class="adminGames">
+                <ul class="pricing-table large-2 small-6" ng-repeat="game in games | filter:filter.displayName">
+                    <a href="#/admin_game_info/{{game.gameTitle}}/{{game.$id}}"><li class="price">
+                        <div class="adminGameArt"><img src="{{game.gameArtUrl}}"></div>
+                        <div class="adminGameTitle">{{game.gameTitle}} <i class="icon-arrow-right"></i></div>
+
+
+                    </li></a>
+                </ul>
+            </div>
+
         </div>
     </div>
 </div>

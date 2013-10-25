@@ -1,0 +1,31 @@
+<!-- Admin Game Info Page -->
+<div class="middle">
+    <div class="row staff_columns">
+        <ul class="admin_nav button-group">
+            <li><a href="#" data-dropdown="admin_dd" class="small button dropdown">Admin Settings</i> </a></li>
+        </ul>
+        <ul id="admin_dd" data-dropdown-content class="f-dropdown">
+            <li><a href="#/admin" class="small button a_dropdown">GTS</a></li>
+            <li><a href="#/admin_users" class="small button a_dropdown">Users</a></li>
+            <li><a href="#/admin_staff" class="small button a_dropdown">Staff</a></li>
+            <li><a href="#/admin_station" class="small button a_dropdown">Station</a></li>
+            <li><a href="#/admin_systems" class="small button a_dropdown">System</a></li>
+            <li><a href="#/admin_games" class="small button a_dropdown">Games</a></li>
+        </ul>
+        <div class="splitter"></div>
+
+        <!-- Admin Users -->
+        <div id="admin_users">
+            <h2>Game Info</h2>
+            <div class="search">
+                <form class="small-12 large-6 columns">
+                    <input type="text" class="systemSearch" placeholder="Search Gamer" ng-model="filter.displayName">
+                </form>
+            </div>
+            <img src="{{game_profile.gameArtUrl}}">
+            {{game_profile.gameTitle}} <br />
+            {{user_profile.email}}
+
+        </div>
+    </div>
+</div>

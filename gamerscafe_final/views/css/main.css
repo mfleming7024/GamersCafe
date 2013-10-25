@@ -337,7 +337,7 @@ h1,h2,h3,p,a {
 .social{
     float: left;
     font-size: 2em;
-    margin-left: 10px;
+    margin-left: 2%;
     margin-top: 5px;
 }
 
@@ -367,9 +367,7 @@ h1,h2,h3,p,a {
     margin-top: 10px;
 
 }
-.social a{
-    padding-right: 5px;
-}
+
 /* GTS Panel */
 #gts_panel {
 }
@@ -565,7 +563,7 @@ h1,h2,h3,p,a {
 }
 
 .search {
-	width: 95%;
+	width: 96%;
 	margin: 0 auto;
 }
 
@@ -684,6 +682,28 @@ h1,h2,h3,p,a {
 .joinForm{
     padding: 0!important;
 }
+
+/* Info Pages */
+
+.adminGameArt{
+    width: 80px;
+    margin: 0 auto;
+}
+.adminGames{
+    margin-left: 2%;
+    margin-right: 2%;
+}
+.adminGameTitle{
+    color: #a9a9a9;
+    margin-top: 10px;
+    font-family:'Oswald',sans-serif;
+    text-align: center;
+}
+.adminGameTitle i{
+    font-size: 1.4em;
+    opacity: 0.2;
+}
+
 /* Media Queries ----------- */
 @media screen and (max-width : 650px) {
 	#main_nav object {
