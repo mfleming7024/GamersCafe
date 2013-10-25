@@ -34,6 +34,7 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
             } else {
                 console.log($scope.game);
                 $scope.games.add($scope.game);
+                $location.path('/admin_games');
             }
         }
     }
@@ -108,6 +109,7 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
             } else {
                 console.log($scope.system);
                 $scope.systems.add($scope.system);
+                $location.path('/admin_systems');
             }
         }
         console.log("addSystem clicked");
@@ -248,6 +250,7 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
             } else {
                 console.log("Station added", $scope.station);
                 $scope.stations.add($scope.station);
+                $location.path('/admin_station');
             }
         }
     }
