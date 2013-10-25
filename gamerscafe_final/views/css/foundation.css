@@ -4190,7 +4190,7 @@ ul.pagination li {
 
 /* Pricing Tables */
 .pricing-table {
-    border: solid 1px #dddddd;
+    /*border: solid 1px #dddddd;*/
     margin-left: 0;
     margin-bottom: 1.25em; }
 .pricing-table * {

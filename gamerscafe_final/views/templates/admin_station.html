@@ -26,26 +26,36 @@
                 <a href="#/admin_add_station" class="small button a_dropdown large-3 columns">Add Station</a>
             </div>
             <!-- Table -->
-            <table class="gts">
-                <thead>
-                <tr>
-                    <th width="5%">Station Number</th>
-                    <th width="15%">System</th>
-                    <th width="20%">Television Model</th>
-                    <th width="15%">Television Serial</th>
-                    <th width="10%">Action</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr ng-repeat="station in stations | filter:filter.stationNumber">
-                    <td><input type="text" class="stationNumber" value="{{station.stationNumber}}" id="tempStationNumber{{station.$id}}"></td>
-                    <td><input type="text" class="stationSystem" value="{{station.stationSystem}}" id="tempStationSystem{{station.$id}}"></td>
-                    <td><input type="text" class="stationTV" value="{{station.stationTV}}" id="tempStationTV{{station.$id}}"></td>
-                    <td><input type="text" class="stationTVSerial" value="{{station.stationTVSerial}}" id="tempStationTVSerial{{station.$id}}"></td>
-                    <td><a href="" class="button" id="station_update_button{{station.$id}}" ng-click="updateStation(station)">Update</a><a href="" class="button" id="station_delete_button{{station.$id}}" ng-click="deleteStation(station.$id)">Delete</a></td>
-                </tr>
-                </tbody>
-            </table>
+            <!--<table class="gts">-->
+                <!--<thead>-->
+                <!--<tr>-->
+                    <!--<th width="5%">Station Number</th>-->
+                    <!--<th width="15%">System</th>-->
+                    <!--<th width="20%">Television Model</th>-->
+                    <!--<th width="15%">Television Serial</th>-->
+                    <!--<th width="10%">Action</th>-->
+                <!--</tr>-->
+                <!--</thead>-->
+                <!--<tbody>-->
+                <!--<tr ng-repeat="station in stations | filter:filter.stationNumber">-->
+                    <!--<td><input type="text" class="stationNumber" value="{{station.stationNumber}}" id="tempStationNumber{{station.$id}}"></td>-->
+                    <!--<td><input type="text" class="stationSystem" value="{{station.stationSystem}}" id="tempStationSystem{{station.$id}}"></td>-->
+                    <!--<td><input type="text" class="stationTV" value="{{station.stationTV}}" id="tempStationTV{{station.$id}}"></td>-->
+                    <!--<td><input type="text" class="stationTVSerial" value="{{station.stationTVSerial}}" id="tempStationTVSerial{{station.$id}}"></td>-->
+                    <!--<td><a href="" class="button" id="station_update_button{{station.$id}}" ng-click="updateStation(station)">Update</a><a href="" class="button" id="station_delete_button{{station.$id}}" ng-click="deleteStation(station.$id)">Delete</a></td>-->
+                <!--</tr>-->
+                <!--</tbody>-->
+            <!--</table>-->
+            <div class="row"></div>
+            <!-- foundation table -->
+            <div class="adminStations">
+                <ul class="pricing-table large-2 small-6 column" ng-repeat="station in stations | filter:filter.stationNumber">
+                    <a href="#/admin_station_info/{{station.stationNumber}}/{{station.$id}}"><li class="price">
+                        <!--<div class="adminGameArt"><img src="{{game.gameArtUrl}}"></div>-->
+                        <div class="adminStationNumber">{{station.stationNumber}} <i class="icon-arrow-right"></i></div>
+                    </li></a>
+                </ul>
+            </div>
         </div>
     </div>
 </div>

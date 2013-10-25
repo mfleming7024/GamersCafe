@@ -43,12 +43,15 @@
             <!--</table>-->
             <div class="row"></div>
             <!-- foundation table -->
-            <ul class="pricing-table" ng-repeat="tempUser in users | filter:filter.displayName">
-                <a href="#/admin_user_profile/{{tempUser.displayName}}/{{tempUser.$id}}"><li class="price">
-                    <div class="images"><img src="{{tempUser.profilePic}}"></div>
-                    <div class="fbName">{{tempUser.displayName}}</div>
+            <div class="adminUsers">
+                <ul class="pricing-table small-6 large-3 columns" ng-repeat="tempUser in users | filter:filter.displayName">
+                    <a href="#/admin_user_profile/{{tempUser.displayName}}/{{tempUser.$id}}"><li class="price">
+                        <div class="images"><img src="{{tempUser.profilePic}}"></div>
+                        <div class="fbName">{{tempUser.displayName}}</div>
                     </li></a>
-            </ul>
+                </ul>
+            </div>
+
         </div>
     </div>
 </div>

@@ -693,6 +693,14 @@ h1,h2,h3,p,a {
     margin-left: 2%;
     margin-right: 2%;
 }
+.adminStations{
+    margin-left: 2%;
+    margin-right: 2%;
+}
+.adminUsers{
+    margin-left: 2%;
+    margin-right: 2%;
+}
 .adminGameTitle{
     color: #a9a9a9;
     margin-top: 10px;
@@ -701,6 +709,17 @@ h1,h2,h3,p,a {
 }
 .adminGameTitle i{
     font-size: 1.4em;
+    opacity: 0.2;
+}
+.adminStationNumber{
+    color: #a9a9a9;
+    margin-top: 10px;
+    font-size: 2em;
+    font-family:'Oswald',sans-serif;
+    text-align: center;
+}
+.adminStationNumber i{
+    font-size: 0.5em;
     opacity: 0.2;
 }
 

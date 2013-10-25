@@ -220,13 +220,7 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
             }
         }
     });
-    //Users info page
-    if(typeof $routeParams !== "undefined"){
-        if(typeof $routeParams.userId !== "undefined"){
-             //collects the info from the database for use.
-             angularFire(urlUsers.child($routeParams.userId),$scope,'user_profile');
-        }
-    }
+
 
     var user_delete_confirmed = false;
     $scope.deleteUser = function(itemId){
@@ -262,6 +256,13 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
         } else {
             $("#user_update_button" + user.$id).css("background", "green").html("Are you sure");
             user_update_confirmed = true;
+        }
+    }
+    //Users info page
+    if(typeof $routeParams !== "undefined"){
+        if(typeof $routeParams.userId !== "undefined"){
+            //collects the info from the database for use.
+            angularFire(urlUsers.child($routeParams.userId),$scope,'user_profile');
         }
     }
 
@@ -339,6 +340,14 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
 
     $scope.addStationToHistory = function(){
         $scope.stationHistory.add($scope.startTicket);
+    }
+
+    //Users info page
+    if(typeof $routeParams !== "undefined"){
+        if(typeof $routeParams.stationId !== "undefined"){
+            //collects the info from the database for use.
+            angularFire(urlStations.child($routeParams.stationId),$scope,'station_profile');
+        }
     }
 
     //************************************Staff CRUD***************************************************
