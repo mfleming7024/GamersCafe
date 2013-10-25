@@ -386,8 +386,15 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
             staff_delete_confirmed = true;
         }
     }
+    //Users info page
+    if(typeof $routeParams !== "undefined"){
+        if(typeof $routeParams.staffId !== "undefined"){
+            //collects the info from the database for use.
+            angularFire(urlStaff.child($routeParams.staffId),$scope,'staff_profile');
+        }
+    }
 
-
+    //****************************** LOGIN ****************************
 
     var ref = new Firebase("https://gamerscafe.firebaseio.com/gamerscafe/users/");
 
