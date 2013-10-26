@@ -15,15 +15,46 @@
         <div class="splitter"></div>
 
         <!-- Admin Users -->
-        <div id="admin_users">
-            <h2>{{staff_profile.staffName}}</h2>
-            <div class="search">
-                <form class="small-12 large-6 columns">
-                    <input type="text" class="systemSearch" placeholder="Search Gamer" ng-model="filter.displayName">
+        <div id="admin_staffs">
+            <div class="panel large-6 center gamesPanel">
+                <a href="#/admin_staff" class="button">Back</a>
+                <h2>{{staff_profile.staffName}}</h2>
+                <form id="form" name="form" novalidate>
+                    <label>Staff Name</label>
+                    <input type="text" class="staffName" name="staffName" placeholder="{{staff_profile.staffName}}" ng-model="staff.staffName" id="tempStaffName" ng-minlength="2" required="">
+                    <div class="errorMessage" ng-show="form.staffName.$dirty && form.staffName.$invalid">
+                        <span ng-show="form.staffName.$error.required">Please Enter A Name</span>
+                        <span ng-show="form.staffName.$error.minlength">Name Must Be At Least 2 Characters Long</span>
+                    </div>
+                    <label>Cell Number</label>
+                    <input type="text" name="cellNumber" class="gameName" placeholder="{{staff_profile.staffNumber}}" value="{{staff_profile.staffNumber}}" ng-minlength=11 ng-maxlength=11 ng-model="staff.staffNumber" id="tempStaffNumber" required="">
+                    <div class="errorMessage" ng-show="form.cellNumber.$dirty && form.cellNumber.$invalid">
+                        <span ng-show="form.cellNumber.$error.required">Please Enter A Cell Number</span>
+                        <span ng-show="form.cellNumber.$error.minlength">Numbers Only and Up To 11 Numbers</span>
+                        <span ng-show="form.cellNumber.$error.maxlength">Max is 11 Numbers</span>
+                    </div>
+                    <label>Email</label>
+                    <input id="tempStaffEmail" class="input_add_staffEmail" name="sEmail" type="email" placeholder="{{staff_profile.staffEmail}}" ng-model="staff.staffEmail" required>
+                    <div class="errorMessage" ng-show="form.sEmail.$dirty && form.sEmail.$invalid">
+                        <span ng-show="form.sEmail.$error.required">Please Enter An Email</span>
+                        <span ng-show="form.sEmail.$error.email">This is not a valid email.</span>
+                    </div>
+                    <label>Password</label>
+                    <input id="tempStaffPassword" class="input_add_staffPassword" name="staffPassword" type="password" placeholder="Password" ng-model="staff.staffPassword" ng-minlength=8 ng-maxlength=20 required>
+                    <div class="errorMessage" ng-show="form.staffPassword.$dirty && form.staffPassword.$invalid">
+                        <span ng-show="form.staffPassword.$error.required">Please Enter A Password</span>
+                        <span ng-show="form.staffPassword.$error.minlength">Min 8 Characters</span>
+                        <span ng-show="form.staffPassword.$error.maxlength">Max 20 Characters</span>
+                    </div>
+                    <label>Permission: {{staff_profile.staffPermission}}</label>
+                    <select id="tempStaffPermission" name="staffPermission" class="small" ng-model="staff.staffPermission" required>
+                        <option>GTS</option>
+                        <option>League</option>
+                    </select>
+                    <a href="" class="button small-12 large-6 " ng-click="updateStaff(staff)" id="staff_update_button" ng-disabled="form.$invalid" >Update</a>
+                    <a href="" class="button small-12 large-6 deleteButton" ng-click="deleteStaff(staff.$id)" id="staff_delete_button">Delete</a>
                 </form>
             </div>
->
-
 
         </div>
     </div>

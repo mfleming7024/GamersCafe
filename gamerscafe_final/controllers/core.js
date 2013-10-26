@@ -422,11 +422,23 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
             }
         }
 
+
         auth.createUser(email, password, function(error, user) {
             if (!error) {
                 console.log('User Id: ' + user.id + ', Email: ' + user.email);
             }
         });
+    }
+
+    var theStaffId;
+    //staff info page
+    if(typeof $routeParams !== "undefined"){
+        if(typeof $routeParams.staffId !== "undefined"){
+            //collects the info from the database for use.
+            angularFire(urlStaff.child($routeParams.staffId),$scope,'staff_profile');
+
+            theStaffId = $routeParams.staffId;
+        }
     }
 
 
@@ -435,25 +447,28 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
     $scope.updateStaff = function(staff){
         if (staff_update_confirmed) {
             //Grabs the staff properties from the scope to pass into the staff object and update it
-            var tempStaffName = document.querySelector("#tempStaffName" + staff.$id).value;
-            var tempStaffNumber = document.querySelector("#tempStaffNumber" + staff.$id).value;
-            var tempStaffEmail = document.querySelector("#tempStaffEmail" + staff.$id).value;
-            var tempStaffPassword = document.querySelector("#tempStaffPassword" + staff.$id).value;
+            var tempStaffName = document.querySelector("#tempStaffName").value;
+            var tempStaffNumber = document.querySelector("#tempStaffNumber").value;
+            var tempStaffEmail = document.querySelector("#tempStaffEmail").value;
+            var tempStaffPassword = document.querySelector("#tempStaffPassword").value;
+            var tempStaffPermission = document.querySelector("#tempStaffPermission").value;
 
             //Sets the staff properties equal to whatever value is in the text inputs
-            staff.staffName = tempStaffName;
-            staff.staffNumber = tempStaffNumber;
-            staff.staffEmail = tempStaffEmail;
-            staff.staffPassword = tempStaffPassword;
+            $scope.staff_profile.staffName = tempStaffName;
+            $scope.staff_profile.staffNumber = tempStaffNumber;
+            $scope.staff_profile.staffEmail = tempStaffEmail;
+            $scope.staff_profile.staffPassword = tempStaffPassword;
+            $scope.staff_profile.staffPermission = tempStaffPermission;
 
             //visual of staff update
             console.log("staff updated", staff);
+            $location.path('/admin_staff');
             $scope.staffs.update(staff);
 
-            $("#staff_update_button" + staff.$id).css("background", "#2ba6cb").html("Update");
+            $("#staff_update_button").css("background", "#2ba6cb").html("Update");
             staff_update_confirmed = false;
         } else {
-            $("#staff_update_button" + staff.$id).css("background", "green").html("Are you sure");
+            $("#staff_update_button").css("background", "green").html("Are you sure");
             staff_update_confirmed = true;
         }
     }
@@ -462,23 +477,17 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
     //remove from the databse object but not from the auth list.
     $scope.deleteStaff = function(myid){
         if (staff_delete_confirmed){
-            $scope.staffs.remove(myid);
+            $("#staff_delete_button").css("background", "#2ba6cb").html("Delete");
+            $scope.staffs.remove(theStaffId);
             console.log("deleteStaff clicked");
-
-            $("#staff_delete_button" + myid).css("background", "#2ba6cb").html("Delete");
+            $location.path('/admin_staff')
             staff_delete_confirmed = false;
         } else {
-            $("#staff_delete_button" + myid).css("background", "red").html("Are you sure");
+            $("#staff_delete_button").css("background", "red").html("Are you sure");
             staff_delete_confirmed = true;
         }
     }
-    //staff info page
-    if(typeof $routeParams !== "undefined"){
-        if(typeof $routeParams.staffId !== "undefined"){
-            //collects the info from the database for use.
-            angularFire(urlStaff.child($routeParams.staffId),$scope,'staff_profile');
-        }
-    }
+
 }])
 
 gamerscafe.filter('range', function() {

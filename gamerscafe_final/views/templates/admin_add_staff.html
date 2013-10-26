@@ -17,53 +17,49 @@
 
         <!-- Admin Add Staff -->
         <div id="admin_staff" ng-controller="Core">
-            <h2>Add Staff</h2>
-
-            <form id="form" name="form" novalidate ng-submit="addStaff()">
-                <fieldset>
-                    <div class="row">
-                        <div class="large-12 columns form">
-                            <input class="input_add_staffName" name="staffName" type="text" placeholder="Staff Name" ng-minlength=2 ng-model="staff.staffName" required>
-                            <div class="errorMessage" ng-show="form.staffName.$dirty && form.staffName.$invalid">
-                                <span ng-show="form.staffName.$error.required">Please Enter A Name</span>
-                                <span ng-show="form.staffName.$error.minlength">Name Must Be At Least 2 Characters Long</span>
-                            </div>
-                            <input class="input_add_staffNumber" name="cellNumber" type="tel" placeholder="Cell Number" ng-minlength=11 ng-maxlength=11 ng-model="staff.staffNumber" required>
-                            <div class="errorMessage" ng-show="form.cellNumber.$dirty && form.cellNumber.$invalid">
-                                <span ng-show="form.cellNumber.$error.required">Please Enter A Cell Number</span>
-                                <span ng-show="form.cellNumber.$error.minlength">Numbers Only</span>
-                                <span ng-show="form.cellNumber.$error.maxlength">Max is 11 Numbers</span>
-                            </div>
-                            <input class="input_add_staffEmail" name="sEmail" type="email" placeholder="Email" ng-model="staff.staffEmail" required>
-                            <div class="errorMessage" ng-show="form.sEmail.$dirty && form.sEmail.$invalid">
-                                <span ng-show="form.sEmail.$error.required">Please Enter An Email</span>
-                                <span ng-show="form.sEmail.$error.email">This is not a valid email.</span>
-                            </div>
-
-                            <input class="input_add_staffPassword" name="staffPassword" type="password" placeholder="Password" ng-model="staff.staffPassword" ng-minlength=8 ng-maxlength=20 required>
-                            <div class="errorMessage" ng-show="form.staffPassword.$dirty && form.staffPassword.$invalid">
-                                <span ng-show="form.staffPassword.$error.required">Please Enter A Password</span>
-                                <span ng-show="form.staffPassword.$error.minlength">Min 8 Characters</span>
-                                <span ng-show="form.staffPassword.$error.maxlength">Max 20 Characters</span>
-                            </div>
-                            <form class="custom">
-                            </form>
-                            <label>Permission</label>
-                            <select id="permissionSelection" name="staffPermission" class="small" ng-model="staff.staffPermission" required>
-                                <option>GTS</option>
-                                <option>League</option>
-                            </select>
-                            <div class="errorMessage" ng-show="form.staffPermission.$dirty && form.staffPermission.$invalid">
-                                <span ng-show="form.staffPermission.$error.required">Please Make A Selection</span>
-                            </div>
-                            <div class="formButtons">
-                                <input type="submit" class="button" value="Add" ng-disabled="form.$invalid"  />
-                                <a href="#/admin_staff" class="button">Cancel</a>
-                            </div>
-                        </div>
+            <div class="panel small-12 large-6 center addPanel">
+                <a href="#/admin_staff" class="button">Back</a>
+                <h2>Add Staff</h2>
+                <form id="form" name="form" novalidate ng-submit="addStaff()">
+                    <label>Staff Name</label>
+                    <input class="input_add_staffName" name="staffName" type="text" placeholder="Staff Name" ng-minlength=2 ng-model="staff.staffName" required>
+                    <div class="errorMessage" ng-show="form.staffName.$dirty && form.staffName.$invalid">
+                        <span ng-show="form.staffName.$error.required">Please Enter A Name</span>
+                        <span ng-show="form.staffName.$error.minlength">Name Must Be At Least 2 Characters Long</span>
                     </div>
-                </fieldset>
-            </form>
+                    <label>Cell Number</label>
+                    <input class="input_add_staffNumber" name="cellNumber" type="tel" placeholder="Cell Number" ng-minlength=11 ng-maxlength=11 ng-model="staff.staffNumber" required>
+                    <div class="errorMessage" ng-show="form.cellNumber.$dirty && form.cellNumber.$invalid">
+                        <span ng-show="form.cellNumber.$error.required">Please Enter A Cell Number</span>
+                        <span ng-show="form.cellNumber.$error.minlength">Numbers Only and Up To 11 Numbers</span>
+                        <span ng-show="form.cellNumber.$error.maxlength">Max is 11 Numbers</span>
+                    </div>
+                    <label>Staff Email</label>
+                    <input class="input_add_staffEmail" name="sEmail" type="email" placeholder="Email" ng-model="staff.staffEmail" required>
+                    <div class="errorMessage" ng-show="form.sEmail.$dirty && form.sEmail.$invalid">
+                        <span ng-show="form.sEmail.$error.required">Please Enter An Email</span>
+                        <span ng-show="form.sEmail.$error.email">This is not a valid email.</span>
+                    </div>
+                    <label>Password</label>
+                    <input class="input_add_staffPassword" name="staffPassword" type="password" placeholder="Password" ng-model="staff.staffPassword" ng-minlength=8 ng-maxlength=20 required>
+                    <div class="errorMessage" ng-show="form.staffPassword.$dirty && form.staffPassword.$invalid">
+                        <span ng-show="form.staffPassword.$error.required">Please Enter A Password</span>
+                        <span ng-show="form.staffPassword.$error.minlength">Min 8 Characters</span>
+                        <span ng-show="form.staffPassword.$error.maxlength">Max 20 Characters</span>
+                    </div>
+                    <label>Permission</label>
+                    <select id="permissionSelection" name="staffPermission" class="small" ng-model="staff.staffPermission" required>
+                        <option>GTS</option>
+                        <option>League</option>
+                    </select>
+                    <div class="errorMessage" ng-show="form.staffPermission.$dirty && form.staffPermission.$invalid">
+                        <span ng-show="form.staffPermission.$error.required">Please Make A Selection</span>
+                    </div>
+                    <div class="formButtons">
+                        <input type="submit" class="button small-12 large-6" value="Add" ng-disabled="form.$invalid"  />
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </div>
