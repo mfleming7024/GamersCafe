@@ -96,14 +96,14 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
             }
         }
     }
-    var theId;
+    var theGameId;
     //Games info page
     if(typeof $routeParams !== "undefined"){
         if(typeof $routeParams.gameId !== "undefined"){
             //collects the info from the database for use.
             angularFire(urlGames.child($routeParams.gameId),$scope,'game_profile');
 
-            theId = $routeParams.gameId;
+            theGameId = $routeParams.gameId;
         }
     }
 
@@ -112,7 +112,7 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
     $scope.deleteGame = function(myid){
         if (game_delete_confirmed) {
             $("#game_delete_button").css("background", "#2ba6cb").html("Delete");
-            $scope.games.remove(theId);
+            $scope.games.remove(theGameId);
             console.log("deleteGame clicked");
             $location.path('/admin_games');
 
@@ -184,16 +184,28 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
         console.log("addSystem clicked");
     }
 
+    var theSystemId;
+    //System info page
+    if(typeof $routeParams !== "undefined"){
+        if(typeof $routeParams.systemId !== "undefined"){
+            //collects the info from the database for use.
+            angularFire(urlSystem.child($routeParams.systemId),$scope,'system_profile');
+
+            theSystemId = $routeParams.systemId;
+        }
+    }
+
     var system_delete_confirmed = false;
     //removes system based on a unique id
     $scope.deleteSystem = function(myid){
         if (system_delete_confirmed) {
-            $scope.systems.remove(myid);
+            $scope.systems.remove(theSystemId);
+            $location.path('/admin_systems');
             console.log("deleteSystem clicked");
-            $("#system_delete_button" + myid).css("background", "#2ba6cb").html("Delete");
+            $("#system_delete_button").css("background", "#2ba6cb").html("Delete");
             system_delete_confirmed = false;
         } else {
-            $("#system_delete_button" + myid).css("background", "red").html("Are you sure");
+            $("#system_delete_button").css("background", "red").html("Are you sure");
             system_delete_confirmed = true;
         }
     }
@@ -204,34 +216,29 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
 
         if (system_update_confirmed) {
             //Grabs the game properties from the scope to pass into the game object and update it
-            var tempSystemName = document.querySelector("#tempSystemName" + system.$id).value;
-            var tempSystemSerial = document.querySelector("#tempSystemSerial" + system.$id).value;
-            var tempSystemStation = document.querySelector("#tempSystemStation" + system.$id).value;
+            var tempSystemName = document.querySelector("#tempSystemName").value;
+            var tempSystemSerial = document.querySelector("#tempSystemSerial").value;
+            var tempSystemStation = document.querySelector("#tempSystemStation").value;
 
             //Sets the game properties equal to whatever value is in the text inputs
-            system.systemName = tempSystemName;
-            system.systemSerial = tempSystemSerial;
-            system.systemStation = tempSystemStation;
+            $scope.system_profile.systemName = tempSystemName;
+            $scope.system_profile.systemSerial = tempSystemSerial;
+            $scope.system_profile.systemStation = tempSystemStation;
 
             //visual of game update
+            $location.path('/admin_systems');
             console.log("system updated", system);
             $scope.systems.update(system);
 
-            $("#system_update_button" + system.$id).css("background", "#2ba6cb").html("Update");
+            $("#system_update_button").css("background", "#2ba6cb").html("Update");
             system_update_confirmed = false;
         } else {
-            $("#system_update_button" + system.$id).css("background", "green").html("Are you sure");
+            $("#system_update_button").css("background", "green").html("Are you sure");
             system_update_confirmed = true;
         }
     }
 
-    //System info page
-    if(typeof $routeParams !== "undefined"){
-        if(typeof $routeParams.systemId !== "undefined"){
-            //collects the info from the database for use.
-            angularFire(urlSystem.child($routeParams.systemId),$scope,'system_profile');
-        }
-    }
+
 
     //************************************Users CRUD***************************************************
 
@@ -465,9 +472,6 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
             angularFire(urlStaff.child($routeParams.staffId),$scope,'staff_profile');
         }
     }
-
-
-
 }])
 
 gamerscafe.filter('range', function() {

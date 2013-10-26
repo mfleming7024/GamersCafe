@@ -14,7 +14,7 @@
         </ul>
         <div class="splitter"></div>
 
-        <!-- Admin Users -->
+        <!-- Admin Game Info -->
         <div id="admin_users">
             <div class="panel large-6 center gamesPanel">
                 <a href="#/admin_games" class="button">Back</a>
@@ -29,7 +29,7 @@
                         <span ng-show="form.gameName.$error.required">Please Enter A Name</span>
                         <span ng-show="form.gameName.$error.minlength">Name Must Be At Least 2 Characters Long</span>
                     </div>
-                    {{game_profile.gameSystem}}
+                    <label>{{game_profile.gameSystem}}</label>
                     <!--<input type="text" class="system" value="" >-->
                     <select id="tempGameSystem" class="medium" ng-model="game.gameSystem" required>
                         <option>Playstation 4</option>

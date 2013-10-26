@@ -16,38 +16,33 @@
         <div class="splitter"></div>
 
         <!-- Admin Add System Page -->
-        <div id="admin_system" ng-controller="Core">
-            <h2>Add System</h2>
-
-            <form name="form" novalidate ng-submit="addSystem()">
-                <div class="row">
-                    <div class="large-12 columns form">
-                        <fieldset>
-                            <input class="input_add_systemName" name="name" type="text" placeholder="System Name" ng-model="system.systemName" ng-minlength="2" required="">
-                            <div class="errorMessage" ng-show="form.name.$dirty && form.name.$invalid">
-                                <span ng-show="form.name.$error.required">Please Enter A Name</span>
-                                <span ng-show="form.name.$error.minlength">Name Must Be At Least 2 Characters Long</span>
-                            </div>
-                            <input class="input_add_systemSerial" name="serial" type="text" placeholder="Serial Number" ng-model="system.systemSerial" required="">
-                            <div class="errorMessage" ng-show="form.serial.$dirty && form.serial.$invalid">
-                                <span ng-show="form.serial.$error.required">Please Enter A Name</span>
-                                <span ng-show="form.serial.$error.minlength">Name Must Be At Least 2 Characters Long</span>
-                            </div>
-                            <label>Assigned Station</label>
-                            <select id="systemDropdown" class="small" ng-model="system.systemStation" required="">
-                                <option>None</option>
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                            </select>
-                            <div class="formButtons">
-                                <input type="submit" class="button" value="Add" ng-disabled="form.$invalid" />
-                                <a href="#/admin_systems" class="button">Cancel</a>
-                            </div>
-                        </fieldset>
+        <div id="admin_game" ng-controller="Core">
+            <div class="panel small-12 large-6 center addPanel">
+                <a href="#/admin_systems" class="button">Back</a>
+                <h2>Add System</h2>
+                <form id="form" name="form" novalidate ng-submit="addSystem()">
+                    <input class="input_add_systemName" name="name" type="text" placeholder="System Name" ng-model="system.systemName" ng-minlength="2" required="">
+                    <div class="errorMessage" ng-show="form.name.$dirty && form.name.$invalid">
+                        <span ng-show="form.name.$error.required">Please Enter A Name</span>
+                        <span ng-show="form.name.$error.minlength">Name Must Be At Least 2 Characters Long</span>
                     </div>
-                </div>
-            </form>
+                    <input class="input_add_systemSerial" name="serial" type="text" placeholder="Serial Number" ng-model="system.systemSerial" ng-minlength="3" required="">
+                    <div class="errorMessage" ng-show="form.serial.$dirty && form.serial.$invalid">
+                        <span ng-show="form.serial.$error.required">Please Enter A Serial</span>
+                        <span ng-show="form.serial.$error.minlength">Name Must Be At Least 3 Characters Long</span>
+                    </div>
+                    <label>Assigned Station</label>
+                    <select id="systemDropdown" class="small" ng-model="system.systemStation" required="">
+                        <option>None</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                    </select>
+                    <div class="formButtons">
+                        <input type="submit" class="button small-12 large-6" value="Add" ng-disabled="form.$invalid"  />
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </div>

@@ -20,36 +20,36 @@
             <div class="panel small-12 large-6 center addPanel">
                 <a href="#/admin_games" class="button">Back</a>
                 <h2>Add Game</h2>
-                    <form id="form" name="form" novalidate ng-submit="addGame()">
-                        <input class="gameName" name="gameName" type="text" placeholder="Game Name" ng-model="game.gameTitle" ng-minlength="2" required>
-                        <div class="errorMessage" ng-show="form.gameName.$dirty && form.gameName.$invalid">
+                <form id="form" name="form" novalidate ng-submit="addGame()">
+                    <input class="gameName" name="gameName" type="text" placeholder="Game Name" ng-model="game.gameTitle" ng-minlength="2" required>
+                    <div class="errorMessage" ng-show="form.gameName.$dirty && form.gameName.$invalid">
                         <span ng-show="form.gameName.$error.required">Please Enter A Name</span>
                         <span ng-show="form.gameName.$error.minlength">Name Must Be At Least 2 Characters Long</span>
-                        </div>
+                    </div>
 
-                        <label>System</label>
-                        <select id="systemDropdown" class="medium" ng-model="game.gameSystem" required>
+                    <label>System</label>
+                    <select id="systemDropdown" class="medium" ng-model="game.gameSystem" required>
                         <option>Playstation 4</option>
                         <option>Playstation 3</option>
                         <option>Xbox 360</option>
                         <option>Xbox One</option>
-                        </select>
+                    </select>
 
-                        <input type="tel" class="small" name="gameQuantity" ng-model="game.gameQuantity" placeholder="Quantity" required>
-                        <div class="errorMessage" ng-show="form.gameQuantity.$dirty && form.gameQuantity.$invalid">
+                    <input type="tel" class="small" name="gameQuantity" ng-model="game.gameQuantity" placeholder="Quantity" required>
+                    <div class="errorMessage" ng-show="form.gameQuantity.$dirty && form.gameQuantity.$invalid">
                         <span ng-show="form.gameQuantity.$error.required">Please Enter An Amount</span>
-                        </div>
+                    </div>
 
-                        <input type="text" class="medium" name="gameArt" ng-model="game.gameArtUrl" placeholder="Box Art URL" required="">
-                        <div class="errorMessage" ng-show="form.gameArt.$dirty && form.gameArt.$invalid">
-                            <span ng-show="form.gameArt.$error.required">Please Enter A URL</span>
-                        </div>
-                        <img src="{{game.gameArtUrl}}" class="addImg" width="200" height="300" />
+                    <input type="text" class="medium" name="gameArt" ng-model="game.gameArtUrl" placeholder="Box Art URL" required="">
+                    <div class="errorMessage" ng-show="form.gameArt.$dirty && form.gameArt.$invalid">
+                        <span ng-show="form.gameArt.$error.required">Please Enter A URL</span>
+                    </div>
+                    <img src="{{game.gameArtUrl}}" class="addImg" width="200" height="300" />
 
-                        <div class="formButtons">
+                    <div class="formButtons">
                         <input type="submit" class="button small-12 large-6" value="Add" ng-disabled="form.$invalid"  />
-                        </div>
-                    </form>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

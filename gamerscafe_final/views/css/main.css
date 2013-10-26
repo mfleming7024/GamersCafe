@@ -705,13 +705,13 @@ h1,h2,h3,p,a {
     margin-left: 2%;
     margin-right: 2%;
 }
-.adminGameTitle{
+.adminPanelTitles{
     color: #a9a9a9;
     margin-top: 10px;
     font-family:'Oswald',sans-serif;
     text-align: center;
 }
-.adminGameTitle i{
+.adminPanelTitles i{
     font-size: 1.4em;
     opacity: 0.2;
 }
@@ -744,8 +744,11 @@ h1,h2,h3,p,a {
 .addImg{
     margin-bottom: 20px;
 }
-text{
-    color: red;
+.pricing-table .price:hover{
+    background-color: lightgray!important;
+}
+.pricing-table .price:active{
+    background-color: #2ba6cb!important;
 }
 
 /* Media Queries ----------- */

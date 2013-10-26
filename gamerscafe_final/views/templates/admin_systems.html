@@ -14,8 +14,8 @@
         </ul>
         <div class="splitter"></div>
 
-        <!-- Gamer Tracking System GTS -->
-        <div id="admin_games">
+        <!-- Admin Systems Panel -->
+        <div id="admin_systems">
             <h2>Systems List</h2>
 
             <div class="search">
@@ -51,7 +51,7 @@
                 <ul class="pricing-table large-2 small-6 columns" ng-repeat="tempSystem in systems | filter:filter.systemName">
                     <a href="#/admin_system_info/{{tempSystem.systemName}}/{{tempSystem.$id}}"><li class="price">
                         <div class="adminGameArt"><img src="{{game.gameArtUrl}}"></div>
-                        <div class="adminSystemName">{{tempSystem.systemName}} <i class="icon-arrow-right"></i></div>
+                        <div class="adminPanelTitles">{{tempSystem.systemName}} <i class="icon-arrow-right"></i></div>
                     </li></a>
                 </ul>
             </div>
