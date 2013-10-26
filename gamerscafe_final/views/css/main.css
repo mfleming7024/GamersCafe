@@ -628,8 +628,7 @@ h1,h2,h3,p,a {
 }
 
 #admin_game {
-	margin:0 auto;
-	width:500px;
+
 }
 
 #admin_station {
@@ -651,9 +650,6 @@ h1,h2,h3,p,a {
 	margin:0 auto;
 }
 
-#form {
-	width:500px;
-}
 
 .formButtons {
 	margin:0 auto;
@@ -730,13 +726,28 @@ h1,h2,h3,p,a {
     font-size: 0.5em;
     opacity: 0.2;
 }
-.gamesPanel{
+.gamesPanel, .addPanel{
     margin-top: 20px;
 }
 .gameInfoImage{
     width: 150px;
     margin: 0 auto;
 }
+.gamesPanel img{
+    margin-bottom: 20px;
+}
+
+.deleteButton{
+    background-color: red!important;
+}
+
+.addImg{
+    margin-bottom: 20px;
+}
+text{
+    color: red;
+}
+
 /* Media Queries ----------- */
 @media screen and (max-width : 650px) {
 	#main_nav object {

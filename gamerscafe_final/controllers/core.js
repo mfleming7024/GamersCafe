@@ -4,13 +4,71 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
     var myConn 	= new Firebase('https://gamerscafe.firebaseio.com/gamerscafe');
 
 
-    //********************************** USER LOGIN/SIGN UP ***********************************
+    //****************************** LOGIN ****************************
 
+    var ref = new Firebase("https://gamerscafe.firebaseio.com/gamerscafe/users/");
 
+    var theUser;
+    //****** Facebook Login
+    //Checks if the user is login
+    $scope.$on("angularFireAuth:login", function(evt, user) {
+        if (user.provider == "facebook") {
+            console.log("logged in", user);
+            $scope.picurl = "http://graph.facebook.com/" + user.username + "/picture?type=small";
+            $scope.displayName = user.displayName;
 
+            theUser = user;
 
+            //console.log('testuser',testUser);
+        } else {
 
-    //************************************Games CRUD***************************************************
+        }
+    })
+
+    $scope.login = function() {
+        // when the user login successfully then run the following function
+        angularFireAuth.login('facebook').then(function() {
+            // If the user login successfully it will take them to admin page
+
+            user = theUser;
+
+            console.log(user);
+            $location.path('/admin');
+            if (user) {
+                console.log('test2');
+                //checks the database against what user email is passed in to see if it
+                //exists then sets a boolean to say so
+                var userExists = false;
+                for (var i = 0, max = $scope.users.length; i<max; i++) {
+                    if ($scope.users[i].email != user.email) {
+                        userExists = false;
+                    } else {
+                        userExists = true;
+                        break;
+                    }
+                }
+                if (userExists) {
+                    console.log("user email exists");
+                    //login the user
+                } else {
+                    //FB profile image
+                    var picurl = "http://graph.facebook.com/" + user.username + "/picture?type=small";
+                    //creates a user object from all of the fields and pushes it to the firebase table
+                    $scope.users.add({"displayName": user.name, "email": user.email, "profilePic": picurl, "facebook": true});
+                }
+            } else {
+                //visual feedback of error
+                console.log("No user Detected");
+            }
+        });
+    }
+    //Logs out of Facebook
+    $scope.logout = function() {
+        angularFireAuth.logout();
+        $location.path('/home')
+    };
+
+//************************************Games CRUD***************************************************
 
     //url to the data needed
     var urlGames = new Firebase("https://gamerscafe.firebaseio.com/gamerscafe/games");
@@ -38,18 +96,30 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
             }
         }
     }
+    var theId;
+    //Games info page
+    if(typeof $routeParams !== "undefined"){
+        if(typeof $routeParams.gameId !== "undefined"){
+            //collects the info from the database for use.
+            angularFire(urlGames.child($routeParams.gameId),$scope,'game_profile');
+
+            theId = $routeParams.gameId;
+        }
+    }
 
     var game_delete_confirmed = false;
-    //removes game based on a unique id
+
     $scope.deleteGame = function(myid){
         if (game_delete_confirmed) {
             $("#game_delete_button").css("background", "#2ba6cb").html("Delete");
-            $scope.games.remove(myid);
+            $scope.games.remove(theId);
             console.log("deleteGame clicked");
-            game_delete_confirmed = false;
+            $location.path('/admin_games');
+
         } else {
             $("#game_delete_button").css("background", "red").html("Are you sure");
             game_delete_confirmed = true;
+            console.log("confirm");
         }
     }
 
@@ -60,21 +130,24 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
         if (game_update_confirmed) {
 
             //Grabs the game properties from the scope to pass into the game object and update it
+            var tempGameArtUrl = document.querySelector("#tempGameArtUrl").value;
             var tempGameTitle = document.querySelector("#tempGameTitle").value;
             var tempGameSystem = document.querySelector("#tempGameSystem").value;
             var tempGameQuantity = document.querySelector("#tempGameQuantity").value;
 
-            console.log(tempGameSystem);
             //Sets the game properties equal to whatever value is in the text inputs
+            $scope.game_profile.gameArtUrl = tempGameArtUrl;
             $scope.game_profile.gameTitle = tempGameTitle;
             $scope.game_profile.gameSystem = tempGameSystem;
             $scope.game_profile.gameQuantity = tempGameQuantity;
 
             //visual of game update
-            console.log("game updated", game);
+            $location.path('/admin_games');
+            console.log("game updated");
             $scope.games.update();
 
             $("#game_update_button").css("background", "#2ba6cb").html("Update");
+
             game_update_confirmed = false;
         } else {
             console.log('clicked')
@@ -83,14 +156,7 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
         }
     }
 
-    //Games info page
-    if(typeof $routeParams !== "undefined"){
-        if(typeof $routeParams.gameId !== "undefined"){
-            //collects the info from the database for use.
-            angularFire(urlGames.child($routeParams.gameId),$scope,'game_profile');
 
-        }
-    }
     //************************************Systems CRUD***************************************************
     //url to the data needed
     var urlSystem = new Firebase('https://gamerscafe.firebaseio.com/gamerscafe/systems');
@@ -400,69 +466,7 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
         }
     }
 
-    //****************************** LOGIN ****************************
 
-    var ref = new Firebase("https://gamerscafe.firebaseio.com/gamerscafe/users/");
-
-    var theUser;
-    //****** Facebook Login
-    //Checks if the user is login
-    $scope.$on("angularFireAuth:login", function(evt, user) {
-        if (user.provider == "facebook") {
-            console.log("logged in", user);
-            $scope.picurl = "http://graph.facebook.com/" + user.username + "/picture?type=small";
-            $scope.displayName = user.displayName;
-
-            theUser = user;
-
-            //console.log('testuser',testUser);
-        } else {
-
-        }
-    })
-
-    $scope.login = function() {
-        // when the user login successfully then run the following function
-        angularFireAuth.login('facebook').then(function() {
-            // If the user login successfully it will take them to admin page
-
-            user = theUser;
-
-            console.log(user);
-            $location.path('/admin');
-            if (user) {
-                console.log('test2');
-                //checks the database against what user email is passed in to see if it
-                //exists then sets a boolean to say so
-                var userExists = false;
-                for (var i = 0, max = $scope.users.length; i<max; i++) {
-                    if ($scope.users[i].email != user.email) {
-                        userExists = false;
-                    } else {
-                        userExists = true;
-                        break;
-                    }
-                }
-                if (userExists) {
-                    console.log("user email exists");
-                    //login the user
-                } else {
-                    //FB profile image
-                    var picurl = "http://graph.facebook.com/" + user.username + "/picture?type=small";
-                    //creates a user object from all of the fields and pushes it to the firebase table
-                    $scope.users.add({"displayName": user.name, "email": user.email, "profilePic": picurl, "facebook": true});
-                }
-            } else {
-                //visual feedback of error
-                console.log("No user Detected");
-            }
-        });
-    }
-    //Logs out of Facebook
-    $scope.logout = function() {
-        angularFireAuth.logout();
-        $location.path('/home')
-    };
 
 }])
 
