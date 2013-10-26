@@ -43,39 +43,42 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
     //removes game based on a unique id
     $scope.deleteGame = function(myid){
         if (game_delete_confirmed) {
-            $("#game_delete_button" + myid).css("background", "#2ba6cb").html("Delete");
+            $("#game_delete_button").css("background", "#2ba6cb").html("Delete");
             $scope.games.remove(myid);
             console.log("deleteGame clicked");
             game_delete_confirmed = false;
         } else {
-            $("#game_delete_button" + myid).css("background", "red").html("Are you sure");
+            $("#game_delete_button").css("background", "red").html("Are you sure");
             game_delete_confirmed = true;
         }
     }
 
     var game_update_confirmed = false;
     //updates the games database have fields instead of string literal
+
     $scope.updateGame = function(game){
         if (game_update_confirmed) {
 
             //Grabs the game properties from the scope to pass into the game object and update it
-            var tempGameTitle = document.querySelector("#tempGameTitle" + game.$id).value;
-            var tempGameSystem = document.querySelector("#tempGameSystem" + game.$id).value;
-            var tempGameQuantity = document.querySelector("#tempGameQuantity" + game.$id).value;
+            var tempGameTitle = document.querySelector("#tempGameTitle").value;
+            var tempGameSystem = document.querySelector("#tempGameSystem").value;
+            var tempGameQuantity = document.querySelector("#tempGameQuantity").value;
 
+            console.log(tempGameSystem);
             //Sets the game properties equal to whatever value is in the text inputs
-            game.gameTitle = tempGameTitle;
-            game.gameSystem = tempGameSystem;
-            game.gameQuantity = tempGameQuantity;
+            $scope.game_profile.gameTitle = tempGameTitle;
+            $scope.game_profile.gameSystem = tempGameSystem;
+            $scope.game_profile.gameQuantity = tempGameQuantity;
 
             //visual of game update
             console.log("game updated", game);
-            $scope.games.update(game);
+            $scope.games.update();
 
-            $("#game_update_button" + game.$id).css("background", "#2ba6cb").html("Update");
+            $("#game_update_button").css("background", "#2ba6cb").html("Update");
             game_update_confirmed = false;
         } else {
-            $("#game_update_button" + game.$id).css("background", "green").html("Are you sure");
+            console.log('clicked')
+            $("#game_update_button").css("background", "green").html("Are you sure");
             game_update_confirmed = true;
         }
     }
@@ -85,9 +88,9 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
         if(typeof $routeParams.gameId !== "undefined"){
             //collects the info from the database for use.
             angularFire(urlGames.child($routeParams.gameId),$scope,'game_profile');
+
         }
     }
-
     //************************************Systems CRUD***************************************************
     //url to the data needed
     var urlSystem = new Firebase('https://gamerscafe.firebaseio.com/gamerscafe/systems');
@@ -389,7 +392,7 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
             staff_delete_confirmed = true;
         }
     }
-    //Users info page
+    //staff info page
     if(typeof $routeParams !== "undefined"){
         if(typeof $routeParams.staffId !== "undefined"){
             //collects the info from the database for use.
