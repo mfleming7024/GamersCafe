@@ -21,11 +21,13 @@
                 <a href="#/admin_systems" class="button">Back</a>
                 <h2>Add System</h2>
                 <form id="form" name="form" novalidate ng-submit="addSystem()">
+                    <label>System Name</label>
                     <input class="input_add_systemName" name="name" type="text" placeholder="System Name" ng-model="system.systemName" ng-minlength="2" required="">
                     <div class="errorMessage" ng-show="form.name.$dirty && form.name.$invalid">
                         <span ng-show="form.name.$error.required">Please Enter A Name</span>
                         <span ng-show="form.name.$error.minlength">Name Must Be At Least 2 Characters Long</span>
                     </div>
+                    <label>System Serial</label>
                     <input class="input_add_systemSerial" name="serial" type="text" placeholder="Serial Number" ng-model="system.systemSerial" ng-minlength="3" required="">
                     <div class="errorMessage" ng-show="form.serial.$dirty && form.serial.$invalid">
                         <span ng-show="form.serial.$error.required">Please Enter A Serial</span>

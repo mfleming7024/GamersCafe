@@ -331,16 +331,28 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
         }
     }
 
+    var theStationId;
+    //Station info page
+    if(typeof $routeParams !== "undefined"){
+        if(typeof $routeParams.stationId !== "undefined"){
+            //collects the info from the database for use.
+            angularFire(urlStations.child($routeParams.stationId),$scope,'station_profile');
+
+            theStationId = $routeParams.stationId;
+        }
+    }
+
     var station_delete_confirmed = false;
     //removes system based on a unique id
     $scope.deleteStation = function(myid){
         if(station_delete_confirmed) {
-            $("#station_delete_button" + myid).css("background", "#2ba6cb").html("Delete");
+            $("#station_delete_button").css("background", "#2ba6cb").html("Delete");
             station_delete_confirmed = false;
-            $scope.stations.remove(myid);
-            console.log("deleteStation clicked", myid);
+            $scope.stations.remove(theStationId);
+            $location.path('/admin_station')
+            console.log("deleteStation clicked");
         } else {
-            $("#station_delete_button" + myid).css("background", "red").html("Are you sure");
+            $("#station_delete_button").css("background", "red").html("Are you sure");
             station_delete_confirmed = true;
         }
 
@@ -351,24 +363,26 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
     $scope.updateStation = function(station){
         if (station_update_confirmed) {
             //Grabs the station properties from the scope to pass into the station object and update it
-            var tempStationNumber = document.querySelector("#tempStationNumber" + station.$id).value;
-            var tempStationSystem = document.querySelector("#tempStationSystem" + station.$id).value;
-            var tempStationTV = document.querySelector("#tempStationTV" + station.$id).value;
-            var tempStationTVSerial = document.querySelector("#tempStationTVSerial" + station.$id).value;
+            var tempStationNumber = document.querySelector("#tempStationNumber").value;
+            var tempStationSystem = document.querySelector("#tempStationSystem").value;
+            var tempStationTV = document.querySelector("#tempStationTV").value;
+            var tempStationTVSerial = document.querySelector("#tempStationTVSerial").value;
 
             //Sets the station properties equal to whatever value is in the text inputs
-            station.stationNumber = tempStationNumber;
-            station.stationSystem = tempStationSystem;
-            station.stationTV = tempStationTV;
-            station.stationTVSerial = tempStationTVSerial;
+            $scope.station_profile.stationNumber = tempStationNumber;
+            $scope.station_profile.stationSystem = tempStationSystem;
+            $scope.station_profile.stationTV = tempStationTV;
+            $scope.station_profile.stationTVSerial = tempStationTVSerial;
 
             //visual of station update
+            $location.path('/admin_station');
             console.log("station updated", station);
             $scope.stations.update(station);
-            $("#station_update_button" + station.$id).css("background", "#2ba6cb").html("Update");
+
+            $("#station_update_button").css("background", "#2ba6cb").html("Update");
             station_update_confirmed = false;
         } else {
-            $("#station_update_button" + station.$id).css("background", "green").html("Are you sure");
+            $("#station_update_button").css("background", "green").html("Are you sure");
             station_update_confirmed = true;
         }
     }
@@ -377,13 +391,6 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
         $scope.stationHistory.add($scope.startTicket);
     }
 
-    //Users info page
-    if(typeof $routeParams !== "undefined"){
-        if(typeof $routeParams.stationId !== "undefined"){
-            //collects the info from the database for use.
-            angularFire(urlStations.child($routeParams.stationId),$scope,'station_profile');
-        }
-    }
 
     //************************************Staff CRUD***************************************************
 

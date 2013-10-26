@@ -26,6 +26,7 @@
                         <span ng-show="form.name.$error.required">Please Enter A Name</span>
                         <span ng-show="form.name.$error.minlength">Name Must Be At Least 2 Characters Long</span>
                     </div>
+                    <label>System Serial</label>
                     <input type="text" name="serial" class="systemSerial" placeholder="{{system_profile.systemSerial}}" value="{{system_profile.systemSerial}}" ng-model="tempSystem.systemSerial" id="tempSystemSerial" required="" ng-minlength="3">
                     <div class="errorMessage" ng-show="form.serial.$dirty && form.serial.$invalid">
                         <span ng-show="form.serial.$error.required">Please Enter A Serial</span>

@@ -17,36 +17,37 @@
 
         <!-- Admin Add Station Page -->
         <div id="admin_station" ng-controller="Core">
-            <h2>Add Station</h2>
-            <form id="form" name="form" novalidate ng-submit="addStation()">
-                <div class="row">
-                    <div class="large-12 columns form">
-                        <fieldset>
-                            <input class="input_add_stationNumber" name="stationNumber" type="number" placeholder="Station Number" ng-model="station.stationNumber" required="">
-                            <div class="errorMessage" ng-show="form.stationNumber.$dirty && form.stationNumber.$invalid">
-                                <span ng-show="form.stationNumber.$error.required">Please Select A Station Number</span>
-                            </div>
-                            <label>Select Available System</label>
-                            <select id="systemSelection" class="small" ng-model="station.stationSystem" required="">
-                                <option>Playstation 4</option>
-                                <option>Playstation 3</option>
-                            </select>
-                            <input class="input_add_stationTelevision" name="stationTV" type="text" placeholder="Television" ng-model="station.stationTV" required="">
-                            <div class="errorMessage" ng-show="form.stationTV.$dirty && form.stationTV.$invalid">
-                                <span ng-show="form.stationTV.$error.required">Please Enter A TV</span>
-                            </div>
-                            <input class="input_add_stationTelevisionSerial" name="tvSerial" type="text" placeholder="TV Serial Number" ng-model="station.stationTVSerial" required="">
-                            <div class="errorMessage" ng-show="form.tvSerial.$dirty && form.tvSerial.$invalid">
-                                <span ng-show="form.tvSerial.$error.required">Please Enter The TV Serial</span>
-                            </div>
-                            <div class="formButtons">
-                                <input type="submit" class="button" value="Add" ng-disabled="form.$invalid"  />
-                                <a href="#/admin_station" class="button">Cancel</a>
-                            </div>
-                        </fieldset>
+            <div class="panel small-12 large-6 center addPanel">
+                <h2>Add Station</h2>
+                <a href="#/admin_station" class="button">Back</a>
+                <form id="form" name="form" novalidate ng-submit="addStation()">
+                    <label>Station Number</label>
+                    <input class="input_add_systemName" name="number" type="tel" placeholder="Station Number" ng-model="station.stationNumber" ng-minlength="1" ng-maxlength="2" required="">
+                    <div class="errorMessage" ng-show="form.number.$dirty && form.number.$invalid">
+                        <span ng-show="form.number.$error.required">Please Enter A Number</span>
+                        <span ng-show="form.number.$error.minlength">Name Must Be At Least 1 Characters Long</span>
+                        <span ng-show="form.number.$error.maxlength">Max of 2 Characters Long</span>
                     </div>
-                </div>
-            </form>
+                    <label>Select Available System</label>
+                    <select id="systemSelection" class="small" ng-model="station.stationSystem" required="">
+                        <option>Playstation 4</option>
+                        <option>Playstation 3</option>
+                    </select>
+                    <label>Station TV</label>
+                    <input class="input_add_stationTelevision" name="stationTV" type="text" placeholder="Television" ng-model="station.stationTV" required="">
+                    <div class="errorMessage" ng-show="form.stationTV.$dirty && form.stationTV.$invalid">
+                        <span ng-show="form.stationTV.$error.required">Please Enter A TV</span>
+                    </div>
+                    <label>TV Serial</label>
+                    <input class="input_add_stationTelevisionSerial" name="tvSerial" type="text" placeholder="TV Serial Number" ng-model="station.stationTVSerial" required="">
+                    <div class="errorMessage" ng-show="form.tvSerial.$dirty && form.tvSerial.$invalid">
+                        <span ng-show="form.tvSerial.$error.required">Please Enter The TV Serial</span>
+                    </div>
+                    <div class="formButtons">
+                        <input type="submit" class="button small-12 large-6" value="Add" ng-disabled="form.$invalid"  />
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </div>
