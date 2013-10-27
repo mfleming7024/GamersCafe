@@ -25,14 +25,14 @@
                 </form>
                 <label>Station</label>
                 <form class="custom">
-                    <select id="customDropdown" class="medium">
-                        <option ng-repeat="station in stations" value="{{station.number}}">{{station.number}}</option>
+                    <select id="customDropdown" class="medium cus">
+                        <option ng-repeat="station in stations" value="{{station.number}}">{{station.stationNumber}}</option>
                     </select>
                 </form>
                 <label>Games</label>
                 <form class="custom">
                     <select id="games_option" class="medium">
-                        <option ng-repeat="game in games" value="{{game.gameTitle}}">{{game.gameTitle}}</option>
+                        <option ng-repeat="game in games" value="{{game.gameArtUrl}}">{{game.gameTitle}}</option>
                     </select>
                 </form>
                 <label>Time(Minutes)</label>

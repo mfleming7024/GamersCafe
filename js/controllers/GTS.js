@@ -30,7 +30,6 @@ gamerscafe.controller('GTS', ['$scope', '$routeParams', '$location', 'angularFir
         };
     };
 
-
     //collects the info from the database for use.
     $scope.activeStations = angularFireCollection(urlActiveStations,function()
     {
@@ -102,16 +101,18 @@ gamerscafe.controller('GTS', ['$scope', '$routeParams', '$location', 'angularFir
             $scope.activeStations = angularFireCollection(urlActiveStations,function(snap){
                 var stations = snap.val();
                 if(typeof $routeParams !== "undefined"){
-                    $scope.tempStation.stationNumber = document.querySelector("#customDropdown").value;
-                    $scope.tempStation.boxart = "views/images/watchdog.jpg";
+                    var stationDropdown = $scope.tempStation.stationNumber = document.querySelector("#customDropdown");
+                    $scope.tempStation.stationNumber = stationDropdown.options[stationDropdown.selectedIndex].text;
+                    $scope.tempStation.boxart = document.querySelector("#games_option").value;
                     $scope.tempStation.username = document.querySelector("#username").value;
                     $scope.tempStation.countdown = parseFloat($scope.tempStation.countdown) + parseFloat(document.querySelector("#time_dropdown").value);
                     $location.path("/admin");
                 }
             })
         }else{
-            $scope.tempStation.stationNumber = document.querySelector("#customDropdown").value;
-            $scope.tempStation.boxart = "styles/images/watchdog.jpg";
+            var stationDropdown = $scope.tempStation.stationNumber = document.querySelector("#customDropdown");
+            $scope.tempStation.stationNumber = stationDropdown.options[stationDropdown.selectedIndex].text;
+            $scope.tempStation.boxart = document.querySelector("#games_option").value;
             $scope.tempStation.username = document.querySelector("#username").value;
             $scope.tempStation.countdown = parseFloat($scope.tempStation.countdown) + parseFloat(document.querySelector("#time_dropdown").value);
             $location.path("/admin");
@@ -161,8 +162,6 @@ gamerscafe.controller('GTS', ['$scope', '$routeParams', '$location', 'angularFir
     $scope.updateQuedStation = function(station){
         $scope.quedStations.update(station);
     }
-
-
     //************************************Empty stations database***************************************************
 
     //url to the data needed
@@ -188,7 +187,5 @@ gamerscafe.controller('GTS', ['$scope', '$routeParams', '$location', 'angularFir
     $scope.updateEmptyStation = function(station){
         $scope.emptyStations.update(station);
     };
-
-
 
 }])
