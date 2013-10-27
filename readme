@@ -1,2 +1,22 @@
-testing
+Welcome to GamersCafe, 
+
+Application workflow
+---------------------------
+
+	When a user first comes to the page they will be greeted with a visual of what GamersCafe cafe is about.
+The main features of our product is the ability to play a variety of new systems and consoles such as the Xbox One, Playstation 4, Wii U and other high end computers, and we also allow an exclusive members experience with a unique gamerpoints system where our customers will recieve rewards and points based on what they do. The main feature however, is the gratification of being able to play with or against friends and family at one of our many stations. 
+
+	Our application currently supports admin users with future support for full users and staff implementation. All you need to do to get started is click the login with facebook up in the top-right corner and then it will automagically add you to our firebase database and redirect you to the GTS(Gamer Tracking System) page which is essentially the heart of the project. From here you will have full access to all of the admin features such as full CRUD operations for systems, users, games, stations, etc. This will allow an admin to fully customize their workplace and what the cafe has to offer. An admin can also control our GTS which has 2 basic steps. Add to Queue for any customer who is coming in but isnt able to play on a specific station at that time, then there is the add to active function which basically takes a gamer out of the queue and allows the admin/staff to specify what station, game, and how much time is allotted to that station for the player. 
+
+	From here, our timer controller basically handles all of the functionality of keeping track of all times on all the stations and counting down to 0. When the station hits zero the admin/staff has 2 options, they can extend the time of the player on that station using our "edit" station feature or they can simply remove the station which will take them to a screen and allow a reason for explaining why the station is being removed. For example, if a player has any issue with the cafe or some other personal issue it will allow us to keep track of these "complaints" or reasons to better perfect our company.
+
+	In the future we look forward to expanding our business to include an online gaming league which includes individual user profiles, the users ability to join a "gaming team" essentially to compete in our gaming league with competitions held for certain occations and basically have access to our own unique network of competitive gaming. 
+	
+	
+Team Members
+-------------------
+
+Erwin Angeles								
+Michael Fleming
+Christopher Henry	
 
