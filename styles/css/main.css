@@ -562,8 +562,24 @@ h1,h2,h3,p,a {
 	background: lightgreen!important;
     border: 1px solid lightgreen!important;
 }
+.avail_station:hover  {
+    background: aquamarine!important;
+    border: 1px solid lightgreen!important;
+}
+.avail_station:active  {
+    background: mediumaquamarine!important;
+    border: 1px solid lightgreen!important;
+}
 .qPanel {
     background: #5f9ea0!important;
+    border: 1px solid lightgreen!important;
+}
+.qPanel:hover {
+    background: #1e728c!important;
+    border: 1px solid lightgreen!important;
+}
+.qPanel:active {
+    background: darkslategrey!important;
     border: 1px solid lightgreen!important;
 }
 
@@ -571,12 +587,20 @@ h1,h2,h3,p,a {
 	background:red!important;
 }
 
-.avail_station h3 a {
-	margin-left:-10px;
+.avail_station h3 {
+	margin-left: 0;
 	font-size:6em;
-	margin-top:-80px;
+	margin-top: -20px;
+    opacity: 0.5;
 	float:left;
 	color:#a9a9a9;
+}
+
+.station_1:hover{
+    background: #5f9ea0!important;
+}
+.station_1:active{
+    background: #1e728c!important;
 }
 
 .station_avail {

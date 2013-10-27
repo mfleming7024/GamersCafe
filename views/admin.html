@@ -77,25 +77,18 @@
 
                 <div ng-repeat="station in emptyStations | orderBy:'stationNumber'">
                     <div class="small-12 large-4 columns gts_panel">
-                        <div class="panel callout radius avail_station">
-                            <div class="panel_content">
-                                <div class="station_number_avail">
-                                    <h1>{{station.stationNumber}}</h1>
+                        <a href="#/gts_add_q">
+                            <div class="panel callout radius avail_station">
+                                <div class="panel_content">
+                                    <div class="station_number_avail">
+                                        <h1>{{station.stationNumber}}</h1>
+                                    </div>
+                                    <div class="station_avail">
+                                        <h3>+</h3>
+                                    </div>
                                 </div>
-                                <div class="station_avail">
-                                    <h3><a href="#/gts_add_q">+</a> </h3>
-                                </div>
                             </div>
-                        </div>
-                        <!-- Station Queue -->
-                        <div class="station_q">
-                            <div class="q_name">
-                                <h6></h6>
-                            </div>
-                            <div class="q_time_in">
-                                <h6></h6>
-                            </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
