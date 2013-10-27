@@ -43,7 +43,7 @@
 }
 
 #displayName {
-	margin-left:-40px;
+	margin-left:-25px;
 }
 
 .user_nav {
@@ -52,7 +52,7 @@
 }
 
 .user_nav a {
-	background-color:#424242!important;
+    background-color:rgba(66,66,66,0)!important;
 	color:#2ba6cb;
 }
 
