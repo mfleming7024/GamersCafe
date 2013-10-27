@@ -47,7 +47,7 @@
                 <ul class="pricing-table small-6 large-3 columns" ng-repeat="tempUser in users | filter:filter.displayName">
                     <a href="#/admin_user_profile/{{tempUser.displayName}}/{{tempUser.$id}}"><li class="price">
                         <div class="images"><img src="{{tempUser.profilePic}}"></div>
-                        <div class="fbName">{{tempUser.displayName}}</div>
+                        <div class="adminPanelTitles">{{tempUser.displayName}} <i class="icon-arrow-right"></i></div>
                     </li></a>
                 </ul>
             </div>

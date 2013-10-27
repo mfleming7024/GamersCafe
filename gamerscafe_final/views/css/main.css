@@ -707,14 +707,14 @@ h1,h2,h3,p,a {
     font-size: 0.5em;
     opacity: 0.2;
 }
-.gamesPanel, .addPanel{
+.gamesPanel, .addPanel, .userPanel{
     margin-top: 20px;
 }
 .gameInfoImage{
     width: 150px;
     margin: 0 auto;
 }
-.gamesPanel img{
+.gamesPanel, .userPanel img{
     margin-bottom: 20px;
 }
 

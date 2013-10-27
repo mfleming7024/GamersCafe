@@ -254,16 +254,26 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
             }
         }
     });
+    var theUserId;
+    //Users info page
+    if(typeof $routeParams !== "undefined"){
+        if(typeof $routeParams.userId !== "undefined"){
+            //collects the info from the database for use.
+            angularFire(urlUsers.child($routeParams.userId),$scope,'user_profile');
 
+            theUserId = $routeParams.userId;
+        }
+    }
 
     var user_delete_confirmed = false;
     $scope.deleteUser = function(itemId){
         if (user_delete_confirmed) {
-            $scope.users.remove(itemId);
-            $("#user_delete_button" + itemId).css("background", "#2ba6cb").html("Delete");
+            $scope.users.remove(theUserId);
+            $location.path('/admin_users')
+            $("#user_delete_button").css("background", "#2ba6cb").html("Delete");
             user_delete_confirmed = false;
         } else {
-            $("#user_delete_button" + itemId).css("background", "red").html("Are you sure");
+            $("#user_delete_button").css("background", "red").html("Are you sure");
             user_delete_confirmed = true;
         }
     }
@@ -292,13 +302,7 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
             user_update_confirmed = true;
         }
     }
-    //Users info page
-    if(typeof $routeParams !== "undefined"){
-        if(typeof $routeParams.userId !== "undefined"){
-            //collects the info from the database for use.
-            angularFire(urlUsers.child($routeParams.userId),$scope,'user_profile');
-        }
-    }
+
 
     //************************************Stations CRUD***************************************************
 
@@ -487,7 +491,6 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
             staff_delete_confirmed = true;
         }
     }
-
 }])
 
 gamerscafe.filter('range', function() {
