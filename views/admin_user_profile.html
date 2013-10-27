@@ -18,10 +18,9 @@
             <div class="panel large-6 center userPanel">
                 <a href="#/admin_users" class="button">Back</a>
                 <h2>{{user_profile.displayName}}</h2>
-
-                    <img class="" src="{{user_profile.profilePic}}"><br />
-
-                {{user_profile.email}}<br />
+                <div class="user_row"><img class="" src="{{user_profile.profilePicLarge}}"></div>
+                <hr />
+                <div class="user_row"><p>{{user_profile.email}}</p></div>
                 <a href="" class="button small-12 large-6 deleteButton" ng-click="deleteUser(user.$id)" id="user_delete_button">Delete</a>
             </div>
         </div>
