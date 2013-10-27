@@ -18,7 +18,7 @@
         <!-- Add Gamer to GTS -->
         <form>
             <fieldset>
-
+                <a href="#/admin" class="button">Back</a>
                 <label>Email Address:</label>
                 <input class="staff_add_gamer" type="text" id="username" ng-model="tempStation.username">
                 <form class="custom">
@@ -48,9 +48,7 @@
                 </form>
 
                 <button ng-click="updateActiveStation(tempStation)">Extend!</button>
-
-                <a href="#/admin" class="button">Cancel</a>
-                <a href="#/gts_cancel/{{tempStation.id}}" class="button">Remove</a>
+                <a class="cancel_gamer_button button" ng-click="deleteActiveStation(tempStation.id)" id="user_delete_button">Cancel Gamer</a>
             </fieldset>
         </form>
     </div>

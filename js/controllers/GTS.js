@@ -69,12 +69,21 @@ gamerscafe.controller('GTS', ['$scope', '$routeParams', '$location', 'angularFir
         }
         console.log("add ActiveStations clicked");
     }
-
+    user_delete_confirmed = false;
     //removes activeStations based on a unique id
     $scope.deleteActiveStation = function(removeStation){
-        $scope.stationHistory.add($scope.tempHistStation);
-        $scope.tempStation = null;
-        $location.path("/admin");
+
+        if (user_delete_confirmed) {
+            $scope.stationHistory.add($scope.tempHistStation);
+            $scope.tempStation = null;
+            $location.path("/admin");
+            $("#user_delete_button").css("background", "#2ba6cb").html("Delete");
+            user_delete_confirmed = false;
+        } else {
+            $("#user_delete_button").css("background", "red").html("Are you sure");
+            user_delete_confirmed = true;
+        }
+
     }
     
     $scope.cancelActiveStation = function(){
