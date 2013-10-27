@@ -43,8 +43,9 @@ gamerscafe.controller('Login', ['$scope', '$routeParams', '$location', 'angularF
                 } else {
                     //FB profile image
                     var picurl = "http://graph.facebook.com/" + user.username + "/picture?type=small";
+                    var picurlLarge = "http://graph.facebook.com/" + user.username + "/picture?type=large";
                     //creates a user object from all of the fields and pushes it to the firebase table
-                    $scope.users.add({"displayName": user.name, "email": user.email, "profilePic": picurl, "facebook": true});
+                    $scope.users.add({"displayName": user.name, "email": user.email, "profilePic": picurl, "profilePicLarge": picurlLarge, "facebook": true});
                 }
             } else {
                 //visual feedback of error

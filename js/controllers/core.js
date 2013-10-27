@@ -416,7 +416,7 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
             $("#staff_delete_button").css("background", "#2ba6cb").html("Delete");
             $scope.staffs.remove(theStaffId);
             console.log("deleteStaff clicked");
-            $location.path('/admin_staff')
+            $location.path('/admin_staff');
             staff_delete_confirmed = false;
         } else {
             $("#staff_delete_button").css("background", "red").html("Are you sure");
