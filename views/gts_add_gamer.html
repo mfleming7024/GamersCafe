@@ -18,26 +18,22 @@
         <!-- Add Gamer to GTS -->
         <form>
             <fieldset>
-
                 <label>Email Address:</label>
-                <input id="username"class="staff_add_gamer" type="text" ng-model="tempUser">
+                <input id="username" class="staff_add_gamer" value="test" type="text" ng-model="tempUser">
+                <input id="gamerPic" type="hidden" value="{{qStation_profile.gamerPic}}">
                 <form class="custom">
                 </form>
                 <label>Station</label>
                 <form class="custom">
                     <select id="customDropdown" class="medium">
-                        <option ng-repeat="station in stations" value="{{station.stationNumber}}">{{station.stationNumber}}</option>
+                        <option ng-repeat="station in stations" selected="selected" value="{{station.stationNumber}}">{{station.stationNumber}}</option>
                     </select>
                 </form>
                 <label>Games</label>
                 <form class="custom">
                     <select id="games_option" class="medium">
-                        <option ng-repeat="game in games" value="{{game.gameTitle}}">{{game.gameTitle}}</option>
+                        <option id="boxArt" ng-repeat="game in games" value="{{game.gameArtUrl}}">{{game.gameTitle}}</option>
                     </select>
-                </form>
-                <label>Box Art</label>
-                <form class="gameBoxArt" ng-repeat="game in games">
-                    <img src="{{game.gameArtUrl}}" alt="Game Art">
                 </form>
                 <label>Time(Minutes)</label>
                 <form class="custom">

@@ -54,7 +54,9 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
             console.log("confirm");
         }
     }
+    $scope.boxArt = function(){
 
+    }
     var game_update_confirmed = false;
     //updates the games database have fields instead of string literal
 
@@ -183,9 +185,11 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
         if(typeof $routeParams !== "undefined"){
             if(typeof $routeParams.user !== "undefined"){
                 $scope.tempUser =  $routeParams.user;
+                $scope.tempUsers =  $routeParams.stationId;
             }
         }
     });
+
     var theUserId;
     //Users info page
     if(typeof $routeParams !== "undefined"){

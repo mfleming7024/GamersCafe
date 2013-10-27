@@ -137,6 +137,8 @@ gamerscafe.config(function ($routeProvider){
 
         .otherwise({redirectTo:"/"});
 
+
+
 }).directive('autoComplete', function($timeout) {
         return function(scope, iElement, iAttrs) {
             iElement.autocomplete({
@@ -149,3 +151,4 @@ gamerscafe.config(function ($routeProvider){
             });
         };
     });
+

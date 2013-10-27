@@ -20,9 +20,9 @@
             <h2>Add To Queue?</h2>
             <div class="add_to_queue">
                 <form>
-                    <label>Email</label>
-                    <select id="customDropdown" class="medium" ng-model="tempusername">
-                        <option ng-repeat="user in users">{{user.email}}</option>
+                    <label>Search</label>
+                    <select id="getName" class="medium" ng-model="tempusername">
+                        <option value="{{user.profilePic}}"  ng-repeat="user in users" selected="selected">{{user.displayName}}</option>
                     </select>
                 </form>
                 <div class="add_gamer_q button" ng-click="addQuedStation(tempusername)">Add</div>

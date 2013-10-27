@@ -1,4 +1,7 @@
 gamerscafe.controller('GTS', ['$scope', '$routeParams', '$location', 'angularFireCollection', 'angularFireAuth','angularFire','$timeout', function mtCtrl($scope, $routeParams, $location, angularFireCollection, angularFireAuth,angularFire,$timeout){
+    //url to the data needed
+
+
     //************************************Active stations database***************************************************
 
     //url to the data needed
@@ -20,11 +23,13 @@ gamerscafe.controller('GTS', ['$scope', '$routeParams', '$location', 'angularFir
 
             if($scope.activeStations[i].displayTime <= 0){
                 console.log("Time is up on Station " + $scope.activeStations[i].stationNumber);
+//                $('.panel, .callout').css("background-color", "#FF0000");
                 console.log("the countdown is at " + $scope.activeStations[i].countdown);
                 $scope.activeStations[i].displayTime = 0;
             }
         };
     };
+
 
     //collects the info from the database for use.
     $scope.activeStations = angularFireCollection(urlActiveStations,function()
@@ -54,6 +59,7 @@ gamerscafe.controller('GTS', ['$scope', '$routeParams', '$location', 'angularFir
         $scope.tempStation.boxart = document.querySelector("#games_option").value;
         $scope.tempStation.username = document.querySelector("#username").value;
         $scope.tempStation.countdown = document.querySelector("#time_dropdown").value;
+        $scope.tempStation.gamerPic = document.querySelector("#gamerPic").value;
         $scope.tempStation.startTime = new Date().getTime()
         $location.path("/admin");
 
@@ -78,6 +84,17 @@ gamerscafe.controller('GTS', ['$scope', '$routeParams', '$location', 'angularFir
         $location.path("/admin");
     }
 
+    var urlQStation = new Firebase('https://gamerscafe.firebaseio.com/gamerscafe/quedStations');
+
+    //test only info page
+    if(typeof $routeParams !== "undefined"){
+        if(typeof $routeParams.stationId !== "undefined"){
+            //collects the info from the database for use.
+            angularFire(urlQStation.child($routeParams.stationId),$scope,'qStation_profile');
+
+        }
+    }
+
     //updates the activeStations database
     $scope.updateActiveStation = function(){
         console.log('urlActiveStations',urlActiveStations)
@@ -87,7 +104,7 @@ gamerscafe.controller('GTS', ['$scope', '$routeParams', '$location', 'angularFir
                 if(typeof $routeParams !== "undefined"){
                     $scope.tempStation.stationNumber = document.querySelector("#customDropdown").value;
                     $scope.tempStation.boxart = "views/images/watchdog.jpg";
-                    $scope.tempStation.username = document.querySelector("#username").value;;
+                    $scope.tempStation.username = document.querySelector("#username").value;
                     $scope.tempStation.countdown = parseFloat($scope.tempStation.countdown) + parseFloat(document.querySelector("#time_dropdown").value);
                     $location.path("/admin");
                 }
@@ -95,7 +112,7 @@ gamerscafe.controller('GTS', ['$scope', '$routeParams', '$location', 'angularFir
         }else{
             $scope.tempStation.stationNumber = document.querySelector("#customDropdown").value;
             $scope.tempStation.boxart = "styles/images/watchdog.jpg";
-            $scope.tempStation.username = document.querySelector("#username").value;;
+            $scope.tempStation.username = document.querySelector("#username").value;
             $scope.tempStation.countdown = parseFloat($scope.tempStation.countdown) + parseFloat(document.querySelector("#time_dropdown").value);
             $location.path("/admin");
         }
@@ -119,7 +136,15 @@ gamerscafe.controller('GTS', ['$scope', '$routeParams', '$location', 'angularFir
             var time = hours+":"+min;
         }
 
-        $scope.quedStations.add({username:tempuser, currentTime:time});
+        var nameValue = document.querySelector("#getName");
+        var getName = nameValue.options[nameValue.selectedIndex].text;
+        console.log(getName);
+
+        $scope.gamersPic = tempuser;
+
+
+        console.log(tempuser);
+        $scope.quedStations.add({username:getName, currentTime:time, gamerPic:tempuser});
         console.log("addQuedStations clicked");
         $location.path("/admin");
     }
@@ -163,6 +188,7 @@ gamerscafe.controller('GTS', ['$scope', '$routeParams', '$location', 'angularFir
     $scope.updateEmptyStation = function(station){
         $scope.emptyStations.update(station);
     };
+
 
 
 }])
