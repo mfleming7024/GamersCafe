@@ -16,8 +16,9 @@
         <div class="splitter"></div>
 
         <!-- Add Gamer to GTS -->
-        <form>
+        <form class="small-12 large-6 center addToQPanel" >
             <fieldset>
+                <a href="#/admin" class="button">Back</a>
                 <label>Email Address:</label>
                 <input id="username" class="staff_add_gamer" value="test" type="text" ng-model="tempUser">
                 <input id="gamerPic" type="hidden" value="{{qStation_profile.gamerPic}}">
@@ -47,8 +48,7 @@
                     </select>
                 </form>
 
-                <button ng-click="addActiveStation()">Play!</button>
-                <a class="button" ng-click="cancelActiveStation()">Cancel</a>
+                <button class="button small-12 large-6" ng-click="addActiveStation()">Play!</button>
             </fieldset>
         </form>
     </div>

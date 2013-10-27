@@ -635,16 +635,8 @@ h1,h2,h3,p,a {
 	background:red;
 }
 
-.add_to_queue {
-	float: left;
-	width: 100%;
-	padding: 0 20%;
-}
-
-.add_to_queue .cancel {
-	float: right;
-	width: 100px;
-	margin-right: 10px;
+.addToQPanel{
+    padding: 3%;
 }
 
 .add_gamer_q {
