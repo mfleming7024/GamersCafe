@@ -21,12 +21,19 @@ gamerscafe.controller('GTS', ['$scope', '$routeParams', '$location', 'angularFir
             var time = new Date().getTime() - $scope.activeStations[i].startTime;
             $scope.activeStations[i].displayTime = parseInt($scope.activeStations[i].countdown - (time/1000/60));
 
+            var timesUp = false;
+
             if($scope.activeStations[i].displayTime <= 0){
+                timesUp = true
                 console.log("Time is up on Station " + $scope.activeStations[i].stationNumber);
-//                $('.panel, .callout').css("background-color", "#FF0000");
+                $(".timeUp").html($scope.activeStations[i].stationNumber );
                 console.log("the countdown is at " + $scope.activeStations[i].countdown);
                 $scope.activeStations[i].displayTime = 0;
+//                $('.panel, .callout').css("background-color", "#FF0000");
+
             }
+            console.log('STATION:', $scope.activeStations[2].stationNumber);
+            console.log('TIME',$scope.activeStations[2].displayTime);
         };
     };
 
@@ -148,12 +155,9 @@ gamerscafe.controller('GTS', ['$scope', '$routeParams', '$location', 'angularFir
 
         var nameValue = document.querySelector("#getName");
         var getName = nameValue.options[nameValue.selectedIndex].text;
-        console.log(getName);
 
         $scope.gamersPic = tempuser;
 
-
-        console.log(tempuser);
         $scope.quedStations.add({username:getName, currentTime:time, gamerPic:tempuser});
         console.log("addQuedStations clicked");
         $location.path("/admin");

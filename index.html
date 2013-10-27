@@ -8,15 +8,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0" />
-    <title>Gamers Cafe</title>
-    <link rel="stylesheet" href="styles/css/bootstrap.css">
+    <title ng-bind="'GamersCafe &mdash; ' + title">GamersCafe</title>
     <link rel="stylesheet" href="styles/css/main.css">
     <link rel="stylesheet" href="styles/css/normalize.css">
     <link rel="stylesheet" href="styles/css/foundation.css">
     <link rel="stylesheet" href="styles/css/font-awesome.css">
     <link rel="stylesheet" href="styles/css/font-awesome-ie7.css">
-
-
 
     <!-- FONTS -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,300,700,800' rel='stylesheet' type='text/css'>
@@ -38,7 +35,7 @@
         <div class="user_panel" ng-controller="Login">
             <ul class="user_nav button-group">
                 <li><a id="displayName" href="" data-dropdown="user_settings" ng-show="user" class="small button dropdown">{{displayName}}</i></a></li>
-                <li><a href="" ng-click="login()" class="small button" ng-show="!user">Login</a></li>
+                <li><a href="" ng-click="login()" class="small button" ng-show="!user">Login with Facebook</a></li>
             </ul>
             <form novalidate>
                 <ul id="user_settings" data-dropdown-content class="f-dropdown">
@@ -51,8 +48,6 @@
 
     </div><!-- End top_half_bar -->
 </div><!-- End top-bar -->
-
-
 
 <div id="top">
     <!-- Navigation -->
