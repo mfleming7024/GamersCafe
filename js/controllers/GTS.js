@@ -36,7 +36,7 @@ gamerscafe.controller('GTS', ['$scope', '$routeParams', '$location', 'angularFir
         })
     });
 
-    //checks to make sure that the routes paramiters are set the sets the tempstaion for use.
+    //checks to make sure that the routes parameters are set the sets the tempstation for use.
     if(typeof $routeParams !== "undefined"){
         if(typeof $routeParams.stationId !== "undefined"){
             $scope.tempStation = {};
@@ -94,7 +94,7 @@ gamerscafe.controller('GTS', ['$scope', '$routeParams', '$location', 'angularFir
             })
         }else{
             $scope.tempStation.stationNumber = document.querySelector("#customDropdown").value;
-            $scope.tempStation.boxart = "views/images/watchdog.jpg";
+            $scope.tempStation.boxart = "styles/images/watchdog.jpg";
             $scope.tempStation.username = document.querySelector("#username").value;;
             $scope.tempStation.countdown = parseFloat($scope.tempStation.countdown) + parseFloat(document.querySelector("#time_dropdown").value);
             $location.path("/admin");
