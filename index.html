@@ -6,6 +6,7 @@
 <!--<![endif]-->
 
 <head>
+    <!-- Head Section -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0" />
     <title ng-bind="'GamersCafe &mdash; ' + title">GamersCafe</title>
@@ -20,8 +21,8 @@
     <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Titillium+Web:600,700,700italic,900,400italic,400,300italic,300,200italic,200' rel='stylesheet' type='text/css'>
 
+    <!-- Scripts -->
     <script src="js/vendor/custom.modernizr.js"></script>
-
 </head>
 <body>
 <!-- Nav Top Bar -->
@@ -32,20 +33,20 @@
             <!-- LOGO -->
             <a href="#/home"></a>  <!-- END LOGO -->
         </div>
-        <div class="user_panel" ng-controller="Login">
+        <!-- User Panel, has login and logout -->
+        <div class="user_panel" ng-controller="Login"> <!-- Login section -->
             <ul class="user_nav button-group">
                 <li><a id="displayName" href="" data-dropdown="user_settings" ng-show="user" class="small button dropdown">{{displayName}}</i></a></li>
                 <li><a href="" ng-click="login()" class="small button" ng-show="!user">Login with Facebook</a></li>
             </ul>
-            <form novalidate>
+            <form novalidate> <!-- Has the Admin Link and Logout -->
                 <ul id="user_settings" data-dropdown-content class="f-dropdown">
                     <li><a href="" id="logout" class="small button a_dropdown" ng-click="logout()" >Logout</a></li>
                     <li><a href="#/admin" class="small button a_dropdown">Admin</a></li>
                 </ul>
-            </form>
+            </form> <!-- Profile Picture of the current Users logged In -->
             <img id="profilePic" src="{{picurl}}" ng-show="user" alt="Small Profile Picture">
         </div>
-
     </div><!-- End top_half_bar -->
 </div><!-- End top-bar -->
 
@@ -58,23 +59,19 @@
                     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
                     <li id="mobile_menu" class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
                     <li><a href="#"><i class="icon-home home_icon"></i></a> </li>
-
                     <li class="divider"></li>
                     <li class="active"><a href="#">League/Tournaments</a></li>
                     <li class="divider"></li>
                     <li><a href="#">Games</a></li>
                     <li class="divider"></li>
                     <li class="has-dropdown"><a href="#">About Us</a>
-
                         <ul class="dropdown">
                             <li class="has-dropdown"><a href="#">Dropdown Level 1a</a>
-
                                 <ul class="dropdown">
                                     <li><label>Dropdown Level 2 Label</label></li>
                                     <li><a href="#">Dropdown Level 2a</a></li>
                                     <li><a href="#">Dropdown Level 2b</a></li>
                                     <li class="has-dropdown"><a href="#">Dropdown Level 2c</a>
-
                                         <ul class="dropdown">
                                             <li><label>Dropdown Level 3 Label</label></li>
                                             <li><a href="#">Dropdown Level 3a</a></li>
@@ -82,7 +79,6 @@
                                             <li class="divider"></li>
                                             <li><a href="#">Dropdown Level 3c</a></li>
                                         </ul>
-
                                     </li>
                                     <li><a href="#">Dropdown Level 2d</a></li>
                                     <li><a href="#">Dropdown Level 2e</a></li>
@@ -98,42 +94,38 @@
                             <li class="divider"></li>
                             <li><a href="#">See all &rarr;</a></li>
                         </ul>
+                    </li>
                 </ul>
             </section>
         </nav>
     </div> <!-- END NAVIGATION -->
 </div>
 
-
 <!--Container for the view templates-->
 <div id="container" ng-view="">
-
 </div>
 
+<!--Footer Content -->
 <div class="row">
     <div id="footer">
-        <div class="social">
+        <div class="social"> <!-- Social Network Icons -->
             <a href="#"><i id="fbIcon" class="icon-facebook-sign"></i></a>
             <a href="#"><i id="twitterIcon" class="icon-twitter-sign"></i></a>
             <a href="/"><i id="gPlusIcon" class="icon-google-plus-sign"></i></a>
         </div>
-        <div class="copyright">
-            <p>&copy; GamersCafe</p>
+        <div class="copyright"> <!--  Company Copyright -->
+            <p>&copy; 2013 GamersCafe</p>
         </div>
     </div>
 </div>
 
-
+<!-- Scripts -->
 <script>
     document.write('<script src=' +
             ('__proto__' in {} ? '/js/vendor/zepto' : '/js/vendor/jquery') +
             '.js><\/script>')
 </script>
-
-
-
 <script src="js/foundation.min.js"></script>
-
 <script>
     $(document).foundation();
 </script>
@@ -161,8 +153,5 @@
 
 <!--Login Controller-->
 <script type="text/javascript" src="js/controllers/login.js"></script>
-
-
-
 </body>
 </html>
