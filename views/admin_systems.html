@@ -29,7 +29,6 @@
             <div class="adminSystems">
                 <ul class="pricing-table large-2 small-6 columns" ng-repeat="tempSystem in systems | filter:filter.systemName">
                     <a href="#/admin_system_info/{{tempSystem.systemName}}/{{tempSystem.$id}}"><li class="price">
-                        <div class="adminGameArt"><img src="{{game.gameArtUrl}}"></div>
                         <div class="adminPanelTitles">{{tempSystem.systemName}} <i class="icon-arrow-right"></i></div>
                     </li></a>
                 </ul>

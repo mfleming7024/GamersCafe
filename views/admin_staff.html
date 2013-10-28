@@ -29,7 +29,6 @@
             <div class="adminStaffs">
                 <ul class="pricing-table large-2 small-6 columns" ng-repeat="staff in staffs | filter:filter.staffName">
                     <a href="#/admin_staff_info/{{staff.staffName}}/{{staff.$id}}"><li class="price">
-                        <div class="adminGameArt"><img src="{{game.gameArtUrl}}"></div>
                         <div class="adminPanelTitles">{{staff.staffName}} <i class="icon-arrow-right"></i></div>
                     </li></a>
                 </ul>

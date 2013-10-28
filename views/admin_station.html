@@ -31,7 +31,6 @@
             <div class="adminStations">
                 <ul class="pricing-table large-2 small-6 column" ng-repeat="station in stations | filter:filter.stationNumber">
                     <a href="#/admin_station_info/{{station.stationNumber}}/{{station.$id}}"><li class="price">
-                        <!--<div class="adminGameArt"><img src="{{game.gameArtUrl}}"></div>-->
                         <div class="adminStationNumber">{{station.stationNumber}} <i class="icon-arrow-right"></i></div>
                     </li></a>
                 </ul>
