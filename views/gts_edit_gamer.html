@@ -24,13 +24,13 @@
                 <form class="custom">
                 </form>
                 <label>Station</label>
-                <form class="custom">
+                <form class="custom" ng-controller="StationCrud">
                     <select id="customDropdown" class="medium cus">
                         <option ng-repeat="station in stations" value="{{station.number}}">{{station.stationNumber}}</option>
                     </select>
                 </form>
                 <label>Games</label>
-                <form class="custom">
+                <form class="custom" ng-controller="GameCrud">
                     <select id="games_option" class="medium">
                         <option ng-repeat="game in games" value="{{game.gameArtUrl}}">{{game.gameTitle}}</option>
                     </select>
@@ -48,7 +48,7 @@
                 </form>
 
                 <button ng-click="updateActiveStation(tempStation)">Extend!</button>
-                <a class="cancel_gamer_button button" ng-click="deleteActiveStation(tempStation.id)" id="user_delete_button">Cancel Gamer</a>
+                <a ng-controller="GTS" class="cancel_gamer_button button" ng-click="deleteActiveStation(tempStation.id)" id="user_delete_button">Cancel Gamer</a>
             </fieldset>
         </form>
     </div>

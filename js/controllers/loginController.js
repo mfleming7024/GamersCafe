@@ -5,7 +5,6 @@ gamerscafe.controller('Login', ['$scope', '$routeParams', '$location', 'angularF
     //Checks if the user is login
     $scope.$on("angularFireAuth:login", function(evt, user) {
         if (user.provider == "facebook") {
-            console.log("logged in", user);
             $scope.picurl = "http://graph.facebook.com/" + user.username + "/picture?type=small";
             $scope.displayName = user.displayName;
 

@@ -25,13 +25,13 @@
                 <form class="custom">
                 </form>
                 <label>Station</label>
-                <form class="custom">
+                <form class="custom" ng-controller="StationCrud">
                     <select id="customDropdown" class="medium">
                         <option ng-repeat="station in stations" selected="selected" value="{{station.stationNumber}}">{{station.stationNumber}}</option>
                     </select>
                 </form>
                 <label>Games</label>
-                <form class="custom">
+                <form class="custom" ng-controller="GameCrud">
                     <select id="games_option" class="medium">
                         <option id="boxArt" ng-repeat="game in games" value="{{game.gameArtUrl}}">{{game.gameTitle}}</option>
                     </select>

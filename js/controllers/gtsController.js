@@ -6,6 +6,9 @@ gamerscafe.controller('GTS', ['$scope', '$routeParams', '$location', 'angularFir
 
     //url to the data needed
     var urlActiveStations = new Firebase('https://gamerscafe.firebaseio.com/gamerscafe/activeStations');
+    var urlStationHist = new Firebase('https://gamerscafe.firebaseio.com/gamerscafe/shistory'); //History
+
+    $scope.stationHistory = angularFireCollection(urlStationHist);
 
     var wrapper = function () {
         updateTimer();
@@ -23,13 +26,9 @@ gamerscafe.controller('GTS', ['$scope', '$routeParams', '$location', 'angularFir
 
             if($scope.activeStations[i].displayTime <= 0){
                 timesUp = true
-                console.log("Time is up on Station " + $scope.activeStations[i].stationNumber);
                 $(".timeUp").html($scope.activeStations[i].stationNumber );
-                console.log("the countdown is at " + $scope.activeStations[i].countdown);
                 $scope.activeStations[i].displayTime = 0;
             }
-            console.log('STATION:', $scope.activeStations[2].stationNumber);
-            console.log('TIME',$scope.activeStations[2].displayTime);
         };
     };
 
@@ -75,7 +74,6 @@ gamerscafe.controller('GTS', ['$scope', '$routeParams', '$location', 'angularFir
     user_delete_confirmed = false;
     //removes activeStations based on a unique id
     $scope.deleteActiveStation = function(removeStation){
-
         if (user_delete_confirmed) {
             $scope.stationHistory.add($scope.tempHistStation);
             $scope.tempStation = null;
@@ -161,9 +159,7 @@ gamerscafe.controller('GTS', ['$scope', '$routeParams', '$location', 'angularFir
 
     //removes quedStations based on a unique id
     $scope.deleteQuedStation = function(myid){
-        console.log(myid)
         $scope.quedStations.remove(myid);
-        console.log("delete ActiveStations clicked");
     }
 
     //updates the quedStations database
