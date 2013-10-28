@@ -13,7 +13,7 @@ gamerscafe.controller('Login', ['$scope', '$routeParams', '$location', 'angularF
 
         }
     })
-
+    // Login With Faceook
     $scope.login = function() {
         // when the user login successfully then run the following function
         angularFireAuth.login('facebook').then(function() {
@@ -21,10 +21,8 @@ gamerscafe.controller('Login', ['$scope', '$routeParams', '$location', 'angularF
 
             user = theUser;
 
-            console.log(user);
             $location.path('/admin');
             if (user) {
-                console.log('test2');
                 //checks the database against what user email is passed in to see if it
                 //exists then sets a boolean to say so
                 var userExists = false;
@@ -37,8 +35,7 @@ gamerscafe.controller('Login', ['$scope', '$routeParams', '$location', 'angularF
                     }
                 }
                 if (userExists) {
-                    console.log("user email exists");
-                    //login the user
+                    //user exists
                 } else {
                     //FB profile image
                     var picurl = "http://graph.facebook.com/" + user.username + "/picture?type=small";
@@ -48,7 +45,6 @@ gamerscafe.controller('Login', ['$scope', '$routeParams', '$location', 'angularF
                 }
             } else {
                 //visual feedback of error
-                console.log("No user Detected");
             }
         });
     }
