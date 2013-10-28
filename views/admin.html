@@ -1,6 +1,6 @@
 <!-- AdminPage -->
 <div class="middle"  ng-controller="GTS">
-    <div class="row staff_columns">
+    <div class="row staff_columns"> <!-- Admin Settings Navigation -->
         <ul class="admin_nav button-group">
             <li><a href="#" data-dropdown="admin_dd" class="small button dropdown">Admin Settings</i> </a></li>
         </ul>
@@ -16,8 +16,8 @@
 
         <!-- Gamer Tracking System GTS -->
         <div id="gts">
+            <!-- Active Stations -->
             <h2>Active Stations</h2>
-
             <div id="gts_panel">
                 <!-- Panel Starts here -->
                 <div ng-repeat="station in activeStations | orderBy:'stationNumber'">
@@ -26,63 +26,54 @@
                             <div class="panel callout radius station_1">
                                 <div class="panel_content">
                                     <div class="station_number">
-                                        <h1>{{station.stationNumber}}</h1>
+                                        <h1>{{station.stationNumber}}</h1> <!-- Gets the Station Number -->
                                     </div>
                                     <div class="gtsImage">
-                                        <img src="{{station.gamerPic}}" alt="Profile Pic">
+                                        <img src="{{station.gamerPic}}" alt="Profile Pic"> <!-- Get the profile picture of the gamer -->
                                     </div>
                                     <div class="gamer_name">
-                                        <h6>{{station.username}}</h6>
+                                        <h6>{{station.username}}</h6> <!-- Gamers Name is diplayed here -->
                                     </div>
-
                                     <div class="game_boxart">
-                                        <img src="{{station.boxart}}" alt="Game Box Art">
+                                        <img src="{{station.boxart}}" alt="Game Box Art"> <!-- Game Box art is here -->
                                     </div>
                                     <div class="gts_timer">
-                                        <h6 class="countdown">{{station.displayTime}} Min</h6>
+                                        <h6 class="countdown">{{station.displayTime}} Min</h6> <!-- The timer is displayed here -->
                                     </div>
                                 </div>
                             </div>
                         </a>
                     </div>
-
                 </div>
-
+                <!-- Queued Stations -->
                 <h2 class="clearfix">Queued:</h2>
-
                 <div ng-repeat="station in quedStations | orderBy:'username'">
                     <div class="small-12 large-4 columns gts_panel">
-                        <a href="#/gts_add_gamer/{{station.username}}/{{station.$id}}">
+                        <a href="#/gts_add_gamer/{{station.username}}/{{station.$id}}"> <!-- Click on panel to goto Add Game Page -->
                             <div class="panel callout radius qPanel">
                                 <div class="panel_content">
-                                    <div class="edit_gts">
-                                    </div>
                                     <div class="queuedPic">
-                                        <img src="{{station.gamerPic}}">
+                                        <img src="{{station.gamerPic}}" alt="Gamer Pic">  <!-- Gamers Pic -->
                                     </div>
                                     <div class="qGamerName">
-                                        <h6>{{station.username}}</h6>
+                                        <h6>{{station.username}}</h6> <!-- Gamers Name -->
                                     </div>
                                     <div class="timeIn">
-                                        <h6>{{station.currentTime}}</h6>
+                                        <h6>{{station.currentTime}}</h6> <!-- Current Time Gamer Signed In -->
                                     </div>
                                 </div>
                             </div>
                         </a>
                     </div>
                 </div>
-
+                <!-- Empty Stations -->
                 <h2 class="clearfix">Empty Stations</h2>
-
                 <div ng-repeat="station in emptyStations | orderBy:'stationNumber'">
                     <div class="small-12 large-4 columns gts_panel">
                         <a href="#/gts_add_q">
                             <div class="panel callout radius avail_station">
                                 <div class="panel_content">
-                                    <div class="station_number_avail">
-                                        <h1>{{station.stationNumber}}</h1>
-                                    </div>
-                                    <div class="station_avail">
+                                    <div class="station_avail"> <!-- Add A Gamer To the Queue. -->
                                         <h3>+</h3>
                                     </div>
                                 </div>
@@ -91,7 +82,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </div>

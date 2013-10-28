@@ -13,54 +13,50 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
             console.log("game does not exist");
         } else {
             //error checking for if fields are null
-            if ($scope.game.gameSystem == "" || $scope.game.gameSystem == null) {
+            if ($scope.game.gameSystem == "" || $scope.game.gameSystem == null) { //System
                 console.log("No game system given");
-            } else if ($scope.game.gameTitle == "" || $scope.game.gameTitle == null) {
+            } else if ($scope.game.gameTitle == "" || $scope.game.gameTitle == null) { //Game Title
                 console.log("No game name given");
-            } else if ($scope.game.gameArtUrl == "" || $scope.game.gameArtUrl == null) {
+            } else if ($scope.game.gameArtUrl == "" || $scope.game.gameArtUrl == null) { // Game Box Art
                 console.log("No game art url given");
-            } else if ($scope.game.gameQuantity == "" || $scope.game.gameQuantity == null) {
+            } else if ($scope.game.gameQuantity == "" || $scope.game.gameQuantity == null) { //Quantity
                 console.log("No game quantity given");
             } else {
-                console.log($scope.game);
-                $scope.games.add($scope.game);
-                $location.path('/admin_games');
+                $scope.games.add($scope.game); //Adds to Firebase
+                $location.path('/admin_games'); //redirects to Admin_Games
             }
         }
     }
+    // get the current game id
     var theGameId;
-    //Games info page
+    //Get the data from firebase on the click game.
     if(typeof $routeParams !== "undefined"){
         if(typeof $routeParams.gameId !== "undefined"){
             //collects the info from the database for use.
             angularFire(urlGames.child($routeParams.gameId),$scope,'game_profile');
-
             theGameId = $routeParams.gameId;
         }
     }
 
+    //Confirm Delete for Games
     var game_delete_confirmed = false;
-
     $scope.deleteGame = function(myid){
         if (game_delete_confirmed) {
-            $("#game_delete_button").css("background", "#2ba6cb").html("Delete");
-            $scope.games.remove(theGameId);
-            console.log("deleteGame clicked");
+            $("#game_delete_button").css("background", "#2ba6cb").html("Delete"); //Click to delete
+            $scope.games.remove(theGameId); // Deletes the game with the GameId
             $location.path('/admin_games');
 
         } else {
-            $("#game_delete_button").css("background", "red").html("Are you sure");
+            $("#game_delete_button").css("background", "red").html("Are you sure"); //click to confirm delete
             game_delete_confirmed = true;
-            console.log("confirm");
         }
     }
     $scope.boxArt = function(){
-
     }
-    var game_update_confirmed = false;
-    //updates the games database have fields instead of string literal
 
-    $scope.updateGame = function(game){
+    //updates the games database have fields instead of string literal
+    var game_update_confirmed = false;
+    $scope.updateGame = function(){
         if (game_update_confirmed) {
 
             //Grabs the game properties from the scope to pass into the game object and update it
@@ -77,20 +73,15 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
 
             //visual of game update
             $location.path('/admin_games');
-            console.log("game updated");
-            $scope.games.update();
+            $scope.games.update(); //Updates the Game on Firebase
 
-            $("#game_update_button").css("background", "#2ba6cb").html("Update");
-
+            $("#game_update_button").css("background", "#2ba6cb").html("Update"); // Click this to Update
             game_update_confirmed = false;
         } else {
-            console.log('clicked')
-            $("#game_update_button").css("background", "green").html("Are you sure");
+            $("#game_update_button").css("background", "green").html("Are you sure"); //Confirms if you wanna update
             game_update_confirmed = true;
         }
     }
-
-
     //************************************Systems CRUD***************************************************
     //url to the data needed
     var urlSystem = new Firebase('https://gamerscafe.firebaseio.com/gamerscafe/systems');
@@ -103,51 +94,47 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
         if ($scope.system == "" || $scope.system == null) {
             console.log("game does not exist");
         } else {
-            if ($scope.system.systemName == "" || $scope.system.systemName == null) {
+            if ($scope.system.systemName == "" || $scope.system.systemName == null) { //System Name
                 console.log("No System Name Given");
-            } else if ($scope.system.systemSerial == "" || $scope.system.systemSerial == null) {
+            } else if ($scope.system.systemSerial == "" || $scope.system.systemSerial == null) { //System Serial
                 console.log("No System Serial Given");
-            } else if ($scope.system.systemStation == "" || $scope.system.systemStation == null) {
+            } else if ($scope.system.systemStation == "" || $scope.system.systemStation == null) { //Systems Assigned Station
                 console.log("Please select a station or None");
             } else {
-                console.log($scope.system);
-                $scope.systems.add($scope.system);
+                $scope.systems.add($scope.system); // Add to Firebase
                 $location.path('/admin_systems');
             }
         }
-        console.log("addSystem clicked");
     }
 
+    //get systemId
     var theSystemId;
     //System info page
     if(typeof $routeParams !== "undefined"){
         if(typeof $routeParams.systemId !== "undefined"){
             //collects the info from the database for use.
             angularFire(urlSystem.child($routeParams.systemId),$scope,'system_profile');
-
             theSystemId = $routeParams.systemId;
         }
     }
 
-    var system_delete_confirmed = false;
     //removes system based on a unique id
+    var system_delete_confirmed = false;
     $scope.deleteSystem = function(myid){
         if (system_delete_confirmed) {
-            $scope.systems.remove(theSystemId);
+            $scope.systems.remove(theSystemId); //Removes from firebase
             $location.path('/admin_systems');
-            console.log("deleteSystem clicked");
-            $("#system_delete_button").css("background", "#2ba6cb").html("Delete");
+            $("#system_delete_button").css("background", "#2ba6cb").html("Delete"); //Click to delete
             system_delete_confirmed = false;
         } else {
-            $("#system_delete_button").css("background", "red").html("Are you sure");
+            $("#system_delete_button").css("background", "red").html("Are you sure"); //Confirm Delete
             system_delete_confirmed = true;
         }
     }
 
-    var system_update_confirmed = false;
     //updates the systems database have fields instead of string literal
+    var system_update_confirmed = false;
     $scope.updateSystem = function(system){
-
         if (system_update_confirmed) {
             //Grabs the game properties from the scope to pass into the game object and update it
             var tempSystemName = document.querySelector("#tempSystemName").value;
@@ -160,8 +147,7 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
             $scope.system_profile.systemStation = tempSystemStation;
 
             //visual of game update
-            $location.path('/admin_systems');
-            console.log("system updated", system);
+            $location.path('/admin_systems'); //Updates Firebase
             $scope.systems.update(system);
 
             $("#system_update_button").css("background", "#2ba6cb").html("Update");
@@ -171,9 +157,6 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
             system_update_confirmed = true;
         }
     }
-
-
-
     //************************************Users CRUD***************************************************
 
     //url to the data needed
@@ -184,27 +167,28 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
         var users = snap.val();
         if(typeof $routeParams !== "undefined"){
             if(typeof $routeParams.user !== "undefined"){
-                $scope.tempUser =  $routeParams.user;
-                $scope.tempUsers =  $routeParams.stationId;
+                $scope.tempUser =  $routeParams.user; // Gets The Users Name
+                $scope.tempUsers =  $routeParams.stationId; //Gets the Station Id for the GTS
             }
         }
     });
 
+    // Var for UserId
     var theUserId;
     //Users info page
     if(typeof $routeParams !== "undefined"){
         if(typeof $routeParams.userId !== "undefined"){
             //collects the info from the database for use.
             angularFire(urlUsers.child($routeParams.userId),$scope,'user_profile');
-
-            theUserId = $routeParams.userId;
+            theUserId = $routeParams.userId; //Gets current selected user Id
         }
     }
 
+    //User Delete
     var user_delete_confirmed = false;
     $scope.deleteUser = function(itemId){
         if (user_delete_confirmed) {
-            $scope.users.remove(theUserId);
+            $scope.users.remove(theUserId); //Deletes from Firebase
             $location.path('/admin_users')
             $("#user_delete_button").css("background", "#2ba6cb").html("Delete");
             user_delete_confirmed = false;
@@ -214,6 +198,7 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
         }
     }
 
+    //User Update
     var user_update_confirmed = false;
     $scope.updateUser = function(user) {
         if (user_update_confirmed) {
@@ -230,21 +215,17 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
             user.email = tempUserEmail;
             user.joinedOn = tempUserJoinDate;
 
-            //visual of station update
-            console.log("user updated", user);
-            $scope.users.update(user);
+            $scope.users.update(user); //Updates the user and pass to Firebase
         } else {
             $("#user_update_button" + user.$id).css("background", "green").html("Are you sure");
             user_update_confirmed = true;
         }
     }
-
-
     //************************************Stations CRUD***************************************************
 
     //urls to the data needed
-    var urlStations = new Firebase('https://gamerscafe.firebaseio.com/gamerscafe/stations');
-    var urlStationHist = new Firebase('https://gamerscafe.firebaseio.com/gamerscafe/shistory');
+    var urlStations = new Firebase('https://gamerscafe.firebaseio.com/gamerscafe/stations'); //Stations Firebase
+    var urlStationHist = new Firebase('https://gamerscafe.firebaseio.com/gamerscafe/shistory'); //History
 
     //collects the info from the database for use.
     $scope.stations = angularFireCollection(urlStations);
@@ -255,22 +236,22 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
         if ($scope.station == "" || $scope.station == null) {
             console.log("Station does not exist");
         } else {
-            if ($scope.station.stationNumber == "" || $scope.station.stationNumber == null) {
+            if ($scope.station.stationNumber == "" || $scope.station.stationNumber == null) { //Station Number
                 console.log("No Station Chosen");
-            } else if ($scope.station.stationSystem == "" || $scope.station.stationSystem == null) {
+            } else if ($scope.station.stationSystem == "" || $scope.station.stationSystem == null) { // The Station System
                 console.log("Select A System");
-            } else if ($scope.station.stationTV == "" || $scope.station.stationTV == null) {
+            } else if ($scope.station.stationTV == "" || $scope.station.stationTV == null) { //Station TV
                 console.log("Please enter a TV");
-            } else if ($scope.station.stationTVSerial == "" || $scope.station.stationTVSerial == null) {
+            } else if ($scope.station.stationTVSerial == "" || $scope.station.stationTVSerial == null) { //TV's Serial
                 console.log("Please enter a TV Serial");
             } else {
-                console.log("Station added", $scope.station);
                 $scope.stations.add($scope.station);
                 $location.path('/admin_station');
             }
         }
     }
 
+    //Get Station Id
     var theStationId;
     //Station info page
     if(typeof $routeParams !== "undefined"){
@@ -282,20 +263,18 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
         }
     }
 
-    var station_delete_confirmed = false;
     //removes system based on a unique id
+    var station_delete_confirmed = false;
     $scope.deleteStation = function(myid){
         if(station_delete_confirmed) {
             $("#station_delete_button").css("background", "#2ba6cb").html("Delete");
             station_delete_confirmed = false;
-            $scope.stations.remove(theStationId);
+            $scope.stations.remove(theStationId); //Removes from Firebase
             $location.path('/admin_station')
-            console.log("deleteStation clicked");
         } else {
             $("#station_delete_button").css("background", "red").html("Are you sure");
             station_delete_confirmed = true;
         }
-
     }
 
     var station_update_confirmed = false;
@@ -315,8 +294,7 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
             $scope.station_profile.stationTVSerial = tempStationTVSerial;
 
             //visual of station update
-            $location.path('/admin_station');
-            console.log("station updated", station);
+            $location.path('/admin_station'); //Updates on firebase
             $scope.stations.update(station);
 
             $("#station_update_button").css("background", "#2ba6cb").html("Update");
@@ -330,8 +308,6 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
     $scope.addStationToHistory = function(){
         $scope.stationHistory.add($scope.startTicket);
     }
-
-
     //************************************Staff CRUD***************************************************
 
     //url to the data needed
@@ -345,45 +321,40 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
         if ($scope.staff == "" || $scope.staff == null) {
             console.log("staff does not exist");
         } else {
-            if ($scope.staff.staffName == "" || $scope.staff.staffName == null) {
+            if ($scope.staff.staffName == "" || $scope.staff.staffName == null) { //Staff Name
                 console.log("No Staff Name Given");
-            } else if ($scope.staff.staffNumber == "" || $scope.staff.staffNumber == null) {
+            } else if ($scope.staff.staffNumber == "" || $scope.staff.staffNumber == null) { //Staff Cell Number
                 console.log("No Number Given");
-            } else if ($scope.staff.staffEmail == "" || $scope.staff.staffEmail == null) {
+            } else if ($scope.staff.staffEmail == "" || $scope.staff.staffEmail == null) { //Staffs Email
                 console.log("Please Enter an Email");
-            } else if ($scope.staff.staffPassword == "" || $scope.staff.staffPassword == null) {
+            } else if ($scope.staff.staffPassword == "" || $scope.staff.staffPassword == null) { //Staff Password
                 console.log("Please Enter A Password");
-            } else if ($scope.staff.staffPermission == "" || $scope.staff.staffPermission == null) {
+            } else if ($scope.staff.staffPermission == "" || $scope.staff.staffPermission == null) { //?Permission
                 console.log("Please select a permission");
             } else {
-                console.log($scope.staff);
                 $scope.staffs.add($scope.staff);
                 $location.path('/admin_staff');
             }
         }
-
-
         auth.createUser(email, password, function(error, user) {
             if (!error) {
                 console.log('User Id: ' + user.id + ', Email: ' + user.email);
             }
         });
     }
-
+    //Get Staff Id
     var theStaffId;
     //staff info page
     if(typeof $routeParams !== "undefined"){
         if(typeof $routeParams.staffId !== "undefined"){
             //collects the info from the database for use.
             angularFire(urlStaff.child($routeParams.staffId),$scope,'staff_profile');
-
-            theStaffId = $routeParams.staffId;
+            theStaffId = $routeParams.staffId; //Gets the staff ID of current page/selected
         }
     }
 
-
-    var staff_update_confirmed = false;
     //updates the staff database have fields instead of string literal
+    var staff_update_confirmed = false;
     $scope.updateStaff = function(staff){
         if (staff_update_confirmed) {
             //Grabs the staff properties from the scope to pass into the staff object and update it
@@ -401,9 +372,8 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
             $scope.staff_profile.staffPermission = tempStaffPermission;
 
             //visual of staff update
-            console.log("staff updated", staff);
             $location.path('/admin_staff');
-            $scope.staffs.update(staff);
+            $scope.staffs.update(staff); //Updates Firebase
 
             $("#staff_update_button").css("background", "#2ba6cb").html("Update");
             staff_update_confirmed = false;
@@ -413,13 +383,12 @@ gamerscafe.controller('Core', ['$scope', '$routeParams', '$location', 'angularFi
         }
     }
 
-    var staff_delete_confirmed = false;
     //remove from the databse object but not from the auth list.
+    var staff_delete_confirmed = false;
     $scope.deleteStaff = function(myid){
         if (staff_delete_confirmed){
             $("#staff_delete_button").css("background", "#2ba6cb").html("Delete");
-            $scope.staffs.remove(theStaffId);
-            console.log("deleteStaff clicked");
+            $scope.staffs.remove(theStaffId);;
             $location.path('/admin_staff');
             staff_delete_confirmed = false;
         } else {
